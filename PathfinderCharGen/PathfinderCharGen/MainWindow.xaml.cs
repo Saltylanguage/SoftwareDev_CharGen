@@ -13,6 +13,8 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using ReactiveLeveling;
+using Microsoft.Win32;
+using Newtonsoft.Json;
 
 
 namespace PathfinderCharGen
@@ -43,6 +45,34 @@ namespace PathfinderCharGen
         private void AC_TextChanged(object sender, TextChangedEventArgs e)
         {
 
+        }
+
+        private void MenuItem_Click_Save(object sender, RoutedEventArgs e)
+        {
+            //This doesn't work yet
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+            saveFileDialog.Filter = "Json file (*.json) [recomended]|*.json"; //|Xml file (*.xml)|*.xml
+            if (saveFileDialog.ShowDialog() == true)
+            {
+                string json = JsonConvert.SerializeObject(hero);
+                System.IO.File.WriteAllText(saveFileDialog.FileName, json);
+
+                int stop = 0;
+            }
+        }
+
+        private void MenuItem_Click_Load(object sender, RoutedEventArgs e)
+        {
+            //This doesn't work yet
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Filter = "Json file (*.json)|*.json";
+            if (openFileDialog.ShowDialog() == true)
+            {
+                string json = System.IO.File.ReadAllText(openFileDialog.FileName);
+                hero = JsonConvert.DeserializeObject<Character>(json);
+
+                int stop = 0;
+            }
         }
     }
 }
