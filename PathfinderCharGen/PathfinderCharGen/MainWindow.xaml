@@ -31,743 +31,767 @@
     </Window.Resources>
 
 
-
-    <!--=================== MAIN GRID =================-->
-    <Grid Name="grid_Main" Background="White">
-        <!--=================== DEFINE MAIN GRID COLUMNS AND ROWS =================-->
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition x:Name="Column1" Width="350"/>
-            <ColumnDefinition Width="auto"/>
-            <ColumnDefinition Width="auto"/>
-        </Grid.ColumnDefinitions>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="auto" />
-            <RowDefinition Height="auto" />
-            <RowDefinition Height="auto"/>
-        </Grid.RowDefinitions>
-        <!--=================== END OF COLUMN AND ROW DEFINITIONS =================-->
-
-        <!--=================== MENU =================-->
-        <Menu Name="menu_Main" Grid.Column="0" Grid.Row="0" VerticalAlignment="Top" HorizontalAlignment="Left" Height="18" Width="105">
-            <MenuItem Header="File">
-                <MenuItem Header="_New Character"/>
-                <MenuItem Header="_Load Character"/>
-                <MenuItem Header="_Quit"/>
-            </MenuItem>
-            <MenuItem Header="Edit">
-                <MenuItem Header="C_ut" />
-                <MenuItem Header="_Copy" />
-                <MenuItem Header="_Paste"/>
-            </MenuItem>
-            <MenuItem Header="View">
-                <MenuItem Header="CharacterWindow"/>
-            </MenuItem>
-        </Menu>
-        <!--=================== END OF MENU =================-->
-
-
-        <!--=================== SUB-GRID: NAME AND PLAYER INFO =================-->
-        <Grid Name="grid_CharInfo" Grid.Column="0" Grid.Row="2" Height="166" VerticalAlignment="Top">
-            <!--=================== 5 ROWS, 2 COLUMNS =================-->
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="auto"/>
-                <ColumnDefinition Width="auto"/>
-            </Grid.ColumnDefinitions>
-            <!--=================== END OF ROW/COL DEFINITIONS =================-->
-
-
-            <!--=================== PLAYER LABELS =================-->
-            <StackPanel Orientation="Vertical" VerticalAlignment="Top" HorizontalAlignment="Left" Grid.Column="0" Grid.Row="2">
-                <TextBlock Text="Player Name" FontSize=     "21" Margin="2"/>
-                <TextBlock Text="Character Name" FontSize=  "21" Margin="2"/>
-                <TextBlock Text="Race" FontSize=            "21" Margin="2"/>
-                <TextBlock Text="Class" FontSize=           "21" Margin="2"/>
-                <TextBlock Text="Level" FontSize=           "21" Margin="2"/>
-            </StackPanel>
-            <!--=================== END OF PLAYER LABELS =================-->
-
-            <!--=================== PLAYER INFO FIELDS =================-->
-            <StackPanel Orientation="Vertical" Width="190" Grid.Column="1" Grid.Row="2">
-                <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Margin="2" Background="Black" Foreground="White" Width="180" Height="30" VerticalAlignment="Top" FontSize="16"/>
-                <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Margin="2" Background="Black" Foreground="White" Width="180" Height="30" VerticalAlignment="Top" FontSize="16"/>
-                <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Margin="2" Background="Black" Foreground="White" Width="180" Height="30" VerticalAlignment="Top" FontSize="16"/>
-                <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Margin="2" Background="Black" Foreground="White" Width="180" Height="30" VerticalAlignment="Top" FontSize="16"/>
-                <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Background="Black" Foreground="White" Height="30" Width="30" VerticalAlignment="Top" FontSize="16" Margin="5,0,155,0" TextAlignment="Center"/>
-            </StackPanel>
-            <!--=================== END OF PLAYER INFO FIELDS =================-->
-        </Grid>
-        <!--=================== END OF NAME AND PLAYER INFO SUB-GRID =================-->
-
-
-        <!--=================== CHARACTER IMAGE =================-->
-        <Image Margin="15" Source="Resources/dwarf.jpg" Grid.Column="0" Grid.Row="1" Width="{Binding ActualWidth + 20, ElementName=Column1}"/>
-
-
-
-        <!--=================== END OF CHARACTER IMAGE =================-->
-
-
-        <!--=================== MAIN STAT BLOCK SUB-GRID =================-->
-        <Grid Name="grid_StatBlock" Height="auto" Width="353" HorizontalAlignment="Left" Grid.Column="1" Grid.Row="2">
-
-            <!--=================== 7 ROWS, 5 COLUMNS =================-->
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="auto"/>
-                <ColumnDefinition Width="auto"/>
-                <ColumnDefinition Width="auto"/>
-                <ColumnDefinition Width="auto"/>
-                <ColumnDefinition Width="auto"/>
-            </Grid.ColumnDefinitions>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="auto"/>
-                <RowDefinition Height="auto"/>
-                <RowDefinition Height="auto"/>
-                <RowDefinition Height="auto"/>
-                <RowDefinition Height="auto"/>
-                <RowDefinition Height="auto"/>
-                <RowDefinition Height="auto"/>
-            </Grid.RowDefinitions>
-            <!--=================== END OF ROW/COL DEFINITIONS =================-->
-
-            <!--=================== LABEL ROW =================-->
-            <Border Margin="5" Padding="5" BorderThickness="1" Background="Black" CornerRadius="10">
-                <TextBlock Text="Ability" FontSize="20" Foreground="White" VerticalAlignment="Center"/>
-            </Border>
-            <Border Margin="5" Padding="5" BorderThickness="1" Background="Black" CornerRadius="10" Grid.Column="1">
-                <TextBlock Text="Score" FontSize="20" Foreground="White" VerticalAlignment="Center"/>
-            </Border>
-            <Border Margin="5" Padding="5" BorderThickness="1" Background="Black" CornerRadius="10" Grid.Column="2">
-                <TextBlock Text="Mod" FontSize="20" Foreground="White" VerticalAlignment="Center"/>
-            </Border>
-            <Border Margin="5" Padding="5" BorderThickness="1" Background="Black" CornerRadius="10" Grid.Column="3">
-                <TextBlock FontSize="20" Foreground="White">
-                        <Run Text="Temp"/>
-                        <LineBreak/>
-                        <Run Text="Mod"/>
-                </TextBlock>
-            </Border>
-            <Border Margin="5" Padding="5" BorderThickness="1" Background="Black" CornerRadius="10" Grid.Column="4">
-                <TextBlock Height="Auto" FontSize="20" Foreground="White" VerticalAlignment="Center">
-                        <Run Text="Temp"/>
-                        <LineBreak/>
-                        <Run Text="Score"/>
-                </TextBlock>
-            </Border>
-            <!--=================== END OF LABEL ROW =================-->
-
-
-            <!--=================== STRENGTH ROW =================-->
-            <Border Margin="5" Padding="5" BorderThickness="1" Background="Black" CornerRadius="10" Grid.Column="0" Grid.Row="1">
-                <TextBlock Text="STR" FontSize="20" TextAlignment="Center" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-            </Border>
-            <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Margin="5"
-                         Grid.Row="1" Grid.Column="1"
-                         Background="Whitesmoke" Foreground="Black"                         
-                         FontSize="28" TextAlignment="Center"/>
-            <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Margin="5"
-                         Grid.Column="2" Grid.Row="1"
-                         Background="Whitesmoke" Foreground="Black"                         
-                         FontSize="28" TextAlignment="Center"/>
-            <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Margin="5"
-                         Grid.Column="3" Grid.Row="1"
-                         Background="Whitesmoke" Foreground="Black"                         
-                         FontSize="28" TextAlignment="Center"/>
-            <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Margin="5"
-                         Grid.Column="4" Grid.Row="1"
-                         Background="Whitesmoke" Foreground="Black"                         
-                         FontSize="28" TextAlignment="Center"/>
-            <!--=================== END OF STRENGTH ROW =================-->
-
-            <!--=================== DEXTERITY ROW =================-->
-            <Border Margin="5" Padding="5" BorderThickness="1" Background="Black" CornerRadius="10" Grid.Column="0" Grid.Row="2">
-                <TextBlock Text="DEX" FontSize="20" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-            </Border>
-            <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Margin="5"
-                         Grid.Column="1" Grid.Row="2"
-                         Background="Whitesmoke" Foreground="Black"                         
-                         FontSize="28" TextAlignment="Center"/>
-            <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Margin="5"
-                         Grid.Column="2" Grid.Row="2"
-                         Background="Whitesmoke" Foreground="Black"                         
-                         FontSize="28" TextAlignment="Center"/>
-            <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Margin="5"
-                         Grid.Column="3" Grid.Row="2"
-                         Background="Whitesmoke" Foreground="Black"                         
-                         FontSize="28" TextAlignment="Center"/>
-            <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Margin="5"
-                         Grid.Column="4" Grid.Row="2"
-                         Background="Whitesmoke" Foreground="Black"                         
-                         FontSize="28" TextAlignment="Center"/>
-            <!--=================== END OF DEXTERITY ROW =================-->
-
-
-            <!--=================== CONSTITUTION ROW =================-->
-            <Border Margin="5" Padding="5" BorderThickness="1" Background="Black" CornerRadius="10" Grid.Column="0" Grid.Row="3">
-                <TextBlock Text="CON" FontSize="20" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-            </Border>
-            <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Margin="5"
-                         Grid.Column="1" Grid.Row="3"
-                         Background="Whitesmoke" Foreground="Black"                         
-                         FontSize="28" TextAlignment="Center"/>
-            <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Margin="5"
-                         Grid.Column="2" Grid.Row="3"
-                         Background="Whitesmoke" Foreground="Black"                         
-                         FontSize="28" TextAlignment="Center"/>
-            <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Margin="5"
-                         Grid.Column="3" Grid.Row="3"
-                         Background="Whitesmoke" Foreground="Black"                         
-                         FontSize="28" TextAlignment="Center"/>
-            <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Margin="5"
-                         Grid.Column="4" Grid.Row="3"
-                         Background="Whitesmoke" Foreground="Black"                         
-                         FontSize="28" TextAlignment="Center"/>
-            <!--=================== END OF CONSTITUTION ROW =================-->
-
-
-            <!--=================== INTELLIGENCE ROW =================-->
-            <Border Margin="5" Padding="5" BorderThickness="1" Background="Black" CornerRadius="10" Grid.Column="0" Grid.Row="4">
-                <TextBlock Text="INT" FontSize="20" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-            </Border>
-            <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Margin="5"
-                         Grid.Column="1" Grid.Row="4"
-                         Background="Whitesmoke" Foreground="Black"                         
-                         FontSize="28" TextAlignment="Center"/>
-            <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Margin="5"
-                         Grid.Column="2" Grid.Row="4"
-                         Background="Whitesmoke" Foreground="Black"                         
-                         FontSize="28" TextAlignment="Center"/>
-            <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Margin="5"
-                         Grid.Column="3" Grid.Row="4"
-                         Background="Whitesmoke" Foreground="Black"                         
-                         FontSize="28" TextAlignment="Center"/>
-            <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Margin="5"
-                         Grid.Column="4" Grid.Row="4"
-                         Background="Whitesmoke" Foreground="Black"                         
-                         FontSize="28" TextAlignment="Center"/>
-            <!--=================== END OF INTELLIGENCE ROW =================-->
-
-
-            <!--=================== WISDOM ROW =================-->
-            <Border Margin="5" Padding="5" BorderThickness="1" Background="Black" CornerRadius="10" Grid.Column="0" Grid.Row="5">
-                <TextBlock Text="WIS" FontSize="20" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-            </Border>
-            <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Margin="5"
-                         Grid.Column="1" Grid.Row="5"
-                         Background="Whitesmoke" Foreground="Black"                         
-                         FontSize="28" TextAlignment="Center"/>
-            <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Margin="5"
-                         Grid.Column="2" Grid.Row="5"
-                         Background="Whitesmoke" Foreground="Black"                         
-                         FontSize="28" TextAlignment="Center"/>
-            <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Margin="5"
-                         Grid.Column="3" Grid.Row="5"
-                         Background="Whitesmoke" Foreground="Black"                         
-                         FontSize="28" TextAlignment="Center"/>
-            <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Margin="5"
-                         Grid.Column="4" Grid.Row="5"
-                         Background="Whitesmoke" Foreground="Black"                         
-                         FontSize="28" TextAlignment="Center"/>
-            <!--=================== END OF WISDOM ROW =================-->
-
-
-            <!--=================== CHARISMA ROW =================-->
-            <Border Margin="5" Padding="5" BorderThickness="1" Background="Black" CornerRadius="10" Grid.Column="0" Grid.Row="6">
-                <TextBlock Text="CHA" FontSize="20" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-            </Border>
-            <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Margin="5"
-                         Grid.Column="1" Grid.Row="6"
-                         Background="Whitesmoke" Foreground="Black"                         
-                         FontSize="28" TextAlignment="Center"/>
-            <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Margin="5"
-                         Grid.Column="2" Grid.Row="6"
-                         Background="Whitesmoke" Foreground="Black"                         
-                         FontSize="28" TextAlignment="Center"/>
-            <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Margin="5"
-                         Grid.Column="3" Grid.Row="6"
-                         Background="Whitesmoke" Foreground="Black"                         
-                         FontSize="28" TextAlignment="Center"/>
-            <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Margin="5"
-                         Grid.Column="4" Grid.Row="6"
-                         Background="Whitesmoke" Foreground="Black"                         
-                         FontSize="28" TextAlignment="Center"/>
-            <!--=================== END OF CHARISMA ROW =================-->
-        </Grid>
-        <!--=================== END OF MAIN STAT BLOCK SUB-GRID =================-->
-
-        <Grid Grid.Row="2" Grid.Column="2" Margin="50">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="auto"/>
-                <ColumnDefinition Width="auto"/>
-                <ColumnDefinition Width="auto"/>
-                <ColumnDefinition Width="auto"/>
-                <ColumnDefinition Width="auto"/>
-                <ColumnDefinition Width="auto"/>
-                <ColumnDefinition Width="auto"/>
-                <ColumnDefinition Width="auto"/>
-                <ColumnDefinition Width="auto"/>
-                <ColumnDefinition Width="auto"/>
-                <ColumnDefinition Width="auto"/>
-                <ColumnDefinition Width="auto"/>
-            </Grid.ColumnDefinitions>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="auto"/>
-                <RowDefinition Height="auto"/>
-                <RowDefinition Height="auto"/>
-                <RowDefinition Height="auto"/>
-                <RowDefinition Height="auto"/>
-                <RowDefinition Height="auto"/>
-            </Grid.RowDefinitions>
-
-
-            <TextBlock Text="     ATTACK:" FontSize="40" FontWeight="Bold" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="12" TextAlignment="Center"/>
-
-            <Border Margin="5" Padding="5" BorderThickness="1" CornerRadius="10" Grid.Row="1" Grid.Column="1">
-                <TextBlock Text="Total" FontSize="12" Foreground="Black" Width="auto" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-            </Border>
-
-            <TextBlock Text="BAB" FontSize="12" Foreground="Black" Width="auto" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="1" Grid.Column="3"/>
-
-            <Border Margin="5" Padding="5" BorderThickness="1" CornerRadius="10" Grid.Row="1" Grid.Column="5">
-                <TextBlock Text="Ability" FontSize="12" Foreground="Black" Width="auto" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-            </Border>
-            <Border Margin="5" Padding="5" BorderThickness="1" CornerRadius="10" Grid.Row="1" Grid.Column="7">
-                <TextBlock Text="Size" FontSize="12" Foreground="Black" Width="auto" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-            </Border>
-            <Border Margin="5" Padding="5" BorderThickness="1"  CornerRadius="10" Grid.Row="1" Grid.Column="9">
-                <TextBlock Text="Misc." FontSize="12" Foreground="Black" Width="auto" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-            </Border>
-            <Border Margin="5" Padding="5" BorderThickness="1"  CornerRadius="10" Grid.Row="1" Grid.Column="11">
-                <TextBlock Text="Temp" FontSize="12" Foreground="Black" Width="auto" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-            </Border>
-
-            <Border Margin="5" Padding="5" BorderThickness="1" Background="Black" CornerRadius="10" Grid.Row="2">
-                <TextBlock Text="Melee Attack Bonus (MAB)" FontSize="12" Foreground="White" Width="auto" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-            </Border>
-            <TextBox Template="{StaticResource TextBoxBaseControlTemplate}"
-                     Margin="15,0" FontSize="16" Height="30"  Background="WhiteSmoke"
-                     MinWidth="30" Width="auto" Grid.Row="2" Grid.Column="1" TextAlignment="Center"/>
-            <TextBlock Text="=" FontSize="20" Foreground="Black" 
-                     Width="auto" VerticalAlignment="Center" Grid.Row="2" Grid.Column="2"/>
-            <TextBox Template="{StaticResource TextBoxBaseControlTemplate}"
-                     Margin="15,0" FontSize="16"  Background="WhiteSmoke"
-                     Height="30" MinWidth="30" Width="auto" Grid.Row="2" Grid.Column="3" TextAlignment="Center"/>
-            <TextBlock Text="+" FontSize="20" Foreground="Black" 
-                       Width="auto" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="2" Grid.Column="4"/>
-            <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" 
-                     Margin="15,0" FontSize="16"  Background="WhiteSmoke"
-                     Height="30" MinWidth="30" Width="auto" TextAlignment="Center" Grid.Row="2" Grid.Column="5"/>
-            <TextBlock Text="+" FontSize="20" Foreground="Black" 
-                       Width="auto" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="2" Grid.Column="6"/>
-            <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" 
-                     Margin="15,0" FontSize="16" Height="30"  Background="WhiteSmoke"
-                     MinWidth="30" Width="auto" TextAlignment="Center" Grid.Row="2" Grid.Column="7"/>
-            <TextBlock Text="+" FontSize="20" Foreground="Black" 
-                       Width="auto" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="2" Grid.Column="8"/>
-            <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" 
-                     Margin="15,0" FontSize="16"  Background="WhiteSmoke"
-                     Height="30" MinWidth="30" Width="auto" TextAlignment="Center" Grid.Row="2" Grid.Column="9"/>
-            <TextBlock Text="+" FontSize="20" Foreground="Black" 
-                       Width="auto" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="2" Grid.Column="10"/>
-            <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" 
-                     Margin="15,0" FontSize="16"  Background="WhiteSmoke"
-                     Height="30" MinWidth="30" Width="auto" TextAlignment="Center" Grid.Row="2" Grid.Column="11"/>
-
-
-            <Border Margin="5" Padding="5" BorderThickness="1" Background="Black" CornerRadius="10" Grid.Row="3">
-                <TextBlock Text="Combat Maneuver Bonus (CMB)" FontSize="12" Foreground="White" Width="auto" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-            </Border>
-            <TextBox Template="{StaticResource TextBoxBaseControlTemplate}"
-                     Margin="15,0" FontSize="16" Height="30"  Background="WhiteSmoke"
-                     MinWidth="30" Width="auto" Grid.Row="3" Grid.Column="1" TextAlignment="Center"/>
-            <TextBlock Text="=" FontSize="20" Foreground="Black" 
-                     Width="auto" VerticalAlignment="Center" Grid.Row="3" Grid.Column="2"/>
-            <TextBox Template="{StaticResource TextBoxBaseControlTemplate}"
-                     Margin="15,0" FontSize="16"  Background="WhiteSmoke"
-                     Height="30" MinWidth="30" Width="auto" Grid.Row="3" Grid.Column="3" TextAlignment="Center"/>
-            <TextBlock Text="+" FontSize="20" Foreground="Black" 
-                       Width="auto" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="3" Grid.Column="4"/>
-            <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" 
-                     Margin="15,0" FontSize="16"  Background="WhiteSmoke"
-                     Height="30" MinWidth="30" Width="auto" TextAlignment="Center" Grid.Row="3" Grid.Column="5"/>
-            <TextBlock Text="+" FontSize="20" Foreground="Black" 
-                       Width="auto" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="3" Grid.Column="6"/>
-            <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" 
-                     Margin="15,0" FontSize="16" Height="30"  Background="WhiteSmoke"
-                     MinWidth="30" Width="auto" TextAlignment="Center" Grid.Row="3" Grid.Column="7"/>
-            <TextBlock Text="+" FontSize="20" Foreground="Black" 
-                       Width="auto" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="3" Grid.Column="8"/>
-            <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" 
-                     Margin="15,0" FontSize="16"  Background="WhiteSmoke"
-                     Height="30" MinWidth="30" Width="auto" TextAlignment="Center" Grid.Row="3" Grid.Column="9"/>
-            <TextBlock Text="+" FontSize="20" Foreground="Black" 
-                       Width="auto" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="3" Grid.Column="10"/>
-            <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" 
-                     Margin="15,0" FontSize="16"  Background="WhiteSmoke"
-                     Height="30" MinWidth="30" Width="auto" TextAlignment="Center" Grid.Row="3" Grid.Column="11"/>
-
-            <Border Margin="5" Padding="5" BorderThickness="1" Background="Black" CornerRadius="10" Grid.Row="4">
-                <TextBlock Text="Ranged Attack Bonus (RAB)" FontSize="12" Foreground="White" Width="auto" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-            </Border>
-            <TextBox Template="{StaticResource TextBoxBaseControlTemplate}"
-                     Margin="15,0" FontSize="16" Height="30"  Background="WhiteSmoke"
-                     MinWidth="30" Width="auto" Grid.Row="4" Grid.Column="1" TextAlignment="Center"/>
-            <TextBlock Text="=" FontSize="20" Foreground="Black" 
-                     Width="auto" VerticalAlignment="Center" Grid.Row="4" Grid.Column="2"/>
-            <TextBox Template="{StaticResource TextBoxBaseControlTemplate}"
-                     Margin="15,0" FontSize="16"  Background="WhiteSmoke" 
-                     Height="30" MinWidth="30" Width="auto" Grid.Row="4" Grid.Column="3" TextAlignment="Center"/>
-            <TextBlock Text="+" FontSize="20" Foreground="Black" 
-                       Width="auto" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="4" Grid.Column="4"/>
-            <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" 
-                     Margin="15,0" FontSize="16"  Background="WhiteSmoke"
-                     Height="30" MinWidth="30" Width="auto" TextAlignment="Center" Grid.Row="4" Grid.Column="5"/>
-            <TextBlock Text="+" FontSize="20" Foreground="Black" 
-                       Width="auto" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="4" Grid.Column="6"/>
-            <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" 
-                     Margin="15,0" FontSize="16" Height="30"  Background="WhiteSmoke"
-                     MinWidth="30" Width="auto" TextAlignment="Center" Grid.Row="4" Grid.Column="7"/>
-            <TextBlock Text="+" FontSize="20" Foreground="Black" 
-                       Width="auto" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="4" Grid.Column="8"/>
-            <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" 
-                     Margin="15,0" FontSize="16"  Background="WhiteSmoke"
-                     Height="30" MinWidth="30" Width="auto" TextAlignment="Center" Grid.Row="4" Grid.Column="9"/>
-            <TextBlock Text="+" FontSize="20" Foreground="Black" 
-                       Width="auto" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="4" Grid.Column="10"/>
-            <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" 
-                     Margin="15,0" FontSize="16"  Background="WhiteSmoke"
-                     Height="30" MinWidth="30" Width="auto" TextAlignment="Center" Grid.Row="4" Grid.Column="11"/>
-        </Grid>
-
-
-
-        <!--=================== DEFENSE STAT SUB-GRID =================-->
-        <Grid Name="grid_Defense" Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="2" Margin="10,0,713,0">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="auto"/>
-                <RowDefinition Height="auto"/>
-                <RowDefinition Height="auto"/>
-                <RowDefinition Height="auto"/>
-                <RowDefinition Height="auto"/>
-                <RowDefinition Height="auto"/>
-                <RowDefinition Height="auto"/>
-
-            </Grid.RowDefinitions>
-
-            <StackPanel Orientation="Horizontal" Grid.Row="1" Grid.Column="0" Height="70" VerticalAlignment="Top">
-                <TextBlock Padding="20" Text="HP" FontSize="28" Foreground="Black" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-                <TextBlock Padding="20" Text="MAX HP" FontSize="28" Foreground="Black" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-                <TextBlock Padding="40" Text="AC" FontSize="28" Foreground="Black" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-            </StackPanel>
-            <StackPanel Orientation="Horizontal" Grid.Row="2" Height="70" VerticalAlignment="Top">
-                <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Margin="12,0" FontSize="20" FontWeight="Bold" Height="30" MinWidth="60" Width="auto" TextAlignment="Center" Background="WhiteSmoke"/>
-                <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Margin="40,0" FontSize="20" FontWeight="Bold" Height="30" MinWidth="60" Width="auto" TextAlignment="Center" Background="WhiteSmoke"/>
-                <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Margin="20,0" FontSize="20" FontWeight="Bold" Height="30" MinWidth="60" Width="auto" TextAlignment="Center" Background="WhiteSmoke"/>
-            </StackPanel>
-            <TextBlock Text="DEFENSE:" FontSize="40" FontWeight="Bold" TextAlignment="Center" Grid.Row="0"/>
-
-            <StackPanel Orientation="Horizontal" Height="50" Grid.Row="3">
-
-
-                <Border Margin="5" Padding="5" BorderThickness="1" Background="Black" CornerRadius="10" Grid.Row="3" Width="60">
-                    <TextBlock Text=" DR " FontSize="20" Background="Black" Foreground="White" VerticalAlignment="Center" TextAlignment="Center" />
-                </Border>
-                <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Margin="10" FontSize="20" Height="30" MinWidth="40" Width="auto" TextAlignment="Center" Background="WhiteSmoke"/>
-                <Border Margin="5" Padding="5" BorderThickness="1" Background="Black" CornerRadius="10" Grid.Row="3" Width="100">
-                    <TextBlock Text=" FFAC " FontSize="20" Background="Black" Foreground="White" VerticalAlignment="Center" TextAlignment="Center" />
-                </Border>
-                <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Margin="10" FontSize="20" Height="30" MinWidth="40" Width="auto" TextAlignment="Center" Background="WhiteSmoke"/>
-            </StackPanel>
-            <StackPanel Orientation="Horizontal" Height="50" Grid.Row="4">
-
-                <Border Margin="5" Padding="5" BorderThickness="1" Background="Black" CornerRadius="10" Grid.Row="3" Width="60">
-                    <TextBlock Text=" SR " FontSize="20" Background="Black" Foreground="White" VerticalAlignment="Center" TextAlignment="Center" />
-                </Border>
-                <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Margin="10" FontSize="20" Height="30" MinWidth="40" Width="auto" TextAlignment="Center" Background="WhiteSmoke"/>
-                <Border Margin="5" Padding="5" BorderThickness="1" Background="Black" CornerRadius="10" Grid.Row="3" Width="100">
-                    <TextBlock Text=" Touch AC " FontSize="20" Background="Black" Foreground="White" VerticalAlignment="Center" TextAlignment="Center" />
-                </Border>
-                <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Margin="10" FontSize="20" Height="30" MinWidth="40" Width="auto" TextAlignment="Center" Background="WhiteSmoke"/>
-            </StackPanel>
-            <StackPanel Orientation="Horizontal" Height="50" Grid.Row="5">
-
-                <Border Margin="5" Padding="5" BorderThickness="1" Background="Black" CornerRadius="10" Grid.Row="3" Width="60">
-                    <TextBlock Text="CMD" FontSize="20" Background="Black" Foreground="White" VerticalAlignment="Center" TextAlignment="Center" />
-                </Border>
-                <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Margin="10" FontSize="20" Height="30" MinWidth="40" Width="auto" TextAlignment="Center" Background="WhiteSmoke"/>
-                <Border Margin="5" Padding="5" BorderThickness="1" Background="Black" CornerRadius="10" Grid.Row="3" Width="100">
-                    <TextBlock Text="FF-CMD" FontSize="20" Background="Black" Foreground="White" VerticalAlignment="Center" TextAlignment="Center"/>
-                </Border>
-                <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Margin="10" FontSize="20" Height="30" MinWidth="40" Width="auto" TextAlignment="Center" Background="WhiteSmoke"/>
-            </StackPanel>
-
-            <Grid Grid.Row="6">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="auto"/>
-                    <RowDefinition Height="auto"/>
-                </Grid.RowDefinitions>
-                <StackPanel Orientation="Horizontal" Grid.Row="0" Margin="40,0" Height="50" Width="auto">
-                    <TextBlock Text="DEX" FontSize="16" Padding="120,20,0,0"/>
-                    <TextBlock Text="MISC" FontSize="16" Padding="55,20,0,0"/>
-                </StackPanel>
-
-                <StackPanel Orientation="Horizontal" Grid.Row="1" Margin="40,0" Height="50" Width="auto">
-                    <Border Margin="5" Padding="5" BorderThickness="1" Background="Black" CornerRadius="10" Grid.Row="3" Width="70">
-                        <TextBlock Text="INIT" FontSize="30" VerticalAlignment="Center" Background="Black" Foreground="White" TextAlignment="Center" />
-                    </Border>
-
-                    <TextBlock Text=" = " FontSize="20" VerticalAlignment="Center"/>
-                    <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Margin="10" FontSize="20" TextAlignment="Center" Background="WhiteSmoke" MinWidth="40" Width="auto"/>
-
-                    <TextBlock Text=" + " FontSize="20" VerticalAlignment="Center"/>
-                    <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Margin="10" FontSize="20" TextAlignment="Center" Background="WhiteSmoke" MinWidth="40" Width="auto"/>
-
-                </StackPanel>
-            </Grid>
-
-        </Grid>
-        <!--=================== END OF DEFENSE STAT SUB-GRID =================-->
-
-
-        <!--=================== AC CALCULATION SUB-GRID =================-->
-        <Grid Grid.Row="1" Grid.Column="2" Grid.ColumnSpan="2">
-            <!--=================== 2 ROWS, 16 COLUMNS =================-->
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="auto"/>
-                <ColumnDefinition Width="60"/>
-                <ColumnDefinition Width="auto"/>
-                <ColumnDefinition Width="60"/>
-                <ColumnDefinition Width="auto"/>
-                <ColumnDefinition Width="60"/>
-                <ColumnDefinition Width="auto"/>
-                <ColumnDefinition Width="60"/>
-                <ColumnDefinition Width="auto"/>
-                <ColumnDefinition Width="60"/>
-                <ColumnDefinition Width="auto"/>
-                <ColumnDefinition Width="60"/>
-                <ColumnDefinition Width="auto"/>
-                <ColumnDefinition Width="60"/>
-            </Grid.ColumnDefinitions>
-            <Grid.RowDefinitions>
-
-                <RowDefinition Height="130"/>
-                <RowDefinition Height="auto"/>
-                <RowDefinition Height="auto"/>
-                <RowDefinition Height="auto"/>
-                <RowDefinition Height="auto"/>
-                <RowDefinition Height="auto"/>
-                <RowDefinition Height="auto"/>
-            </Grid.RowDefinitions>
-            <!--=================== END OF ROW/COL DEFINITION =================-->
-
-            <!--=================== AC LABEL ROW =================-->
-            <TextBlock Margin="0,65,0,0" Text="Armor" FontSize="15" Foreground="Black" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="0" Grid.Column="1"/>
-            <TextBlock Margin="0,65,0,0" Text="Dex" FontSize="15" Foreground="Black" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="0" Grid.Column="3"/>
-            <TextBlock Margin="0,65,0,0" Text="Dodge" FontSize="15" Foreground="Black" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="0" Grid.Column="5"/>
-            <TextBlock Margin="0,65,0,0" Text="Size" FontSize="15" Foreground="Black" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="0" Grid.Column="7"/>
-            <TextBlock Margin="0,65,0,0" Text="Natural" FontSize="15" Foreground="Black" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="0" Grid.Column="9"/>
-            <TextBlock Margin="0,65,0,0" Text="Deflect" FontSize="15" Foreground="Black" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="0" Grid.Column="11"/>
-            <TextBlock Margin="0,65,0,0" Text="Misc." FontSize="15" Foreground="Black" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="0" Grid.Column="13"/>
-            <!--=================== END OF AC LABEL ROW =================-->
-
-            <!--=================== AC VALUE ROW =================-->
-            <TextBlock  Text="= 10 + " FontSize="28" Foreground="Black" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="0" Grid.Row="1"/>
-            <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Background="Whitesmoke" Foreground="Black" 
-                     FontSize="20" Height="30" MinWidth="40" Width="auto" TextAlignment="Center"
-                     Margin="7" Grid.Row ="1" Grid.Column="1"/>
-
-            <TextBlock  Text=" + " FontSize="20" Foreground="Black" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="2" Grid.Row="1"/>
-            <TextBlock  Text=" + " FontSize="20" Foreground="Black" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="4" Grid.Row="1"/>
-            <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Background="Whitesmoke" Foreground="Black" 
-                     FontSize="20" Height="30" MinWidth="60" Width="auto" TextAlignment="Center"
-                     Grid.Row ="1" Grid.Column="3"/>
-
-            <TextBlock  Text=" + " FontSize="20" Foreground="Black" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="10" Grid.Row="1"/>
-            <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Background="Whitesmoke" Foreground="Black" 
-                     FontSize="20" Height="30" MinWidth="60" Width="auto" TextAlignment="Center"
-                     Grid.Row ="1" Grid.Column="5"/>
-
-            <TextBlock  Text=" + " FontSize="20" Foreground="Black" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="6" Grid.Row="1"/>
-            <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Background="Whitesmoke" Foreground="Black" 
-                     FontSize="20" Height="30" MinWidth="60" Width="auto" TextAlignment="Center"
-                     Grid.Row ="1" Grid.Column="7"/>
-
-            <TextBlock  Text=" + " FontSize="20" Foreground="Black" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="8" Grid.Row="1"/>
-            <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Background="Whitesmoke" Foreground="Black" 
-                     FontSize="20" Height="30" MinWidth="60" Width="auto" TextAlignment="Center"
-                     Grid.Row ="1" Grid.Column="9"/>
-
-            <TextBlock  Text=" + " FontSize="20" Foreground="Black" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="10" Grid.Row="1"/>
-            <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Background="Whitesmoke" Foreground="Black" 
-                     FontSize="20" Height="30" MinWidth="60" Width="auto" TextAlignment="Center"
-                     Grid.Row ="1" Grid.Column="11"/>
-
-            <TextBlock  Text=" + " FontSize="20" Foreground="Black" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="12" Grid.Row="1"/>
-            <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Background="Whitesmoke" Foreground="Black" 
-                     FontSize="20" Height="30" MinWidth="60" Width="auto" TextAlignment="Center"
-                     Grid.Row ="1" Grid.Column="13"/>
-            <!--=================== END OF AC VALUE ROW =================-->
-
-
-            <Grid Grid.Row="2" Grid.ColumnSpan="15" Margin="60">
+    <TabControl>
+        <TabItem Header="Combat">
+
+            <!--=================== MAIN GRID =================-->
+            <Grid Name="grid_Main" Background="White">
+                <!--=================== DEFINE MAIN GRID COLUMNS AND ROWS =================-->
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="auto"/>
-                    <ColumnDefinition Width="auto"/>
-                    <ColumnDefinition Width="auto"/>
-                    <ColumnDefinition Width="auto"/>
-                    <ColumnDefinition Width="auto"/>
-                    <ColumnDefinition Width="auto"/>
-                    <ColumnDefinition Width="auto"/>
-                    <ColumnDefinition Width="auto"/>
-                    <ColumnDefinition Width="auto"/>
-                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition x:Name="Column1" Width="350"/>
                     <ColumnDefinition Width="auto"/>
                     <ColumnDefinition Width="auto"/>
                 </Grid.ColumnDefinitions>
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="auto"/>
-                    <RowDefinition Height="auto"/>
-                    <RowDefinition Height="auto"/>
-                    <RowDefinition Height="auto"/>
-                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="auto" />
                     <RowDefinition Height="auto"/>
                 </Grid.RowDefinitions>
+                <!--=================== END OF COLUMN AND ROW DEFINITIONS =================-->
 
 
-                <TextBlock Text="    SAVES:" FontSize="30" FontWeight="Bold"
-                           Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="12" TextAlignment="Center"/>
+                <!--=================== MENU =================-->
+                <Menu Name="menu_Main" Grid.Column="0" Grid.Row="0" VerticalAlignment="Top" HorizontalAlignment="Left" Height="18" Width="105">
+                    <MenuItem Header="File">
+                        <MenuItem Header="_New Character"/>
+                        <MenuItem Header="_Load Character"/>
+                        <MenuItem Header="_Quit"/>
+                    </MenuItem>
+                    <MenuItem Header="Edit">
+                        <MenuItem Header="C_ut" />
+                        <MenuItem Header="_Copy" />
+                        <MenuItem Header="_Paste"/>
+                    </MenuItem>
+                    <MenuItem Header="View">
+                        <MenuItem Header="CharacterWindow"/>
+                    </MenuItem>
+                </Menu>
+                <!--=================== END OF MENU =================-->
+                                              
+                
+                
+                <!--=================== SUB-GRID: NAME AND PLAYER INFO =================-->
+                <Grid Name="grid_CharInfo" Grid.Column="0" Grid.Row="2" Height="166" VerticalAlignment="Top">
+                    <!--=================== 5 ROWS, 2 COLUMNS =================-->
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="auto"/>
+                        <ColumnDefinition Width="auto"/>
+                    </Grid.ColumnDefinitions>
+                    <!--=================== END OF ROW/COL DEFINITIONS =================-->
 
-                <Border Margin="5" Padding="5" BorderThickness="1" CornerRadius="10" Grid.Row="1" Grid.Column="1">
-                    <TextBlock Text="Total" FontSize="12" Foreground="Black" Width="auto" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-                </Border>
 
-                <TextBlock Text="Base" FontSize="12" Foreground="Black" Width="auto" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="1" Grid.Column="3"/>
+                    <!--=================== PLAYER LABELS =================-->
+                    <StackPanel Orientation="Vertical" VerticalAlignment="Top" HorizontalAlignment="Left" Grid.Column="0" Grid.Row="2">
+                        <TextBlock Text="Player Name" FontSize=     "21" Margin="2"/>
+                        <TextBlock Text="Character Name" FontSize=  "21" Margin="2"/>
+                        <TextBlock Text="Race" FontSize=            "21" Margin="2"/>
+                        <TextBlock Text="Class" FontSize=           "21" Margin="2"/>
+                        <TextBlock Text="Level" FontSize=           "21" Margin="2"/>
+                    </StackPanel>
+                    <!--=================== END OF PLAYER LABELS =================-->
 
-                <Border Margin="5" Padding="5" BorderThickness="1" CornerRadius="10" Grid.Row="1" Grid.Column="5">
-                    <TextBlock Text="Ability" FontSize="12" Foreground="Black" Width="auto" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-                </Border>
-                <Border Margin="5" Padding="5" BorderThickness="1" CornerRadius="10" Grid.Row="1" Grid.Column="7">
-                    <TextBlock Text="Magic" FontSize="12" Foreground="Black" Width="auto" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-                </Border>
-                <Border Margin="5" Padding="5" BorderThickness="1"  CornerRadius="10" Grid.Row="1" Grid.Column="9">
-                    <TextBlock Text="Misc." FontSize="12" Foreground="Black" Width="auto" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-                </Border>
-                <Border Margin="5" Padding="5" BorderThickness="1"  CornerRadius="10" Grid.Row="1" Grid.Column="11">
-                    <TextBlock Text="Temp" FontSize="12" Foreground="Black" Width="auto" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-                </Border>
+                    <!--=================== PLAYER INFO FIELDS =================-->
+                    <StackPanel Orientation="Vertical" Width="190" Grid.Column="1" Grid.Row="2">
+                        <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Margin="2" Background="Black" Foreground="White" Width="180" Height="30" VerticalAlignment="Top" FontSize="16"/>
+                        <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Margin="2" Background="Black" Foreground="White" Width="180" Height="30" VerticalAlignment="Top" FontSize="16"/>
+                        <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Margin="2" Background="Black" Foreground="White" Width="180" Height="30" VerticalAlignment="Top" FontSize="16"/>
+                        <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Margin="2" Background="Black" Foreground="White" Width="180" Height="30" VerticalAlignment="Top" FontSize="16"/>
+                        <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Background="Black" Foreground="White" Height="30" Width="30" VerticalAlignment="Top" FontSize="16" Margin="5,0,155,0" TextAlignment="Center"/>
+                    </StackPanel>
+                    <!--=================== END OF PLAYER INFO FIELDS =================-->
+                </Grid>
+                <!--=================== END OF NAME AND PLAYER INFO SUB-GRID =================-->
 
-                <Border Margin="5" Padding="5" BorderThickness="1" Background="Black" CornerRadius="10" Grid.Row="2">
-                    <TextBlock Text="FORTITUDE" FontSize="12" Foreground="White" Width="auto" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-                </Border>
-                <TextBox Template="{StaticResource TextBoxBaseControlTemplate}"
+
+                <!--=================== CHARACTER IMAGE =================-->
+                <Image Margin="15" Source="Resources/dwarf.jpg" Grid.Column="0" Grid.Row="1" Width="{Binding ActualWidth + 20, ElementName=Column1}"/>
+
+
+
+                <!--=================== END OF CHARACTER IMAGE =================-->
+
+
+                <!--=================== MAIN STAT BLOCK SUB-GRID =================-->
+                <Grid Name="grid_StatBlock" Height="auto" Width="353" HorizontalAlignment="Left" Grid.Column="1" Grid.Row="2">
+
+                    <!--=================== 7 ROWS, 5 COLUMNS =================-->
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="auto"/>
+                        <ColumnDefinition Width="auto"/>
+                        <ColumnDefinition Width="auto"/>
+                        <ColumnDefinition Width="auto"/>
+                        <ColumnDefinition Width="auto"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                    </Grid.RowDefinitions>
+                    <!--=================== END OF ROW/COL DEFINITIONS =================-->
+
+                    <!--=================== LABEL ROW =================-->
+                    <Border Margin="5" Padding="5" BorderThickness="1" Background="Black" CornerRadius="10">
+                        <TextBlock Text="Ability" FontSize="20" Foreground="White" VerticalAlignment="Center"/>
+                    </Border>
+                    <Border Margin="5" Padding="5" BorderThickness="1" Background="Black" CornerRadius="10" Grid.Column="1">
+                        <TextBlock Text="Score" FontSize="20" Foreground="White" VerticalAlignment="Center"/>
+                    </Border>
+                    <Border Margin="5" Padding="5" BorderThickness="1" Background="Black" CornerRadius="10" Grid.Column="2">
+                        <TextBlock Text="Mod" FontSize="20" Foreground="White" VerticalAlignment="Center"/>
+                    </Border>
+                    <Border Margin="5" Padding="5" BorderThickness="1" Background="Black" CornerRadius="10" Grid.Column="3">
+                        <TextBlock FontSize="20" Foreground="White">
+                        <Run Text="Temp"/>
+                        <LineBreak/>
+                        <Run Text="Mod"/>
+                        </TextBlock>
+                    </Border>
+                    <Border Margin="5" Padding="5" BorderThickness="1" Background="Black" CornerRadius="10" Grid.Column="4">
+                        <TextBlock Height="Auto" FontSize="20" Foreground="White" VerticalAlignment="Center">
+                        <Run Text="Temp"/>
+                        <LineBreak/>
+                        <Run Text="Score"/>
+                        </TextBlock>
+                    </Border>
+                    <!--=================== END OF LABEL ROW =================-->
+
+
+                    <!--=================== STRENGTH ROW =================-->
+                    <Border Margin="5" Padding="5" BorderThickness="1" Background="Black" CornerRadius="10" Grid.Column="0" Grid.Row="1">
+                        <TextBlock Text="STR" FontSize="20" TextAlignment="Center" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                    </Border>
+                    <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Margin="5"
+                         Grid.Row="1" Grid.Column="1"
+                         Background="Whitesmoke" Foreground="Black"                         
+                         FontSize="28" TextAlignment="Center"/>
+                    <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Margin="5"
+                         Grid.Column="2" Grid.Row="1"
+                         Background="Whitesmoke" Foreground="Black"                         
+                         FontSize="28" TextAlignment="Center"/>
+                    <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Margin="5"
+                         Grid.Column="3" Grid.Row="1"
+                         Background="Whitesmoke" Foreground="Black"                         
+                         FontSize="28" TextAlignment="Center"/>
+                    <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Margin="5"
+                         Grid.Column="4" Grid.Row="1"
+                         Background="Whitesmoke" Foreground="Black"                         
+                         FontSize="28" TextAlignment="Center"/>
+                    <!--=================== END OF STRENGTH ROW =================-->
+
+                    <!--=================== DEXTERITY ROW =================-->
+                    <Border Margin="5" Padding="5" BorderThickness="1" Background="Black" CornerRadius="10" Grid.Column="0" Grid.Row="2">
+                        <TextBlock Text="DEX" FontSize="20" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                    </Border>
+                    <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Margin="5"
+                         Grid.Column="1" Grid.Row="2"
+                         Background="Whitesmoke" Foreground="Black"                         
+                         FontSize="28" TextAlignment="Center"/>
+                    <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Margin="5"
+                         Grid.Column="2" Grid.Row="2"
+                         Background="Whitesmoke" Foreground="Black"                         
+                         FontSize="28" TextAlignment="Center"/>
+                    <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Margin="5"
+                         Grid.Column="3" Grid.Row="2"
+                         Background="Whitesmoke" Foreground="Black"                         
+                         FontSize="28" TextAlignment="Center"/>
+                    <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Margin="5"
+                         Grid.Column="4" Grid.Row="2"
+                         Background="Whitesmoke" Foreground="Black"                         
+                         FontSize="28" TextAlignment="Center"/>
+                    <!--=================== END OF DEXTERITY ROW =================-->
+
+
+                    <!--=================== CONSTITUTION ROW =================-->
+                    <Border Margin="5" Padding="5" BorderThickness="1" Background="Black" CornerRadius="10" Grid.Column="0" Grid.Row="3">
+                        <TextBlock Text="CON" FontSize="20" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                    </Border>
+                    <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Margin="5"
+                         Grid.Column="1" Grid.Row="3"
+                         Background="Whitesmoke" Foreground="Black"                         
+                         FontSize="28" TextAlignment="Center"/>
+                    <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Margin="5"
+                         Grid.Column="2" Grid.Row="3"
+                         Background="Whitesmoke" Foreground="Black"                         
+                         FontSize="28" TextAlignment="Center"/>
+                    <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Margin="5"
+                         Grid.Column="3" Grid.Row="3"
+                         Background="Whitesmoke" Foreground="Black"                         
+                         FontSize="28" TextAlignment="Center"/>
+                    <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Margin="5"
+                         Grid.Column="4" Grid.Row="3"
+                         Background="Whitesmoke" Foreground="Black"                         
+                         FontSize="28" TextAlignment="Center"/>
+                    <!--=================== END OF CONSTITUTION ROW =================-->
+
+
+                    <!--=================== INTELLIGENCE ROW =================-->
+                    <Border Margin="5" Padding="5" BorderThickness="1" Background="Black" CornerRadius="10" Grid.Column="0" Grid.Row="4">
+                        <TextBlock Text="INT" FontSize="20" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                    </Border>
+                    <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Margin="5"
+                         Grid.Column="1" Grid.Row="4"
+                         Background="Whitesmoke" Foreground="Black"                         
+                         FontSize="28" TextAlignment="Center"/>
+                    <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Margin="5"
+                         Grid.Column="2" Grid.Row="4"
+                         Background="Whitesmoke" Foreground="Black"                         
+                         FontSize="28" TextAlignment="Center"/>
+                    <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Margin="5"
+                         Grid.Column="3" Grid.Row="4"
+                         Background="Whitesmoke" Foreground="Black"                         
+                         FontSize="28" TextAlignment="Center"/>
+                    <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Margin="5"
+                         Grid.Column="4" Grid.Row="4"
+                         Background="Whitesmoke" Foreground="Black"                         
+                         FontSize="28" TextAlignment="Center"/>
+                    <!--=================== END OF INTELLIGENCE ROW =================-->
+
+
+                    <!--=================== WISDOM ROW =================-->
+                    <Border Margin="5" Padding="5" BorderThickness="1" Background="Black" CornerRadius="10" Grid.Column="0" Grid.Row="5">
+                        <TextBlock Text="WIS" FontSize="20" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                    </Border>
+                    <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Margin="5"
+                         Grid.Column="1" Grid.Row="5"
+                         Background="Whitesmoke" Foreground="Black"                         
+                         FontSize="28" TextAlignment="Center"/>
+                    <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Margin="5"
+                         Grid.Column="2" Grid.Row="5"
+                         Background="Whitesmoke" Foreground="Black"                         
+                         FontSize="28" TextAlignment="Center"/>
+                    <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Margin="5"
+                         Grid.Column="3" Grid.Row="5"
+                         Background="Whitesmoke" Foreground="Black"                         
+                         FontSize="28" TextAlignment="Center"/>
+                    <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Margin="5"
+                         Grid.Column="4" Grid.Row="5"
+                         Background="Whitesmoke" Foreground="Black"                         
+                         FontSize="28" TextAlignment="Center"/>
+                    <!--=================== END OF WISDOM ROW =================-->
+
+
+                    <!--=================== CHARISMA ROW =================-->
+                    <Border Margin="5" Padding="5" BorderThickness="1" Background="Black" CornerRadius="10" Grid.Column="0" Grid.Row="6">
+                        <TextBlock Text="CHA" FontSize="20" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                    </Border>
+                    <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Margin="5"
+                         Grid.Column="1" Grid.Row="6"
+                         Background="Whitesmoke" Foreground="Black"                         
+                         FontSize="28" TextAlignment="Center"/>
+                    <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Margin="5"
+                         Grid.Column="2" Grid.Row="6"
+                         Background="Whitesmoke" Foreground="Black"                         
+                         FontSize="28" TextAlignment="Center"/>
+                    <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Margin="5"
+                         Grid.Column="3" Grid.Row="6"
+                         Background="Whitesmoke" Foreground="Black"                         
+                         FontSize="28" TextAlignment="Center"/>
+                    <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Margin="5"
+                         Grid.Column="4" Grid.Row="6"
+                         Background="Whitesmoke" Foreground="Black"                         
+                         FontSize="28" TextAlignment="Center"/>
+                    <!--=================== END OF CHARISMA ROW =================-->
+                </Grid>
+                <!--=================== END OF MAIN STAT BLOCK SUB-GRID =================-->
+
+                <Grid Grid.Row="2" Grid.Column="2" Margin="50">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="auto"/>
+                        <ColumnDefinition Width="auto"/>
+                        <ColumnDefinition Width="auto"/>
+                        <ColumnDefinition Width="auto"/>
+                        <ColumnDefinition Width="auto"/>
+                        <ColumnDefinition Width="auto"/>
+                        <ColumnDefinition Width="auto"/>
+                        <ColumnDefinition Width="auto"/>
+                        <ColumnDefinition Width="auto"/>
+                        <ColumnDefinition Width="auto"/>
+                        <ColumnDefinition Width="auto"/>
+                        <ColumnDefinition Width="auto"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                    </Grid.RowDefinitions>
+
+
+                    <TextBlock Text="     ATTACK:" FontSize="40" FontWeight="Bold" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="12" TextAlignment="Center"/>
+
+                    <Border Margin="5" Padding="5" BorderThickness="1" CornerRadius="10" Grid.Row="1" Grid.Column="1">
+                        <TextBlock Text="Total" FontSize="12" Foreground="Black" Width="auto" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                    </Border>
+
+                    <TextBlock Text="BAB" FontSize="12" Foreground="Black" Width="auto" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="1" Grid.Column="3"/>
+
+                    <Border Margin="5" Padding="5" BorderThickness="1" CornerRadius="10" Grid.Row="1" Grid.Column="5">
+                        <TextBlock Text="Ability" FontSize="12" Foreground="Black" Width="auto" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                    </Border>
+                    <Border Margin="5" Padding="5" BorderThickness="1" CornerRadius="10" Grid.Row="1" Grid.Column="7">
+                        <TextBlock Text="Size" FontSize="12" Foreground="Black" Width="auto" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                    </Border>
+                    <Border Margin="5" Padding="5" BorderThickness="1"  CornerRadius="10" Grid.Row="1" Grid.Column="9">
+                        <TextBlock Text="Misc." FontSize="12" Foreground="Black" Width="auto" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                    </Border>
+                    <Border Margin="5" Padding="5" BorderThickness="1"  CornerRadius="10" Grid.Row="1" Grid.Column="11">
+                        <TextBlock Text="Temp" FontSize="12" Foreground="Black" Width="auto" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                    </Border>
+
+                    <Border Margin="5" Padding="5" BorderThickness="1" Background="Black" CornerRadius="10" Grid.Row="2">
+                        <TextBlock Text="Melee Attack Bonus (MAB)" FontSize="12" Foreground="White" Width="auto" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                    </Border>
+                    <TextBox Template="{StaticResource TextBoxBaseControlTemplate}"
                      Margin="15,0" FontSize="16" Height="30"  Background="WhiteSmoke"
                      MinWidth="30" Width="auto" Grid.Row="2" Grid.Column="1" TextAlignment="Center"/>
-                <TextBlock Text="=" FontSize="20" Foreground="Black"
+                    <TextBlock Text="=" FontSize="20" Foreground="Black" 
                      Width="auto" VerticalAlignment="Center" Grid.Row="2" Grid.Column="2"/>
-                <TextBox Template="{StaticResource TextBoxBaseControlTemplate}"
+                    <TextBox Template="{StaticResource TextBoxBaseControlTemplate}"
                      Margin="15,0" FontSize="16"  Background="WhiteSmoke"
                      Height="30" MinWidth="30" Width="auto" Grid.Row="2" Grid.Column="3" TextAlignment="Center"/>
-                <TextBlock Text="+" FontSize="20" Foreground="Black" 
+                    <TextBlock Text="+" FontSize="20" Foreground="Black" 
                        Width="auto" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="2" Grid.Column="4"/>
-                <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" 
+                    <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" 
                      Margin="15,0" FontSize="16"  Background="WhiteSmoke"
                      Height="30" MinWidth="30" Width="auto" TextAlignment="Center" Grid.Row="2" Grid.Column="5"/>
-                <TextBlock Text="+" FontSize="20" Foreground="Black" 
+                    <TextBlock Text="+" FontSize="20" Foreground="Black" 
                        Width="auto" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="2" Grid.Column="6"/>
-                <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" 
+                    <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" 
                      Margin="15,0" FontSize="16" Height="30"  Background="WhiteSmoke"
                      MinWidth="30" Width="auto" TextAlignment="Center" Grid.Row="2" Grid.Column="7"/>
-                <TextBlock Text="+" FontSize="20" Foreground="Black" 
+                    <TextBlock Text="+" FontSize="20" Foreground="Black" 
                        Width="auto" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="2" Grid.Column="8"/>
-                <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" 
+                    <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" 
                      Margin="15,0" FontSize="16"  Background="WhiteSmoke"
                      Height="30" MinWidth="30" Width="auto" TextAlignment="Center" Grid.Row="2" Grid.Column="9"/>
-                <TextBlock Text="+" FontSize="20" Foreground="Black" 
+                    <TextBlock Text="+" FontSize="20" Foreground="Black" 
                        Width="auto" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="2" Grid.Column="10"/>
-                <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" 
+                    <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" 
                      Margin="15,0" FontSize="16"  Background="WhiteSmoke"
                      Height="30" MinWidth="30" Width="auto" TextAlignment="Center" Grid.Row="2" Grid.Column="11"/>
 
 
-                <Border Margin="5" Padding="5" BorderThickness="1" Background="Black" CornerRadius="10" Grid.Row="3">
-                    <TextBlock Text="REFLEX" FontSize="12" Foreground="White" Width="auto" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-                </Border>
-                <TextBox Template="{StaticResource TextBoxBaseControlTemplate}"
+                    <Border Margin="5" Padding="5" BorderThickness="1" Background="Black" CornerRadius="10" Grid.Row="3">
+                        <TextBlock Text="Combat Maneuver Bonus (CMB)" FontSize="12" Foreground="White" Width="auto" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                    </Border>
+                    <TextBox Template="{StaticResource TextBoxBaseControlTemplate}"
                      Margin="15,0" FontSize="16" Height="30"  Background="WhiteSmoke"
                      MinWidth="30" Width="auto" Grid.Row="3" Grid.Column="1" TextAlignment="Center"/>
-                <TextBlock Text="=" FontSize="20" Foreground="Black" 
+                    <TextBlock Text="=" FontSize="20" Foreground="Black" 
                      Width="auto" VerticalAlignment="Center" Grid.Row="3" Grid.Column="2"/>
-                <TextBox Template="{StaticResource TextBoxBaseControlTemplate}"
+                    <TextBox Template="{StaticResource TextBoxBaseControlTemplate}"
                      Margin="15,0" FontSize="16"  Background="WhiteSmoke"
                      Height="30" MinWidth="30" Width="auto" Grid.Row="3" Grid.Column="3" TextAlignment="Center"/>
-                <TextBlock Text="+" FontSize="20" Foreground="Black" 
+                    <TextBlock Text="+" FontSize="20" Foreground="Black" 
                        Width="auto" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="3" Grid.Column="4"/>
-                <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" 
+                    <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" 
                      Margin="15,0" FontSize="16"  Background="WhiteSmoke"
                      Height="30" MinWidth="30" Width="auto" TextAlignment="Center" Grid.Row="3" Grid.Column="5"/>
-                <TextBlock Text="+" FontSize="20" Foreground="Black" 
+                    <TextBlock Text="+" FontSize="20" Foreground="Black" 
                        Width="auto" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="3" Grid.Column="6"/>
-                <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" 
+                    <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" 
                      Margin="15,0" FontSize="16" Height="30"  Background="WhiteSmoke"
                      MinWidth="30" Width="auto" TextAlignment="Center" Grid.Row="3" Grid.Column="7"/>
-                <TextBlock Text="+" FontSize="20" Foreground="Black" 
+                    <TextBlock Text="+" FontSize="20" Foreground="Black" 
                        Width="auto" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="3" Grid.Column="8"/>
-                <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" 
+                    <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" 
                      Margin="15,0" FontSize="16"  Background="WhiteSmoke"
                      Height="30" MinWidth="30" Width="auto" TextAlignment="Center" Grid.Row="3" Grid.Column="9"/>
-                <TextBlock Text="+" FontSize="20" Foreground="Black" 
+                    <TextBlock Text="+" FontSize="20" Foreground="Black" 
                        Width="auto" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="3" Grid.Column="10"/>
-                <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" 
+                    <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" 
                      Margin="15,0" FontSize="16"  Background="WhiteSmoke"
                      Height="30" MinWidth="30" Width="auto" TextAlignment="Center" Grid.Row="3" Grid.Column="11"/>
 
-                <Border Margin="5" Padding="5" BorderThickness="1" Background="Black" CornerRadius="10" Grid.Row="4">
-                    <TextBlock Text="WILL" FontSize="12" Foreground="White" Width="auto" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-                </Border>
-                <TextBox Template="{StaticResource TextBoxBaseControlTemplate}"
+                    <Border Margin="5" Padding="5" BorderThickness="1" Background="Black" CornerRadius="10" Grid.Row="4">
+                        <TextBlock Text="Ranged Attack Bonus (RAB)" FontSize="12" Foreground="White" Width="auto" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                    </Border>
+                    <TextBox Template="{StaticResource TextBoxBaseControlTemplate}"
                      Margin="15,0" FontSize="16" Height="30"  Background="WhiteSmoke"
                      MinWidth="30" Width="auto" Grid.Row="4" Grid.Column="1" TextAlignment="Center"/>
-                <TextBlock Text="=" FontSize="20" Foreground="Black" 
+                    <TextBlock Text="=" FontSize="20" Foreground="Black" 
                      Width="auto" VerticalAlignment="Center" Grid.Row="4" Grid.Column="2"/>
-                <TextBox Template="{StaticResource TextBoxBaseControlTemplate}"
-                     Margin="15,0" FontSize="16"  Background="WhiteSmoke"
+                    <TextBox Template="{StaticResource TextBoxBaseControlTemplate}"
+                     Margin="15,0" FontSize="16"  Background="WhiteSmoke" 
                      Height="30" MinWidth="30" Width="auto" Grid.Row="4" Grid.Column="3" TextAlignment="Center"/>
-                <TextBlock Text="+" FontSize="20" Foreground="Black" 
+                    <TextBlock Text="+" FontSize="20" Foreground="Black" 
                        Width="auto" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="4" Grid.Column="4"/>
-                <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" 
+                    <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" 
                      Margin="15,0" FontSize="16"  Background="WhiteSmoke"
                      Height="30" MinWidth="30" Width="auto" TextAlignment="Center" Grid.Row="4" Grid.Column="5"/>
-                <TextBlock Text="+" FontSize="20" Foreground="Black" 
+                    <TextBlock Text="+" FontSize="20" Foreground="Black" 
                        Width="auto" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="4" Grid.Column="6"/>
-                <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" 
+                    <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" 
                      Margin="15,0" FontSize="16" Height="30"  Background="WhiteSmoke"
                      MinWidth="30" Width="auto" TextAlignment="Center" Grid.Row="4" Grid.Column="7"/>
-                <TextBlock Text="+" FontSize="20" Foreground="Black" 
+                    <TextBlock Text="+" FontSize="20" Foreground="Black" 
                        Width="auto" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="4" Grid.Column="8"/>
-                <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" 
+                    <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" 
                      Margin="15,0" FontSize="16"  Background="WhiteSmoke"
                      Height="30" MinWidth="30" Width="auto" TextAlignment="Center" Grid.Row="4" Grid.Column="9"/>
-                <TextBlock Text="+" FontSize="20" Foreground="White" 
+                    <TextBlock Text="+" FontSize="20" Foreground="Black" 
                        Width="auto" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="4" Grid.Column="10"/>
-                <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" 
+                    <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" 
+                     Margin="15,0" FontSize="16"  Background="WhiteSmoke"
+                     Height="30" MinWidth="30" Width="auto" TextAlignment="Center" Grid.Row="4" Grid.Column="11"/>
+                </Grid>
+
+
+
+                <!--=================== DEFENSE STAT SUB-GRID =================-->
+                <Grid Name="grid_Defense" Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="2" Margin="10,0,713,0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+
+                    </Grid.RowDefinitions>
+
+                    <StackPanel Orientation="Horizontal" Grid.Row="1" Grid.Column="0" Height="70" VerticalAlignment="Top">
+                        <TextBlock Padding="20" Text="HP" FontSize="28" Foreground="Black" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                        <TextBlock Padding="20" Text="MAX HP" FontSize="28" Foreground="Black" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                        <TextBlock Padding="40" Text="AC" FontSize="28" Foreground="Black" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Grid.Row="2" Height="70" VerticalAlignment="Top">
+                        <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Margin="12,0" FontSize="20" FontWeight="Bold" Height="30" MinWidth="60" Width="auto" TextAlignment="Center" Background="WhiteSmoke"/>
+                        <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Margin="40,0" FontSize="20" FontWeight="Bold" Height="30" MinWidth="60" Width="auto" TextAlignment="Center" Background="WhiteSmoke"/>
+                        <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Margin="20,0" FontSize="20" FontWeight="Bold" Height="30" MinWidth="60" Width="auto" TextAlignment="Center" Background="WhiteSmoke"/>
+                    </StackPanel>
+                    <TextBlock Text="DEFENSE:" FontSize="40" FontWeight="Bold" TextAlignment="Center" Grid.Row="0"/>
+
+                    <StackPanel Orientation="Horizontal" Height="50" Grid.Row="3">
+
+
+                        <Border Margin="5" Padding="5" BorderThickness="1" Background="Black" CornerRadius="10" Grid.Row="3" Width="60">
+                            <TextBlock Text=" DR " FontSize="20" Background="Black" Foreground="White" VerticalAlignment="Center" TextAlignment="Center" />
+                        </Border>
+                        <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Margin="10" FontSize="20" Height="30" MinWidth="40" Width="auto" TextAlignment="Center" Background="WhiteSmoke"/>
+                        <Border Margin="5" Padding="5" BorderThickness="1" Background="Black" CornerRadius="10" Grid.Row="3" Width="100">
+                            <TextBlock Text=" FFAC " FontSize="20" Background="Black" Foreground="White" VerticalAlignment="Center" TextAlignment="Center" />
+                        </Border>
+                        <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Margin="10" FontSize="20" Height="30" MinWidth="40" Width="auto" TextAlignment="Center" Background="WhiteSmoke"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Height="50" Grid.Row="4">
+
+                        <Border Margin="5" Padding="5" BorderThickness="1" Background="Black" CornerRadius="10" Grid.Row="3" Width="60">
+                            <TextBlock Text=" SR " FontSize="20" Background="Black" Foreground="White" VerticalAlignment="Center" TextAlignment="Center" />
+                        </Border>
+                        <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Margin="10" FontSize="20" Height="30" MinWidth="40" Width="auto" TextAlignment="Center" Background="WhiteSmoke"/>
+                        <Border Margin="5" Padding="5" BorderThickness="1" Background="Black" CornerRadius="10" Grid.Row="3" Width="100">
+                            <TextBlock Text=" Touch AC " FontSize="20" Background="Black" Foreground="White" VerticalAlignment="Center" TextAlignment="Center" />
+                        </Border>
+                        <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Margin="10" FontSize="20" Height="30" MinWidth="40" Width="auto" TextAlignment="Center" Background="WhiteSmoke"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Height="50" Grid.Row="5">
+
+                        <Border Margin="5" Padding="5" BorderThickness="1" Background="Black" CornerRadius="10" Grid.Row="3" Width="60">
+                            <TextBlock Text="CMD" FontSize="20" Background="Black" Foreground="White" VerticalAlignment="Center" TextAlignment="Center" />
+                        </Border>
+                        <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Margin="10" FontSize="20" Height="30" MinWidth="40" Width="auto" TextAlignment="Center" Background="WhiteSmoke"/>
+                        <Border Margin="5" Padding="5" BorderThickness="1" Background="Black" CornerRadius="10" Grid.Row="3" Width="100">
+                            <TextBlock Text="FF-CMD" FontSize="20" Background="Black" Foreground="White" VerticalAlignment="Center" TextAlignment="Center"/>
+                        </Border>
+                        <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Margin="10" FontSize="20" Height="30" MinWidth="40" Width="auto" TextAlignment="Center" Background="WhiteSmoke"/>
+                    </StackPanel>
+
+                    <Grid Grid.Row="6">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="auto"/>
+                        </Grid.RowDefinitions>
+                        <StackPanel Orientation="Horizontal" Grid.Row="0" Margin="40,0" Height="50" Width="auto">
+                            <TextBlock Text="DEX" FontSize="16" Padding="120,20,0,0"/>
+                            <TextBlock Text="MISC" FontSize="16" Padding="55,20,0,0"/>
+                        </StackPanel>
+
+                        <StackPanel Orientation="Horizontal" Grid.Row="1" Margin="40,0" Height="50" Width="auto">
+                            <Border Margin="5" Padding="5" BorderThickness="1" Background="Black" CornerRadius="10" Grid.Row="3" Width="70">
+                                <TextBlock Text="INIT" FontSize="30" VerticalAlignment="Center" Background="Black" Foreground="White" TextAlignment="Center" />
+                            </Border>
+
+                            <TextBlock Text=" = " FontSize="20" VerticalAlignment="Center"/>
+                            <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Margin="10" FontSize="20" TextAlignment="Center" Background="WhiteSmoke" MinWidth="40" Width="auto"/>
+
+                            <TextBlock Text=" + " FontSize="20" VerticalAlignment="Center"/>
+                            <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Margin="10" FontSize="20" TextAlignment="Center" Background="WhiteSmoke" MinWidth="40" Width="auto"/>
+
+                        </StackPanel>
+                    </Grid>
+
+                </Grid>
+                <!--=================== END OF DEFENSE STAT SUB-GRID =================-->
+
+
+                <!--=================== AC CALCULATION SUB-GRID =================-->
+                <Grid Grid.Row="1" Grid.Column="2" Grid.ColumnSpan="2">
+                    <!--=================== 2 ROWS, 16 COLUMNS =================-->
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="auto"/>
+                        <ColumnDefinition Width="60"/>
+                        <ColumnDefinition Width="auto"/>
+                        <ColumnDefinition Width="60"/>
+                        <ColumnDefinition Width="auto"/>
+                        <ColumnDefinition Width="60"/>
+                        <ColumnDefinition Width="auto"/>
+                        <ColumnDefinition Width="60"/>
+                        <ColumnDefinition Width="auto"/>
+                        <ColumnDefinition Width="60"/>
+                        <ColumnDefinition Width="auto"/>
+                        <ColumnDefinition Width="60"/>
+                        <ColumnDefinition Width="auto"/>
+                        <ColumnDefinition Width="60"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+
+                        <RowDefinition Height="130"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                    </Grid.RowDefinitions>
+                    <!--=================== END OF ROW/COL DEFINITION =================-->
+
+                    <!--=================== AC LABEL ROW =================-->
+                    <TextBlock Margin="0,65,0,0" Text="Armor" FontSize="15" Foreground="Black" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="0" Grid.Column="1"/>
+                    <TextBlock Margin="0,65,0,0" Text="Dex" FontSize="15" Foreground="Black" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="0" Grid.Column="3"/>
+                    <TextBlock Margin="0,65,0,0" Text="Dodge" FontSize="15" Foreground="Black" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="0" Grid.Column="5"/>
+                    <TextBlock Margin="0,65,0,0" Text="Size" FontSize="15" Foreground="Black" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="0" Grid.Column="7"/>
+                    <TextBlock Margin="0,65,0,0" Text="Natural" FontSize="15" Foreground="Black" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="0" Grid.Column="9"/>
+                    <TextBlock Margin="0,65,0,0" Text="Deflect" FontSize="15" Foreground="Black" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="0" Grid.Column="11"/>
+                    <TextBlock Margin="0,65,0,0" Text="Misc." FontSize="15" Foreground="Black" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="0" Grid.Column="13"/>
+                    <!--=================== END OF AC LABEL ROW =================-->
+
+                    <!--=================== AC VALUE ROW =================-->
+                    <TextBlock  Text="= 10 + " FontSize="28" Foreground="Black" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="0" Grid.Row="1"/>
+                    <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Background="Whitesmoke" Foreground="Black" 
+                     FontSize="20" Height="30" MinWidth="40" Width="auto" TextAlignment="Center"
+                     Margin="7" Grid.Row ="1" Grid.Column="1"/>
+
+                    <TextBlock  Text=" + " FontSize="20" Foreground="Black" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="2" Grid.Row="1"/>
+                    <TextBlock  Text=" + " FontSize="20" Foreground="Black" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="4" Grid.Row="1"/>
+                    <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Background="Whitesmoke" Foreground="Black" 
+                     FontSize="20" Height="30" MinWidth="60" Width="auto" TextAlignment="Center"
+                     Grid.Row ="1" Grid.Column="3"/>
+
+                    <TextBlock  Text=" + " FontSize="20" Foreground="Black" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="10" Grid.Row="1"/>
+                    <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Background="Whitesmoke" Foreground="Black" 
+                     FontSize="20" Height="30" MinWidth="60" Width="auto" TextAlignment="Center"
+                     Grid.Row ="1" Grid.Column="5"/>
+
+                    <TextBlock  Text=" + " FontSize="20" Foreground="Black" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="6" Grid.Row="1"/>
+                    <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Background="Whitesmoke" Foreground="Black" 
+                     FontSize="20" Height="30" MinWidth="60" Width="auto" TextAlignment="Center"
+                     Grid.Row ="1" Grid.Column="7"/>
+
+                    <TextBlock  Text=" + " FontSize="20" Foreground="Black" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="8" Grid.Row="1"/>
+                    <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Background="Whitesmoke" Foreground="Black" 
+                     FontSize="20" Height="30" MinWidth="60" Width="auto" TextAlignment="Center"
+                     Grid.Row ="1" Grid.Column="9"/>
+
+                    <TextBlock  Text=" + " FontSize="20" Foreground="Black" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="10" Grid.Row="1"/>
+                    <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Background="Whitesmoke" Foreground="Black" 
+                     FontSize="20" Height="30" MinWidth="60" Width="auto" TextAlignment="Center"
+                     Grid.Row ="1" Grid.Column="11"/>
+
+                    <TextBlock  Text=" + " FontSize="20" Foreground="Black" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="12" Grid.Row="1"/>
+                    <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Background="Whitesmoke" Foreground="Black" 
+                     FontSize="20" Height="30" MinWidth="60" Width="auto" TextAlignment="Center"
+                     Grid.Row ="1" Grid.Column="13"/>
+                    <!--=================== END OF AC VALUE ROW =================-->
+
+
+                    <Grid Grid.Row="2" Grid.ColumnSpan="15" Margin="60">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="auto"/>
+                            <ColumnDefinition Width="auto"/>
+                            <ColumnDefinition Width="auto"/>
+                            <ColumnDefinition Width="auto"/>
+                            <ColumnDefinition Width="auto"/>
+                            <ColumnDefinition Width="auto"/>
+                            <ColumnDefinition Width="auto"/>
+                            <ColumnDefinition Width="auto"/>
+                            <ColumnDefinition Width="auto"/>
+                            <ColumnDefinition Width="auto"/>
+                            <ColumnDefinition Width="auto"/>
+                            <ColumnDefinition Width="auto"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="auto"/>
+                        </Grid.RowDefinitions>
+
+
+                        <TextBlock Text="    SAVES:" FontSize="30" FontWeight="Bold"
+                           Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="12" TextAlignment="Center"/>
+
+                        <Border Margin="5" Padding="5" BorderThickness="1" CornerRadius="10" Grid.Row="1" Grid.Column="1">
+                            <TextBlock Text="Total" FontSize="12" Foreground="Black" Width="auto" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                        </Border>
+
+                        <TextBlock Text="Base" FontSize="12" Foreground="Black" Width="auto" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="1" Grid.Column="3"/>
+
+                        <Border Margin="5" Padding="5" BorderThickness="1" CornerRadius="10" Grid.Row="1" Grid.Column="5">
+                            <TextBlock Text="Ability" FontSize="12" Foreground="Black" Width="auto" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                        </Border>
+                        <Border Margin="5" Padding="5" BorderThickness="1" CornerRadius="10" Grid.Row="1" Grid.Column="7">
+                            <TextBlock Text="Magic" FontSize="12" Foreground="Black" Width="auto" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                        </Border>
+                        <Border Margin="5" Padding="5" BorderThickness="1"  CornerRadius="10" Grid.Row="1" Grid.Column="9">
+                            <TextBlock Text="Misc." FontSize="12" Foreground="Black" Width="auto" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                        </Border>
+                        <Border Margin="5" Padding="5" BorderThickness="1"  CornerRadius="10" Grid.Row="1" Grid.Column="11">
+                            <TextBlock Text="Temp" FontSize="12" Foreground="Black" Width="auto" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                        </Border>
+
+                        <Border Margin="5" Padding="5" BorderThickness="1" Background="Black" CornerRadius="10" Grid.Row="2">
+                            <TextBlock Text="FORTITUDE" FontSize="12" Foreground="White" Width="auto" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                        </Border>
+                        <TextBox Template="{StaticResource TextBoxBaseControlTemplate}"
+                     Margin="15,0" FontSize="16" Height="30"  Background="WhiteSmoke"
+                     MinWidth="30" Width="auto" Grid.Row="2" Grid.Column="1" TextAlignment="Center"/>
+                        <TextBlock Text="=" FontSize="20" Foreground="Black"
+                     Width="auto" VerticalAlignment="Center" Grid.Row="2" Grid.Column="2"/>
+                        <TextBox Template="{StaticResource TextBoxBaseControlTemplate}"
+                     Margin="15,0" FontSize="16"  Background="WhiteSmoke"
+                     Height="30" MinWidth="30" Width="auto" Grid.Row="2" Grid.Column="3" TextAlignment="Center"/>
+                        <TextBlock Text="+" FontSize="20" Foreground="Black" 
+                       Width="auto" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="2" Grid.Column="4"/>
+                        <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" 
+                     Margin="15,0" FontSize="16"  Background="WhiteSmoke"
+                     Height="30" MinWidth="30" Width="auto" TextAlignment="Center" Grid.Row="2" Grid.Column="5"/>
+                        <TextBlock Text="+" FontSize="20" Foreground="Black" 
+                       Width="auto" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="2" Grid.Column="6"/>
+                        <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" 
+                     Margin="15,0" FontSize="16" Height="30"  Background="WhiteSmoke"
+                     MinWidth="30" Width="auto" TextAlignment="Center" Grid.Row="2" Grid.Column="7"/>
+                        <TextBlock Text="+" FontSize="20" Foreground="Black" 
+                       Width="auto" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="2" Grid.Column="8"/>
+                        <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" 
+                     Margin="15,0" FontSize="16"  Background="WhiteSmoke"
+                     Height="30" MinWidth="30" Width="auto" TextAlignment="Center" Grid.Row="2" Grid.Column="9"/>
+                        <TextBlock Text="+" FontSize="20" Foreground="Black" 
+                       Width="auto" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="2" Grid.Column="10"/>
+                        <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" 
+                     Margin="15,0" FontSize="16"  Background="WhiteSmoke"
+                     Height="30" MinWidth="30" Width="auto" TextAlignment="Center" Grid.Row="2" Grid.Column="11"/>
+
+
+                        <Border Margin="5" Padding="5" BorderThickness="1" Background="Black" CornerRadius="10" Grid.Row="3">
+                            <TextBlock Text="REFLEX" FontSize="12" Foreground="White" Width="auto" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                        </Border>
+                        <TextBox Template="{StaticResource TextBoxBaseControlTemplate}"
+                     Margin="15,0" FontSize="16" Height="30"  Background="WhiteSmoke"
+                     MinWidth="30" Width="auto" Grid.Row="3" Grid.Column="1" TextAlignment="Center"/>
+                        <TextBlock Text="=" FontSize="20" Foreground="Black" 
+                     Width="auto" VerticalAlignment="Center" Grid.Row="3" Grid.Column="2"/>
+                        <TextBox Template="{StaticResource TextBoxBaseControlTemplate}"
+                     Margin="15,0" FontSize="16"  Background="WhiteSmoke"
+                     Height="30" MinWidth="30" Width="auto" Grid.Row="3" Grid.Column="3" TextAlignment="Center"/>
+                        <TextBlock Text="+" FontSize="20" Foreground="Black" 
+                       Width="auto" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="3" Grid.Column="4"/>
+                        <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" 
+                     Margin="15,0" FontSize="16"  Background="WhiteSmoke"
+                     Height="30" MinWidth="30" Width="auto" TextAlignment="Center" Grid.Row="3" Grid.Column="5"/>
+                        <TextBlock Text="+" FontSize="20" Foreground="Black" 
+                       Width="auto" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="3" Grid.Column="6"/>
+                        <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" 
+                     Margin="15,0" FontSize="16" Height="30"  Background="WhiteSmoke"
+                     MinWidth="30" Width="auto" TextAlignment="Center" Grid.Row="3" Grid.Column="7"/>
+                        <TextBlock Text="+" FontSize="20" Foreground="Black" 
+                       Width="auto" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="3" Grid.Column="8"/>
+                        <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" 
+                     Margin="15,0" FontSize="16"  Background="WhiteSmoke"
+                     Height="30" MinWidth="30" Width="auto" TextAlignment="Center" Grid.Row="3" Grid.Column="9"/>
+                        <TextBlock Text="+" FontSize="20" Foreground="Black" 
+                       Width="auto" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="3" Grid.Column="10"/>
+                        <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" 
+                     Margin="15,0" FontSize="16"  Background="WhiteSmoke"
+                     Height="30" MinWidth="30" Width="auto" TextAlignment="Center" Grid.Row="3" Grid.Column="11"/>
+
+                        <Border Margin="5" Padding="5" BorderThickness="1" Background="Black" CornerRadius="10" Grid.Row="4">
+                            <TextBlock Text="WILL" FontSize="12" Foreground="White" Width="auto" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                        </Border>
+                        <TextBox Template="{StaticResource TextBoxBaseControlTemplate}"
+                     Margin="15,0" FontSize="16" Height="30"  Background="WhiteSmoke"
+                     MinWidth="30" Width="auto" Grid.Row="4" Grid.Column="1" TextAlignment="Center"/>
+                        <TextBlock Text="=" FontSize="20" Foreground="Black" 
+                     Width="auto" VerticalAlignment="Center" Grid.Row="4" Grid.Column="2"/>
+                        <TextBox Template="{StaticResource TextBoxBaseControlTemplate}"
+                     Margin="15,0" FontSize="16"  Background="WhiteSmoke"
+                     Height="30" MinWidth="30" Width="auto" Grid.Row="4" Grid.Column="3" TextAlignment="Center"/>
+                        <TextBlock Text="+" FontSize="20" Foreground="Black" 
+                       Width="auto" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="4" Grid.Column="4"/>
+                        <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" 
+                     Margin="15,0" FontSize="16"  Background="WhiteSmoke"
+                     Height="30" MinWidth="30" Width="auto" TextAlignment="Center" Grid.Row="4" Grid.Column="5"/>
+                        <TextBlock Text="+" FontSize="20" Foreground="Black" 
+                       Width="auto" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="4" Grid.Column="6"/>
+                        <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" 
+                     Margin="15,0" FontSize="16" Height="30"  Background="WhiteSmoke"
+                     MinWidth="30" Width="auto" TextAlignment="Center" Grid.Row="4" Grid.Column="7"/>
+                        <TextBlock Text="+" FontSize="20" Foreground="Black" 
+                       Width="auto" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="4" Grid.Column="8"/>
+                        <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" 
+                     Margin="15,0" FontSize="16"  Background="WhiteSmoke"
+                     Height="30" MinWidth="30" Width="auto" TextAlignment="Center" Grid.Row="4" Grid.Column="9"/>
+                        <TextBlock Text="+" FontSize="20" Foreground="White" 
+                       Width="auto" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="4" Grid.Column="10"/>
+                        <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" 
                      Margin="15,0" FontSize="16" Background="WhiteSmoke"
                      Height="30" MinWidth="30" Width="auto" TextAlignment="Center" Grid.Row="4" Grid.Column="11"/>
+                    </Grid>
+
+                </Grid>
+                <!--=================== END OF AC CALCULATION SUB-GRID =================-->
+
+
+
+                <!--=================== SAVE GRID =================-->
+
+
+                <!--=================== END OF SAVE GRID =================-->
+
+
+
+
             </Grid>
-
-        </Grid>
-        <!--=================== END OF AC CALCULATION SUB-GRID =================-->
-
-
-
-        <!--=================== SAVE GRID =================-->
-
-
-        <!--=================== END OF SAVE GRID =================-->
-
-
-
-
-    </Grid>
     <!--=================== END OF MAIN GRID =================-->
+        </TabItem>
+        <TabItem Header="Skills">
+
+        </TabItem>
+
+        <TabItem Header="Inventory">
+
+        </TabItem>
+
+        <TabItem Header="Character Info.">
+
+        </TabItem>
+
+    </TabControl>
+    <!--=================== END OF COMBAT TAB =================-->
+
+ 
+
+    
+
 </Window>
 
 
