@@ -60,6 +60,7 @@ namespace PathfinderCharGen.ViewModels
         private int ac_deflectBonus = 0;
         private int ac_miscBonus = 0;
 
+        private int acrobaticsAbilBonus = 0;
 
         private StrengthModCommand strModCmd;
         private DexterityModCommand dexModCmd;
@@ -289,10 +290,20 @@ namespace PathfinderCharGen.ViewModels
                 OnPropertyChanged("AC_MiscBonus");
             }
         }
+   
 
 
-    
 
+        public int Acrobatics_AbilityBonus
+        {
+            get { return acrobaticsAbilBonus; }
+
+            set
+            {
+                acrobaticsAbilBonus = value;
+                OnPropertyChanged("Acrobatics_AbilityBonus");
+            }
+        }
         #endregion
 
 
@@ -321,7 +332,6 @@ namespace PathfinderCharGen.ViewModels
             }
         }
         #endregion
-
 
         #region Methods
         void CalculateStatMod(int Score, int Mod)
@@ -362,7 +372,7 @@ namespace PathfinderCharGen.ViewModels
 
         internal void CalculateArmorBonus()
         {
-            AC_Total = ac_armorBonus + ac_dexBonus + ac_dodgeBonus + ac_sizeBonus + ac_naturalBonus + ac_deflectBonus + ac_miscBonus + 10;
+            AC_Total = ac_armorBonus + dex_mod + ac_dodgeBonus + ac_sizeBonus + ac_naturalBonus + ac_deflectBonus + ac_miscBonus + 10;
         }
 
         #endregion
