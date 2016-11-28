@@ -35,6 +35,12 @@ namespace PathfinderCharGen.Commands.Generic
             charGenViewModel.CalculateCharismaMod();
 
             charGenViewModel.CalculateArmorBonus();
+
+            charGenViewModel.CalculateFortBonus();
+            charGenViewModel.CalculateReflexBonus();
+            charGenViewModel.CalculateWillBonus();
+
+           
         }
     }
 }

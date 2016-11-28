@@ -56,7 +56,7 @@
             <TabItem Header="Combat">
 
                 <!--=================== MAIN GRID =================-->
-                <Grid Name="grid_Main" Background="White" DataContext="{Binding Source={StaticResource charGenVM}}">
+                <Grid Name="grid_Main" Background="White" DataContext="{Binding Source={StaticResource charGenVM}}" Margin="0,-3,0,3">
                     <!--=================== DEFINE MAIN GRID COLUMNS AND ROWS =================-->
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition x:Name="Column1" Width="33.437"/>
@@ -170,12 +170,14 @@
                          Margin="5" Grid.Row="1" Grid.Column="1"
                          Background="Whitesmoke" Foreground="Black"                         
                          FontSize="28" TextAlignment="Center"/>
-                        <TextBlock Name="STR_Mod" Text="{Binding STR_MOD, Mode=TwoWay}"
-                         Margin="5" Grid.Column="2" Grid.Row="1"
-                         Background="Whitesmoke" Foreground="Black"                         
-                         FontSize="28" TextAlignment="Center"/>
+
+                        <TextBox Name="STR_Mod" Template="{StaticResource TextBoxBaseControlTemplate}" Text="{Binding STR_MOD, Mode=TwoWay}"
+                                       Margin="5" Grid.Column="2" Grid.Row="1" IsReadOnly="True"
+                                       Background="Whitesmoke" Foreground="Black"                         
+                                       FontSize="28" TextAlignment="Center"/>
+
                         <TextBox Name="STR_TempScore" Template="{StaticResource TextBoxBaseControlTemplate}" Margin="5"
-                         Grid.Column="3" Grid.Row="1"
+                         Grid.Column="3" Grid.Row="1" IsReadOnly="True"
                          Background="Whitesmoke" Foreground="Black"                         
                          FontSize="28" TextAlignment="Center"/>
                         <TextBox Name="STR_TempMod" Template="{StaticResource TextBoxBaseControlTemplate}" Margin="5"
@@ -192,8 +194,8 @@
                          Margin="5" Grid.Column="1" Grid.Row="2"
                          Background="Whitesmoke" Foreground="Black"                         
                          FontSize="28" TextAlignment="Center"/>
-                        <TextBlock Name="DEX_Mod" Text="{Binding DEX_MOD, Mode=TwoWay}"
-                         Margin="5" Grid.Column="2" Grid.Row="2"
+                        <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Name="DEX_Mod" Text="{Binding DEX_MOD, Mode=TwoWay}"
+                         Margin="5" Grid.Column="2" Grid.Row="2" IsReadOnly="True"
                          Background="Whitesmoke" Foreground="Black"                         
                          FontSize="28" TextAlignment="Center"/>
                         <TextBox Name="DEX_TempScore" Template="{StaticResource TextBoxBaseControlTemplate}" Margin="0,5,5,5"
@@ -215,8 +217,8 @@
                          Margin="5" Grid.Column="1" Grid.Row="3"
                          Background="Whitesmoke" Foreground="Black"                         
                          FontSize="28" TextAlignment="Center"/>
-                        <TextBlock  Name="CON_Mod" Text="{Binding CON_MOD, Mode=TwoWay}"
-                         Margin="5" Grid.Column="2" Grid.Row="3"
+                        <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Name="CON_Mod" Text="{Binding CON_MOD, Mode=TwoWay}"
+                         Margin="5" Grid.Column="2" Grid.Row="3" IsReadOnly="True"
                          Background="Whitesmoke" Foreground="Black"                         
                          FontSize="28" TextAlignment="Center"/>
                         <TextBox Name="CON_TempScore" Template="{StaticResource TextBoxBaseControlTemplate}" Margin="5"
@@ -238,8 +240,8 @@
                          Margin="5" Grid.Column="1" Grid.Row="4"
                          Background="Whitesmoke" Foreground="Black"                         
                          FontSize="28" TextAlignment="Center"/>
-                        <TextBlock Name="INT_Mod" Text="{Binding INT_MOD, Mode=TwoWay}"
-                         Margin="5" Grid.Column="2" Grid.Row="4"
+                        <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Name="INT_Mod" Text="{Binding INT_MOD, Mode=TwoWay}"
+                         Margin="5" Grid.Column="2" Grid.Row="4" IsReadOnly="True"
                          Background="Whitesmoke" Foreground="Black"                         
                          FontSize="28" TextAlignment="Center"/>
                         <TextBox Name="INT_TempScore" Template="{StaticResource TextBoxBaseControlTemplate}" Margin="5"
@@ -261,8 +263,8 @@
                          Margin="5" Grid.Column="1" Grid.Row="5"
                          Background="Whitesmoke" Foreground="Black"                         
                          FontSize="28" TextAlignment="Center"/>
-                        <TextBlock Name="WIS_Mod" Text="{Binding WIS_MOD, Mode=TwoWay}"
-                         Margin="5" Grid.Column="2" Grid.Row="5"
+                        <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Name="WIS_Mod" Text="{Binding WIS_MOD, Mode=TwoWay}"
+                         Margin="5" Grid.Column="2" Grid.Row="5" IsReadOnly="True"
                          Background="Whitesmoke" Foreground="Black"                         
                          FontSize="28" TextAlignment="Center"/>
                         <TextBox Name="WIS_TempScore" Template="{StaticResource TextBoxBaseControlTemplate}" Margin="5"
@@ -285,9 +287,8 @@
                          Grid.Column="1" Grid.Row="6"
                          Background="Whitesmoke" Foreground="Black"                         
                          FontSize="28" TextAlignment="Center"/>
-                        <TextBlock Name="CHA_Mod" Text="{Binding CHA_MOD, Mode=TwoWay}"
-                         Margin="5"
-                         Grid.Column="2" Grid.Row="6"
+                        <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Name="CHA_Mod" Text="{Binding CHA_MOD, Mode=TwoWay}"
+                         Margin="5" Grid.Column="2" Grid.Row="6" IsReadOnly="True"
                          Background="Whitesmoke" Foreground="Black"                         
                          FontSize="28" TextAlignment="Center"/>
                         <TextBox Name="CHA_TempScore" Template="{StaticResource TextBoxBaseControlTemplate}" Margin="5"
@@ -351,7 +352,7 @@
                         <Border Margin="5" Padding="5" BorderThickness="1" Background="Black" CornerRadius="10" Grid.Row="2">
                             <TextBlock Text="Melee Attack Bonus (MAB)" FontSize="12" Foreground="White" Width="auto" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                         </Border>
-                        <TextBox Name="MAB_Total" Template="{StaticResource TextBoxBaseControlTemplate}"
+                        <TextBox Name="MAB_Total" Template="{StaticResource TextBoxBaseControlTemplate}" 
                      Margin="15,0" FontSize="16" Height="30"  Background="WhiteSmoke"
                      MinWidth="30" Width="auto" Grid.Row="2" Grid.Column="1" TextAlignment="Center"/>
                         <TextBlock Text="=" FontSize="20" Foreground="Black" 
@@ -362,7 +363,7 @@
                         <TextBlock Text="+" FontSize="20" Foreground="Black" 
                        Width="auto" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="2" Grid.Column="4"/>
                         <TextBox Name="MAB_AbilityBonus" Template="{StaticResource TextBoxBaseControlTemplate}" Text="{Binding STR_MOD, Mode=TwoWay}"
-                     Margin="20,6,10,2" FontSize="16"  Background="WhiteSmoke"
+                     Margin="15,0" FontSize="16"  Background="WhiteSmoke"
                      Height="30" MinWidth="30" Width="auto" TextAlignment="Center" Grid.Row="2" Grid.Column="5"/>
                         <TextBlock Text="+" FontSize="20" Foreground="Black" 
                        Width="auto" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="2" Grid.Column="6"/>
@@ -675,7 +676,7 @@
                             <Border Margin="5" Padding="5" BorderThickness="1" Background="Black" CornerRadius="10" Grid.Row="2">
                                 <TextBlock Text="FORTITUDE" FontSize="12" Foreground="White" Width="auto" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                             </Border>
-                            <TextBox Name="FORT_Total" Template="{StaticResource TextBoxBaseControlTemplate}"
+                            <TextBox Name="FORT_Total" Template="{StaticResource TextBoxBaseControlTemplate}" Text="{Binding FORT_Total, Mode=TwoWay}"
                      Margin="15,0" FontSize="16" Height="30"  Background="WhiteSmoke"
                      MinWidth="30" Width="auto" Grid.Row="2" Grid.Column="1" TextAlignment="Center"/>
                             <TextBlock Text="=" FontSize="20" Foreground="Black"
@@ -708,7 +709,7 @@
                             <Border Margin="5" Padding="5" BorderThickness="1" Background="Black" CornerRadius="10" Grid.Row="3">
                                 <TextBlock Text="REFLEX" FontSize="12" Foreground="White" Width="auto" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                             </Border>
-                            <TextBox Name="REF_Total" Template="{StaticResource TextBoxBaseControlTemplate}"
+                            <TextBox Name="REF_Total" Template="{StaticResource TextBoxBaseControlTemplate}" Text="{Binding REF_Total, Mode=TwoWay}"
                      Margin="15,0" FontSize="16" Height="30"  Background="WhiteSmoke"
                      MinWidth="30" Width="auto" Grid.Row="3" Grid.Column="1" TextAlignment="Center"/>
                             <TextBlock Text="=" FontSize="20" Foreground="Black" 
@@ -740,7 +741,7 @@
                             <Border Margin="5" Padding="5" BorderThickness="1" Background="Black" CornerRadius="10" Grid.Row="4">
                                 <TextBlock Text="WILL" FontSize="12" Foreground="White" Width="auto" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                             </Border>
-                            <TextBox Name="WILL_Total" Template="{StaticResource TextBoxBaseControlTemplate}"
+                            <TextBox Name="WILL_Total" Template="{StaticResource TextBoxBaseControlTemplate}" Text="{Binding WILL_Total, Mode=TwoWay}"
                      Margin="15,0" FontSize="16" Height="30"  Background="WhiteSmoke"
                      MinWidth="30" Width="auto" Grid.Row="4" Grid.Column="1" TextAlignment="Center"/>
                             <TextBlock Text="=" FontSize="20" Foreground="Black" 
@@ -828,11 +829,12 @@
                         <RowDefinition Height="auto"/>
                     </Grid.RowDefinitions>
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="auto"/>
+                        <ColumnDefinition Width="26"/>
+                        <ColumnDefinition Width="862"/>
                         <ColumnDefinition Width="auto"/>
                     </Grid.ColumnDefinitions>
 
-                    <StackPanel Grid.Row="1" Grid.Column="0" Orientation="Horizontal" Margin="1">
+                    <StackPanel Grid.Row="1" Grid.Column="0" Orientation="Horizontal" Margin="1" Grid.ColumnSpan="2">
                         <TextBlock Text="Name" FontSize="16" Width="250" MinWidth="150" Margin="20,0,0,0" TextDecorations="Underline" VerticalAlignment="Top"/>
                         <TextBlock Text="Ability" FontSize="16" Width="auto" TextDecorations="Underline" VerticalAlignment="Top" Margin="0,0,20,0"/>
                         <TextBlock Text="Skill Mod" FontSize="16" Width="auto" Margin="0,0,35,0" TextDecorations="Underline" VerticalAlignment="Top"/>
@@ -842,7 +844,7 @@
                         <TextBlock Text="ACP" FontSize="16" Width="auto" MinWidth="150" TextDecorations="Underline" VerticalAlignment="Top"/>
                     </StackPanel>
 
-                    <StackPanel Grid.Row="2" Grid.Column="0" Orientation="Horizontal" Margin="1">
+                    <StackPanel Grid.Row="2" Grid.Column="0" Orientation="Horizontal" Margin="1" Grid.ColumnSpan="2">
                         <CheckBox Width="auto" Height="auto" VerticalAlignment="Center" />
                         <TextBlock Text="Acrobatics" FontSize="16" Width="255" MinWidth="150" TextDecorations="Underline" VerticalAlignment="Top"/>
                         <TextBlock Text="DEX" FontSize="16" Width="auto" Margin="0,0,36,0" TextDecorations="Underline" VerticalAlignment="Top"/>
@@ -857,7 +859,7 @@
                         <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Background="Black" Foreground="White" Width="40" Height="25"/>
                     </StackPanel>
 
-                    <StackPanel Grid.Row="3" Grid.Column="0" Orientation="Horizontal" Margin="1">
+                    <StackPanel Grid.Row="3" Grid.Column="0" Orientation="Horizontal" Margin="1" Grid.ColumnSpan="2">
                         <CheckBox Width="auto" Height="auto" VerticalAlignment="Center" />
                         <TextBlock Text="Appraise" FontSize="16" Width="255" MinWidth="150" TextDecorations="Underline" VerticalAlignment="Top"/>
                         <TextBlock Text="INT" FontSize="16" Width="auto" Margin="0,0,40,0" TextDecorations="Underline" VerticalAlignment="Top"/>
@@ -872,7 +874,7 @@
                         <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Background="Black" Foreground="White" Width="40" Height="25"/>
                     </StackPanel>
 
-                    <StackPanel Grid.Row="4" Grid.Column="0" Orientation="Horizontal" Margin="1">
+                    <StackPanel Grid.Row="4" Grid.Column="0" Orientation="Horizontal" Margin="1" Grid.ColumnSpan="2">
                         <CheckBox Width="auto" Height="auto" VerticalAlignment="Center" />
                         <TextBlock Text="Bluff" FontSize="16" Width="255" MinWidth="150" TextDecorations="Underline" VerticalAlignment="Top"/>
                         <TextBlock Text="CHA" FontSize="16" Width="auto" Margin="0,0,34,0" TextDecorations="Underline" VerticalAlignment="Top"/>
@@ -887,7 +889,7 @@
                         <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Background="Black" Foreground="White" Width="40" Height="25"/>
                     </StackPanel>
 
-                    <StackPanel Grid.Row="5" Grid.Column="0" Orientation="Horizontal" Margin="1">
+                    <StackPanel Grid.Row="5" Grid.Column="0" Orientation="Horizontal" Margin="1" Grid.ColumnSpan="2">
                         <CheckBox Width="auto" Height="auto" VerticalAlignment="Center" />
                         <TextBlock Text="Climb" FontSize="16" Width="255" MinWidth="150" TextDecorations="Underline" VerticalAlignment="Top"/>
                         <TextBlock Text="STR" FontSize="16" Width="auto" Margin="0,0,40,0" TextDecorations="Underline" VerticalAlignment="Top"/>
@@ -902,7 +904,7 @@
                         <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Background="Black" Foreground="White" Width="40" Height="25"/>
                     </StackPanel>
 
-                    <StackPanel Grid.Row="6" Grid.Column="0" Orientation="Horizontal" Margin="1">
+                    <StackPanel Grid.Row="6" Grid.Column="0" Orientation="Horizontal" Margin="1" Grid.ColumnSpan="2">
                         <CheckBox Width="auto" Height="auto" VerticalAlignment="Center" />
                         <TextBlock Text="Craft" FontSize="16" Width="255" MinWidth="150" TextDecorations="Underline" VerticalAlignment="Top"/>
                         <TextBlock Text="INT" FontSize="16" Width="auto" Margin="0,0,40,0" TextDecorations="Underline" VerticalAlignment="Top"/>
@@ -917,7 +919,7 @@
                         <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Background="Black" Foreground="White" Width="40" Height="25"/>
                     </StackPanel>
 
-                    <StackPanel Grid.Row="7" Grid.Column="0" Orientation="Horizontal" Margin="1">
+                    <StackPanel Grid.Row="7" Grid.Column="0" Orientation="Horizontal" Margin="1" Grid.ColumnSpan="2">
                         <CheckBox Width="auto" Height="auto" VerticalAlignment="Center" />
                         <TextBlock Text="Diplomacy" FontSize="16" Width="255" MinWidth="150" TextDecorations="Underline" VerticalAlignment="Top"/>
                         <TextBlock Text="CHA" FontSize="16" Width="auto" Margin="0,0,34,0" TextDecorations="Underline" VerticalAlignment="Top"/>
@@ -932,7 +934,7 @@
                         <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Background="Black" Foreground="White" Width="40" Height="25"/>
                     </StackPanel>
 
-                    <StackPanel Grid.Row="8" Grid.Column="0" Orientation="Horizontal" Margin="1">
+                    <StackPanel Grid.Row="8" Grid.Column="0" Orientation="Horizontal" Margin="1" Grid.ColumnSpan="2">
                         <CheckBox Width="auto" Height="auto" VerticalAlignment="Center" />
                         <TextBlock Text="Disable Device" FontSize="16" Width="255" MinWidth="150" TextDecorations="Underline" VerticalAlignment="Top"/>
                         <TextBlock Text="DEX" FontSize="16" Width="auto" Margin="0,0,37,0" TextDecorations="Underline" VerticalAlignment="Top"/>
@@ -949,7 +951,7 @@
 
 
 
-                    <StackPanel Grid.Row="9" Grid.Column="0" Orientation="Horizontal" Margin="1">
+                    <StackPanel Grid.Row="9" Grid.Column="0" Orientation="Horizontal" Margin="1" Grid.ColumnSpan="2">
                         <CheckBox Width="auto" Height="auto" VerticalAlignment="Center" />
                         <TextBlock Text="Disguise" FontSize="16" Width="255" MinWidth="150" TextDecorations="Underline" VerticalAlignment="Top"/>
                         <TextBlock Text="CHA" FontSize="16" Width="auto" Margin="0,0,35,0" TextDecorations="Underline" VerticalAlignment="Top"/>
@@ -964,7 +966,7 @@
                         <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Background="Black" Foreground="White" Width="40" Height="25"/>
                     </StackPanel>
 
-                    <StackPanel Grid.Row="10" Grid.Column="0" Orientation="Horizontal" Margin="1">
+                    <StackPanel Grid.Row="10" Grid.Column="0" Orientation="Horizontal" Margin="1" Grid.ColumnSpan="2">
                         <CheckBox Width="auto" Height="auto" VerticalAlignment="Center" />
                         <TextBlock Text="Escape Artist" FontSize="16" Width="255" MinWidth="150" TextDecorations="Underline" VerticalAlignment="Top"/>
                         <TextBlock Text="DEX" FontSize="16" Width="auto" Margin="0,0,37,0" TextDecorations="Underline" VerticalAlignment="Top"/>
@@ -979,7 +981,7 @@
                         <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Background="Black" Foreground="White" Width="40" Height="25"/>
                     </StackPanel>
 
-                    <StackPanel Grid.Row="11" Grid.Column="0" Orientation="Horizontal" Margin="1">
+                    <StackPanel Grid.Row="11" Grid.Column="0" Orientation="Horizontal" Margin="1" Grid.ColumnSpan="2">
                         <CheckBox Width="auto" Height="auto" VerticalAlignment="Center" />
                         <TextBlock Text="Fly" FontSize="16" Width="255" MinWidth="150" TextDecorations="Underline" VerticalAlignment="Top"/>
                         <TextBlock Text="DEX" FontSize="16" Width="auto" Margin="0,0,37,0" TextDecorations="Underline" VerticalAlignment="Top"/>
@@ -994,7 +996,7 @@
                         <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Background="Black" Foreground="White" Width="40" Height="25"/>
                     </StackPanel>
 
-                    <StackPanel Grid.Row="12" Grid.Column="0" Orientation="Horizontal" Margin="1">
+                    <StackPanel Grid.Row="12" Grid.Column="0" Orientation="Horizontal" Margin="1" Grid.ColumnSpan="2">
                         <CheckBox Width="auto" Height="auto" VerticalAlignment="Center" />
                         <TextBlock Text="Handle Animal" FontSize="16" Width="255" MinWidth="150" TextDecorations="Underline" VerticalAlignment="Top"/>
                         <TextBlock Text="CHA" FontSize="16" Width="auto" Margin="0,0,34,0" TextDecorations="Underline" VerticalAlignment="Top"/>
@@ -1009,7 +1011,7 @@
                         <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Background="Black" Foreground="White" Width="40" Height="25"/>
                     </StackPanel>
 
-                    <StackPanel Grid.Row="13" Grid.Column="0" Orientation="Horizontal" Margin="1">
+                    <StackPanel Grid.Row="13" Grid.Column="0" Orientation="Horizontal" Margin="1" Grid.ColumnSpan="2">
                         <CheckBox Width="auto" Height="auto" VerticalAlignment="Center" />
                         <TextBlock Text="Heal" FontSize="16" Width="255" MinWidth="150" TextDecorations="Underline" VerticalAlignment="Top"/>
                         <TextBlock Text="DEX" FontSize="16" Width="auto" Margin="0,0,37,0" TextDecorations="Underline" VerticalAlignment="Top"/>
@@ -1024,7 +1026,7 @@
                         <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Background="Black" Foreground="White" Width="40" Height="25"/>
                     </StackPanel>
 
-                    <StackPanel Grid.Row="14" Grid.Column="0" Orientation="Horizontal" Margin="1">
+                    <StackPanel Grid.Row="14" Grid.Column="0" Orientation="Horizontal" Margin="1" Grid.ColumnSpan="2">
                         <CheckBox Width="auto" Height="auto" VerticalAlignment="Center" />
                         <TextBlock Text="Intimidate" FontSize="16" Width="255" MinWidth="150" TextDecorations="Underline" VerticalAlignment="Top"/>
                         <TextBlock Text="CHA" FontSize="16" Width="auto" Margin="0,0,34,0" TextDecorations="Underline" VerticalAlignment="Top"/>
@@ -1039,7 +1041,7 @@
                         <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Background="Black" Foreground="White" Width="40" Height="25"/>
                     </StackPanel>
 
-                    <StackPanel Grid.Row="15" Grid.Column="0" Orientation="Horizontal" Margin="1">
+                    <StackPanel Grid.Row="15" Grid.Column="0" Orientation="Horizontal" Margin="1" Grid.ColumnSpan="2">
                         <CheckBox Width="auto" Height="auto" VerticalAlignment="Center" />
                         <TextBlock Text="Linguistics" FontSize="16" Width="255" MinWidth="150" TextDecorations="Underline" VerticalAlignment="Top"/>
                         <TextBlock Text="INT" FontSize="16" Width="auto" Margin="0,0,40,0" TextDecorations="Underline" VerticalAlignment="Top"/>
@@ -1054,10 +1056,10 @@
                         <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Background="Black" Foreground="White" Width="40" Height="25"/>
                     </StackPanel>
 
-                    <StackPanel Grid.Row="16" Grid.Column="0" Orientation="Horizontal" Margin="1">
+                    <StackPanel Grid.Row="16" Grid.Column="0" Orientation="Horizontal" Margin="1" Grid.ColumnSpan="2">
                         <CheckBox Width="auto" Height="auto" VerticalAlignment="Center" />
                         <TextBlock Text="Perception" FontSize="16" Width="255" MinWidth="150" TextDecorations="Underline" VerticalAlignment="Top"/>
-                        <TextBlock Text="WIS" FontSize="16" Width="auto" Margin="0,0,40,0" TextDecorations="Underline" VerticalAlignment="Top"/>
+                        <TextBlock Text="WIS" FontSize="16" Width="auto" Margin="0,0,37,0" TextDecorations="Underline" VerticalAlignment="Top"/>
                         <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Background="Black" Foreground="White" Width="40" Height="25"/>
                         <TextBlock Text=" = " FontSize="25" Width="70" TextAlignment="Center" VerticalAlignment="Center" />
                         <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Text="{Binding WIS_MOD, Mode=TwoWay}" TextAlignment="Center" Background="White" Foreground="Black" Width="40" Height="25"/>
@@ -1069,10 +1071,10 @@
                         <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Background="Black" Foreground="White" Width="40" Height="25"/>
                     </StackPanel>
 
-                    <StackPanel Grid.Row="17" Grid.Column="0" Orientation="Horizontal" Margin="1">
+                    <StackPanel Grid.Row="17" Grid.Column="0" Orientation="Horizontal" Margin="1" Grid.ColumnSpan="2">
                         <CheckBox Width="auto" Height="auto" VerticalAlignment="Center" />
                         <TextBlock Text="Perform" FontSize="16" Width="255" MinWidth="150" TextDecorations="Underline" VerticalAlignment="Top"/>
-                        <TextBlock Text="CHA" FontSize="16" Width="auto" Margin="0,0,40,12" TextDecorations="Underline"/>
+                        <TextBlock Text="CHA" FontSize="16" Width="auto" Margin="0,0,33,12" TextDecorations="Underline"/>
                         <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Background="Black" Foreground="White" Width="40" Height="25"/>
                         <TextBlock Text=" = " FontSize="25" Width="70" TextAlignment="Center" VerticalAlignment="Center" />
                         <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Text="{Binding CHA_MOD, Mode=TwoWay}" TextAlignment="Center" Background="White" Foreground="Black" Width="40" Height="25"/>
@@ -1084,10 +1086,10 @@
                         <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Background="Black" Foreground="White" Width="40" Height="25"/>
                     </StackPanel>
 
-                    <StackPanel Grid.Row="18" Grid.Column="0" Orientation="Horizontal" Margin="1">
+                    <StackPanel Grid.Row="18" Grid.Column="0" Orientation="Horizontal" Margin="1" Grid.ColumnSpan="2">
                         <CheckBox Width="auto" Height="auto" VerticalAlignment="Center" />
                         <TextBlock Text="Profession" FontSize="16" Width="255" MinWidth="150" TextDecorations="Underline" VerticalAlignment="Top"/>
-                        <TextBlock Text="WIS" FontSize="16" Width="auto" Margin="0,0,40,0" TextDecorations="Underline" VerticalAlignment="Top"/>
+                        <TextBlock Text="WIS" FontSize="16" Width="auto" Margin="0,0,38,0" TextDecorations="Underline" VerticalAlignment="Top"/>
                         <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Background="Black" Foreground="White" Width="40" Height="25"/>
                         <TextBlock Text=" = " FontSize="25" Width="70" TextAlignment="Center" VerticalAlignment="Center" />
                         <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Text="{Binding WIS_MOD, Mode=TwoWay}" TextAlignment="Center" Background="White" Width="40" Height="25"/>
@@ -1099,10 +1101,10 @@
                         <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Background="Black" Foreground="White" Width="40" Height="25"/>
                     </StackPanel>
 
-                    <StackPanel Grid.Row="19" Grid.Column="0" Orientation="Horizontal" Margin="1">
+                    <StackPanel Grid.Row="19" Grid.Column="0" Orientation="Horizontal" Margin="1" Grid.ColumnSpan="2">
                         <CheckBox Width="auto" Height="auto" VerticalAlignment="Center" />
                         <TextBlock Text="Ride" FontSize="16" Width="255" MinWidth="150" TextDecorations="Underline" VerticalAlignment="Top"/>
-                        <TextBlock Text="DEX" FontSize="16" Width="auto" Margin="0,0,40,0" TextDecorations="Underline" VerticalAlignment="Top"/>
+                        <TextBlock Text="DEX" FontSize="16" Width="auto" Margin="0,0,37,0" TextDecorations="Underline" VerticalAlignment="Top"/>
                         <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Background="Black" Foreground="White" Width="40" Height="25"/>
                         <TextBlock Text=" = " FontSize="25" Width="70" TextAlignment="Center" VerticalAlignment="Center" />
                         <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Text="{Binding DEX_MOD, Mode=TwoWay}" TextAlignment="Center" Background="White" Foreground="Black" Width="40" Height="25"/>
@@ -1114,7 +1116,7 @@
                         <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Background="Black" Foreground="White" Width="40" Height="25"/>
                     </StackPanel>
 
-                    <StackPanel Grid.Row="20" Grid.Column="0" Orientation="Horizontal" Margin="1">
+                    <StackPanel Grid.Row="20" Grid.Column="0" Orientation="Horizontal" Margin="1" Grid.ColumnSpan="2">
                         <CheckBox Width="auto" Height="auto" VerticalAlignment="Center" />
                         <TextBlock Text="Sense Motive" FontSize="16" Width="255" MinWidth="150" TextDecorations="Underline" VerticalAlignment="Top" />
                         <TextBlock Text="WIS" FontSize="16" Width="auto" Margin="0,0,40,0" TextDecorations="Underline" VerticalAlignment="Top"/>
@@ -1129,10 +1131,10 @@
                         <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Background="Black" Foreground="White" Width="40" Height="25"/>
                     </StackPanel>
 
-                    <StackPanel Grid.Row="21" Grid.Column="0" Orientation="Horizontal" Margin="1">
+                    <StackPanel Grid.Row="21" Grid.Column="0" Orientation="Horizontal" Margin="1" Grid.ColumnSpan="2">
                         <CheckBox Width="auto" Height="auto" VerticalAlignment="Center" />
                         <TextBlock Text="Sleight of Hand" FontSize="16" Width="255" MinWidth="150" TextDecorations="Underline" VerticalAlignment="Top"/>
-                        <TextBlock Text="DEX" FontSize="16" Width="auto" Margin="0,0,40,0" TextDecorations="Underline" VerticalAlignment="Top"/>
+                        <TextBlock Text="DEX" FontSize="16" Width="auto" Margin="0,0,38,0" TextDecorations="Underline" VerticalAlignment="Top"/>
                         <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Background="Black" Foreground="White" Width="40" Height="25"/>
                         <TextBlock Text=" = " FontSize="25" Width="70" TextAlignment="Center" VerticalAlignment="Center" />
                         <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Text="{Binding DEX_MOD, Mode=TwoWay}" TextAlignment="Center" Background="White" Foreground="Black" Width="40" Height="25"/>
@@ -1144,10 +1146,10 @@
                         <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Background="Black" Foreground="White" Width="40" Height="25"/>
                     </StackPanel>
 
-                    <StackPanel Grid.Row="22" Grid.Column="0" Orientation="Horizontal" Margin="1">
+                    <StackPanel Grid.Row="22" Grid.Column="0" Orientation="Horizontal" Margin="1" Grid.ColumnSpan="2">
                         <CheckBox Width="auto" Height="auto" VerticalAlignment="Center" />
                         <TextBlock Text="Spellcraft" FontSize="16" Width="255" MinWidth="150" TextDecorations="Underline" VerticalAlignment="Top"/>
-                        <TextBlock Text="INT" FontSize="16" Width="auto" Margin="0,0,40,0" TextDecorations="Underline" VerticalAlignment="Top"/>
+                        <TextBlock Text="INT" FontSize="16" Width="auto" Margin="0,0,42,0" TextDecorations="Underline" VerticalAlignment="Top"/>
                         <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Background="Black" Foreground="White" Width="40" Height="25"/>
                         <TextBlock Text=" = " FontSize="25" Width="70" TextAlignment="Center" VerticalAlignment="Center" />
                         <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Text="{Binding INT_MOD, Mode=TwoWay}" TextAlignment="Center" Background="White" Foreground="Black" Width="40" Height="25"/>
@@ -1161,10 +1163,10 @@
 
 
 
-                    <StackPanel Grid.Row="23" Grid.Column="0" Orientation="Horizontal" Margin="1">
+                    <StackPanel Grid.Row="23" Grid.Column="0" Orientation="Horizontal" Margin="1" Grid.ColumnSpan="2">
                         <CheckBox Width="auto" Height="auto" VerticalAlignment="Center" />
                         <TextBlock Text="Stealth" FontSize="16" Width="255" MinWidth="150" TextDecorations="Underline" VerticalAlignment="Top"/>
-                        <TextBlock Text="DEX" FontSize="16" Width="auto" Margin="0,0,40,0" TextDecorations="Underline" VerticalAlignment="Top"/>
+                        <TextBlock Text="DEX" FontSize="16" Width="auto" Margin="0,0,39,0" TextDecorations="Underline" VerticalAlignment="Top"/>
                         <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Background="Black" Foreground="White" Width="40" Height="25"/>
                         <TextBlock Text=" = " FontSize="25" Width="70" TextAlignment="Center" VerticalAlignment="Center" />
                         <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Text="{Binding DEX_MOD, Mode=TwoWay}" TextAlignment="Center" Background="White" Foreground="Black" Width="40" Height="25"/>
@@ -1176,7 +1178,7 @@
                         <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Background="Black" Foreground="White" Width="40" Height="25"/>
                     </StackPanel>
 
-                    <StackPanel Grid.Row="24" Grid.Column="0" Orientation="Horizontal" Margin="1">
+                    <StackPanel Grid.Row="24" Grid.Column="0" Orientation="Horizontal" Margin="1" Grid.ColumnSpan="2">
                         <CheckBox Width="auto" Height="auto" VerticalAlignment="Center" />
                         <TextBlock Text="Survival" FontSize="16" Width="255" MinWidth="150" TextDecorations="Underline" VerticalAlignment="Top"/>
                         <TextBlock Text="WIS" FontSize="16" Width="auto" Margin="0,0,40,0" TextDecorations="Underline" VerticalAlignment="Top"/>
@@ -1191,10 +1193,10 @@
                         <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Background="Black" Foreground="White" Width="40" Height="25"/>
                     </StackPanel>
 
-                    <StackPanel Grid.Row="25" Grid.Column="0" Orientation="Horizontal" Margin="1">
+                    <StackPanel Grid.Row="25" Grid.Column="0" Orientation="Horizontal" Margin="1" Grid.ColumnSpan="2">
                         <CheckBox Width="auto" Height="auto" VerticalAlignment="Center" />
                         <TextBlock Text="Swim" FontSize="16" Width="255" MinWidth="150" TextDecorations="Underline" VerticalAlignment="Top"/>
-                        <TextBlock Text="STR" FontSize="16" Width="auto" Margin="0,0,40,0" TextDecorations="Underline" VerticalAlignment="Top"/>
+                        <TextBlock Text="STR" FontSize="16" Width="auto" Margin="0,0,42,0" TextDecorations="Underline" VerticalAlignment="Top"/>
                         <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Background="Black" Foreground="White" Width="40" Height="25"/>
                         <TextBlock Text=" = " FontSize="25" Width="70" TextAlignment="Center" VerticalAlignment="Center" />
                         <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Text="{Binding STR_MOD, Mode=TwoWay}" TextAlignment="Center" Background="White" Foreground="Black" Width="40" Height="25"/>
@@ -1205,10 +1207,10 @@
                         <TextBlock Text=" + " FontSize="25" Width="50" TextAlignment="Center" VerticalAlignment="Center" />
                         <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Background="Black" Foreground="White" Width="40" Height="25"/>
                     </StackPanel>
-                    <StackPanel Grid.Row="26" Grid.Column="0" Orientation="Horizontal" Margin="1">
+                    <StackPanel Grid.Row="26" Grid.Column="0" Orientation="Horizontal" Margin="1" Grid.ColumnSpan="2">
                         <CheckBox Width="auto" Height="auto" VerticalAlignment="Center" />
                         <TextBlock Text="Use magic Device" FontSize="16" Width="255" MinWidth="150" TextDecorations="Underline" VerticalAlignment="Top"/>
-                        <TextBlock Text="CHA" FontSize="16" Width="auto" Margin="0,0,40,0" TextDecorations="Underline" VerticalAlignment="Top"/>
+                        <TextBlock Text="CHA" FontSize="16" Width="auto" Margin="0,0,36,0" TextDecorations="Underline" VerticalAlignment="Top"/>
                         <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Background="Black" Foreground="White" Width="40" Height="25"/>
                         <TextBlock Text=" = " FontSize="25" Width="70" TextAlignment="Center" VerticalAlignment="Center" />
                         <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Text="{Binding CHA_MOD, Mode=TwoWay}" TextAlignment="Center" Background="White" Foreground="Black" Width="40" Height="25"/>
@@ -1224,7 +1226,7 @@
 
 
                     <!--============================================== START OF COLUMN 2 SKILLS ==============================================-->
-                    <StackPanel Grid.Row="1" Grid.Column="1" Orientation="Horizontal" Margin="1">
+                    <StackPanel Grid.Row="1" Grid.Column="2" Orientation="Horizontal" Margin="1">
                         <TextBlock Text="Name" FontSize="16" Width="250" MinWidth="150" Margin="20,0,0,0" TextDecorations="Underline" VerticalAlignment="Top"/>
                         <TextBlock Text="Ability" FontSize="16" Width="auto" TextDecorations="Underline" VerticalAlignment="Top" Margin="0,0,20,0"/>
                         <TextBlock Text="Skill Mod" FontSize="16" Width="auto" Margin="0,0,35,0" TextDecorations="Underline" VerticalAlignment="Top"/>
@@ -1234,7 +1236,7 @@
                         <TextBlock Text="ACP" FontSize="16" Width="auto" MinWidth="150" TextDecorations="Underline" VerticalAlignment="Top"/>
                     </StackPanel>
 
-                    <StackPanel Grid.Row="2" Grid.Column="1" Orientation="Horizontal" Margin="1">
+                    <StackPanel Grid.Row="2" Grid.Column="2" Orientation="Horizontal" Margin="1">
                         <CheckBox Width="auto" Height="auto" VerticalAlignment="Center" />
                         <TextBlock Text="Knowledge(Arcana)" FontSize="16" Width="255" MinWidth="150" TextDecorations="Underline" VerticalAlignment="Top"/>
                         <TextBlock Text="INT" FontSize="16" Width="auto" Margin="0,0,36,0" TextDecorations="Underline" VerticalAlignment="Top"/>
@@ -1249,7 +1251,7 @@
                         <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Background="Black" Foreground="White" Width="40" Height="25"/>
                     </StackPanel>
 
-                    <StackPanel Grid.Row="3" Grid.Column="1" Orientation="Horizontal" Margin="1">
+                    <StackPanel Grid.Row="3" Grid.Column="2" Orientation="Horizontal" Margin="1">
                         <CheckBox Width="auto" Height="auto" VerticalAlignment="Center" />
                         <TextBlock Text="Knowledge(Dungeoneering)" FontSize="16" Width="255" MinWidth="150" TextDecorations="Underline" VerticalAlignment="Top"/>
                         <TextBlock Text="INT" FontSize="16" Width="auto" Margin="0,0,36,0" TextDecorations="Underline" VerticalAlignment="Top"/>
@@ -1264,7 +1266,7 @@
                         <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Background="Black" Foreground="White" Width="40" Height="25"/>
                     </StackPanel>
 
-                    <StackPanel Grid.Row="4" Grid.Column="1" Orientation="Horizontal" Margin="1">
+                    <StackPanel Grid.Row="4" Grid.Column="2" Orientation="Horizontal" Margin="1">
                         <CheckBox Width="auto" Height="auto" VerticalAlignment="Center" />
                         <TextBlock Text="Knowledge(Engineering)" FontSize="16" Width="255" MinWidth="150" TextDecorations="Underline" VerticalAlignment="Top"/>
                         <TextBlock Text="INT" FontSize="16" Width="auto" Margin="0,0,36,0" TextDecorations="Underline" VerticalAlignment="Top"/>
@@ -1279,7 +1281,7 @@
                         <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Background="Black" Foreground="White" Width="40" Height="25"/>
                     </StackPanel>
 
-                    <StackPanel Grid.Row="5" Grid.Column="1" Orientation="Horizontal" Margin="1">
+                    <StackPanel Grid.Row="5" Grid.Column="2" Orientation="Horizontal" Margin="1">
                         <CheckBox Width="auto" Height="auto" VerticalAlignment="Center" />
                         <TextBlock Text="Knowledge(Geography)" FontSize="16" Width="255" MinWidth="150" TextDecorations="Underline" VerticalAlignment="Top"/>
                         <TextBlock Text="INT" FontSize="16" Width="auto" Margin="0,0,36,0" TextDecorations="Underline" VerticalAlignment="Top"/>
@@ -1294,7 +1296,7 @@
                         <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Background="Black" Foreground="White" Width="40" Height="25"/>
                     </StackPanel>
 
-                    <StackPanel Grid.Row="6" Grid.Column="1" Orientation="Horizontal" Margin="1">
+                    <StackPanel Grid.Row="6" Grid.Column="2" Orientation="Horizontal" Margin="1">
                         <CheckBox Width="auto" Height="auto" VerticalAlignment="Center" />
                         <TextBlock Text="Knowledge(History)" FontSize="16" Width="255" MinWidth="150" TextDecorations="Underline" VerticalAlignment="Top"/>
                         <TextBlock Text="INT" FontSize="16" Width="auto" Margin="0,0,36,0" TextDecorations="Underline" VerticalAlignment="Top"/>
@@ -1309,7 +1311,7 @@
                         <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Background="Black" Foreground="White" Width="40" Height="25"/>
                     </StackPanel>
 
-                    <StackPanel Grid.Row="7" Grid.Column="1" Orientation="Horizontal" Margin="1">
+                    <StackPanel Grid.Row="7" Grid.Column="2" Orientation="Horizontal" Margin="1">
                         <CheckBox Width="auto" Height="auto" VerticalAlignment="Center" />
                         <TextBlock Text="Knowledge(Local)" FontSize="16" Width="255" MinWidth="150" TextDecorations="Underline" VerticalAlignment="Top"/>
                         <TextBlock Text="INT" FontSize="16" Width="auto" Margin="0,0,36,0" TextDecorations="Underline" VerticalAlignment="Top"/>
@@ -1324,7 +1326,7 @@
                         <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Background="Black" Foreground="White" Width="40" Height="25"/>
                     </StackPanel>
 
-                    <StackPanel Grid.Row="8" Grid.Column="1" Orientation="Horizontal" Margin="1">
+                    <StackPanel Grid.Row="8" Grid.Column="2" Orientation="Horizontal" Margin="1">
                         <CheckBox Width="auto" Height="auto" VerticalAlignment="Center" />
                         <TextBlock Text="Knowledge(Nature)" FontSize="16" Width="255" MinWidth="150" TextDecorations="Underline" VerticalAlignment="Top"/>
                         <TextBlock Text="INT" FontSize="16" Width="auto" Margin="0,0,36,0" TextDecorations="Underline" VerticalAlignment="Top"/>
@@ -1339,7 +1341,7 @@
                         <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Background="Black" Foreground="White" Width="40" Height="25"/>
                     </StackPanel>
 
-                    <StackPanel Grid.Row="9" Grid.Column="1" Orientation="Horizontal" Margin="1">
+                    <StackPanel Grid.Row="9" Grid.Column="2" Orientation="Horizontal" Margin="1">
                         <CheckBox Width="auto" Height="auto" VerticalAlignment="Center" />
                         <TextBlock Text="Knowledge(Nobility)" FontSize="16" Width="255" MinWidth="150" TextDecorations="Underline" VerticalAlignment="Top"/>
                         <TextBlock Text="INT" FontSize="16" Width="auto" Margin="0,0,36,0" TextDecorations="Underline" VerticalAlignment="Top"/>
@@ -1354,7 +1356,7 @@
                         <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Background="Black" Foreground="White" Width="40" Height="25"/>
                     </StackPanel>
 
-                    <StackPanel Grid.Row="10" Grid.Column="1" Orientation="Horizontal" Margin="1">
+                    <StackPanel Grid.Row="10" Grid.Column="2" Orientation="Horizontal" Margin="1">
                         <CheckBox Width="auto" Height="auto" VerticalAlignment="Center" />
                         <TextBlock Text="Knowledge(Planes)" FontSize="16" Width="255" MinWidth="150" TextDecorations="Underline" VerticalAlignment="Top"/>
                         <TextBlock Text="INT" FontSize="16" Width="auto" Margin="0,0,36,0" TextDecorations="Underline" VerticalAlignment="Top"/>
@@ -1369,7 +1371,7 @@
                         <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Background="Black" Foreground="White" Width="40" Height="25"/>
                     </StackPanel>
 
-                    <StackPanel Grid.Row="11" Grid.Column="1" Orientation="Horizontal" Margin="1">
+                    <StackPanel Grid.Row="11" Grid.Column="2" Orientation="Horizontal" Margin="1">
                         <CheckBox Width="auto" Height="auto" VerticalAlignment="Center" />
                         <TextBlock Text="Knowldege(Religion)" FontSize="16" Width="255" MinWidth="150" TextDecorations="Underline" VerticalAlignment="Top"/>
                         <TextBlock Text="INT" FontSize="16" Width="auto" Margin="0,0,36,0" TextDecorations="Underline" VerticalAlignment="Top"/>
@@ -1385,7 +1387,7 @@
                     </StackPanel>
 
 
-                    <TextBlock Text="Skills" FontSize="20" FontWeight="Bold"/>
+                    <TextBlock Text="Skills" FontSize="20" FontWeight="Bold" Grid.ColumnSpan="2"/>
                 </Grid>
             </TabItem>
 

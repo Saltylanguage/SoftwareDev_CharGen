@@ -60,6 +60,28 @@ namespace PathfinderCharGen.ViewModels
         private int ac_deflectBonus = 0;
         private int ac_miscBonus = 0;
 
+        private int fort_Total = 0;
+        private int fort_Base = 0;
+        private int fort_StrBonus = 0;
+        private int fort_Magic = 0;
+        private int fort_Misc = 0;
+        private int fort_Temp = 0;
+
+        private int ref_Total = 0;
+        private int ref_Base = 0;
+        private int ref_StrBonus = 0;
+        private int ref_Magic = 0;
+        private int ref_Misc = 0;
+        private int ref_Temp = 0;
+
+        private int will_Total = 0;
+        private int will_Base = 0;
+        private int will_StrBonus = 0;
+        private int will_Magic = 0;
+        private int will_Misc = 0;
+        private int will_Temp = 0;
+
+
         private int acrobaticsAbilBonus = 0;
 
         private StrengthModCommand strModCmd;
@@ -290,10 +312,211 @@ namespace PathfinderCharGen.ViewModels
                 OnPropertyChanged("AC_MiscBonus");
             }
         }
-   
+
+        //SAVE VALUES
+        public int FORT_Total
+        {
+            get { return fort_Total; }
+
+            set
+            {
+                fort_Total = value;
+                OnPropertyChanged("FORT_Total");
+            }
+        }
+
+        public int FORT_Base
+        {
+            get { return fort_Base; }
+
+            set
+            {
+                fort_Base = value;
+                OnPropertyChanged("FORT_Base");
+            }
+        }
+
+        public int FORT_STR_Bonus
+        {
+            get { return fort_StrBonus; }
+
+            set
+            {
+                fort_StrBonus = value;
+                OnPropertyChanged("FORT_STR_Bonus");
+            }
+        }
+
+        public int FORT_Magic_Bonus
+        {
+            get { return fort_Magic; }
+
+            set
+            {
+                fort_Magic = value;
+                OnPropertyChanged("FORT_Magic_Bonus");
+            }
+        }
+
+        public int FORT_Temp_Bonus
+        {
+            get { return fort_Temp; }
+
+            set
+            {
+                fort_Temp = value;
+                OnPropertyChanged("FORT_Temp_Bonus");
+            }
+        }
+
+        public int FORT_Misc_Bonus
+        {
+            get { return fort_Misc; }
+
+            set
+            {
+                fort_Misc = value;
+                OnPropertyChanged("FORT_Misc_Bonus");
+            }
+        }
+
+        public int REF_Total
+        {
+            get { return ref_Total; }
+
+            set
+            {
+                ref_Total = value;
+                OnPropertyChanged("REF_Total");
+            }
+        }
+
+        public int REF_Base
+        {
+            get { return ref_Base; }
+
+            set
+            {
+                ref_Base = value;
+                OnPropertyChanged("REF_Base");
+            }
+        }
+
+        public int REF_STR_Bonus
+        {
+            get { return ref_StrBonus; }
+
+            set
+            {
+                ref_StrBonus = value;
+                OnPropertyChanged("REF_STR_Bonus");
+            }
+        }
+
+        public int REF_Magic_Bonus
+        {
+            get { return ref_Magic; }
+
+            set
+            {
+                ref_Magic = value;
+                OnPropertyChanged("REF_Magic_Bonus");
+            }
+        }
+
+        public int REF_Temp_Bonus
+        {
+            get { return ref_Temp; }
+
+            set
+            {
+                ref_Temp = value;
+                OnPropertyChanged("REF_Temp_Bonus");
+            }
+        }
+
+        public int REF_Misc_Bonus
+        {
+            get { return ref_Misc; }
+
+            set
+            {
+                ref_Misc = value;
+                OnPropertyChanged("REF_Misc_Bonus");
+            }
+        }
+
+
+        public int WILL_Total
+        {
+            get { return will_Total; }
+
+            set
+            {
+                will_Total = value;
+                OnPropertyChanged("WILL_Total");
+            }
+        }
+
+        public int WILL_Base
+        {
+            get { return will_Base; }
+
+            set
+            {
+                will_Base = value;
+                OnPropertyChanged("WILL_Base");
+            }
+        }
+
+        public int WILL_STR_Bonus
+        {
+            get { return will_StrBonus; }
+
+            set
+            {
+                will_StrBonus = value;
+                OnPropertyChanged("WILL_STR_Bonus");
+            }
+        }
+
+        public int WILL_Magic_Bonus
+        {
+            get { return will_Magic; }
+
+            set
+            {
+                will_Magic = value;
+                OnPropertyChanged("WILL_Magic_Bonus");
+            }
+        }
+
+        public int WILL_Temp_Bonus
+        {
+            get { return will_Temp; }
+
+            set
+            {
+                will_Temp = value;
+                OnPropertyChanged("WILL_Temp_Bonus");
+            }
+        }
+
+        public int WILL_Misc_Bonus
+        {
+            get { return will_Misc; }
+
+            set
+            {
+                will_Misc = value;
+                OnPropertyChanged("WILL_Misc_Bonus");
+            }
+        }
 
 
 
+
+        //SKILL PROPERTIES
         public int Acrobatics_AbilityBonus
         {
             get { return acrobaticsAbilBonus; }
@@ -304,6 +527,8 @@ namespace PathfinderCharGen.ViewModels
                 OnPropertyChanged("Acrobatics_AbilityBonus");
             }
         }
+
+
         #endregion
 
 
@@ -374,6 +599,23 @@ namespace PathfinderCharGen.ViewModels
         {
             AC_Total = ac_armorBonus + dex_mod + ac_dodgeBonus + ac_sizeBonus + ac_naturalBonus + ac_deflectBonus + ac_miscBonus + 10;
         }
+
+
+        internal void CalculateFortBonus()
+        {
+            FORT_Total = fort_Base + str_mod + fort_Magic + fort_Misc + fort_Temp;
+        }
+
+        internal void CalculateReflexBonus()
+        {
+            REF_Total = fort_Base + dex_mod + ref_Magic + ref_Misc + ref_Temp;
+        }
+
+        internal void CalculateWillBonus()
+        {
+            WILL_Total = will_Base + wis_mod + will_Magic + will_Misc + will_Temp;
+        }
+
 
         #endregion
     }
