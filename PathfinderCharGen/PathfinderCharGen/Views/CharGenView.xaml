@@ -166,12 +166,12 @@
                         <Border Margin="5" Padding="5" BorderThickness="1" Background="Black" CornerRadius="10" Grid.Column="0" Grid.Row="1">
                             <TextBlock Text="STR" FontSize="20" TextAlignment="Center" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                         </Border>
-                        <TextBox Name="STR_Score" Template="{StaticResource TextBoxBaseControlTemplate}" Margin="5"
-                         Grid.Row="1" Grid.Column="1"
+                        <TextBox Name="STR_Score" Template="{StaticResource TextBoxBaseControlTemplate}" Text="{Binding STR_Score, Mode=TwoWay}"
+                         Margin="5" Grid.Row="1" Grid.Column="1"
                          Background="Whitesmoke" Foreground="Black"                         
                          FontSize="28" TextAlignment="Center"/>
-                        <TextBox Name="STR_Mod" Template="{StaticResource TextBoxBaseControlTemplate}" Margin="5"
-                         Grid.Column="2" Grid.Row="1"
+                        <TextBlock Name="STR_Mod" Text="{Binding STR_MOD, Mode=TwoWay}"
+                         Margin="5" Grid.Column="2" Grid.Row="1"
                          Background="Whitesmoke" Foreground="Black"                         
                          FontSize="28" TextAlignment="Center"/>
                         <TextBox Name="STR_TempScore" Template="{StaticResource TextBoxBaseControlTemplate}" Margin="5"
@@ -188,12 +188,12 @@
                         <Border Margin="5" Padding="5" BorderThickness="1" Background="Black" CornerRadius="10" Grid.Column="0" Grid.Row="2">
                             <TextBlock Text="DEX" FontSize="20" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                         </Border>
-                        <TextBox Name="DEX_Score" Template="{StaticResource TextBoxBaseControlTemplate}" Margin="5"
-                         Grid.Column="1" Grid.Row="2"
+                        <TextBox Name="DEX_Score" Template="{StaticResource TextBoxBaseControlTemplate}" Text="{Binding DEX_Score, Mode=TwoWay}"
+                         Margin="5" Grid.Column="1" Grid.Row="2"
                          Background="Whitesmoke" Foreground="Black"                         
                          FontSize="28" TextAlignment="Center"/>
-                        <TextBox Name="DEX_Mod" Template="{StaticResource TextBoxBaseControlTemplate}" Margin="5"
-                         Grid.Column="2" Grid.Row="2"
+                        <TextBlock Name="DEX_Mod" Text="{Binding DEX_MOD, Mode=TwoWay}"
+                         Margin="5" Grid.Column="2" Grid.Row="2"
                          Background="Whitesmoke" Foreground="Black"                         
                          FontSize="28" TextAlignment="Center"/>
                         <TextBox Name="DEX_TempScore" Template="{StaticResource TextBoxBaseControlTemplate}" Margin="5"
@@ -442,8 +442,8 @@
                         <TextBox Name="RAB_TempBonus" Template="{StaticResource TextBoxBaseControlTemplate}" 
                      Margin="15,0" FontSize="16"  Background="WhiteSmoke"
                      Height="30" MinWidth="30" Width="auto" TextAlignment="Center" Grid.Row="4" Grid.Column="11"/>
+                        <Button Content="Calculate!" FontSize="20" HorizontalAlignment="Center" Grid.Column="0" Grid.Row="5" Grid.ColumnSpan="10" Background="Red" Height="50" Width="100" Margin="10" Command="{Binding CalculateCommand}"/>
                     </Grid>
-
 
 
                     <!--=================== DEFENSE STAT SUB-GRID =================-->

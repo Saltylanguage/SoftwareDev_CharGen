@@ -24,5 +24,10 @@ namespace PathfinderCharGen.Views
         {
             InitializeComponent();
         }
+
+        private void STR_Score_LostFocus(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
