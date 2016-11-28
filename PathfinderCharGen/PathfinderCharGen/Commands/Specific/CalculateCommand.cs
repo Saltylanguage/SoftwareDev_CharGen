@@ -28,6 +28,13 @@ namespace PathfinderCharGen.Commands.Generic
         {
             charGenViewModel.CalculateStrengthMod();
             charGenViewModel.CalculateDexterityMod();
+            charGenViewModel.CalculateConstitutionMod();
+
+            charGenViewModel.CalculateIntelligenceMod();
+            charGenViewModel.CalculateWisdomMod();
+            charGenViewModel.CalculateCharismaMod();
+
+            charGenViewModel.CalculateArmorBonus();
         }
     }
 }

@@ -26,7 +26,7 @@ namespace PathfinderCharGen.Commands.Specific
 
         public void Execute(object parameter)
         {
-            charGenViewModel.CalculateDexterityMod();
+            //charGenViewModel.CalculateDexterityMod();
         }
     }
 }

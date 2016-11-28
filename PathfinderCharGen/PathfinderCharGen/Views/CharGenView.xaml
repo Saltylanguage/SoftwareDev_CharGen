@@ -7,7 +7,7 @@
         xmlns:vm="clr-namespace:PathfinderCharGen.ViewModels"
         mc:Ignorable="d"
        Height="1010" Width="1800" >
-<UserControl.Resources>
+    <UserControl.Resources>
         <vm:CharGenViewModel x:Key="charGenVM"/>
         <!--=================== CUSTOM TEXTBOX =================-->
         <ControlTemplate x:Key="TextBoxBaseControlTemplate" TargetType="{x:Type TextBoxBase}">
@@ -196,10 +196,10 @@
                          Margin="5" Grid.Column="2" Grid.Row="2"
                          Background="Whitesmoke" Foreground="Black"                         
                          FontSize="28" TextAlignment="Center"/>
-                        <TextBox Name="DEX_TempScore" Template="{StaticResource TextBoxBaseControlTemplate}" Margin="5"
+                        <TextBox Name="DEX_TempScore" Template="{StaticResource TextBoxBaseControlTemplate}" Margin="0,5,5,5"
                          Grid.Column="3" Grid.Row="2"
                          Background="Whitesmoke" Foreground="Black"                         
-                         FontSize="28" TextAlignment="Center"/>
+                         FontSize="28" TextAlignment="Center" HorizontalAlignment="Right" Width="61"/>
                         <TextBox Name="DEX_TempMod" Template="{StaticResource TextBoxBaseControlTemplate}" Margin="5"
                          Grid.Column="4" Grid.Row="2"
                          Background="Whitesmoke" Foreground="Black"                         
@@ -211,12 +211,12 @@
                         <Border Margin="5" Padding="5" BorderThickness="1" Background="Black" CornerRadius="10" Grid.Column="0" Grid.Row="3">
                             <TextBlock Text="CON" FontSize="20" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                         </Border>
-                        <TextBox Name="CON_Score" Template="{StaticResource TextBoxBaseControlTemplate}" Margin="5"
-                         Grid.Column="1" Grid.Row="3"
+                        <TextBox Name="CON_Score" Template="{StaticResource TextBoxBaseControlTemplate}" Text="{Binding CON_Score, Mode=TwoWay}"
+                         Margin="5" Grid.Column="1" Grid.Row="3"
                          Background="Whitesmoke" Foreground="Black"                         
                          FontSize="28" TextAlignment="Center"/>
-                        <TextBox  Name="CON_Mod" Template="{StaticResource TextBoxBaseControlTemplate}" Margin="5"
-                         Grid.Column="2" Grid.Row="3"
+                        <TextBlock  Name="CON_Mod" Text="{Binding CON_MOD, Mode=TwoWay}"
+                         Margin="5" Grid.Column="2" Grid.Row="3"
                          Background="Whitesmoke" Foreground="Black"                         
                          FontSize="28" TextAlignment="Center"/>
                         <TextBox Name="CON_TempScore" Template="{StaticResource TextBoxBaseControlTemplate}" Margin="5"
@@ -234,12 +234,12 @@
                         <Border Margin="5" Padding="5" BorderThickness="1" Background="Black" CornerRadius="10" Grid.Column="0" Grid.Row="4">
                             <TextBlock Text="INT" FontSize="20" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                         </Border>
-                        <TextBox Name="INT_Score" Template="{StaticResource TextBoxBaseControlTemplate}" Margin="5"
-                         Grid.Column="1" Grid.Row="4"
+                        <TextBox Name="INT_Score" Template="{StaticResource TextBoxBaseControlTemplate}" Text="{Binding INT_Score, Mode=TwoWay}"
+                         Margin="5" Grid.Column="1" Grid.Row="4"
                          Background="Whitesmoke" Foreground="Black"                         
                          FontSize="28" TextAlignment="Center"/>
-                        <TextBox Name="INT_Mod" Template="{StaticResource TextBoxBaseControlTemplate}" Margin="5"
-                         Grid.Column="2" Grid.Row="4"
+                        <TextBlock Name="INT_Mod" Text="{Binding INT_MOD, Mode=TwoWay}"
+                         Margin="5" Grid.Column="2" Grid.Row="4"
                          Background="Whitesmoke" Foreground="Black"                         
                          FontSize="28" TextAlignment="Center"/>
                         <TextBox Name="INT_TempScore" Template="{StaticResource TextBoxBaseControlTemplate}" Margin="5"
@@ -257,12 +257,12 @@
                         <Border Margin="5" Padding="5" BorderThickness="1" Background="Black" CornerRadius="10" Grid.Column="0" Grid.Row="5">
                             <TextBlock Text="WIS" FontSize="20" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                         </Border>
-                        <TextBox Name="WIS_Score" Template="{StaticResource TextBoxBaseControlTemplate}" Margin="5"
-                         Grid.Column="1" Grid.Row="5"
+                        <TextBox Name="WIS_Score" Template="{StaticResource TextBoxBaseControlTemplate}" Text="{Binding WIS_Score, Mode=TwoWay}"
+                         Margin="5" Grid.Column="1" Grid.Row="5"
                          Background="Whitesmoke" Foreground="Black"                         
                          FontSize="28" TextAlignment="Center"/>
-                        <TextBox Name="WIS_Mod" Template="{StaticResource TextBoxBaseControlTemplate}" Margin="5"
-                         Grid.Column="2" Grid.Row="5"
+                        <TextBlock Name="WIS_Mod" Text="{Binding WIS_MOD, Mode=TwoWay}"
+                         Margin="5" Grid.Column="2" Grid.Row="5"
                          Background="Whitesmoke" Foreground="Black"                         
                          FontSize="28" TextAlignment="Center"/>
                         <TextBox Name="WIS_TempScore" Template="{StaticResource TextBoxBaseControlTemplate}" Margin="5"
@@ -280,11 +280,13 @@
                         <Border Margin="5" Padding="5" BorderThickness="1" Background="Black" CornerRadius="10" Grid.Column="0" Grid.Row="6">
                             <TextBlock Text="CHA" FontSize="20" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                         </Border>
-                        <TextBox Name="CHA_Score" Template="{StaticResource TextBoxBaseControlTemplate}" Margin="5"
+                        <TextBox Name="CHA_Score" Template="{StaticResource TextBoxBaseControlTemplate}" Text="{Binding CHA_Score, Mode=TwoWay}"
+                         Margin="5"
                          Grid.Column="1" Grid.Row="6"
                          Background="Whitesmoke" Foreground="Black"                         
                          FontSize="28" TextAlignment="Center"/>
-                        <TextBox Name="CHA_Mod" Template="{StaticResource TextBoxBaseControlTemplate}" Margin="5"
+                        <TextBlock Name="CHA_Mod" Text="{Binding CHA_MOD, Mode=TwoWay}"
+                         Margin="5"
                          Grid.Column="2" Grid.Row="6"
                          Background="Whitesmoke" Foreground="Black"                         
                          FontSize="28" TextAlignment="Center"/>
@@ -467,7 +469,8 @@
                         <StackPanel Orientation="Horizontal" Grid.Row="2" Height="70" VerticalAlignment="Top">
                             <TextBox Name="HP" Template="{StaticResource TextBoxBaseControlTemplate}" Margin="12,0" FontSize="20" FontWeight="Bold" Height="30" MinWidth="60" Width="auto" TextAlignment="Center" Background="WhiteSmoke"/>
                             <TextBox Name="MaxHP" Template="{StaticResource TextBoxBaseControlTemplate}" Margin="40,0" FontSize="20" FontWeight="Bold" Height="30" MinWidth="60" Width="auto" TextAlignment="Center" Background="WhiteSmoke"/>
-                            <TextBox Name="AC" Template="{StaticResource TextBoxBaseControlTemplate}" Margin="20,0" FontSize="20" FontWeight="Bold" Height="30" MinWidth="60" Width="auto" TextAlignment="Center" Background="WhiteSmoke" />
+                            <TextBox Name="AC" Template="{StaticResource TextBoxBaseControlTemplate}" Text="{Binding AC_Total, Mode=TwoWay}"
+                                     Margin="20,0" FontSize="20" FontWeight="Bold" Height="30" MinWidth="60" Width="auto" TextAlignment="Center" Background="WhiteSmoke" />
                         </StackPanel>
                         <TextBlock Text="DEFENSE:" FontSize="40" FontWeight="Bold" TextAlignment="Center" Grid.Row="0"/>
 
@@ -577,40 +580,47 @@
 
                         <!--=================== AC VALUE ROW =================-->
                         <TextBlock  Text="= 10 + " FontSize="28" Foreground="Black" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="0" Grid.Row="1"/>
-                        <TextBox Name="AC_ArmorBonus" Template="{StaticResource TextBoxBaseControlTemplate}" Background="Whitesmoke" Foreground="Black" 
-                     FontSize="20" Height="30" MinWidth="40" Width="auto" TextAlignment="Center"
-                     Margin="7" Grid.Row ="1" Grid.Column="1"/>
+                        <TextBox Name="AC_ArmorBonus" Template="{StaticResource TextBoxBaseControlTemplate}" Text="{Binding AC_ArmorBonus, Mode=TwoWay}"
+                                 Background="Whitesmoke" Foreground="Black" 
+                                 FontSize="20" Height="30" MinWidth="40" Width="auto" TextAlignment="Center"
+                                 Margin="7" Grid.Row ="1" Grid.Column="1"/>
 
                         <TextBlock  Text=" + " FontSize="20" Foreground="Black" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="2" Grid.Row="1"/>
                         <TextBlock  Text=" + " FontSize="20" Foreground="Black" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="4" Grid.Row="1"/>
-                        <TextBox Name="AC_DexBonus" Template="{StaticResource TextBoxBaseControlTemplate}" Background="Whitesmoke" Foreground="Black" 
-                     FontSize="20" Height="30" MinWidth="60" Width="auto" TextAlignment="Center"
-                     Grid.Row ="1" Grid.Column="3"/>
+                        <TextBox Name="AC_DexBonus" Template="{StaticResource TextBoxBaseControlTemplate}" Text="{Binding AC_DexBonus, Mode=TwoWay}"
+                                 Background="Whitesmoke" Foreground="Black" 
+                                 FontSize="20" Height="30" MinWidth="60" Width="auto" TextAlignment="Center"
+                                 Grid.Row ="1" Grid.Column="3"/>
 
                         <TextBlock  Text=" + " FontSize="20" Foreground="Black" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="10" Grid.Row="1"/>
-                        <TextBox Name="AC_DodgeBonus" Template="{StaticResource TextBoxBaseControlTemplate}" Background="Whitesmoke" Foreground="Black" 
-                     FontSize="20" Height="30" MinWidth="60" Width="auto" TextAlignment="Center"
-                     Grid.Row ="1" Grid.Column="5"/>
+                        <TextBox Name="AC_DodgeBonus" Template="{StaticResource TextBoxBaseControlTemplate}" Text="{Binding AC_DodgeBonus, Mode=TwoWay}"
+                                 Background="Whitesmoke" Foreground="Black" 
+                                 FontSize="20" Height="30" MinWidth="60" Width="auto" TextAlignment="Center"
+                                 Grid.Row ="1" Grid.Column="5"/>
 
                         <TextBlock  Text=" + " FontSize="20" Foreground="Black" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="6" Grid.Row="1"/>
-                        <TextBox Name="AC_SizeBonus" Template="{StaticResource TextBoxBaseControlTemplate}" Background="Whitesmoke" Foreground="Black" 
-                     FontSize="20" Height="30" MinWidth="60" Width="auto" TextAlignment="Center"
-                     Grid.Row ="1" Grid.Column="7"/>
+                        <TextBox Name="AC_SizeBonus" Template="{StaticResource TextBoxBaseControlTemplate}" Text="{Binding AC_SizeBonus, Mode=TwoWay}"
+                                 Background="Whitesmoke" Foreground="Black" 
+                                 FontSize="20" Height="30" MinWidth="60" Width="auto" TextAlignment="Center"
+                                 Grid.Row ="1" Grid.Column="7"/>
 
                         <TextBlock  Text=" + " FontSize="20" Foreground="Black" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="8" Grid.Row="1"/>
-                        <TextBox Name="AC_NaturalArmorBonus" Template="{StaticResource TextBoxBaseControlTemplate}" Background="Whitesmoke" Foreground="Black" 
-                     FontSize="20" Height="30" MinWidth="60" Width="auto" TextAlignment="Center"
-                     Grid.Row ="1" Grid.Column="9"/>
+                        <TextBox Name="AC_NaturalArmorBonus" Template="{StaticResource TextBoxBaseControlTemplate}" Text="{Binding AC_NaturalBonus, Mode=TwoWay}"
+                                 Background="Whitesmoke" Foreground="Black" 
+                                 FontSize="20" Height="30" MinWidth="60" Width="auto" TextAlignment="Center"
+                                 Grid.Row ="1" Grid.Column="9"/>
 
                         <TextBlock Text=" + " FontSize="20" Foreground="Black" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="10" Grid.Row="1"/>
-                        <TextBox Name="AC_DeflectBonus" Template="{StaticResource TextBoxBaseControlTemplate}" Background="Whitesmoke" Foreground="Black" 
-                     FontSize="20" Height="30" MinWidth="60" Width="auto" TextAlignment="Center"
-                     Grid.Row ="1" Grid.Column="11"/>
+                        <TextBox Name="AC_DeflectBonus" Template="{StaticResource TextBoxBaseControlTemplate}" Text="{Binding AC_DeflectBonus, Mode=TwoWay}"
+                                 Background="Whitesmoke" Foreground="Black" 
+                                 FontSize="20" Height="30" MinWidth="60" Width="auto" TextAlignment="Center"
+                                 Grid.Row ="1" Grid.Column="11"/>
 
                         <TextBlock  Text=" + " FontSize="20" Foreground="Black" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="12" Grid.Row="1"/>
-                        <TextBox Name="AC_MiscBonus" Template="{StaticResource TextBoxBaseControlTemplate}" Background="Whitesmoke" Foreground="Black" 
-                     FontSize="20" Height="30" MinWidth="60" Width="auto" TextAlignment="Center"
-                     Grid.Row ="1" Grid.Column="13"/>
+                        <TextBox Name="AC_MiscBonus" Template="{StaticResource TextBoxBaseControlTemplate}" Text="{Binding AC_MiscBonus, Mode=TwoWay}"
+                                 Background="Whitesmoke" Foreground="Black" 
+                                 FontSize="20" Height="30" MinWidth="60" Width="auto" TextAlignment="Center"
+                                 Grid.Row ="1" Grid.Column="13"/>
                         <!--=================== END OF AC VALUE ROW =================-->
 
 

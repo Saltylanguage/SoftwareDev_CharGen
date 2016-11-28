@@ -26,8 +26,8 @@ namespace PathfinderCharGen.Commands.Specific
 
         public void Execute(object parameter)
         {
-            charGenViewModel.CalculateStrengthMod();
-            charGenViewModel.CalculateDexterityMod();     
+            //charGenViewModel.CalculateStrengthMod();
+           //charGenViewModel.CalculateDexterityMod();     
         }
     }
 }
