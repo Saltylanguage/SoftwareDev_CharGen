@@ -603,7 +603,7 @@ namespace PathfinderCharGen.ViewModels
 
         internal void CalculateFortBonus()
         {
-            FORT_Total = fort_Base + str_mod + fort_Magic + fort_Misc + fort_Temp;
+            FORT_Total = fort_Base + con_mod + fort_Magic + fort_Misc + fort_Temp;
         }
 
         internal void CalculateReflexBonus()

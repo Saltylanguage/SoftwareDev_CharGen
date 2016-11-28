@@ -686,7 +686,7 @@
                      Height="30" MinWidth="30" Width="auto" Grid.Row="2" Grid.Column="3" TextAlignment="Center"/>
                             <TextBlock Text="+" FontSize="20" Foreground="Black" 
                        Width="auto" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="2" Grid.Column="4"/>
-                            <TextBox Name="FORT_AbilityBonus" Template="{StaticResource TextBoxBaseControlTemplate}" Text="{Binding STR_MOD, Mode=TwoWay}"
+                            <TextBox Name="FORT_AbilityBonus" Template="{StaticResource TextBoxBaseControlTemplate}" Text="{Binding CON_MOD, Mode=TwoWay}"
                      Margin="15,0" FontSize="16"  Background="WhiteSmoke"
                      Height="30" MinWidth="30" Width="auto" TextAlignment="Center" Grid.Row="2" Grid.Column="5"/>
                             <TextBlock Text="+" FontSize="20" Foreground="Black" 
