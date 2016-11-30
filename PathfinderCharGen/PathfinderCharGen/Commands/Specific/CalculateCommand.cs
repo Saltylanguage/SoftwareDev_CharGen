@@ -38,9 +38,7 @@ namespace PathfinderCharGen.Commands.Generic
 
             charGenViewModel.CalculateFortBonus();
             charGenViewModel.CalculateReflexBonus();
-            charGenViewModel.CalculateWillBonus();
-
-           
+            charGenViewModel.CalculateWillBonus();          
         }
     }
 }

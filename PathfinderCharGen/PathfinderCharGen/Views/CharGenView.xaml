@@ -97,8 +97,8 @@
                             <TextBox Name="PlayerName" Template="{StaticResource TextBoxBaseControlTemplate}" Margin="2" Background="Black" Foreground="White" Width="180" Height="30" VerticalAlignment="Top" FontSize="16"/>
                             <TextBox Name="CharacterName"  Template="{StaticResource TextBoxBaseControlTemplate}" Margin="2" Background="Black" Foreground="White" Width="180" Height="30" VerticalAlignment="Top" FontSize="16"/>
                             <TextBox Name="CharacterRace"  Template="{StaticResource TextBoxBaseControlTemplate}" Margin="2" Background="Black" Foreground="White" Width="180" Height="30" VerticalAlignment="Top" FontSize="16"/>
-                            <TextBox Name="CharacterClass"  Template="{StaticResource TextBoxBaseControlTemplate}" Margin="2" Background="Black" Foreground="White" Width="180" Height="30" VerticalAlignment="Top" FontSize="16"/>
-                            <TextBox Name="CharacterLevel"  Template="{StaticResource TextBoxBaseControlTemplate}" Background="Black" Foreground="White" Height="30" Width="30" VerticalAlignment="Top" FontSize="16" Margin="5,0,155,0" TextAlignment="Center"/>
+                            <TextBox Name="CharacterClass"  Template="{StaticResource TextBoxBaseControlTemplate}" Margin="2" Background="Black" Foreground="White" Width="180" Height="30" VerticalAlignment="Top" FontSize="16" Text="{Binding CLASS_Name, Mode=TwoWay}"/>
+                            <TextBox Name="CharacterLevel"  Template="{StaticResource TextBoxBaseControlTemplate}" Background="Black" Foreground="White" Height="30" Width="30" VerticalAlignment="Top" FontSize="16" Margin="5,0,155,0" TextAlignment="Center" />
                         </StackPanel>
                         <!--=================== END OF PLAYER INFO FIELDS =================-->
                     </Grid>
@@ -681,7 +681,7 @@
                      MinWidth="30" Width="auto" Grid.Row="2" Grid.Column="1" TextAlignment="Center"/>
                             <TextBlock Text="=" FontSize="20" Foreground="Black"
                      Width="auto" VerticalAlignment="Center" Grid.Row="2" Grid.Column="2"/>
-                            <TextBox Name="FORT_Base" Template="{StaticResource TextBoxBaseControlTemplate}"
+                            <TextBox Name="FORT_Base" Template="{StaticResource TextBoxBaseControlTemplate}" Text="{Binding FORT_Base, Mode=TwoWay}"
                      Margin="15,0" FontSize="16"  Background="WhiteSmoke"
                      Height="30" MinWidth="30" Width="auto" Grid.Row="2" Grid.Column="3" TextAlignment="Center"/>
                             <TextBlock Text="+" FontSize="20" Foreground="Black" 
@@ -691,17 +691,17 @@
                      Height="30" MinWidth="30" Width="auto" TextAlignment="Center" Grid.Row="2" Grid.Column="5"/>
                             <TextBlock Text="+" FontSize="20" Foreground="Black" 
                        Width="auto" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="2" Grid.Column="6"/>
-                            <TextBox Name="FORT_MagicBonus" Template="{StaticResource TextBoxBaseControlTemplate}" 
+                            <TextBox Name="FORT_MagicBonus" Template="{StaticResource TextBoxBaseControlTemplate}" Text="{Binding FORT_Magic_Bonus, Mode=TwoWay}" 
                      Margin="15,0" FontSize="16" Height="30"  Background="WhiteSmoke"
                      MinWidth="30" Width="auto" TextAlignment="Center" Grid.Row="2" Grid.Column="7"/>
                             <TextBlock Text="+" FontSize="20" Foreground="Black" 
                        Width="auto" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="2" Grid.Column="8"/>
-                            <TextBox Name="FORT_MiscBonus" Template="{StaticResource TextBoxBaseControlTemplate}" 
+                            <TextBox Name="FORT_MiscBonus" Template="{StaticResource TextBoxBaseControlTemplate}" Text="{Binding FORT_Misc_Bonus, Mode=TwoWay}"
                      Margin="15,0" FontSize="16"  Background="WhiteSmoke"
                      Height="30" MinWidth="30" Width="auto" TextAlignment="Center" Grid.Row="2" Grid.Column="9"/>
                             <TextBlock Text="+" FontSize="20" Foreground="Black" 
                        Width="auto" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="2" Grid.Column="10"/>
-                            <TextBox Name="FORT_TempBonus" Template="{StaticResource TextBoxBaseControlTemplate}" 
+                            <TextBox Name="FORT_TempBonus" Template="{StaticResource TextBoxBaseControlTemplate}" Text="{Binding FORT_Temp_Bonus, Mode=TwoWay}"
                      Margin="15,0" FontSize="16"  Background="WhiteSmoke"
                      Height="30" MinWidth="30" Width="auto" TextAlignment="Center" Grid.Row="2" Grid.Column="11"/>
 
@@ -1395,7 +1395,7 @@
 
             </TabItem>
 
-            <TabItem Header="Character Info.">
+            <TabItem DataContext="{StaticResource charGenVM}" Header="{Binding CLASS_Name}" >
 
             </TabItem>
 

@@ -81,6 +81,7 @@ namespace PathfinderCharGen.ViewModels
         private int will_Misc = 0;
         private int will_Temp = 0;
 
+        private string className ="Ranger";
 
         private int acrobaticsAbilBonus = 0;
 
@@ -88,8 +89,20 @@ namespace PathfinderCharGen.ViewModels
         private DexterityModCommand dexModCmd;
         private CalculateCommand calcCmd;
         #endregion
-      
+
         #region Public Properties
+
+        public string CLASS_Name
+        {
+            get { return className; }
+
+            set
+            {
+                className = value;
+                OnPropertyChanged("CLASS_Name");
+            }
+           
+        }
 
         public int STR_Score
         {
@@ -608,14 +621,13 @@ namespace PathfinderCharGen.ViewModels
 
         internal void CalculateReflexBonus()
         {
-            REF_Total = fort_Base + dex_mod + ref_Magic + ref_Misc + ref_Temp;
+            REF_Total = ref_Base + DEX_MOD + ref_Magic + ref_Misc + ref_Temp;
         }
 
         internal void CalculateWillBonus()
         {
             WILL_Total = will_Base + wis_mod + will_Magic + will_Misc + will_Temp;
         }
-
 
         #endregion
     }
