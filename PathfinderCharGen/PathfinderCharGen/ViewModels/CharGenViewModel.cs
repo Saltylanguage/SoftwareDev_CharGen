@@ -6,50 +6,41 @@ using System.Threading.Tasks;
 using System.Windows.Input;
 using PathfinderCharGen.Commands.Specific;
 using PathfinderCharGen.Commands.Generic;
+using ReactiveLeveling;
+
 
 namespace PathfinderCharGen.ViewModels
 {
+
+
+
     class CharGenViewModel : ViewModelBase
     {
 
         public CharGenViewModel()
         {
-            strModCmd = new StrengthModCommand(this);
-            dexModCmd = new DexterityModCommand(this);
             calcCmd = new CalculateCommand(this);
         }
 
-
         #region PrivateFields
+
         private int str_score = 10;
         private int str_mod = 0;
-        //private int str_tempScore = 0;
-        //private int str_tempMod = 0;
 
         private int dex_score = 10;
-        private int dex_mod = 0;
-        //private int dex_tempScore = 0;
-        //private int dex_tempMod = 0;
+        private int dex_mod = 0;    
 
         private int con_score = 10;
         private int con_mod = 0;
-        //private int con_tempScore = 0;
-        //private int con_tempMod = 0;
 
         private int int_score = 10;
         private int int_mod = 0;
-        //private int int_tempScore = 0;
-        //private int int_tempMod = 0;
 
         private int wis_score = 10;
         private int wis_mod = 0;
-        //private int wis_tempScore = 0;
-        //private int wis_tempMod = 0;
 
         private int cha_score = 10;
         private int cha_mod = 0;
-        //private int cha_tempScore = 0;
-        //private int cha_tempMod = 0;
 
         private int ac_total = 10;
         private int ac_armorBonus = 0;
@@ -62,47 +53,49 @@ namespace PathfinderCharGen.ViewModels
 
         private int fort_Total = 0;
         private int fort_Base = 0;
-        private int fort_StrBonus = 0;
         private int fort_Magic = 0;
         private int fort_Misc = 0;
         private int fort_Temp = 0;
 
         private int ref_Total = 0;
         private int ref_Base = 0;
-        private int ref_StrBonus = 0;
         private int ref_Magic = 0;
         private int ref_Misc = 0;
         private int ref_Temp = 0;
 
         private int will_Total = 0;
         private int will_Base = 0;
-        private int will_StrBonus = 0;
         private int will_Magic = 0;
         private int will_Misc = 0;
         private int will_Temp = 0;
 
-        private string className ="Ranger";
+        private int baseAttackBonus = 0;
 
-        private int acrobaticsAbilBonus = 0;
+        private int meleeTotalBonus = 0;
+        private int meleeSizeBonus = 0;
+        private int meleeMiscBonus = 0;
+        private int meleeTempBonus = 0;
 
-        private StrengthModCommand strModCmd;
-        private DexterityModCommand dexModCmd;
+        private int combateManeuverTotalBonus = 0;
+        private int combatManeuverSizeBonus = 0;
+        private int combatManeuverMiscBonus = 0;
+        private int combatManeuverTempBonus = 0;
+
+        private int combatManeuverDefense = 10;
+        private int combatManeuverDefenseMisc = 0;
+
+        private int rangeTotalBonus = 0;
+        private int rangeSizeBonus = 0;
+        private int rangeMiscBonus = 0;
+        private int rangeTempBonus = 0;
+
+        private string className = "Ranger";
+   
         private CalculateCommand calcCmd;
         #endregion
 
         #region Public Properties
 
-        public string CLASS_Name
-        {
-            get { return className; }
-
-            set
-            {
-                className = value;
-                OnPropertyChanged("CLASS_Name");
-            }
-           
-        }
 
         public int STR_Score
         {
@@ -111,6 +104,17 @@ namespace PathfinderCharGen.ViewModels
             {
                 str_score = value;
                 OnPropertyChanged("STR_Score");
+            }
+        }
+
+        public int STR_MOD
+        {
+            get { return str_mod; }
+            set
+            {
+                str_mod = value;
+                OnPropertyChanged("STR_MOD");
+
             }
         }
 
@@ -165,18 +169,6 @@ namespace PathfinderCharGen.ViewModels
             {
                 cha_score = value;
                 OnPropertyChanged("CHA_Score");
-            }
-        }
-
-
-        public int STR_MOD
-        {
-            get { return str_mod; }
-            set
-            {
-                str_mod = value;
-                OnPropertyChanged("STR_MOD");
-
             }
         }
 
@@ -349,17 +341,6 @@ namespace PathfinderCharGen.ViewModels
             }
         }
 
-        public int FORT_STR_Bonus
-        {
-            get { return fort_StrBonus; }
-
-            set
-            {
-                fort_StrBonus = value;
-                OnPropertyChanged("FORT_STR_Bonus");
-            }
-        }
-
         public int FORT_Magic_Bonus
         {
             get { return fort_Magic; }
@@ -407,22 +388,10 @@ namespace PathfinderCharGen.ViewModels
         public int REF_Base
         {
             get { return ref_Base; }
-
             set
             {
                 ref_Base = value;
                 OnPropertyChanged("REF_Base");
-            }
-        }
-
-        public int REF_STR_Bonus
-        {
-            get { return ref_StrBonus; }
-
-            set
-            {
-                ref_StrBonus = value;
-                OnPropertyChanged("REF_STR_Bonus");
             }
         }
 
@@ -482,17 +451,6 @@ namespace PathfinderCharGen.ViewModels
             }
         }
 
-        public int WILL_STR_Bonus
-        {
-            get { return will_StrBonus; }
-
-            set
-            {
-                will_StrBonus = value;
-                OnPropertyChanged("WILL_STR_Bonus");
-            }
-        }
-
         public int WILL_Magic_Bonus
         {
             get { return will_Magic; }
@@ -526,41 +484,186 @@ namespace PathfinderCharGen.ViewModels
             }
         }
 
-
-
-
-        //SKILL PROPERTIES
-        public int Acrobatics_AbilityBonus
+        public int BAB
         {
-            get { return acrobaticsAbilBonus; }
+            get { return baseAttackBonus; }
 
             set
             {
-                acrobaticsAbilBonus = value;
-                OnPropertyChanged("Acrobatics_AbilityBonus");
+                baseAttackBonus = value;
+                OnPropertyChanged("BAB_Total");
             }
         }
+
+        public int CMD
+        {
+            get { return combatManeuverDefense; }
+
+            set
+            {
+                combatManeuverDefense = value;
+                OnPropertyChanged("CMD");
+            }
+        }
+        public int CMD_Misc
+        {
+            get { return combatManeuverDefenseMisc; }
+            set
+            {
+                combatManeuverDefenseMisc = value;
+                OnPropertyChanged("CMD_Misc");
+            }
+        }
+
+        public int MAB_Total
+        {
+            get { return meleeTotalBonus; }
+
+            set
+            {
+                meleeTotalBonus = value;
+                OnPropertyChanged("MAB_Total");
+            }
+            
+        }
+
+        public int MAB_Size
+        {
+            get { return meleeSizeBonus; }
+
+            set
+            {
+                meleeSizeBonus = value;
+                OnPropertyChanged("MAB_Size");
+            }
+        }
+
+        public int MAB_Misc
+        {
+            get { return meleeMiscBonus; }
+
+            set
+            {
+                meleeMiscBonus = value;
+                OnPropertyChanged("MAB_Misc");
+            }
+        }
+
+        public int MAB_Temp
+        {
+            get { return meleeTempBonus; }
+
+            set
+            {
+                meleeTempBonus = value;
+                OnPropertyChanged("MAB_Temp");
+            }
+        }
+        
+        public int CMB_Total
+        {
+            get { return combateManeuverTotalBonus; }
+            set
+            {
+                combateManeuverTotalBonus = value;
+                OnPropertyChanged("CMB_Total");
+            }
+        }
+
+        public int CMB_Size
+        {
+            get { return combatManeuverSizeBonus; }
+
+            set
+            {
+                combatManeuverSizeBonus = value;
+                OnPropertyChanged("CMB_Size");
+            }
+        }
+
+        public int CMB_Misc
+        {
+            get { return combatManeuverMiscBonus; }
+
+            set
+            {
+                combatManeuverMiscBonus = value;
+                OnPropertyChanged("CMB_Misc");
+            }
+        }
+
+        public int CMB_Temp
+        {
+            get { return combatManeuverTempBonus; }
+
+            set
+            {
+                combatManeuverTempBonus = value;
+                OnPropertyChanged("CMB_Temp");
+            }
+        }
+
+        public int RAB_Total
+        {
+            get { return rangeTotalBonus; }
+            set
+            {
+                rangeTotalBonus = value;
+                OnPropertyChanged("RAB_Total");
+            }
+        }
+
+        public int RAB_Size
+        {
+            get { return rangeSizeBonus; }
+
+            set
+            {
+                rangeSizeBonus = value;
+                OnPropertyChanged("RAB_Size");
+            }
+        }
+
+        public int RAB_Misc
+        {
+            get { return rangeMiscBonus; }
+            set
+            {
+                rangeMiscBonus = value;
+                OnPropertyChanged("RAB_Misc");
+            }
+        }
+
+        public int RAB_Temp
+        {
+            get { return rangeTempBonus; }
+            set
+            {
+                rangeTempBonus = value;
+                OnPropertyChanged("RAB_Temp");
+            }
+        }
+
+        //SKILL PROPERTIES
+
+        public string CLASS_Name
+        {
+            get { return className; }
+
+            set
+            {
+                className = value;
+                OnPropertyChanged("CLASS_Name");
+            }
+
+        }
+
 
 
         #endregion
 
 
         #region Commands
-        //public ICommand StrengthModCommand
-        //{
-        //    get
-        //    {
-        //        return strModCmd;
-        //    }
-        //}
-
-        //public ICommand DexterityModCommand
-        //{
-        //    get
-        //    {
-        //        return dexModCmd;
-        //    }
-        //}
 
         public ICommand CalculateCommand
         {
@@ -576,7 +679,7 @@ namespace PathfinderCharGen.ViewModels
         {
             Mod = (int)Math.Floor((Score - 10.0f) / 2.0f);
         }
-        
+
         internal void CalculateStrengthMod()
         {
             STR_MOD = (int)Math.Floor((str_score - 10.0f) / 2.0f);
@@ -607,12 +710,10 @@ namespace PathfinderCharGen.ViewModels
             CHA_MOD = (int)Math.Floor((cha_score - 10.0f) / 2.0f);
         }
 
-
         internal void CalculateArmorBonus()
         {
             AC_Total = ac_armorBonus + dex_mod + ac_dodgeBonus + ac_sizeBonus + ac_naturalBonus + ac_deflectBonus + ac_miscBonus + 10;
         }
-
 
         internal void CalculateFortBonus()
         {
@@ -629,6 +730,30 @@ namespace PathfinderCharGen.ViewModels
             WILL_Total = will_Base + wis_mod + will_Magic + will_Misc + will_Temp;
         }
 
+        internal void CalculateBAB()
+        {
+            BAB = baseAttackBonus;
+        }
+
+        internal void CalculateMAB()
+        {
+            MAB_Total = baseAttackBonus + str_mod + meleeSizeBonus + meleeMiscBonus + meleeTempBonus;
+        }
+
+        internal void CalculateCMD()
+        {
+            CMD = 10 + baseAttackBonus + str_mod + dex_mod + combatManeuverSizeBonus + combatManeuverDefenseMisc;
+        }
+
+        internal void CalculateCMB()
+        {
+            CMB_Total = baseAttackBonus + str_mod + combatManeuverSizeBonus + combatManeuverMiscBonus + combatManeuverTempBonus;
+        }
+
+        internal void CalculateRAB()
+        {
+            RAB_Total = baseAttackBonus + dex_mod + rangeSizeBonus + rangeMiscBonus + rangeTempBonus;
+        }            
         #endregion
     }
 }

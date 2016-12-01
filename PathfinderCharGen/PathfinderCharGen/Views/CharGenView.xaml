@@ -56,7 +56,7 @@
             <TabItem Header="Combat">
 
                 <!--=================== MAIN GRID =================-->
-                <Grid Name="grid_Main" Background="White" DataContext="{Binding Source={StaticResource charGenVM}}" Margin="0,-3,0,3">
+                <Grid Name="grid_Main" Background="Transparent" DataContext="{Binding Source={StaticResource charGenVM}}" Margin="0,-6,0,6">
                     <!--=================== DEFINE MAIN GRID COLUMNS AND ROWS =================-->
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition x:Name="Column1" Width="33.437"/>
@@ -352,32 +352,31 @@
                         <Border Margin="5" Padding="5" BorderThickness="1" Background="Black" CornerRadius="10" Grid.Row="2">
                             <TextBlock Text="Melee Attack Bonus (MAB)" FontSize="12" Foreground="White" Width="auto" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                         </Border>
-                        <TextBox Name="MAB_Total" Template="{StaticResource TextBoxBaseControlTemplate}" 
+                        <TextBox Name="MAB_Total" Template="{StaticResource TextBoxBaseControlTemplate}" Text="{Binding MAB_Total, Mode=TwoWay}"
                      Margin="15,0" FontSize="16" Height="30"  Background="WhiteSmoke"
                      MinWidth="30" Width="auto" Grid.Row="2" Grid.Column="1" TextAlignment="Center"/>
                         <TextBlock Text="=" FontSize="20" Foreground="Black" 
                      Width="auto" VerticalAlignment="Center" Grid.Row="2" Grid.Column="2"/>
-                        <TextBox Name="MAB_Base" Template="{StaticResource TextBoxBaseControlTemplate}"
+                        <TextBox Name="MAB_Base" Template="{StaticResource TextBoxBaseControlTemplate}" Text="{Binding BAB, Mode=TwoWay}"
                      Margin="15,0" FontSize="16"  Background="WhiteSmoke"
                      Height="30" MinWidth="30" Width="auto" Grid.Row="2" Grid.Column="3" TextAlignment="Center"/>
                         <TextBlock Text="+" FontSize="20" Foreground="Black" 
                        Width="auto" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="2" Grid.Column="4"/>
                         <TextBox Name="MAB_AbilityBonus" Template="{StaticResource TextBoxBaseControlTemplate}" Text="{Binding STR_MOD, Mode=TwoWay}"
-                     Margin="15,0" FontSize="16"  Background="WhiteSmoke"
-                     Height="30" MinWidth="30" Width="auto" TextAlignment="Center" Grid.Row="2" Grid.Column="5"/>
+                     Margin="15,4" FontSize="16"  Background="WhiteSmoke" MinWidth="30" Width="auto" TextAlignment="Center" Grid.Row="2" Grid.Column="5"/>
                         <TextBlock Text="+" FontSize="20" Foreground="Black" 
                        Width="auto" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="2" Grid.Column="6"/>
-                        <TextBox Name="MAB_SizeBonus" Template="{StaticResource TextBoxBaseControlTemplate}" 
+                        <TextBox Name="MAB_SizeBonus" Template="{StaticResource TextBoxBaseControlTemplate}" Text="{Binding MAB_Size, Mode=TwoWay}"
                      Margin="15,0" FontSize="16" Height="30"  Background="WhiteSmoke"
                      MinWidth="30" Width="auto" TextAlignment="Center" Grid.Row="2" Grid.Column="7"/>
                         <TextBlock Text="+" FontSize="20" Foreground="Black" 
                        Width="auto" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="2" Grid.Column="8"/>
-                        <TextBox Name="MAB_MiscBonus" Template="{StaticResource TextBoxBaseControlTemplate}" 
+                        <TextBox Name="MAB_MiscBonus" Template="{StaticResource TextBoxBaseControlTemplate}" Text="{Binding MAB_Misc, Mode=TwoWay}"
                      Margin="15,0" FontSize="16"  Background="WhiteSmoke"
                      Height="30" MinWidth="30" Width="auto" TextAlignment="Center" Grid.Row="2" Grid.Column="9"/>
                         <TextBlock Text="+" FontSize="20" Foreground="Black" 
                        Width="auto" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="2" Grid.Column="10"/>
-                        <TextBox Name="MAB_TempBonus" Template="{StaticResource TextBoxBaseControlTemplate}" 
+                        <TextBox Name="MAB_TempBonus" Template="{StaticResource TextBoxBaseControlTemplate}" Text="{Binding MAB_Temp, Mode=TwoWay}"
                      Margin="15,0" FontSize="16"  Background="WhiteSmoke"
                      Height="30" MinWidth="30" Width="auto" TextAlignment="Center" Grid.Row="2" Grid.Column="11"/>
 
@@ -385,12 +384,12 @@
                         <Border Margin="5" Padding="5" BorderThickness="1" Background="Black" CornerRadius="10" Grid.Row="3">
                             <TextBlock Text="Combat Maneuver Bonus (CMB)" FontSize="12" Foreground="White" Width="auto" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                         </Border>
-                        <TextBox Name="CMB_Total" Template="{StaticResource TextBoxBaseControlTemplate}"
+                        <TextBox Name="CMB_Total" Template="{StaticResource TextBoxBaseControlTemplate}" Text="{Binding CMB_Total, Mode=TwoWay}"
                      Margin="15,0" FontSize="16" Height="30"  Background="WhiteSmoke"
                      MinWidth="30" Width="auto" Grid.Row="3" Grid.Column="1" TextAlignment="Center"/>
                         <TextBlock Text="=" FontSize="20" Foreground="Black" 
                      Width="auto" VerticalAlignment="Center" Grid.Row="3" Grid.Column="2"/>
-                        <TextBox Name="CMB_Base" Template="{StaticResource TextBoxBaseControlTemplate}"
+                        <TextBox Name="CMB_Base" Template="{StaticResource TextBoxBaseControlTemplate}" Text="{Binding BAB, Mode=TwoWay}"
                      Margin="15,0" FontSize="16"  Background="WhiteSmoke"
                      Height="30" MinWidth="30" Width="auto" Grid.Row="3" Grid.Column="3" TextAlignment="Center"/>
                         <TextBlock Text="+" FontSize="20" Foreground="Black" 
@@ -400,29 +399,29 @@
                      Height="30" MinWidth="30" Width="auto" TextAlignment="Center" Grid.Row="3" Grid.Column="5"/>
                         <TextBlock Text="+" FontSize="20" Foreground="Black" 
                        Width="auto" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="3" Grid.Column="6"/>
-                        <TextBox Name="CMB_SizeBonus" Template="{StaticResource TextBoxBaseControlTemplate}" 
+                        <TextBox Name="CMB_SizeBonus" Template="{StaticResource TextBoxBaseControlTemplate}" Text="{Binding CMB_Size, Mode=TwoWay}"
                      Margin="15,0" FontSize="16" Height="30"  Background="WhiteSmoke"
                      MinWidth="30" Width="auto" TextAlignment="Center" Grid.Row="3" Grid.Column="7"/>
                         <TextBlock Text="+" FontSize="20" Foreground="Black" 
                        Width="auto" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="3" Grid.Column="8"/>
-                        <TextBox Name="CMB_MiscBonus" Template="{StaticResource TextBoxBaseControlTemplate}" 
+                        <TextBox Name="CMB_MiscBonus" Template="{StaticResource TextBoxBaseControlTemplate}" Text="{Binding CMB_Misc, Mode=TwoWay}"
                      Margin="15,0" FontSize="16"  Background="WhiteSmoke"
                      Height="30" MinWidth="30" Width="auto" TextAlignment="Center" Grid.Row="3" Grid.Column="9"/>
                         <TextBlock Text="+" FontSize="20" Foreground="Black" 
                        Width="auto" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="3" Grid.Column="10"/>
-                        <TextBox Name="CMB_TempBonus" Template="{StaticResource TextBoxBaseControlTemplate}" 
+                        <TextBox Name="CMB_TempBonus" Template="{StaticResource TextBoxBaseControlTemplate}" Text="{Binding CMB_Temp, Mode=TwoWay}"
                      Margin="15,0" FontSize="16"  Background="WhiteSmoke"
                      Height="30" MinWidth="30" Width="auto" TextAlignment="Center" Grid.Row="3" Grid.Column="11"/>
 
                         <Border Margin="5" Padding="5" BorderThickness="1" Background="Black" CornerRadius="10" Grid.Row="4">
                             <TextBlock Text="Ranged Attack Bonus (RAB)" FontSize="12" Foreground="White" Width="auto" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                         </Border>
-                        <TextBox Name="RAB_Total" Template="{StaticResource TextBoxBaseControlTemplate}"
+                        <TextBox Name="RAB_Total" Template="{StaticResource TextBoxBaseControlTemplate}" Text="{Binding RAB_Total, Mode=TwoWay}"
                      Margin="15,0" FontSize="16" Height="30"  Background="WhiteSmoke"
                      MinWidth="30" Width="auto" Grid.Row="4" Grid.Column="1" TextAlignment="Center"/>
                         <TextBlock Text="=" FontSize="20" Foreground="Black" 
                      Width="auto" VerticalAlignment="Center" Grid.Row="4" Grid.Column="2"/>
-                        <TextBox Name="RAB_Base" Template="{StaticResource TextBoxBaseControlTemplate}"
+                        <TextBox Name="RAB_Base" Template="{StaticResource TextBoxBaseControlTemplate}" Text="{Binding BAB, Mode=TwoWay}"
                      Margin="15,0" FontSize="16"  Background="WhiteSmoke" 
                      Height="30" MinWidth="30" Width="auto" Grid.Row="4" Grid.Column="3" TextAlignment="Center"/>
                         <TextBlock Text="+" FontSize="20" Foreground="Black" 
@@ -432,17 +431,17 @@
                      Height="30" MinWidth="30" Width="auto" TextAlignment="Center" Grid.Row="4" Grid.Column="5"/>
                         <TextBlock Text="+" FontSize="20" Foreground="Black" 
                        Width="auto" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="4" Grid.Column="6"/>
-                        <TextBox Name="RAB_SizeBonus" Template="{StaticResource TextBoxBaseControlTemplate}" 
+                        <TextBox Name="RAB_SizeBonus" Template="{StaticResource TextBoxBaseControlTemplate}" Text="{Binding RAB_Size, Mode=TwoWay}"
                      Margin="15,0" FontSize="16" Height="30"  Background="WhiteSmoke"
                      MinWidth="30" Width="auto" TextAlignment="Center" Grid.Row="4" Grid.Column="7"/>
                         <TextBlock Text="+" FontSize="20" Foreground="Black" 
                        Width="auto" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="4" Grid.Column="8"/>
-                        <TextBox Name="RAB_MiscBonus" Template="{StaticResource TextBoxBaseControlTemplate}" 
+                        <TextBox Name="RAB_MiscBonus" Template="{StaticResource TextBoxBaseControlTemplate}" Text="{Binding RAB_Misc, Mode=TwoWay}"
                      Margin="15,0" FontSize="16"  Background="WhiteSmoke"
                      Height="30" MinWidth="30" Width="auto" TextAlignment="Center" Grid.Row="4" Grid.Column="9"/>
                         <TextBlock Text="+" FontSize="20" Foreground="Black" 
                        Width="auto" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="4" Grid.Column="10"/>
-                        <TextBox Name="RAB_TempBonus" Template="{StaticResource TextBoxBaseControlTemplate}" 
+                        <TextBox Name="RAB_TempBonus" Template="{StaticResource TextBoxBaseControlTemplate}" Text="{Binding MAB_Temp, Mode=TwoWay}"
                      Margin="15,0" FontSize="16"  Background="WhiteSmoke"
                      Height="30" MinWidth="30" Width="auto" TextAlignment="Center" Grid.Row="4" Grid.Column="11"/>
                         <Button Content="Calculate!" FontSize="20" HorizontalAlignment="Center" Grid.Column="0" Grid.Row="5" Grid.ColumnSpan="10" Background="Red" Height="50" Width="100" Margin="10" Command="{Binding CalculateCommand}"/>
@@ -503,7 +502,9 @@
                             <Border Margin="5" Padding="5" BorderThickness="1" Background="Black" CornerRadius="10" Grid.Row="3" Width="60">
                                 <TextBlock Text="CMD" FontSize="20" Background="Black" Foreground="White" VerticalAlignment="Center" TextAlignment="Center" />
                             </Border>
-                            <TextBox Name="CMD" Template="{StaticResource TextBoxBaseControlTemplate}" Margin="10" FontSize="20" Height="30" MinWidth="40" Width="auto" TextAlignment="Center" Background="WhiteSmoke"/>
+                            <TextBox Name="CMD" Template="{StaticResource TextBoxBaseControlTemplate}" Margin="10" Text="{Binding CMD, Mode=TwoWay}"
+                                     FontSize="20" Height="30" MinWidth="40" Width="auto" 
+                                     TextAlignment="Center" Background="WhiteSmoke"/>
                             <Border Margin="5" Padding="5" BorderThickness="1" Background="Black" CornerRadius="10" Grid.Row="3" Width="100">
                                 <TextBlock Text="FF-CMD" FontSize="20" Background="Black" Foreground="White" VerticalAlignment="Center" TextAlignment="Center"/>
                             </Border>
@@ -714,7 +715,7 @@
                      MinWidth="30" Width="auto" Grid.Row="3" Grid.Column="1" TextAlignment="Center"/>
                             <TextBlock Text="=" FontSize="20" Foreground="Black" 
                      Width="auto" VerticalAlignment="Center" Grid.Row="3" Grid.Column="2"/>
-                            <TextBox Name="REF_BaseBonus" Template="{StaticResource TextBoxBaseControlTemplate}" 
+                            <TextBox Name="REF_BaseBonus" Template="{StaticResource TextBoxBaseControlTemplate}" Text="{Binding REF_Base, Mode=TwoWay}"
                      Margin="15,0" FontSize="16"  Background="WhiteSmoke"
                      Height="30" MinWidth="30" Width="auto" Grid.Row="3" Grid.Column="3" TextAlignment="Center"/>
                             <TextBlock Text="+" FontSize="20" Foreground="Black" 
@@ -724,17 +725,17 @@
                      Height="30" MinWidth="30" Width="auto" TextAlignment="Center" Grid.Row="3" Grid.Column="5"/>
                             <TextBlock Text="+" FontSize="20" Foreground="Black" 
                        Width="auto" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="3" Grid.Column="6"/>
-                            <TextBox Name="REF_MagicBonus" Template="{StaticResource TextBoxBaseControlTemplate}" 
+                            <TextBox Name="REF_MagicBonus" Template="{StaticResource TextBoxBaseControlTemplate}" Text="{Binding REF_Magic_Bonus, Mode=TwoWay}"
                      Margin="15,0" FontSize="16" Height="30"  Background="WhiteSmoke"
                      MinWidth="30" Width="auto" TextAlignment="Center" Grid.Row="3" Grid.Column="7"/>
                             <TextBlock Text="+" FontSize="20" Foreground="Black" 
                        Width="auto" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="3" Grid.Column="8"/>
-                            <TextBox Name="REF_MiscBonus" Template="{StaticResource TextBoxBaseControlTemplate}" 
+                            <TextBox Name="REF_MiscBonus" Template="{StaticResource TextBoxBaseControlTemplate}" Text="{Binding REF_Misc_Bonus, Mode=TwoWay}"
                      Margin="15,0" FontSize="16"  Background="WhiteSmoke"
                      Height="30" MinWidth="30" Width="auto" TextAlignment="Center" Grid.Row="3" Grid.Column="9"/>
                             <TextBlock Text="+" FontSize="20" Foreground="Black" 
                        Width="auto" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="3" Grid.Column="10"/>
-                            <TextBox Name="REF_TempBonus" Template="{StaticResource TextBoxBaseControlTemplate}" 
+                            <TextBox Name="REF_TempBonus" Template="{StaticResource TextBoxBaseControlTemplate}" Text="{Binding REF_Temp_Bonus}"
                      Margin="15,0" FontSize="16"  Background="WhiteSmoke"
                      Height="30" MinWidth="30" Width="auto" TextAlignment="Center" Grid.Row="3" Grid.Column="11"/>
 
@@ -746,7 +747,7 @@
                      MinWidth="30" Width="auto" Grid.Row="4" Grid.Column="1" TextAlignment="Center"/>
                             <TextBlock Text="=" FontSize="20" Foreground="Black" 
                      Width="auto" VerticalAlignment="Center" Grid.Row="4" Grid.Column="2"/>
-                            <TextBox Name="WILL_BaseBonus" Template="{StaticResource TextBoxBaseControlTemplate}"
+                            <TextBox Name="WILL_BaseBonus" Template="{StaticResource TextBoxBaseControlTemplate}" Text="{Binding WILL_Base, Mode=TwoWay}"
                      Margin="15,0" FontSize="16"  Background="WhiteSmoke"
                      Height="30" MinWidth="30" Width="auto" Grid.Row="4" Grid.Column="3" TextAlignment="Center"/>
                             <TextBlock Text="+" FontSize="20" Foreground="Black" 
@@ -756,17 +757,17 @@
                      Height="30" MinWidth="30" Width="auto" TextAlignment="Center" Grid.Row="4" Grid.Column="5"/>
                             <TextBlock Text="+" FontSize="20" Foreground="Black" 
                        Width="auto" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="4" Grid.Column="6"/>
-                            <TextBox Name="WILL_MagicBonus" Template="{StaticResource TextBoxBaseControlTemplate}" 
+                            <TextBox Name="WILL_MagicBonus" Template="{StaticResource TextBoxBaseControlTemplate}" Text="{Binding WILL_Magic_Bonus, Mode=TwoWay}"
                      Margin="15,0" FontSize="16" Height="30"  Background="WhiteSmoke"
                      MinWidth="30" Width="auto" TextAlignment="Center" Grid.Row="4" Grid.Column="7"/>
                             <TextBlock Text="+" FontSize="20" Foreground="Black" 
                        Width="auto" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="4" Grid.Column="8"/>
-                            <TextBox Name="WILL_MiscBonus" Template="{StaticResource TextBoxBaseControlTemplate}" 
+                            <TextBox Name="WILL_MiscBonus" Template="{StaticResource TextBoxBaseControlTemplate}" Text="{Binding WILL_Misc_Bonus, Mode=TwoWay}"
                      Margin="15,0" FontSize="16"  Background="WhiteSmoke"
                      Height="30" MinWidth="30" Width="auto" TextAlignment="Center" Grid.Row="4" Grid.Column="9"/>
                             <TextBlock Text="+" FontSize="20" Foreground="White" 
                        Width="auto" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="4" Grid.Column="10"/>
-                            <TextBox Name="WILL_Temp" Template="{StaticResource TextBoxBaseControlTemplate}" 
+                            <TextBox Name="WILL_Temp" Template="{StaticResource TextBoxBaseControlTemplate}" Text="{Binding WILL_Temp_Bonus, Mode=TwoWay}"
                      Margin="15,0" FontSize="16" Background="WhiteSmoke"
                      Height="30" MinWidth="30" Width="auto" TextAlignment="Center" Grid.Row="4" Grid.Column="11"/>
                         </Grid>

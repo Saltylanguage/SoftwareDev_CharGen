@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using PathfinderCharGen.ViewModels;
 
 namespace PathfinderCharGen.Views
 {
@@ -25,9 +26,6 @@ namespace PathfinderCharGen.Views
             InitializeComponent();
         }
 
-        private void STR_Score_LostFocus(object sender, RoutedEventArgs e)
-        {
 
-        }
     }
 }
