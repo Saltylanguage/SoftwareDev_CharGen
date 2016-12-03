@@ -22,7 +22,7 @@ namespace ReactiveLeveling
         public uint levelingStatPoints = 0; //for use after player has confirmed they are finished character creation
 
 
-        public ReactiveProperty<uint> Strength = new ReactiveProperty<uint>(10);
+        public ReactiveProperty<uint> Strength = new ReactiveProperty<uint>(19);
         public ReactiveProperty<uint> Dexerity = new ReactiveProperty<uint>(10);
         public ReactiveProperty<uint> Constitution = new ReactiveProperty<uint>(10);
         public ReactiveProperty<uint> Intellect = new ReactiveProperty<uint>(10);
@@ -42,6 +42,16 @@ namespace ReactiveLeveling
             }
         }
 
+        public void SetStatsFromExternalInput(uint ExternStrength, uint ExternDexetrity, uint ExternConstitution, uint ExternIntellect, uint ExternWisdom, uint ExternCharisma) // this is a test function used for execute update
+        {
+            Strength.Value = ExternStrength;
+            Dexerity.Value = ExternDexetrity;
+            Constitution.Value = ExternConstitution;
+            Intellect.Value = ExternIntellect;
+            Wisdom.Value = ExternWisdom;
+            Charisma.Value = ExternCharisma;
+        }
+
         void StatModifier(uint newLevel) // subscribes to call OnStatUpdate, and this method is called when level changes
         {
             Debug.WriteLine("******StatModifier was called******"); // remove later
@@ -56,17 +66,17 @@ namespace ReactiveLeveling
         public void OnStatUpdate(Tuple<uint, uint, uint, uint, uint, uint, uint> tuple) // gets called when a stat changes, this is part of the statObservable subscription
         {
             Debug.WriteLine("******OnStatUpdate was called******"); // remove later
-            //Strength.Value = tuple.Item2 + 1;         // Doing this will cause an infinite loop since it triggers itself
-            str = tuple.Item2 + tuple.Item1;
-            dex = tuple.Item3 + tuple.Item1;
-            con = tuple.Item4 + tuple.Item1;
-            itl = tuple.Item5 + tuple.Item1;
-            wis = tuple.Item6 + tuple.Item1;
-            cha = tuple.Item7 + tuple.Item1;
+            //Strength.Value = tuple.Item2;         // Doing this will cause an infinite loop since it triggers itself
+            str = tuple.Item2;
+            dex = tuple.Item3;
+            con = tuple.Item4;
+            itl = tuple.Item5;
+            wis = tuple.Item6;
+            cha = tuple.Item7;
             AbilityRollModUpdate();
         }
 
-        void AbilityRollModUpdate() // the Ability Modifier equation for all of the stats for the seperate set of variables
+        public void AbilityRollModUpdate() // the Ability Modifier equation for all of the stats for the seperate set of variables
         {
             StrMod = AbilityRollEquation((int)str);
             DexMod = AbilityRollEquation((int)dex);
