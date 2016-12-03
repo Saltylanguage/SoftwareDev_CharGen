@@ -26,7 +26,7 @@ namespace PathfinderCharGen.Commands.Specific
 
         public void Execute(object parameter)
         {
-            //charGenViewModel.character.statMgr.SetStatsFromExternalInput(charGenViewModel.STR_Score, charGenViewModel.DEX_Score, charGenViewModel.CON_Score, charGenViewModel.INT_Score, charGenViewModel.WIS_Score, charGenViewModel.CHA_Score);
+            
             charGenViewModel.CalculateStrengthMod();
             charGenViewModel.CalculateDexterityMod();
             charGenViewModel.CalculateConstitutionMod();
@@ -40,12 +40,13 @@ namespace PathfinderCharGen.Commands.Specific
             charGenViewModel.CalculateFortBonus();
             charGenViewModel.CalculateReflexBonus();
             charGenViewModel.CalculateWillBonus();
-          
+
             charGenViewModel.CalculateMAB();
             charGenViewModel.CalculateCMB();
             charGenViewModel.CalculateCMD();
             charGenViewModel.CalculateRAB();
 
+            charGenViewModel.CalculateINIT();
         
         }
     }

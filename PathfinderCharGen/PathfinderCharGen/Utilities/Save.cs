@@ -37,8 +37,7 @@ namespace PathfinderCharGen.Utilities
             //Add health block to json
             json.Add("HP", model.HP.Text);
             json.Add("Max_HP", model.MaxHP.Text);
-            json.Add("AC", model.AC.Text);
-            
+                       
             //Add stat block to json
             //STR
             json.Add("STR", model.STR_Score.Text);
@@ -70,8 +69,42 @@ namespace PathfinderCharGen.Utilities
             json.Add("CHA_Mod", model.CHA_Mod.Text);
             json.Add("CHA_Temp", model.CHA_TempScore.Text);
             json.Add("CHA_Temp_Mod", model.CHA_TempMod.Text);
-
            
+            //AC
+            json.Add("AC", model.AC.Text);
+            json.Add("AC_Armor", model.AC_ArmorBonus.Text);           
+            json.Add("AC_Dodge", model.AC_DodgeBonus.Text);
+            json.Add("AC_Size", model.AC_SizeBonus.Text);
+            json.Add("AC_Natural", model.AC_NaturalArmorBonus.Text);
+            json.Add("AC_Deflect", model.AC_DeflectBonus.Text);
+            json.Add("AC_Misc", model.AC_MiscBonus.Text);
+            
+            //Add Saves to json
+            //Fort Save
+            json.Add("FORT_Total", model.FORT_Total.Text);
+            json.Add("FORT_Base", model.FORT_Base.Text);
+            json.Add("FORT_Magic", model.FORT_MagicBonus.Text);
+            json.Add("FORT_Misc", model.FORT_MiscBonus.Text);
+            json.Add("FORT_Temp", model.FORT_TempBonus.Text);
+            //Ref Save
+            json.Add("REF_Total", model.REF_Total.Text);
+            json.Add("REF_Base",  model.REF_BaseBonus.Text);
+            json.Add("REF_Magic", model.REF_MagicBonus.Text);
+            json.Add("REF_Misc",  model.REF_MiscBonus.Text);
+            json.Add("REF_Temp",  model.REF_TempBonus.Text);
+            //Will Save
+            json.Add("WILL_Total", model.WILL_Total.Text);
+            json.Add("WILL_Base",  model.WILL_BaseBonus.Text);
+            json.Add("WILL_Magic", model.WILL_MagicBonus.Text);
+            json.Add("WILL_Misc",  model.WILL_MiscBonus.Text);
+            json.Add("WILL_Temp",  model.WILL_Temp.Text);
+            //MAB
+
+            //CMB
+
+            //RAB
+
+            // Init
 
             //Add more
 

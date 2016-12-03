@@ -19,7 +19,7 @@ namespace PathfinderCharGen.ViewModels
         public CharGenViewModel()
         {
             calcCmd = new CalculateCommand(this);
-            strCmd = new StrengthModCommand(this);
+
         }
 
         #region PrivateFields
@@ -28,7 +28,7 @@ namespace PathfinderCharGen.ViewModels
         private int str_mod = 0;
 
         private int dex_score = 10;
-        private int dex_mod = 0;    
+        private int dex_mod = 0;
 
         private int con_score = 10;
         private int con_mod = 0;
@@ -89,10 +89,16 @@ namespace PathfinderCharGen.ViewModels
         private int rangeMiscBonus = 0;
         private int rangeTempBonus = 0;
 
+        private int initTotal = 0;
+        private int initMisc = 0;
+
         private string className = "Ranger";
-   
+
+
+
+
         private CalculateCommand calcCmd;
-        private StrengthModCommand strCmd;
+
         #endregion
 
         #region Public Properties
@@ -142,7 +148,7 @@ namespace PathfinderCharGen.ViewModels
         public int INT_Score
         {
             get { return int_score; }
-            
+
             set
             {
                 int_score = value;
@@ -524,7 +530,7 @@ namespace PathfinderCharGen.ViewModels
                 meleeTotalBonus = value;
                 OnPropertyChanged("MAB_Total");
             }
-            
+
         }
 
         public int MAB_Size
@@ -559,7 +565,7 @@ namespace PathfinderCharGen.ViewModels
                 OnPropertyChanged("MAB_Temp");
             }
         }
-        
+
         public int CMB_Total
         {
             get { return combateManeuverTotalBonus; }
@@ -644,6 +650,28 @@ namespace PathfinderCharGen.ViewModels
             }
         }
 
+        public int INIT_Total
+        {
+            get { return initTotal; }
+            set
+            {
+                initTotal = value;
+                OnPropertyChanged("INIT_Total");
+            }
+        }
+
+        public int INIT_Misc
+        {
+            get { return initMisc; }
+            set
+            {
+                initMisc = value;
+                OnPropertyChanged("INIT_Misc");
+            }
+
+
+        }
+
         //SKILL PROPERTIES
 
         public string CLASS_Name
@@ -657,8 +685,6 @@ namespace PathfinderCharGen.ViewModels
             }
 
         }
-
-
 
         #endregion
 
@@ -753,7 +779,16 @@ namespace PathfinderCharGen.ViewModels
         internal void CalculateRAB()
         {
             RAB_Total = baseAttackBonus + dex_mod + rangeSizeBonus + rangeMiscBonus + rangeTempBonus;
-        }            
+        }
+
+        internal void CalculateINIT()
+        {
+            INIT_Total = dex_mod + initMisc;
+        }
+
+
+
+
         #endregion
     }
 }

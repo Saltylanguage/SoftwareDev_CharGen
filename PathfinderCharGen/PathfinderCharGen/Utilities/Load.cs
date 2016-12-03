@@ -46,6 +46,37 @@ namespace PathfinderCharGen.Utilities
             model.WIS_Score.Text = json.GetValue("WIS").ToString();
             model.CHA_Score.Text = json.GetValue("CHA").ToString();
 
+            //Load AC Stats
+            model.AC.Text = json.GetValue("AC").ToString();
+            model.AC_ArmorBonus.Text = json.GetValue("AC_Armor").ToString();
+            //model.AC_DexBonus.Text = json.GetValue("AC_Dex").ToString();
+            model.AC_DodgeBonus.Text = json.GetValue("AC_Dodge").ToString();
+            model.AC_SizeBonus.Text = json.GetValue("AC_Size").ToString();
+            model.AC_NaturalArmorBonus.Text = json.GetValue("AC_Natural").ToString();
+            model.AC_DeflectBonus.Text = json.GetValue("AC_Deflect").ToString();
+            model.AC_MiscBonus.Text = json.GetValue("AC_Misc").ToString();
+
+            //Load Fort Stats
+            model.FORT_Total.Text = json.GetValue("FORT_Total").ToString();
+            model.FORT_Base.Text = json.GetValue("FORT_Base").ToString();
+            model.FORT_MagicBonus.Text = json.GetValue("FORT_Magic").ToString();
+            model.FORT_MiscBonus.Text = json.GetValue("FORT_Misc").ToString();
+            model.FORT_TempBonus.Text = json.GetValue("FORT_Temp").ToString();
+
+            //Load Ref Stats
+            model.REF_Total.Text = json.GetValue("REF_Total").ToString();
+            model.REF_BaseBonus.Text = json.GetValue("REF_Base").ToString();
+            model.REF_MagicBonus.Text = json.GetValue("REF_Magic").ToString();
+            model.REF_MiscBonus.Text = json.GetValue("REF_Misc").ToString();
+            model.REF_TempBonus.Text = json.GetValue("REF_Temp").ToString();
+
+            //Load Will Stats
+            model.WILL_Total.Text = json.GetValue("WILL_Total").ToString();
+            model.WILL_BaseBonus.Text = json.GetValue("WILL_Base").ToString();
+            model.WILL_MagicBonus.Text = json.GetValue("WILL_Magic").ToString();
+            model.WILL_MiscBonus.Text = json.GetValue("WILL_Misc").ToString();
+            model.WILL_Temp.Text = json.GetValue("WILL_Temp").ToString();
+
             return true;
         }
     }
