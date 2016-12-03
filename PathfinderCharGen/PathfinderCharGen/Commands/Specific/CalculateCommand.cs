@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using System.Windows.Input;
 using PathfinderCharGen.ViewModels;
 
-namespace PathfinderCharGen.Commands.Generic
+namespace PathfinderCharGen.Commands.Specific
 {
     class CalculateCommand : ICommand
     {
@@ -26,7 +26,7 @@ namespace PathfinderCharGen.Commands.Generic
 
         public void Execute(object parameter)
         {
-            charGenViewModel.character.statMgr.SetStatsFromExternalInput(charGenViewModel.STR_Score, charGenViewModel.DEX_Score, charGenViewModel.CON_Score, charGenViewModel.INT_Score, charGenViewModel.WIS_Score, charGenViewModel.CHA_Score);
+            //charGenViewModel.character.statMgr.SetStatsFromExternalInput(charGenViewModel.STR_Score, charGenViewModel.DEX_Score, charGenViewModel.CON_Score, charGenViewModel.INT_Score, charGenViewModel.WIS_Score, charGenViewModel.CHA_Score);
             //charGenViewModel.CalculateDexterityMod();
             //charGenViewModel.CalculateConstitutionMod();
 

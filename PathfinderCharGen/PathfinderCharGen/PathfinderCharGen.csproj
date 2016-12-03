@@ -110,6 +110,8 @@
     <Compile Include="Pathfinder\Races\RaceHalfling.cs" />
     <Compile Include="Pathfinder\RaceManager.cs" />
     <Compile Include="Pathfinder\StatManager.cs" />
+    <Compile Include="Utilities\Load.cs" />
+    <Compile Include="Utilities\Save.cs" />
     <Compile Include="ViewModels\CharGenViewModel.cs" />
     <Compile Include="ViewModels\ViewModelBase.cs" />
     <Compile Include="Views\CharGenView.xaml.cs">

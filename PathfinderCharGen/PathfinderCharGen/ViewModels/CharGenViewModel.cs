@@ -5,7 +5,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using PathfinderCharGen.Commands.Specific;
-using PathfinderCharGen.Commands.Generic;
 using ReactiveLeveling;
 
 
@@ -20,6 +19,7 @@ namespace PathfinderCharGen.ViewModels
         public CharGenViewModel()
         {
             calcCmd = new CalculateCommand(this);
+            strCmd = new StrengthModCommand(this);
         }
 
         #region PrivateFields
@@ -43,7 +43,7 @@ namespace PathfinderCharGen.ViewModels
         private int cha_mod = 0;
 
         private int ac_total = 10;
-        private int ac_armorBonus = 0;
+        private int ac_armorBonus;
         private int ac_dexBonus = 0;
         private int ac_dodgeBonus = 0;
         private int ac_sizeBonus = 0;
@@ -92,6 +92,7 @@ namespace PathfinderCharGen.ViewModels
         private string className = "Ranger";
    
         private CalculateCommand calcCmd;
+        private StrengthModCommand strCmd;
         #endregion
 
         #region Public Properties
