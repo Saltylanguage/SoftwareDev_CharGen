@@ -71,6 +71,8 @@ namespace PathfinderCharGen.Utilities
             json.Add("CHA_Temp", model.CHA_TempScore.Text);
             json.Add("CHA_Temp_Mod", model.CHA_TempMod.Text);
 
+           
+
             //Add more
 
             System.IO.File.WriteAllText(path, json.ToString());

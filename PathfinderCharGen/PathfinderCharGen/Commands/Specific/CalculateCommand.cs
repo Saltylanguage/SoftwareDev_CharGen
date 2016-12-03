@@ -27,12 +27,13 @@ namespace PathfinderCharGen.Commands.Specific
         public void Execute(object parameter)
         {
             //charGenViewModel.character.statMgr.SetStatsFromExternalInput(charGenViewModel.STR_Score, charGenViewModel.DEX_Score, charGenViewModel.CON_Score, charGenViewModel.INT_Score, charGenViewModel.WIS_Score, charGenViewModel.CHA_Score);
-            //charGenViewModel.CalculateDexterityMod();
-            //charGenViewModel.CalculateConstitutionMod();
+            charGenViewModel.CalculateStrengthMod();
+            charGenViewModel.CalculateDexterityMod();
+            charGenViewModel.CalculateConstitutionMod();
 
-            //charGenViewModel.CalculateIntelligenceMod();
-            //charGenViewModel.CalculateWisdomMod();
-            //charGenViewModel.CalculateCharismaMod();
+            charGenViewModel.CalculateIntelligenceMod();
+            charGenViewModel.CalculateWisdomMod();
+            charGenViewModel.CalculateCharismaMod();
 
             charGenViewModel.CalculateArmorBonus();
 

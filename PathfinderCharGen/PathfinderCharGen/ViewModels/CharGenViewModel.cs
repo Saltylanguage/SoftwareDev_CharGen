@@ -24,22 +24,22 @@ namespace PathfinderCharGen.ViewModels
 
         #region PrivateFields
 
-        //private int str_score = 10;
-        //private int str_mod = 0;
+        private int str_score = 10;
+        private int str_mod = 0;
 
-        //private int dex_score = 10;
+        private int dex_score = 10;
         private int dex_mod = 0;    
 
-        //private int con_score = 10;
+        private int con_score = 10;
         private int con_mod = 0;
 
-        //private int int_score = 10;
+        private int int_score = 10;
         private int int_mod = 0;
 
-        //private int wis_score = 10;
+        private int wis_score = 10;
         private int wis_mod = 0;
 
-        //private int cha_score = 10;
+        private int cha_score = 10;
         private int cha_mod = 0;
 
         private int ac_total = 10;
@@ -98,76 +98,76 @@ namespace PathfinderCharGen.ViewModels
         #region Public Properties
 
 
-        public uint STR_Score
+        public int STR_Score
         {
-            get { return character.statMgr.Strength.Value; }
+            get { return str_score; }
             set
             {
-                character.statMgr.Strength.Value = value;
+                str_score = value;
                 OnPropertyChanged("STR_Score");
             }
         }
 
         public int STR_MOD
         {
-            get { return character.statMgr.StrMod; }
+            get { return str_mod; }
             set
             {
-                character.statMgr.StrMod = value;
+                str_mod = value;
                 OnPropertyChanged("STR_MOD");
             }
         }
 
-        public uint DEX_Score
+        public int DEX_Score
         {
-            get { return character.statMgr.Dexerity.Value; }
+            get { return dex_score; }
             set
             {
-                character.statMgr.Dexerity.Value = value;
+                dex_score = value;
                 OnPropertyChanged("DEX_Score");
             }
         }
 
-        public uint CON_Score
+        public int CON_Score
         {
-            get { return character.statMgr.Constitution.Value; }
+            get { return con_score; }
 
             set
             {
-                character.statMgr.Constitution.Value = value;
+                con_score = value;
                 OnPropertyChanged("CON_Score");
             }
         }
 
-        public uint INT_Score
+        public int INT_Score
         {
-            get { return character.statMgr.Intellect.Value; }
-
+            get { return int_score; }
+            
             set
             {
-                character.statMgr.Intellect.Value = value;
+                int_score = value;
                 OnPropertyChanged("INT_Score");
             }
         }
 
-        public uint WIS_Score
+        public int WIS_Score
         {
-            get { return character.statMgr.Wisdom.Value; }
+            get { return wis_score; }
 
             set
             {
-                character.statMgr.Wisdom.Value = value;
+                wis_score = value;
                 OnPropertyChanged("WIS_Score");
             }
         }
 
-        public uint CHA_Score
+        public int CHA_Score
         {
-            get { return character.statMgr.Charisma.Value; }
+            get { return cha_score; }
 
             set
             {
-                character.statMgr.Charisma.Value = value;
+                cha_score = value;
                 OnPropertyChanged("CHA_Score");
             }
         }
@@ -680,35 +680,35 @@ namespace PathfinderCharGen.ViewModels
             Mod = (int)Math.Floor((Score - 10.0f) / 2.0f);
         }
 
-        //internal void CalculateStrengthMod()
-        //{
-        //    STR_MOD = (int)Math.Floor((str_score - 10.0f) / 2.0f);
-        //}
+        internal void CalculateStrengthMod()
+        {
+            STR_MOD = (int)Math.Floor((str_score - 10.0f) / 2.0f);
+        }
 
-        //internal void CalculateDexterityMod()
-        //{
-        //    DEX_MOD = (int)Math.Floor((dex_score - 10.0f) / 2.0f);
-        //}
+        internal void CalculateDexterityMod()
+        {
+            DEX_MOD = (int)Math.Floor((dex_score - 10.0f) / 2.0f);
+        }
 
-        //internal void CalculateConstitutionMod()
-        //{
-        //    CON_MOD = (int)Math.Floor((con_score - 10.0f) / 2.0f);
-        //}
+        internal void CalculateConstitutionMod()
+        {
+            CON_MOD = (int)Math.Floor((con_score - 10.0f) / 2.0f);
+        }
 
-        //internal void CalculateIntelligenceMod()
-        //{
-        //    INT_MOD = (int)Math.Floor((int_score - 10.0f) / 2.0f);
-        //}
+        internal void CalculateIntelligenceMod()
+        {
+            INT_MOD = (int)Math.Floor((int_score - 10.0f) / 2.0f);
+        }
 
-        //internal void CalculateWisdomMod()
-        //{
-        //    WIS_MOD = (int)Math.Floor((wis_score - 10.0f) / 2.0f);
-        //}
+        internal void CalculateWisdomMod()
+        {
+            WIS_MOD = (int)Math.Floor((wis_score - 10.0f) / 2.0f);
+        }
 
-        //internal void CalculateCharismaMod()
-        //{
-        //    CHA_MOD = (int)Math.Floor((cha_score - 10.0f) / 2.0f);
-        //}
+        internal void CalculateCharismaMod()
+        {
+            CHA_MOD = (int)Math.Floor((cha_score - 10.0f) / 2.0f);
+        }
 
         internal void CalculateArmorBonus()
         {
@@ -737,17 +737,17 @@ namespace PathfinderCharGen.ViewModels
 
         internal void CalculateMAB()
         {
-            MAB_Total = baseAttackBonus + /*str_mod*/character.statMgr.StrMod + meleeSizeBonus + meleeMiscBonus + meleeTempBonus;
+            MAB_Total = baseAttackBonus + str_mod + meleeSizeBonus + meleeMiscBonus + meleeTempBonus;
         }
 
         internal void CalculateCMD()
         {
-            CMD = 10 + baseAttackBonus +/*str_mod*/character.statMgr.StrMod + dex_mod + combatManeuverSizeBonus + combatManeuverDefenseMisc;
+            CMD = 10 + baseAttackBonus + str_mod + dex_mod + combatManeuverSizeBonus + combatManeuverDefenseMisc;
         }
 
         internal void CalculateCMB()
         {
-            CMB_Total = baseAttackBonus +/*str_mod*/character.statMgr.StrMod + combatManeuverSizeBonus + combatManeuverMiscBonus + combatManeuverTempBonus;
+            CMB_Total = baseAttackBonus + str_mod + character.statMgr.StrMod + combatManeuverSizeBonus + combatManeuverMiscBonus + combatManeuverTempBonus;
         }
 
         internal void CalculateRAB()

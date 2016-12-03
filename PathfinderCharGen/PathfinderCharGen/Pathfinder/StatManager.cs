@@ -22,7 +22,7 @@ namespace ReactiveLeveling
         public uint levelingStatPoints = 0; //for use after player has confirmed they are finished character creation
 
 
-        public ReactiveProperty<uint> Strength = new ReactiveProperty<uint>(19);
+        public ReactiveProperty<uint> Strength = new ReactiveProperty<uint>(10);
         public ReactiveProperty<uint> Dexerity = new ReactiveProperty<uint>(10);
         public ReactiveProperty<uint> Constitution = new ReactiveProperty<uint>(10);
         public ReactiveProperty<uint> Intellect = new ReactiveProperty<uint>(10);

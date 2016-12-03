@@ -35,6 +35,7 @@ namespace PathfinderCharGen.Views
         private void MenuItem_Click_Load(object sender, RoutedEventArgs e)
         {
             Load.LoadDialog(this);
+            CalcBtn.Command.Execute(this);
         }
 
         private void TextBoxLostFocus(object sender, RoutedEventArgs e)
