@@ -11,7 +11,7 @@ namespace PathfinderCharGen.Utilities
 {
     public static class Save
     {
-        public static bool SaveDialog(CharGenView model)
+        public static bool SaveDialog(CharSheetView model)
         {
             SaveFileDialog saveFileDialog = new SaveFileDialog();
             saveFileDialog.Filter = "Json file (*.json) [recomended]|*.json"; //|Xml file (*.xml)|*.xml
@@ -23,13 +23,14 @@ namespace PathfinderCharGen.Utilities
             return ToJson(model, saveFileDialog.FileName);
         }
 
-        public static bool ToJson(CharGenView model, string path)
+        public static bool ToJson(CharSheetView model, string path)
         {
             //json object for storing data
             JObject json = new JObject();
 
             //Add char info to json
-            json.Add("Name", model.CharacterName.Text);
+            json.Add("Player_Name", model.PlayerName.Text);
+            json.Add("Char_Name", model.CharacterName.Text);
             json.Add("Race", model.CharacterRace.Text);
             json.Add("Class", model.CharacterClass.Text);
             json.Add("Level", model.CharacterLevel.Text);
@@ -98,13 +99,31 @@ namespace PathfinderCharGen.Utilities
             json.Add("WILL_Magic", model.WILL_MagicBonus.Text);
             json.Add("WILL_Misc",  model.WILL_MiscBonus.Text);
             json.Add("WILL_Temp",  model.WILL_Temp.Text);
+
+            //Add Attack Bonuses to json            
+
             //MAB
-
+            json.Add("MAB_Base", model.MAB_Base.Text);
+            json.Add("MAB_Total", model.MAB_Total.Text);
+            json.Add("MAB_Size",  model.MAB_SizeBonus.Text);
+            json.Add("MAB_Misc",  model.MAB_MiscBonus.Text);
+            json.Add("MAB_Temp",  model.MAB_TempBonus.Text);
             //CMB
-
+            json.Add("CMB_Base", model.CMB_Base.Text);
+            json.Add("CMB_Total", model.CMB_Total.Text);
+            json.Add("CMB_Size", model.CMB_SizeBonus.Text);
+            json.Add("CMB_Misc", model.CMB_MiscBonus.Text);
+            json.Add("CMB_Temp", model.CMB_TempBonus.Text);
             //RAB
+            json.Add("RAB_Base", model.RAB_Base.Text);
+            json.Add("RAB_Total", model.RAB_Total.Text);
+            json.Add("RAB_Size",  model.RAB_SizeBonus.Text);
+            json.Add("RAB_Misc",  model.RAB_MiscBonus.Text);
+            json.Add("RAB_Temp",  model.RAB_TempBonus.Text);
 
             // Init
+            json.Add("INIT_Total", model.Init_Total.Text);
+            json.Add("INIT_Misc", model.Init_MiscBonus.Text);
 
             //Add more
 

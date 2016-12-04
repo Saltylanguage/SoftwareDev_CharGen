@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.ComponentModel;
 
+
 namespace PathfinderCharGen.ViewModels
 {
     class ViewModelBase : INotifyPropertyChanged
@@ -18,6 +19,5 @@ namespace PathfinderCharGen.ViewModels
                 PropertyChanged(this, new PropertyChangedEventArgs(PropertyName));
             }
         }
-
     }
 }

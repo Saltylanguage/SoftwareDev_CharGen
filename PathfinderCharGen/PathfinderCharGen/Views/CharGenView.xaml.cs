@@ -12,8 +12,6 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using PathfinderCharGen.ViewModels;
-using PathfinderCharGen.Utilities;
 
 namespace PathfinderCharGen.Views
 {
@@ -25,22 +23,6 @@ namespace PathfinderCharGen.Views
         public CharGenView()
         {
             InitializeComponent();
-        }
-
-        private void MenuItem_Click_Save(object sender, RoutedEventArgs e)
-        {
-            Save.SaveDialog(this);
-        }
-
-        private void MenuItem_Click_Load(object sender, RoutedEventArgs e)
-        {
-            Load.LoadDialog(this);
-            CalcBtn.Command.Execute(this);
-        }
-
-        private void TextBoxLostFocus(object sender, RoutedEventArgs e)
-        {
-            CalcBtn.Command.Execute(this);
         }
     }
 }

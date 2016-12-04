@@ -11,8 +11,8 @@ namespace PathfinderCharGen.Commands.Specific
     class StrengthModCommand : ICommand
     {
 
-        private CharGenViewModel charGenViewModel;
-        public StrengthModCommand(CharGenViewModel vm)
+        private CharSheetViewModel charGenViewModel;
+        public StrengthModCommand(CharSheetViewModel vm)
         {
             charGenViewModel = vm;
         }

@@ -11,10 +11,10 @@ namespace PathfinderCharGen.Commands.Specific
     class CalculateCommand : ICommand
     {
 
-        private CharGenViewModel charGenViewModel;
-        public CalculateCommand(CharGenViewModel vm)
+        private CharSheetViewModel charSheetViewModel;
+        public CalculateCommand(CharSheetViewModel vm)
         {
-            charGenViewModel = vm;
+            charSheetViewModel = vm;
         }
 
         public event EventHandler CanExecuteChanged;
@@ -27,26 +27,26 @@ namespace PathfinderCharGen.Commands.Specific
         public void Execute(object parameter)
         {
             
-            charGenViewModel.CalculateStrengthMod();
-            charGenViewModel.CalculateDexterityMod();
-            charGenViewModel.CalculateConstitutionMod();
+            charSheetViewModel.CalculateStrengthMod();
+            charSheetViewModel.CalculateDexterityMod();
+            charSheetViewModel.CalculateConstitutionMod();
+             
+            charSheetViewModel.CalculateIntelligenceMod();
+            charSheetViewModel.CalculateWisdomMod();
+            charSheetViewModel.CalculateCharismaMod();
+          
+            charSheetViewModel.CalculateArmorBonus();
 
-            charGenViewModel.CalculateIntelligenceMod();
-            charGenViewModel.CalculateWisdomMod();
-            charGenViewModel.CalculateCharismaMod();
-
-            charGenViewModel.CalculateArmorBonus();
-
-            charGenViewModel.CalculateFortBonus();
-            charGenViewModel.CalculateReflexBonus();
-            charGenViewModel.CalculateWillBonus();
-
-            charGenViewModel.CalculateMAB();
-            charGenViewModel.CalculateCMB();
-            charGenViewModel.CalculateCMD();
-            charGenViewModel.CalculateRAB();
-
-            charGenViewModel.CalculateINIT();
+            charSheetViewModel.CalculateFortBonus();
+            charSheetViewModel.CalculateReflexBonus();
+            charSheetViewModel.CalculateWillBonus();
+                
+            charSheetViewModel.CalculateMAB();
+            charSheetViewModel.CalculateCMB();
+            charSheetViewModel.CalculateCMD();
+            charSheetViewModel.CalculateRAB();
+                
+            charSheetViewModel.CalculateINIT();
         
         }
     }

@@ -13,6 +13,11 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using ReactiveLeveling;
+using PathfinderCharGen.Commands;
+using PathfinderCharGen.Views;
+using PathfinderCharGen.ViewModels;
+using PathfinderCharGen.Utilities;
+
 
 
 
@@ -24,11 +29,25 @@ namespace PathfinderCharGen
     public partial class MainWindow : Window
     {
         Character hero = new Character();
-
+        CharSheetView sheetView = new CharSheetView();
 
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void NewCharacterWizard_Click(object sender, RoutedEventArgs e)
+        {
+            Window window = new Window { Content = new PathfinderCharGen.Views.CharGenView(), Height = 600, Width = 1200, WindowStartupLocation = WindowStartupLocation.CenterScreen };
+            window.ShowDialog();                       
+        }
+
+        private void LoadCharacterSheet_Click(object sender, RoutedEventArgs e)
+        {            
+            Load.LoadDialog(sheetView);
+            this.Content = sheetView;
+            //this.Content = new PathfinderCharGen.Views.CharSheetView();
+            //TODO make this load properly
         }
     }
 }

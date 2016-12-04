@@ -113,9 +113,14 @@
     <Compile Include="Utilities\Load.cs" />
     <Compile Include="Utilities\Save.cs" />
     <Compile Include="ViewModels\CharGenViewModel.cs" />
+    <Compile Include="ViewModels\CharSheetViewModel.cs" />
+    <Compile Include="ViewModels\MainWindowViewModel.cs" />
     <Compile Include="ViewModels\ViewModelBase.cs" />
     <Compile Include="Views\CharGenView.xaml.cs">
       <DependentUpon>CharGenView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CharSheetView.xaml.cs">
+      <DependentUpon>CharSheetView.xaml</DependentUpon>
     </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -133,6 +138,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="Views\CharGenView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\CharSheetView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

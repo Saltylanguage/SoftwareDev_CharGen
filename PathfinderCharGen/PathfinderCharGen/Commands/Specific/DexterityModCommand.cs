@@ -11,8 +11,8 @@ namespace PathfinderCharGen.Commands.Specific
     class DexterityModCommand : ICommand
     {
 
-        private CharGenViewModel charGenViewModel;
-        public DexterityModCommand(CharGenViewModel vm)
+        private CharSheetViewModel charGenViewModel;
+        public DexterityModCommand(CharSheetViewModel vm)
         {
             charGenViewModel = vm;
         }
