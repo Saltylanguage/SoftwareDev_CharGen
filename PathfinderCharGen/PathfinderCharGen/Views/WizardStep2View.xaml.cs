@@ -16,13 +16,24 @@ using System.Windows.Shapes;
 namespace PathfinderCharGen.Views
 {
     /// <summary>
-    /// Interaction logic for CharGenView.xaml
+    /// Interaction logic for WizardStep2View.xaml
     /// </summary>
-    public partial class CharGenView : UserControl
+    public partial class WizardStep2View : UserControl
     {
-        public CharGenView()
+
+        CharSheetView sheetView;
+
+        public WizardStep2View(CharSheetView SV)
         {
+            sheetView = SV;
             InitializeComponent();
+        }
+
+        private void Step2Next_Click(object sender, RoutedEventArgs e)
+        {
+            sheetView.CharacterRace.Text = RaceSelection.Text.ToString();
+
+            this.Content = new WizardStep3View(sheetView);
         }
     }
 }

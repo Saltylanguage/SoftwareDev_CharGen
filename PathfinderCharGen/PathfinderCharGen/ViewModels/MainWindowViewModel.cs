@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using System.Windows.Input;
 using System.ComponentModel;
 using System.Windows.Controls;
-using System.ComponentModel;
+
 
 namespace PathfinderCharGen.ViewModels
 {

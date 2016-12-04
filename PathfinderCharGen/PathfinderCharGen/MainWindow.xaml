@@ -11,7 +11,7 @@
         Title="Char Gen" Height="1010" Width="1800" WindowStartupLocation="CenterScreen">
     <Window.Resources>
         <DataTemplate DataType="{x:Type vm:MainWindowViewModel}">
-            <views:CharGenView/>
+            <views:WizardStep1View/>
         </DataTemplate>
         <DataTemplate DataType="{x:Type vm:CharSheetViewModel}">
             <views:CharSheetView/>

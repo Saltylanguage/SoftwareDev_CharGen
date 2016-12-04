@@ -38,16 +38,15 @@ namespace PathfinderCharGen
 
         private void NewCharacterWizard_Click(object sender, RoutedEventArgs e)
         {
-            Window window = new Window { Content = new PathfinderCharGen.Views.CharGenView(), Height = 600, Width = 1200, WindowStartupLocation = WindowStartupLocation.CenterScreen };
-            window.ShowDialog();                       
+            Window window = new Window { Content = new PathfinderCharGen.Views.WizardStep1View(sheetView), Height = 600, Width = 1200, WindowStartupLocation = WindowStartupLocation.CenterScreen };            
+            this.Close();                 
+            window.ShowDialog();
         }
 
         private void LoadCharacterSheet_Click(object sender, RoutedEventArgs e)
         {            
             Load.LoadDialog(sheetView);
-            this.Content = sheetView;
-            //this.Content = new PathfinderCharGen.Views.CharSheetView();
-            //TODO make this load properly
+            this.Content = sheetView; 
         }
     }
 }

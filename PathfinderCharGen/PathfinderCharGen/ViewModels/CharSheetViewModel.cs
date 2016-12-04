@@ -90,6 +90,7 @@ namespace PathfinderCharGen.ViewModels
         private int initMisc = 0;
 
         private string playerName = "";
+        public string characterName = "";
         private string className = "";
 
         private CalculateCommand calcCmd;
@@ -691,8 +692,17 @@ namespace PathfinderCharGen.ViewModels
             }
         }
 
-        #endregion
+        public string CharacterName
+        {
+            get { return characterName; }
+            set
+            {
+                characterName = value;
+                OnPropertyChanged("CharacterName");
+            }
+        }
 
+        #endregion
 
         #region Commands
 

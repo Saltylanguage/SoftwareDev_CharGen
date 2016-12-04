@@ -13,41 +13,39 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using PathfinderCharGen.Utilities;
+using PathfinderCharGen.ViewModels;
 
 namespace PathfinderCharGen.Views
 {
     /// <summary>
     /// Interaction logic for CharGenView.xaml
     /// </summary>
-    public partial class CharSheetView : UserControl
+    public partial class WizardStep1View : UserControl
     {
-        public CharSheetView()
-        {
-            this.Width = 1800;
-            this.Width = 1010;
+
+        CharSheetView sheetView;
+
+        public WizardStep1View()
+        {            
             InitializeComponent();
         }
 
-        public CharSheetView(CharSheetView SV)
+        public WizardStep1View(CharSheetView SV)
         {
-            this.Content = SV.Content;
+            sheetView = SV;
             InitializeComponent();
         }
 
-        private void MenuItem_Click_Save(object sender, RoutedEventArgs e)
+        private void Step1Next_Click(object sender, RoutedEventArgs e)
         {
-            Save.SaveDialog(this);
-        }
 
-        private void MenuItem_Click_Load(object sender, RoutedEventArgs e)
-        {
-            Load.LoadDialog(this);
-            CalcBtn.Command.Execute(this);
-        }
+            sheetView.PlayerName.Text = playerName.Text.ToString();
+            sheetView.CharacterName.Text = CharName.Text.ToString();
 
-        private void TextBoxLostFocus(object sender, RoutedEventArgs e)
-        {
-            CalcBtn.Command.Execute(this);
+            this.Content = new WizardStep2View(sheetView);
+            
+            //this.Content = sheetView;
+            //this.Content = new CharSheetView(sheetView);            
         }
     }
 }
