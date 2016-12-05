@@ -716,10 +716,6 @@ namespace PathfinderCharGen.ViewModels
         #endregion
 
         #region Methods
-        void CalculateStatMod(int Score, int Mod)
-        {
-            Mod = (int)Math.Floor((Score - 10.0f) / 2.0f);
-        }
 
         internal void CalculateStrengthMod()
         {

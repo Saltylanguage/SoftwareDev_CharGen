@@ -31,8 +31,7 @@ namespace PathfinderCharGen.Views
         private void Step3Next_Click(object sender, RoutedEventArgs e)
         {
             sheetView.CharacterClass.Text = ClassSelection.Text.ToString();
-
-            this.Content = sheetView;
+            this.Content = new WizardStep4View(sheetView);
         }
     }
 }

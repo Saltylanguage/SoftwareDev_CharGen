@@ -7,7 +7,7 @@
              mc:Ignorable="d" 
              d:DesignHeight="600" d:DesignWidth="1200">
     <Grid Background="White">
-      
+
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="auto"/>
             <ColumnDefinition Width="auto"/>
@@ -47,11 +47,11 @@
         </ComboBox>
 
         <Button Name="Step2Next" Content="Next"
-                Width="100" Height="50" Margin="450,300,0,0"  Grid.Row="4" Grid.Column="3" 
+                Width="100" Height="60" Grid.Row="4" Grid.Column="2" 
                 HorizontalAlignment="Right" FontSize="30" 
                 Background="Gray" Foreground="Black" Click="Step2Next_Click"/>
 
-        
+
 
 
     </Grid>

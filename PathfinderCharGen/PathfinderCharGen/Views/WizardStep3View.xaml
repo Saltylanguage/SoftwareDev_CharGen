@@ -28,7 +28,7 @@
                Background="Black" Foreground="White" 
                Content="Step 2:"/>
 
-        <Label Width="auto" Height="100" Grid.Row="0" Grid.Column="1"
+        <Label Width="auto" Grid.Row="0" Grid.Column="1"
                FontSize="30" HorizontalAlignment="Left" Margin="30"
                HorizontalContentAlignment="Center" VerticalContentAlignment="Center"  
                Background="Black" Foreground="White" 

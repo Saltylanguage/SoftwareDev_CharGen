@@ -7,10 +7,8 @@
              xmlns:vm="clr-namespace:PathfinderCharGen.ViewModels"
              mc:Ignorable="d" 
              d:DesignHeight="600" d:DesignWidth="1200">
-    <UserControl.Resources>
-        <vm:WizardStep1ViewModel x:Key="WizardStep1VM"/>
-    </UserControl.Resources>
-    <Grid Background="white" DataContext="{Binding Source={StaticResource WizardStep1VM}}">
+    
+    <Grid Background="White">
 
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="320"/>
