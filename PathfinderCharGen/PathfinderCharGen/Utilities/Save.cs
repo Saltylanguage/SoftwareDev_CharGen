@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using PathfinderCharGen.Views;
 using Microsoft.Win32;
 using Newtonsoft.Json.Linq;
+using System.Windows.Media.Imaging;
 
 namespace PathfinderCharGen.Utilities
 {
@@ -126,6 +127,26 @@ namespace PathfinderCharGen.Utilities
             json.Add("INIT_Misc", model.Init_MiscBonus.Text);
 
             //Add more
+
+            //Add Image
+            BitmapSource src = model.CharImage.Source as BitmapSource;
+            WriteableBitmap bitmap = new WriteableBitmap(src);
+            int width = bitmap.PixelWidth;
+            int height = bitmap.PixelHeight;
+            int stride = width * ((bitmap.Format.BitsPerPixel + 7) / 8);
+            double dpiX = bitmap.DpiX;
+            double dpiY = bitmap.DpiY;
+            string pixelFormat = bitmap.Format.ToString();
+            byte[] bitmapData = new byte[height * stride];
+            bitmap.CopyPixels(bitmapData, stride, 0);
+            string byteString = Convert.ToBase64String(bitmapData);
+
+            json.Add("ImageWidth", width.ToString());
+            json.Add("ImageHeight", height.ToString());
+            json.Add("ImageFormat", pixelFormat);
+            json.Add("ImageDpiX", dpiX.ToString());
+            json.Add("ImageDpiY", dpiY.ToString());
+            json.Add("Image", byteString);
 
             System.IO.File.WriteAllText(path, json.ToString());
 

@@ -39,6 +39,7 @@
                 <MenuItem Header="_New Character"/>
                 <MenuItem Header="_Save Character" Click="MenuItem_Click_Save"/>
                 <MenuItem Header="_Load Character" Click="MenuItem_Click_Load"/>
+                <MenuItem Header="_Import Image" Click="MenuItem_Click_Import"/>
                 <MenuItem Header="_Quit"/>
             </MenuItem>
             <MenuItem Header="Edit">
