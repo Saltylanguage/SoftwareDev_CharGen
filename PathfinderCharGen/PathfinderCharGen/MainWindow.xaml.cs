@@ -33,7 +33,7 @@ namespace PathfinderCharGen
 
         public MainWindow()
         {
-            InitializeComponent();
+            InitializeComponent();            
         }
 
         private void NewCharacterWizard_Click(object sender, RoutedEventArgs e)

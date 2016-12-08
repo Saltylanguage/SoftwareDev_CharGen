@@ -117,6 +117,7 @@
     <Compile Include="ViewModels\CharSheetViewModel.cs" />
     <Compile Include="ViewModels\MainWindowViewModel.cs" />
     <Compile Include="ViewModels\ViewModelBase.cs" />
+    <Compile Include="ViewModels\WizardStep2ViewModel.cs" />
     <Compile Include="ViewModels\WizardStep4ViewModel.cs" />
     <Compile Include="Views\WizardStep1View.xaml.cs">
       <DependentUpon>WizardStep1View.xaml</DependentUpon>
@@ -209,6 +210,20 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Commands\Generic\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\barbarian1.jpg" />
+    <Resource Include="Resources\barbarian2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\human.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\elf.jpg" />
+    <Resource Include="Resources\gnome.jpg" />
+    <Resource Include="Resources\haflling.jpg" />
+    <Resource Include="Resources\halfelf.jpg" />
+    <Resource Include="Resources\halforc2.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

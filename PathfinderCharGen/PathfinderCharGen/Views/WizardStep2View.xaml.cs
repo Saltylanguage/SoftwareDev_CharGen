@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using PathfinderCharGen.ViewModels;
 
 namespace PathfinderCharGen.Views
 {
@@ -21,12 +22,15 @@ namespace PathfinderCharGen.Views
     public partial class WizardStep2View : UserControl
     {
 
+
         CharSheetView sheetView;
 
         public WizardStep2View(CharSheetView SV)
         {
-            sheetView = SV;
             InitializeComponent();
+            //RaceSelection.ItemsSource = Enum.GetValues(typeof(MyEnum)).Cast<MyEnum>();
+            this.DataContext = new WizardStep2ViewModel();
+            sheetView = SV;
         }
 
         private void Step2Next_Click(object sender, RoutedEventArgs e)

@@ -3,23 +3,27 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="clr-namespace:PathfinderCharGen.Views"
+             xmlns:local="clr-namespace:PathfinderCharGen"
+             xmlns:vm="clr-namespace:PathfinderCharGen.ViewModels"
              mc:Ignorable="d" 
              d:DesignHeight="600" d:DesignWidth="1200">
+    <UserControl.Resources>
+        <vm:EnumToImageConverter x:Key="conv"/>
+    </UserControl.Resources>
     <Grid Background="White">
 
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="auto"/>
             <ColumnDefinition Width="auto"/>
             <ColumnDefinition Width="350"/>
-            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="100"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"/>
             <RowDefinition Height="auto"/>
             <RowDefinition Height="300"/>
             <RowDefinition Height="auto"/>
-            
+
             <RowDefinition/>
         </Grid.RowDefinitions>
 
@@ -37,8 +41,8 @@
                Content="Please Select A Race:"/>
 
         <ComboBox Name="RaceSelection" FontSize="30" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"
-                  Width="150" Height="50" Grid.Column="1" Grid.Row="1" 
-                  Background="WhiteSmoke" Foreground="Black">
+                  Width="150" Height="50" Grid.Column="1" Grid.Row="1" SelectedValue="Dwarf"
+                  Background="WhiteSmoke" Foreground="Black" Margin="98,0" VerticalAlignment="Top">
             <ComboBoxItem Name="race1" Content="Dwarf" FontSize="30" HorizontalContentAlignment="Left"/>
             <ComboBoxItem Name="race2" Content="Elf" FontSize="30" HorizontalContentAlignment="Left"/>
             <ComboBoxItem Name="race3" Content="Gnome" FontSize="30" HorizontalContentAlignment="Left"/>
@@ -49,11 +53,11 @@
         </ComboBox>
 
         <Button Name="Step2Next" Content="Next"
-                Width="100" Height="60" Grid.Row="2" Grid.Column="3" 
-                HorizontalAlignment="Center" VerticalAlignment="Bottom" FontSize="30"
-                Background="Gray" Foreground="Black" Click="Step2Next_Click"/>
+                Width="100" Height="60" Grid.Row="2" 
+                HorizontalAlignment="right" VerticalAlignment="Bottom" FontSize="30"
+                Background="Gray" Foreground="Black" Click="Step2Next_Click" Margin="0,0,0,240"/>
 
-
+        <Image Source="{Binding ElementName=RaceSelection, Path=SelectedValue, Converter={StaticResource conv}}" x:Name="img" Grid.Column="2" Grid.ColumnSpan="2" Grid.Row="0" Grid.RowSpan="5" Margin="97,44,-97,-24"/>
 
 
     </Grid>
