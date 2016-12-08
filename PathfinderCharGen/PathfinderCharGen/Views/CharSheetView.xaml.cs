@@ -49,5 +49,10 @@ namespace PathfinderCharGen.Views
         {
             CalcBtn.Command.Execute(this);
         }
+
+        private void MenuItem_Click_Import(object sender, RoutedEventArgs e)
+        {
+            Load.LoadPic(this);
+        }
     }
 }
