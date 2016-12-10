@@ -72,7 +72,7 @@ namespace PathfinderCharGen.ViewModels
                 switch (enumVal)
                 {
                     case MyEnum.Dwarf:
-                        return new BitmapImage(new Uri(@"../Resources/dwarf.jpg", UriKind.Relative));
+                        return new BitmapImage(new Uri(@"../Resources/dwarf.png", UriKind.Relative));
                     case MyEnum.Elf:
                         return new BitmapImage(new Uri(@"../Resources/elf.jpg", UriKind.Relative));
                     case MyEnum.Gnome:

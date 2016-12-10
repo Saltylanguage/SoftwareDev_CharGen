@@ -6,7 +6,11 @@
              xmlns:local="clr-namespace:PathfinderCharGen.Views"
              mc:Ignorable="d" 
              d:DesignHeight="600" d:DesignWidth="1200">
-    <Grid Background="White">
+    <Grid>
+
+        <Grid.Background>
+            <ImageBrush ImageSource="../Resources/parchment.jpg" Stretch="UniformToFill"/>
+        </Grid.Background>
 
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="250"/>

@@ -10,7 +10,11 @@
     <UserControl.Resources>
         <vm:EnumToImageConverter x:Key="conv"/>
     </UserControl.Resources>
-    <Grid Background="White">
+    <Grid>
+
+        <Grid.Background>
+            <ImageBrush ImageSource="../Resources/parchment.jpg" Stretch="Fill"/>
+        </Grid.Background>
 
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="auto"/>

@@ -8,7 +8,11 @@
              mc:Ignorable="d" 
              d:DesignHeight="600" d:DesignWidth="1200">
     
-    <Grid Background="White">
+    <Grid>
+
+        <Grid.Background>
+            <ImageBrush ImageSource="../Resources/parchment.jpg" Stretch="UniformToFill"/>
+        </Grid.Background>
 
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="320"/>
@@ -21,6 +25,9 @@
             <RowDefinition Height="auto"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
+        
+        
+        
         <Label Width="1000" Height="100" Margin="30" Grid.Row="0" Grid.ColumnSpan="5"
                FontSize="50" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"  
                Background="Black" Foreground="White" 

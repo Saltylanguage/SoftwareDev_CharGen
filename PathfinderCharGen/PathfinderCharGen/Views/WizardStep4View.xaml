@@ -10,7 +10,12 @@
     <UserControl.Resources>
         <vm:WizardStep4ViewModel x:Key="wizardVM"/>
     </UserControl.Resources>
-    <Grid Name="Wizard_MainGrid" Background="White" DataContext="{Binding Source={StaticResource wizardVM}}">
+    <Grid Name="Wizard_MainGrid" DataContext="{Binding Source={StaticResource wizardVM}}">
+
+        <Grid.Background>
+            <ImageBrush ImageSource="../Resources/parchment.jpg" Stretch="UniformToFill"/>
+        </Grid.Background>
+
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"/>
             <RowDefinition Height="20"/>
