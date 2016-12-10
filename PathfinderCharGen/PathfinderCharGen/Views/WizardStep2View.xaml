@@ -19,13 +19,13 @@
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="auto"/>
             <ColumnDefinition Width="auto"/>
-            <ColumnDefinition Width="350"/>
-            <ColumnDefinition Width="100"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"/>
             <RowDefinition Height="auto"/>
-            <RowDefinition Height="300"/>
+            <RowDefinition Height="auto"/>
             <RowDefinition Height="auto"/>
 
             <RowDefinition/>
@@ -57,11 +57,11 @@
         </ComboBox>
 
         <Button Name="Step2Next" Content="Next"
-                Width="100" Height="60" Grid.Row="2" 
+                Width="100" Height="50" Grid.Row="4" 
                 HorizontalAlignment="right" VerticalAlignment="Bottom" FontSize="30"
-                Background="Gray" Foreground="Black" Click="Step2Next_Click" Margin="0,0,0,240"/>
+                Background="Gray" Foreground="Black" Click="Step2Next_Click" Margin="0,0,-545,20" Grid.Column="3"/>
 
-        <Image Source="{Binding ElementName=RaceSelection, Path=SelectedValue, Converter={StaticResource conv}}" x:Name="img" Grid.Column="2" Grid.ColumnSpan="2" Grid.Row="0" Grid.RowSpan="5" Margin="97,44,-97,-24"/>
+        <Image Source="{Binding ElementName=RaceSelection, Path=SelectedValue, Converter={StaticResource conv}}" x:Name="img" Grid.Column="2" Grid.ColumnSpan="2" Grid.Row="0" Grid.RowSpan="5" Margin="6,4,-6,16"/>
 
 
     </Grid>

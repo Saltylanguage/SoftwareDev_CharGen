@@ -200,39 +200,30 @@
     <None Include="ConfigFiles\App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\PathfinderCharImageSmall.jpg" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="Resources\PhilipJFry_art.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\dwarf.jpg" />
-  </ItemGroup>
-  <ItemGroup>
     <Folder Include="Commands\Generic\" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resources\barbarian1.jpg" />
-    <Resource Include="Resources\barbarian2.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resources\human.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resources\elf.jpg" />
-    <Resource Include="Resources\gnome.jpg" />
-    <Resource Include="Resources\haflling.jpg" />
-    <Resource Include="Resources\halfelf.jpg" />
-    <Resource Include="Resources\halforc2.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resources\BookBackground.png" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\parchment.jpg" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\dwarf.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\elf.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\gnome.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\haflling.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\halfelf.png" />
+    <Resource Include="Resources\halforc2.png" />
+    <Resource Include="Resources\human.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

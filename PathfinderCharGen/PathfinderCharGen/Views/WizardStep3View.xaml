@@ -9,26 +9,26 @@
     <Grid>
 
         <Grid.Background>
-            <ImageBrush ImageSource="../Resources/parchment.jpg" Stretch="UniformToFill"/>
+            <ImageBrush ImageSource="../Resources/parchment.jpg" Stretch="Fill"/>
         </Grid.Background>
 
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="250"/>
-            <ColumnDefinition Width="350"/>
-            <ColumnDefinition Width="200"/>
-            <ColumnDefinition Width="200"/>
-            <ColumnDefinition Width="200"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="150"/>
-            <RowDefinition Height="120"/>
-            <RowDefinition Height="120"/>
-            <RowDefinition Height="120"/>
-            <RowDefinition Height="90"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
 
-        <Image Name="ClassImage" Grid.Row="0" Grid.Column="2" Grid.RowSpan="5" Grid.ColumnSpan="3" Source="../Resources/Barbarian1.jpg" Margin="10,0,-10,0"  />
+        <!--<Image Name="ClassImage" Grid.Row="0" Grid.Column="2" Grid.RowSpan="5" Grid.ColumnSpan="3" Source="../Resources/Barbarian1.jpg" Margin="10,0,-10,0"  />-->
 
         <Label Width="200" Height="100" Grid.Row="0" Grid.Column="0"
                FontSize="50" HorizontalAlignment="Left" Margin="30"
@@ -59,9 +59,9 @@
         </ComboBox>
 
         <Button Name="Step3Next" Content="Next"
-                Width="100" Height="52" Grid.Row="4" 
+                Width="100" Height="52" Grid.Row="5" 
                 HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="30" 
-                Background="Gray" Foreground="Black" Click="Step3Next_Click" Grid.Column="1"/>
+                Background="Gray" Foreground="Black" Click="Step3Next_Click" Grid.Column="4" Margin="443,280,-363,0"/>
 
 
 

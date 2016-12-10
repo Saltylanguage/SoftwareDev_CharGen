@@ -37,8 +37,10 @@
             <ColumnDefinition MinWidth="50"/>
         </Grid.ColumnDefinitions>
 
+        <Grid.Background>
+            <ImageBrush ImageSource="Resources/parchment.jpg" Stretch="Fill"/>
+        </Grid.Background>
 
-        
         <Button Height="60" Width="500" Background="Black" Foreground="White" Content="New Character Wizard" FontSize="30" Grid.Row="1" Grid.ColumnSpan="6" Click="NewCharacterWizard_Click"/>
         <Button Height="60" Width="500" Background="Black" Foreground="White" Content="Load Character Sheet" FontSize="30" Grid.Row="3" Grid.ColumnSpan="6" Click="LoadCharacterSheet_Click"/>
         <ContentControl Content="{Binding CurrentView, Mode=OneWay}"/>

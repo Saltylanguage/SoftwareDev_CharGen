@@ -29,7 +29,7 @@ namespace PathfinderCharGen.Views
         {
             InitializeComponent();
             //RaceSelection.ItemsSource = Enum.GetValues(typeof(MyEnum)).Cast<MyEnum>();
-            this.DataContext = new WizardStep2ViewModel();
+            //this.DataContext = new WizardStep2ViewModel();
             sheetView = SV;
         }
 

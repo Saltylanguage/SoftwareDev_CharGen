@@ -7,11 +7,11 @@
              xmlns:vm="clr-namespace:PathfinderCharGen.ViewModels"
              mc:Ignorable="d" 
              d:DesignHeight="600" d:DesignWidth="1200">
-    
+
     <Grid>
 
         <Grid.Background>
-            <ImageBrush ImageSource="../Resources/parchment.jpg" Stretch="UniformToFill"/>
+            <ImageBrush ImageSource="../Resources/parchment.jpg" Stretch="Fill"/>
         </Grid.Background>
 
         <Grid.ColumnDefinitions>
@@ -25,9 +25,9 @@
             <RowDefinition Height="auto"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        
-        
-        
+
+
+
         <Label Width="1000" Height="100" Margin="30" Grid.Row="0" Grid.ColumnSpan="5"
                FontSize="50" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"  
                Background="Black" Foreground="White" 
@@ -65,9 +65,9 @@
         <TextBox Name="CharName" Text="{Binding CHAR_Name, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                  FontSize="30" Background="WhiteSmoke" Foreground="Black" 
                  Width="500" Height="50" VerticalContentAlignment="Center"  HorizontalAlignment="Left"
-                 Grid.Column="2" Grid.Row="3" Margin="30,0,0,0"/>
+                 Grid.Column="2" Grid.Row="3" Margin="30"/>
 
-        <Button Name="Step1Next" Width="100" Height="50" Margin="0,0,50,0"  Grid.Row="4" Grid.Column="1" HorizontalAlignment="Right" 
+        <Button Name="Step1Next" Width="100" Height="50" Grid.Row="4" HorizontalAlignment="Right" Margin="0,0,-830,0"
                 Content="Next" FontSize="30" Background="Gray" Foreground="Black" Click="Step1Next_Click"/>
 
     </Grid>

@@ -13,12 +13,12 @@
     <Grid Name="Wizard_MainGrid" DataContext="{Binding Source={StaticResource wizardVM}}">
 
         <Grid.Background>
-            <ImageBrush ImageSource="../Resources/parchment.jpg" Stretch="UniformToFill"/>
+            <ImageBrush ImageSource="../Resources/parchment.jpg" Stretch="Fill"/>
         </Grid.Background>
 
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"/>
-            <RowDefinition Height="20"/>
+            <RowDefinition Height="auto"/>
             <RowDefinition/>
             <RowDefinition/>
             <RowDefinition/>
@@ -26,19 +26,19 @@
             <RowDefinition/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="200"/>
-            <ColumnDefinition Width="150"/>
-            <ColumnDefinition Width="200"/>
-            <ColumnDefinition Width="150"/>
-            <ColumnDefinition Width="100"/>
-            <ColumnDefinition Width="200"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
         </Grid.ColumnDefinitions>
 
 
 
         <Label Content="STEP 4:" FontSize="40" Background="Black" Foreground="White"               
                Grid.Column="0" Grid.Row="0" HorizontalAlignment="Right" VerticalAlignment="Center"
-               Margin="0,0,10,0"/>
+               Margin="20,0,10,0"/>
 
         <Label Content="Set Attribute Values" FontSize="30" Background="Black" Foreground="White"
                Grid.Column="1" Grid.Row="0" Grid.ColumnSpan="5" HorizontalAlignment="Left" VerticalAlignment="Center"
@@ -171,13 +171,13 @@
 
         </StackPanel>
 
-        <Label Content="Points:" FontSize="40" Background="White" Foreground="Black"               
-               Grid.Column="0" Grid.Row="5" HorizontalAlignment="Right" VerticalAlignment="Center"
-               Margin="0,0,10,0"/>
+        <Label Content="Points:" FontSize="40" Background="Transparent" Foreground="Black"               
+               Grid.Column="1" Grid.Row="5" HorizontalAlignment="Right" VerticalAlignment="Center"
+               Margin="0,10,0,25"/>
 
         <TextBlock Name="NumPoints"  FontSize="50" Text="0"
-                   Grid.Row="5" Grid.Column="1" HorizontalAlignment="Left" TextAlignment="Center"                   
-                   Margin="20,0,0,0"  Width="70" Height="70" Background="{DynamicResource {x:Static SystemColors.ControlBrushKey}}"/>
+                   Grid.Row="5" Grid.Column="2" HorizontalAlignment="Left" TextAlignment="Center"                   
+                   Margin="20,0,0,0"  Width="70" Height="70" Background="Transparent"/>
         <Viewbox Height="40" Grid.Row="2" Grid.Column="4" HorizontalAlignment="Right">
             <RadioButton Name="EpicFantasy" GroupName="pointBuy" Click="EpicFantasy_Click" RenderTransformOrigin="1.429,1.429"/>
         </Viewbox>
@@ -191,7 +191,7 @@
         <Button Name="Step4Next" Content="Next"
                 Width="100" Height="50" Grid.Row="6" Grid.Column="5" 
                 HorizontalAlignment="Right" FontSize="30" 
-                Background="Gray" Foreground="Black" Click="Step4Next_Click"/>
+                Background="Gray" Foreground="Black" Click="Step4Next_Click" Margin="0,20,-360,20"/>
 
         <TextBlock Grid.Column="5" Grid.Row="2" Width="294" Text="25 Point Buy(Epic Fantasy)" FontSize="25" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="10,37,-103,16" Height="41"/>
         <TextBlock Grid.Column="5" Grid.Row="3" Width="313" Text="15 Point Buy (High Fantasy)" FontSize="25" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="10,30,-122,17" Height="47"/>
