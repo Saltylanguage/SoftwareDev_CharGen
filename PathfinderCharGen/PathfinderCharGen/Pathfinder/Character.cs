@@ -15,9 +15,9 @@ namespace ReactiveLeveling.Pathfinder
     {
         public StatManager statMgr = new StatManager();
 
-        public void ChooseRace(int choice)
+        public void ChooseRace(string raceName)
         {
-            statMgr.SetRaceChoice(choice);
+            statMgr.SetRaceChoice(raceName);
         }
 
         public void SetClassType(string className)

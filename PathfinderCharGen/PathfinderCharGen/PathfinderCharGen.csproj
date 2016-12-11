@@ -131,6 +131,7 @@
     <Compile Include="ViewModels\MainWindowViewModel.cs" />
     <Compile Include="ViewModels\ViewModelBase.cs" />
     <Compile Include="ViewModels\WizardStep2ViewModel.cs" />
+    <Compile Include="ViewModels\WizardStep3ViewModel.cs" />
     <Compile Include="ViewModels\WizardStep4ViewModel.cs" />
     <Compile Include="Views\WizardStep1View.xaml.cs">
       <DependentUpon>WizardStep1View.xaml</DependentUpon>

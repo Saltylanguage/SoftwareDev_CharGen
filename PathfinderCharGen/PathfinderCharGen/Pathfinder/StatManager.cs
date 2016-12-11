@@ -19,6 +19,7 @@ namespace ReactiveLeveling.Pathfinder
 
         public uint str, dex, con, itl, wis, cha; //main stats that will be changed and updated
         public int StrMod, ConMod, DexMod, ItlMod, WisMod, ChaMod; //main Ability roll modifier
+        
 
         public void AbilityRollModUpdate() // the Ability Modifier equation for all of the stats for the seperate set of variables
         {
@@ -39,9 +40,9 @@ namespace ReactiveLeveling.Pathfinder
             else return 0;
         }
 
-        public void SetRaceChoice(int choice)
+        public void SetRaceChoice(string raceName)
         {
-            raceMgr.RaceSelector(choice);
+            raceMgr.RaceSelector(raceName);
         }
 
         public void SetClassChoice(string className)

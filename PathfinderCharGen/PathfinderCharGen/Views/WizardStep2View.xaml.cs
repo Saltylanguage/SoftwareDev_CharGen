@@ -28,15 +28,13 @@ namespace PathfinderCharGen.Views
         public WizardStep2View(CharSheetView SV)
         {
             InitializeComponent();
-            //RaceSelection.ItemsSource = Enum.GetValues(typeof(MyEnum)).Cast<MyEnum>();
-            //this.DataContext = new WizardStep2ViewModel();
             sheetView = SV;
         }
 
         private void Step2Next_Click(object sender, RoutedEventArgs e)
         {
             sheetView.CharacterRace.Text = RaceSelection.Text.ToString();
-
+            sheetView.character.ChooseRace(RaceSelection.Text.ToString());
             this.Content = new WizardStep3View(sheetView);
         }
     }

@@ -13,10 +13,9 @@ namespace ReactiveLeveling.Pathfinder.Classes
 {
     public class GenericClass
     {
-        public int classFortSave;
-        public int classRefSave;
-        public int classWillSave;
-      
+        public int classFortSave = 0;
+        public int classRefSave = 0;
+        public int classWillSave = 0;
 
         public virtual void ClassLevels(uint level)
         {
