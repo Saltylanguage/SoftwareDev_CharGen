@@ -13,26 +13,26 @@ namespace ReactiveLeveling
 {
     public class LevelManager
     {
-        public ReactiveProperty<uint> level = new ReactiveProperty<uint>();
-        public ReactiveProperty<uint> exp = new ReactiveProperty<uint>();
+        public int level = 1;
+        public int exp = 0;
 
         public LevelManager()
         {
-            level.Value = 0;
-            exp.Value = 0;
+            level = 0;
+            exp = 0;
         }
 
         public void IncreaseLevel()
         {
-            level.Value++;
-            Debug.WriteLine("Player Leveled Up\n", level.Value.ToString()); //remove later            
+            level++;
+            Debug.WriteLine("Player Leveled Up\n", level.ToString()); //remove later            
         }
 
-        public void IncreaseExp(uint addExp) //way of checking level and exp increase
+        public void IncreaseExp(int addExp) //way of checking level and exp increase
         {
-            uint expForNextLevel;
-            exp.Value += addExp;
-            switch (level.Value)
+            int expForNextLevel;
+            exp += addExp;
+            switch (level)
             {
                 case 0:
                     {
@@ -166,11 +166,11 @@ namespace ReactiveLeveling
 
         }
 
-        void CheckExperienceToNextLevel(uint expForNextLevel)
+        void CheckExperienceToNextLevel(int expForNextLevel)
         {
-            if (exp.Value >= expForNextLevel)
+            if (exp >= expForNextLevel)
             {
-                exp.Value -= expForNextLevel;
+                exp -= expForNextLevel;
                 IncreaseLevel();
             }
         }

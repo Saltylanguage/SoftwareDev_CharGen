@@ -9,10 +9,11 @@ namespace ReactiveLeveling.Races
 {
     public class RaceElf : GenericRace
     {
-        public override Tuple<int, int, int, int, int, int> SetRacialStatChanges() // +2 dex, -2 con, +2 itl
+        public RaceElf() // +2 dex, -2 con, +2 itl
         {
-            int elfStr = 0, elfDex = 2, elfCon = -2, elfItl = 2, elfWis = 0, elfCha = 0; 
-            return new Tuple<int, int, int, int, int, int>(elfStr, elfDex, elfCon, elfItl, elfWis, elfCha);
+            RaceDex = 2;
+            RaceCon = -2;
+            RaceItl = 2;
         }
 
         public override string Size() // medium

@@ -97,19 +97,32 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Classes\ClassBarbarian.cs" />
-    <Compile Include="Classes\GenericClass.cs" />
     <Compile Include="Commands\Specific\CalculateCommand.cs" />
     <Compile Include="Commands\Specific\CalculateStatModsCommand.cs" />
     <Compile Include="Commands\Specific\DexterityModCommand.cs" />
     <Compile Include="Commands\Specific\StrengthModCommand.cs" />
+    <Compile Include="Pathfinder\Character.cs" />
+    <Compile Include="Pathfinder\Classes\ClassBarbarian.cs" />
+    <Compile Include="Pathfinder\Classes\ClassBard.cs" />
+    <Compile Include="Pathfinder\Classes\ClassCleric.cs" />
+    <Compile Include="Pathfinder\Classes\ClassDruid.cs" />
+    <Compile Include="Pathfinder\Classes\ClassFighter.cs" />
+    <Compile Include="Pathfinder\Classes\ClassMonk.cs" />
+    <Compile Include="Pathfinder\Classes\ClassPaladin.cs" />
+    <Compile Include="Pathfinder\Classes\ClassRanger.cs" />
+    <Compile Include="Pathfinder\Classes\ClassRogue.cs" />
+    <Compile Include="Pathfinder\Classes\ClassSorcerer.cs" />
+    <Compile Include="Pathfinder\Classes\ClassWizard.cs" />
+    <Compile Include="Pathfinder\Classes\GenericClass.cs" />
+    <Compile Include="Pathfinder\ClassManager.cs" />
+    <Compile Include="Pathfinder\LevelManager.cs" />
+    <Compile Include="Pathfinder\RaceManager.cs" />
     <Compile Include="Pathfinder\Races\GenericRace.cs" />
     <Compile Include="Pathfinder\Races\IRaceTraits.cs" />
     <Compile Include="Pathfinder\Races\RaceDwarf.cs" />
     <Compile Include="Pathfinder\Races\RaceElf.cs" />
     <Compile Include="Pathfinder\Races\RaceGnome.cs" />
     <Compile Include="Pathfinder\Races\RaceHalfling.cs" />
-    <Compile Include="Pathfinder\RaceManager.cs" />
     <Compile Include="Pathfinder\StatManager.cs" />
     <Compile Include="Utilities\Load.cs" />
     <Compile Include="Utilities\Save.cs" />
@@ -118,6 +131,7 @@
     <Compile Include="ViewModels\MainWindowViewModel.cs" />
     <Compile Include="ViewModels\ViewModelBase.cs" />
     <Compile Include="ViewModels\WizardStep2ViewModel.cs" />
+    <Compile Include="ViewModels\WizardStep3ViewModel.cs" />
     <Compile Include="ViewModels\WizardStep4ViewModel.cs" />
     <Compile Include="Views\WizardStep1View.xaml.cs">
       <DependentUpon>WizardStep1View.xaml</DependentUpon>
@@ -142,9 +156,6 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Pathfinder\Character.cs" />
-    <Compile Include="Pathfinder\GameModeType.cs" />
-    <Compile Include="Pathfinder\LevelManager.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>

@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using PathfinderCharGen.Commands.Specific;
-using ReactiveLeveling;
+using ReactiveLeveling.Pathfinder;
 
 
 namespace PathfinderCharGen.ViewModels
@@ -13,7 +13,7 @@ namespace PathfinderCharGen.ViewModels
 
     class CharSheetViewModel : ViewModelBase
     {
-        public Character character = new Character();
+        
         public CharSheetViewModel()
         {
             calcCmd = new CalculateCommand(this);
@@ -784,7 +784,7 @@ namespace PathfinderCharGen.ViewModels
 
         internal void CalculateCMB()
         {
-            CMB_Total = baseAttackBonus + str_mod + character.statMgr.StrMod + combatManeuverSizeBonus + combatManeuverMiscBonus + combatManeuverTempBonus;
+            CMB_Total = baseAttackBonus + str_mod + combatManeuverSizeBonus + combatManeuverMiscBonus + combatManeuverTempBonus;
         }
 
         internal void CalculateRAB()

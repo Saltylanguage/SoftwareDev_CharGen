@@ -21,6 +21,9 @@ namespace PathfinderCharGen.Views
     /// </summary>
     public partial class CharSheetView : UserControl
     {
+
+        public ReactiveLeveling.Pathfinder.Character character= new ReactiveLeveling.Pathfinder.Character();
+
         public CharSheetView()
         {
             this.Width = 1800;

@@ -9,14 +9,13 @@ using System.Reactive.Subjects;
 using Reactive.Bindings;
 using System.Diagnostics;
 
-namespace ReactiveLeveling.Classes
+namespace ReactiveLeveling.Pathfinder.Classes
 {
     public class GenericClass
     {
-        public ReactiveProperty<int> classFortSave = new ReactiveProperty<int>(0);
-        public ReactiveProperty<int> classRefSave = new ReactiveProperty<int>(0);
-        public ReactiveProperty<int> classWillSave = new ReactiveProperty<int>(0);
-        public ReactiveProperty<int> classFirstAttackBonus = new ReactiveProperty<int>(0);
+        public int classFortSave = 0;
+        public int classRefSave = 0;
+        public int classWillSave = 0;
 
         public virtual void ClassLevels(uint level)
         {
