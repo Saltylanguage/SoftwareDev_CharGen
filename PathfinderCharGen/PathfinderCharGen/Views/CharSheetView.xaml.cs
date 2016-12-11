@@ -30,9 +30,7 @@ namespace PathfinderCharGen.Views
             this.STR_Score.Focus();
             this.DEX_Score.Focus();
 
-            
-
-            //this.CalcBtn.Command.Execute(this);
+            this.CalcBtn.Command.Execute(this);
         }
 
         public CharSheetView(CharSheetView SV)
@@ -59,7 +57,7 @@ namespace PathfinderCharGen.Views
 
         private void MenuItem_Click_Import(object sender, RoutedEventArgs e)
         {
-            Load.LoadPic(this);
+            Load.LoadPic(this);                            
         }
     }
 }
