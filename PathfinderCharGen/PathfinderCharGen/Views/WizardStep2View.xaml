@@ -17,16 +17,15 @@
         </Grid.Background>
 
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="auto"/>
-            <ColumnDefinition Width="auto"/>
-            <ColumnDefinition Width="auto"/>
-            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="250" Name="column0"/>
+            <ColumnDefinition Width="350" Name="column1"/>
+            <ColumnDefinition Width="600" Name="column2"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="auto"/>
-            <RowDefinition Height="auto"/>
-            <RowDefinition Height="auto"/>
-            <RowDefinition Height="auto"/>
+            <RowDefinition Height="160" Name="row0"/>
+            <RowDefinition Height="50" Name="row1"/>
+            <RowDefinition Height="250" Name="row2"/>
+            <!--<RowDefinition Height="100" Name="row3"/>-->
 
             <RowDefinition/>
         </Grid.RowDefinitions>
@@ -45,8 +44,9 @@
                Content="Please Select A Race:"/>
 
         <ComboBox Name="RaceSelection" FontSize="30" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"
-                  Width="150" Height="50" Grid.Column="1" Grid.Row="1" SelectedValue="Dwarf"
+                  Width="150" Height="50" Grid.Column="1" Grid.Row="1" SelectedValue=""
                   Background="WhiteSmoke" Foreground="Black" Margin="98,0" VerticalAlignment="Top">
+            <ComboBoxItem Name="race0" Content="" FontSize="30" HorizontalContentAlignment="Left"/>
             <ComboBoxItem Name="race1" Content="Dwarf" FontSize="30" HorizontalContentAlignment="Left"/>
             <ComboBoxItem Name="race2" Content="Elf" FontSize="30" HorizontalContentAlignment="Left"/>
             <ComboBoxItem Name="race3" Content="Gnome" FontSize="30" HorizontalContentAlignment="Left"/>
@@ -57,11 +57,13 @@
         </ComboBox>
 
         <Button Name="Step2Next" Content="Next"
-                Width="100" Height="50" Grid.Row="4" 
+                Width="100" Height="50" Grid.Row="3"  Grid.Column="2"
                 HorizontalAlignment="right" VerticalAlignment="Bottom" FontSize="30"
-                Background="Gray" Foreground="Black" Click="Step2Next_Click" Margin="0,0,-545,20" Grid.Column="3"/>
+                Background="Gray" Foreground="Black" Click="Step2Next_Click" Margin="0,0,40,30"/>
 
-        <Image Source="{Binding ElementName=RaceSelection, Path=SelectedValue, Converter={StaticResource conv}}" x:Name="img" Grid.Column="2" Grid.ColumnSpan="2" Grid.Row="0" Grid.RowSpan="5" Margin="6,4,-6,16"/>
+        <Image Source="{Binding ElementName=RaceSelection, Path=SelectedValue, Converter={StaticResource conv}}" 
+               Width="{Binding ActualWidth + 20, ElementName=Column2}" MaxHeight="500"
+               x:Name="img" Grid.Column="2" Grid.Row="0" Grid.RowSpan="3" Margin="30"/>
 
 
     </Grid>

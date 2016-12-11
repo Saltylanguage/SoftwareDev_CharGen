@@ -41,12 +41,9 @@ namespace PathfinderCharGen.Views
 
             sheetView.PlayerName.Text = playerName.Text.ToString();
             sheetView.CharacterName.Text = CharName.Text.ToString();
-
             
             this.Content = new WizardStep2View(sheetView);
-            
-            //this.Content = sheetView;
-            //this.Content = new CharSheetView(sheetView);            
+              
         }
     }
 }
