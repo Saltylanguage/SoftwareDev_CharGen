@@ -26,6 +26,13 @@ namespace PathfinderCharGen.Views
             this.Width = 1800;
             this.Width = 1010;
             InitializeComponent();
+
+            this.STR_Score.Focus();
+            this.DEX_Score.Focus();
+
+            
+
+            //this.CalcBtn.Command.Execute(this);
         }
 
         public CharSheetView(CharSheetView SV)

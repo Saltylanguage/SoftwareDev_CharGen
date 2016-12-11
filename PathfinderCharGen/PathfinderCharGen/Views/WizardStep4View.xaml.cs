@@ -586,8 +586,26 @@ namespace PathfinderCharGen.Views
             sheetView.WIS_Score.Text = WIS_Score.Text;
             sheetView.CHA_Score.Text = CHA_Score.Text;
 
+            int strMod = (Convert.ToInt32(STR_Score.Text) - 10) / 2;
+            int dexMod = (Convert.ToInt32(DEX_Score.Text) - 10) / 2;
+            int conMod = (Convert.ToInt32(CON_Score.Text) - 10) / 2;
+            int intMod = (Convert.ToInt32(INT_Score.Text) - 10) / 2;
+            int wisMod = (Convert.ToInt32(WIS_Score.Text) - 10) / 2;
+            int chaMod = (Convert.ToInt32(CHA_Score.Text) - 10) / 2;
+
+            sheetView.STR_Mod.Text = strMod.ToString();
+            sheetView.DEX_Mod.Text = dexMod.ToString();
+            sheetView.CON_Mod.Text = conMod.ToString();
+            sheetView.INT_Mod.Text = intMod.ToString();
+            sheetView.WIS_Mod.Text = wisMod.ToString();
+            sheetView.CHA_Mod.Text = chaMod.ToString();
+
+
+            sheetView.CharacterLevel.Text = "1";
+
             Window parentWindow = Window.GetWindow(this);
             Window window = new Window { Content = sheetView, Height = 1010, Width = 1800, WindowStartupLocation = WindowStartupLocation.CenterScreen };
+
             parentWindow.Close();
             window.ShowDialog();
         }
