@@ -14,8 +14,6 @@ namespace ReactiveLeveling.Races
     }
     public interface IRaceTraits
     {
-        
-        Tuple<int, int, int, int, int, int> SetRacialStatChanges();
         string Size();
     }
 

@@ -15,7 +15,7 @@ namespace ReactiveLeveling.Races
     {
         public Races.GenericRace Race = new Races.GenericRace();
 
-        public void RaceSelector(uint raceChoice) //takes user input to choose their race
+        public void RaceSelector(int raceChoice) //takes user input to choose their race
         {
             switch (raceChoice)
             {

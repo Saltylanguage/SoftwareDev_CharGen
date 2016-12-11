@@ -13,14 +13,12 @@ namespace ReactiveLeveling.Races
 {
     public class GenericRace : IRaceTraits
     {
-
-        public ReactiveProperty<uint> FreeStatPoints = new ReactiveProperty<uint>(0); //this will change to 2 for classes that do not have preset Racial stats
-
-        public virtual Tuple<int, int, int, int, int, int> SetRacialStatChanges() //should never be called
-        {
-            Debug.WriteLine("The Generic Race SetRacialStatChanges was called.");
-            return new Tuple<int, int, int, int, int, int>(0,0,0,0,0,0);
-        }
+        public int RaceStr = 0;
+        public int RaceDex = 0;
+        public int RaceCon = 0;
+        public int RaceItl = 0;
+        public int RaceWis = 0;
+        public int RaceCha = 0;
 
         public virtual string Size() //should never be called
         {

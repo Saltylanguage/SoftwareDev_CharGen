@@ -9,10 +9,11 @@ namespace ReactiveLeveling.Races
 {
     public class RaceDwarf : GenericRace
     {
-        public override Tuple<int, int, int, int, int, int> SetRacialStatChanges() // +2 con, +2 wis, -2 cha
+        public RaceDwarf() // +2 con, +2 wis, -2 cha
         {
-            int dwarfStr = 0, dwarfDex = 0, dwarfCon = 2, dwarfItl = 0, dwarfWis = 2, dwarfCha = -2;
-            return new Tuple<int, int, int, int, int, int>(dwarfStr, dwarfDex, dwarfCon, dwarfItl, dwarfWis, dwarfCha);
+            RaceCon = 2;
+            RaceWis = 2;
+            RaceCha = -2;
         }
 
         public override string Size() // medium
