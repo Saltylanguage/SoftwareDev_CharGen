@@ -15,50 +15,47 @@ namespace ReactiveLeveling.Pathfinder
             {
                 Class = new Classes.ClassBarbarian();
             }
-            if (className == "Bard")
+            else if (className == "Bard")
             {
                 Class = new Classes.ClassBard();
             }
-            if (className == "Cleric")
+            else if (className == "Cleric")
             {
                 Class = new Classes.ClassCleric();
             }
-            if (className == "Druid")
+            else if (className == "Druid")
             {
                 Class = new Classes.ClassDruid();
             }
-            if (className == "Fighter")
+            else if (className == "Fighter")
             {
                 Class = new Classes.ClassFighter();
             }
-            if (className == "Monk")
+            else if (className == "Monk")
             {
                 Class = new Classes.ClassMonk();
             }
-            if (className == "Paladin")
+            else if (className == "Paladin")
             {
                 Class = new Classes.ClassPaladin();
             }
-            if (className == "Ranger")
+            else if (className == "Ranger")
             {
                 Class = new Classes.ClassRanger();
             }
-            if (className == "Rogue")
+            else if (className == "Rogue")
             {
                 Class = new Classes.ClassRogue();
             }
-            if (className == "Sorcerer")
+            else if (className == "Sorcerer")
             {
                 Class = new Classes.ClassSorcerer();
             }
-            if (className == "Wizard")
+            else if (className == "Wizard")
             {
                 Class = new Classes.ClassWizard();
             }
-            else  //in case there is a Class that did not get added to this poorly programmed list of Classes
-            {
-                Class = new Classes.ClassBarbarian();
-            }
+
 
         }
     }
