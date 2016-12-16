@@ -57,7 +57,7 @@
             <TabItem Header="Combat">
 
                 <!--=================== MAIN GRID =================-->
-                <Grid Name="grid_Main" DataContext="{Binding Source={StaticResource charSheetVM}}" Margin="0,-12,0,12">
+                <Grid Name="grid_Main" DataContext="{Binding Source={StaticResource charSheetVM}}" Margin="0,-20,0,20">
                     <Grid.Background>
                         <ImageBrush ImageSource="../Resources/parchment.jpg" Stretch="Fill"/>
                     </Grid.Background>

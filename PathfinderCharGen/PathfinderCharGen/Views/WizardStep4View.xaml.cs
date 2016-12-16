@@ -600,7 +600,6 @@ namespace PathfinderCharGen.Views
             sheetView.WIS_Mod.Text = wisMod.ToString();
             sheetView.CHA_Mod.Text = chaMod.ToString();
 
-
             sheetView.CharacterLevel.Text = "1";
 
             Window parentWindow = Window.GetWindow(this);

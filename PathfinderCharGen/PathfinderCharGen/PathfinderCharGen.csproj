@@ -236,6 +236,21 @@
     <Resource Include="Resources\halforc2.png" />
     <Resource Include="Resources\human.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\barbarian.png" />
+    <Resource Include="Resources\bard.png" />
+    <Resource Include="Resources\cleric.png" />
+    <Resource Include="Resources\druid.png" />
+    <Resource Include="Resources\fighter.png" />
+    <Resource Include="Resources\paladin.png" />
+    <Resource Include="Resources\ranger.png" />
+    <Resource Include="Resources\rogue.png" />
+    <Resource Include="Resources\sorcerer.png" />
+    <Resource Include="Resources\wizard.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\monk.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

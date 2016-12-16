@@ -8,7 +8,7 @@
              mc:Ignorable="d" 
              d:DesignHeight="600" d:DesignWidth="1200">
     <UserControl.Resources>
-        <vm:EnumToImageConverter x:Key="conv"/>
+        <vm:RaceImageConverter x:Key="conv"/>
     </UserControl.Resources>
     <Grid>
 
@@ -25,11 +25,8 @@
             <RowDefinition Height="160" Name="row0"/>
             <RowDefinition Height="50" Name="row1"/>
             <RowDefinition Height="250" Name="row2"/>
-            <!--<RowDefinition Height="100" Name="row3"/>-->
-
             <RowDefinition/>
         </Grid.RowDefinitions>
-
 
         <Label Width="200" Height="100" Grid.Row="0" Grid.Column="0"
                FontSize="50" HorizontalAlignment="Left" Margin="30"
@@ -44,8 +41,8 @@
                Content="Please Select A Race:"/>
 
         <ComboBox Name="RaceSelection" FontSize="30" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"
-                  Width="150" Height="50" Grid.Column="1" Grid.Row="1" SelectedValue=""
-                  Background="WhiteSmoke" Foreground="Black" Margin="98,0" VerticalAlignment="Top">
+                  Width="150" Height="50" Grid.Column="1" Grid.Row="1"
+                  Background="WhiteSmoke" Foreground="Black" Margin="107,0,93,0" VerticalAlignment="Top">
             <ComboBoxItem Name="race0" Content="" FontSize="30" HorizontalContentAlignment="Left"/>
             <ComboBoxItem Name="race1" Content="Dwarf" FontSize="30" HorizontalContentAlignment="Left"/>
             <ComboBoxItem Name="race2" Content="Elf" FontSize="30" HorizontalContentAlignment="Left"/>
@@ -65,6 +62,24 @@
                Width="{Binding ActualWidth + 20, ElementName=Column2}" MaxHeight="500"
                x:Name="img" Grid.Column="2" Grid.Row="0" Grid.RowSpan="3" Margin="30"/>
 
+
+        <Grid Grid.Row="2" Grid.RowSpan="2" Grid.Column="0" Grid.ColumnSpan="2" Margin="30">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="300"/>
+                <ColumnDefinition Width="100"/>
+            </Grid.ColumnDefinitions>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="280"/>
+           
+            </Grid.RowDefinitions>
+            
+            
+            <TextBlock Background="Transparent" Text="Physical Description:" FontSize="30" FontWeight="Bold"/>
+            <TextBlock Background="Transparent" FontSize="20" FontWeight="Bold" 
+                     Grid.Row="1" Grid.ColumnSpan="3"/>
+        </Grid>
 
     </Grid>
 </UserControl>

@@ -18,9 +18,6 @@ using PathfinderCharGen.Views;
 using PathfinderCharGen.ViewModels;
 using PathfinderCharGen.Utilities;
 
-
-
-
 namespace PathfinderCharGen
 {
     /// <summary>

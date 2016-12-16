@@ -4,11 +4,13 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:PathfinderCharGen.Views"
-             xmlns:vm ="clr-namespace:PathfinderCharGen.ViewModels"
+             xmlns:vm ="clr-namespace:PathfinderCharGen.ViewModels"             
              mc:Ignorable="d" 
              d:DesignHeight="600" d:DesignWidth="1200">
-
-
+    <UserControl.Resources>
+        <vm:ClassImageConverter x:Key="conv"/>
+    </UserControl.Resources>
+        
     <Grid>
 
         <Grid.Background>
@@ -16,18 +18,16 @@
         </Grid.Background>
 
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="auto"/>
-            <ColumnDefinition Width="auto"/>
-            <ColumnDefinition Width="auto"/>
-            <ColumnDefinition Width="auto"/>
-            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="250" Name="column0"/>
+            <ColumnDefinition Width="350" Name="column1"/>
+            <ColumnDefinition Width="600" Name="column2"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="auto"/>
-            <RowDefinition Height="auto"/>
-            <RowDefinition Height="auto"/>
-            <RowDefinition Height="auto"/>
-            <RowDefinition Height="auto"/>
+            <RowDefinition Height="160" Name="row0"/>
+            <RowDefinition Height="50" Name="row1"/>
+            <RowDefinition Height="250" Name="row2"/>
+            
+            
             <RowDefinition/>
         </Grid.RowDefinitions>
 
@@ -49,26 +49,27 @@
                   Width="150" Height="50" Grid.Column="1" Grid.Row="1" 
                   Background="WhiteSmoke" Foreground="Black">
             <ComboBoxItem Name="class1" Content="Barbarian" FontSize="30" HorizontalContentAlignment="Left"/>
-            <ComboBoxItem Name="class2" Content="Bard" FontSize="30" HorizontalContentAlignment="Left"/>
-            <ComboBoxItem Name="class3" Content="Cleric" FontSize="30" HorizontalContentAlignment="Left"/>
-            <ComboBoxItem Name="class4" Content="Druid" FontSize="30" HorizontalContentAlignment="Left"/>
-            <ComboBoxItem Name="class5" Content="Fighter" FontSize="30" HorizontalContentAlignment="Left"/>
-            <ComboBoxItem Name="class6" Content="Monk" FontSize="30" HorizontalContentAlignment="Left"/>
-            <ComboBoxItem Name="class7" Content="Paladin" FontSize="30" HorizontalContentAlignment="Left"/>
-            <ComboBoxItem Name="class8" Content="Ranger" FontSize="30" HorizontalContentAlignment="Left"/>
-            <ComboBoxItem Name="class9" Content="Rogue" FontSize="30" HorizontalContentAlignment="Left"/>
+            <ComboBoxItem Name="class2"  Content="Bard" FontSize="30" HorizontalContentAlignment="Left"/>
+            <ComboBoxItem Name="class3"  Content="Cleric" FontSize="30" HorizontalContentAlignment="Left"/>
+            <ComboBoxItem Name="class4"  Content="Druid" FontSize="30" HorizontalContentAlignment="Left"/>
+            <ComboBoxItem Name="class5"  Content="Fighter" FontSize="30" HorizontalContentAlignment="Left"/>
+            <ComboBoxItem Name="class6"  Content="Monk" FontSize="30" HorizontalContentAlignment="Left"/>
+            <ComboBoxItem Name="class7"  Content="Paladin" FontSize="30" HorizontalContentAlignment="Left"/>
+            <ComboBoxItem Name="class8"  Content="Ranger" FontSize="30" HorizontalContentAlignment="Left"/>
+            <ComboBoxItem Name="class9"  Content="Rogue" FontSize="30" HorizontalContentAlignment="Left"/>
             <ComboBoxItem Name="class10" Content="Sorcerer" FontSize="30" HorizontalContentAlignment="Left"/>
             <ComboBoxItem Name="class11" Content="Wizard" FontSize="30" HorizontalContentAlignment="Left"/>
         </ComboBox>
 
+        <Image Source="{Binding ElementName=ClassSelection, Path=SelectedValue, Converter={StaticResource conv}}"
+               Width="{Binding ActualWidth + 20, ElementName=column2}" MaxHeight="500"
+               x:Name="classImage" Grid.Column="3" Grid.Row="0" Grid.RowSpan="3" Margin="30"/>
+
+
         <Button Name="Step3Next" Content="Next"
-                Width="100" Height="52" Grid.Row="5" 
+                Width="100" Height="50" Grid.Row="3"  Grid.Column="2"
                 HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="30" 
-                Background="Gray" Foreground="Black" Click="Step3Next_Click" Grid.Column="4" Margin="443,280,-363,0"/>
-
-
-
-
-
+                Background="Gray" Foreground="Black" Click="Step3Next_Click" Margin="450,30,0,0"/>
+        
     </Grid>
 </UserControl>

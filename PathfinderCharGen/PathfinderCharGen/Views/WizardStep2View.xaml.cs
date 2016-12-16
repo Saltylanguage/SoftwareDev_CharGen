@@ -12,7 +12,6 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using PathfinderCharGen.ViewModels;
 
 namespace PathfinderCharGen.Views
 {
@@ -21,8 +20,6 @@ namespace PathfinderCharGen.Views
     /// </summary>
     public partial class WizardStep2View : UserControl
     {
-
-
         CharSheetView sheetView;
 
         public WizardStep2View(CharSheetView SV)

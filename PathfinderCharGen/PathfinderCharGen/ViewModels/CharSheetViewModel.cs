@@ -17,6 +17,7 @@ namespace PathfinderCharGen.ViewModels
         public CharSheetViewModel()
         {
             calcCmd = new CalculateCommand(this);
+            
         }
 
         #region PrivateFields
