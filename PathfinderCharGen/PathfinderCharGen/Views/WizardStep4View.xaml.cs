@@ -602,7 +602,11 @@ namespace PathfinderCharGen.Views
 
             sheetView.CharacterLevel.Text = "1";
 
+            sheetView.CalcBtn.Command.Execute(sheetView);
+
             Window parentWindow = Window.GetWindow(this);
+
+
             Window window = new Window { Content = sheetView, Height = 1010, Width = 1800, WindowStartupLocation = WindowStartupLocation.CenterScreen };
 
             parentWindow.Close();

@@ -26,20 +26,13 @@ namespace PathfinderCharGen.Views
 
         public CharSheetView()
         {
-            this.Width = 1800;
-            this.Width = 1010;
             InitializeComponent();
-
-            this.STR_Score.Focus();
-            this.DEX_Score.Focus();
-
-            this.CalcBtn.Command.Execute(this);
         }
 
         public CharSheetView(CharSheetView SV)
         {
             this.Content = SV.Content;
-            InitializeComponent();
+            InitializeComponent();                
         }
 
         private void MenuItem_Click_Save(object sender, RoutedEventArgs e)
