@@ -31,7 +31,7 @@ namespace PathfinderCharGen.Views
         public CharSheetView(CharSheetView SV)
         {            
             this.Content = SV.Content;
-            InitializeComponent();
+            InitializeComponent();                
         }
 
         private void MenuItem_Click_Save(object sender, RoutedEventArgs e)

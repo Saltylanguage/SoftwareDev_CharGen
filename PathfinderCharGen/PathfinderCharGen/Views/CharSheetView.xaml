@@ -264,7 +264,7 @@
                                  FontSize="28" TextAlignment="Center"/>
 
                         <TextBox Name="INT_Mod" Template="{StaticResource TextBoxBaseControlTemplate}" 
-                                 Text="{Binding INT_MOD, Mode=TwoWay}"
+                                 Text="{Binding INT_MOD, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                                  Margin="5" Grid.Column="2" Grid.Row="4" IsReadOnly="True"
                                  Background="Transparent" Foreground="Black"                         
                                  FontSize="28" TextAlignment="Center"/>
@@ -322,7 +322,7 @@
                                  FontSize="28" TextAlignment="Center"/>
 
                         <TextBox Name="CHA_Mod" Template="{StaticResource TextBoxBaseControlTemplate}" 
-                                 Text="{Binding CHA_MOD, Mode=TwoWay}"
+                                 Text="{Binding CHA_MOD, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                                  Margin="5" Grid.Column="2" Grid.Row="6" IsReadOnly="True"
                                  Background="Transparent" Foreground="Black"                         
                                  FontSize="28" TextAlignment="Center"/>
@@ -542,7 +542,7 @@
                             <TextBox Name="HP" Template="{StaticResource TextBoxBaseControlTemplate}" Margin="12,0" FontSize="20" FontWeight="Bold" Height="30" MinWidth="60" Width="auto" TextAlignment="Center" Background="Transparent"/>
                             <TextBox Name="MaxHP" Template="{StaticResource TextBoxBaseControlTemplate}" Margin="40,0" FontSize="20" FontWeight="Bold" Height="30" MinWidth="60" Width="auto" TextAlignment="Center" Background="Transparent"/>
                             <TextBox Name="AC" Template="{StaticResource TextBoxBaseControlTemplate}" 
-                                     Text="{Binding AC_Total, Mode=TwoWay}" IsReadOnly="True"
+                                     Text="{Binding AC_Total, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" IsReadOnly="True"
                                      Margin="110,0, 20,0"  FontSize="20" FontWeight="Bold" 
                                      Height="30" MinWidth="60" Width="auto" TextAlignment="Center" Background="Transparent" />
                         </StackPanel>
@@ -576,7 +576,7 @@
                             <Border Margin="5" Padding="5" BorderThickness="1" Background="Black" CornerRadius="10" Grid.Row="3" Width="60">
                                 <TextBlock Text="CMD" FontSize="20" Background="Black" Foreground="White" VerticalAlignment="Center" TextAlignment="Center" />
                             </Border>
-                            <TextBox Name="CMD" Template="{StaticResource TextBoxBaseControlTemplate}" Margin="10" Text="{Binding CMD, Mode=TwoWay}"
+                            <TextBox Name="CMD" Template="{StaticResource TextBoxBaseControlTemplate}" Margin="10" Text="{Binding CMD, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                                      FontSize="20" Height="30" MinWidth="40" Width="auto" 
                                      TextAlignment="Center" Background="Transparent"/>
                             <Border Margin="5" Padding="5" BorderThickness="1" Background="Black" CornerRadius="10" Grid.Row="3" Width="100">
@@ -602,11 +602,11 @@
                                 </Border>
 
                                 <TextBlock Text=" = " FontSize="20" VerticalAlignment="Center"/>
-                                <TextBox Name="Init_Total" Template="{StaticResource TextBoxBaseControlTemplate}" Text="{Binding INIT_Total, Mode=TwoWay}" IsReadOnly="True"
+                                <TextBox Name="Init_Total" Template="{StaticResource TextBoxBaseControlTemplate}" Text="{Binding INIT_Total, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" IsReadOnly="True"
                                          Margin="10" FontSize="20" TextAlignment="Center" Background="Transparent" MinWidth="40" Width="auto"/>
 
                                 <TextBlock Text=" = " FontSize="20" VerticalAlignment="Center"/>
-                                <TextBox Name="Init_DexBonus" Template="{StaticResource TextBoxBaseControlTemplate}" Text="{Binding DEX_MOD, Mode=TwoWay}" IsReadOnly="True"
+                                <TextBox Name="Init_DexBonus" Template="{StaticResource TextBoxBaseControlTemplate}" Text="{Binding DEX_MOD, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" IsReadOnly="True"
                                          Margin="10" FontSize="20" TextAlignment="Center" Background="Transparent" MinWidth="40" Width="auto"/>
 
                                 <TextBlock Text=" + " FontSize="20" VerticalAlignment="Center"/>
