@@ -13,11 +13,11 @@ namespace PathfinderCharGen.ViewModels
 
     class CharSheetViewModel : ViewModelBase
     {
-        
+
         public CharSheetViewModel()
         {
             calcCmd = new CalculateCommand(this);
-            
+
         }
 
         #region PrivateFields
@@ -93,6 +93,40 @@ namespace PathfinderCharGen.ViewModels
         private string playerName = "";
         public string characterName = "";
         private string className = "";
+
+        private int acrobaticsTotal = 0;
+        private int acrobaticsRank = 0;
+        private int acrobaticsMisc = 0;
+
+        private int appraiseTotal = 0;
+        private int appraiseRank = 0;
+        private int appraiseMisc = 0;
+
+        //private int ACP = 0;
+
+        private int bluffTotal = 0;
+        private int bluffRank = 0;
+        private int bluffMisc = 0;
+
+        private int climbTotal = 0;
+        private int climbRank = 0;
+        private int climbMisc = 0;
+
+        private int craftTotal = 0;
+        private int craftRank = 0;
+        private int craftMisc = 0;
+
+        private int diplomacyTotal = 0;
+        private int diplomacyRank = 0;
+        private int diplomacyMisc = 0;
+
+        private int disableDeviceTotal = 0;
+        private int disableDeviceRank = 0;
+        private int disableDeviceMisc = 0;
+
+        private int disguiseTotal = 0;
+        private int disguiseRank = 0;
+        private int disguiseMisc = 0;
 
         private CalculateCommand calcCmd;
 
@@ -487,6 +521,8 @@ namespace PathfinderCharGen.ViewModels
             }
         }
 
+
+        //COMBAT BONUSES
         public int BAB
         {
             get { return baseAttackBonus; }
@@ -671,6 +707,249 @@ namespace PathfinderCharGen.ViewModels
 
         //SKILL PROPERTIES
 
+        public int Acrobatics_Rank
+        {
+            get { return acrobaticsRank; }
+            set
+            {
+                acrobaticsRank = value;
+                OnPropertyChanged("Acrobatics_Rank");
+            }
+        }
+
+        public int Acrobatics_Misc
+        {
+            get { return acrobaticsMisc; }
+            set
+            {
+                acrobaticsMisc = value;
+                OnPropertyChanged("Acrobatics_Misc");
+            }
+        }
+
+        public int Acrobatics_Total
+        {
+            get { return acrobaticsTotal; }
+            set
+            {
+                acrobaticsTotal = value;
+                OnPropertyChanged("Acrobatics_Total");
+            }
+        }
+
+        public int Appraise_Rank
+        {
+            get { return appraiseRank; }
+            set
+            {
+                appraiseRank = value;
+                OnPropertyChanged("Appraise_Rank");
+            }
+        }
+
+        public int Appraise_Misc
+        {
+            get { return appraiseMisc; }
+            set
+            {
+                appraiseMisc = value;
+                OnPropertyChanged("Appraise_Misc");
+            }
+        }
+
+        public int Appraise_Total
+        {
+            get { return appraiseTotal; }
+            set
+            {
+                appraiseTotal = value;
+                OnPropertyChanged("Appraise_Total");
+            }
+        }
+
+        public int Bluff_Rank
+        {
+            get { return bluffRank; }
+            set
+            {
+                bluffRank = value;
+                OnPropertyChanged("Bluff_Rank");
+            }
+        }
+
+        public int Bluff_Misc
+        {
+            get { return bluffMisc; }
+            set
+            {
+                bluffMisc = value;
+                OnPropertyChanged("Bluff_Misc");
+            }
+        }
+
+        public int Bluff_Total
+        {
+            get { return bluffTotal; }
+            set
+            {
+                bluffTotal = value;
+                OnPropertyChanged("Bluff_Total");
+            }
+        }
+
+        public int Climb_Rank
+        {
+            get { return climbRank; }
+            set
+            {
+                climbRank = value;
+                OnPropertyChanged("Climb_Rank");
+            }
+        }
+
+        public int Climb_Misc
+        {
+            get { return climbMisc; }
+            set
+            {
+                climbMisc = value;
+                OnPropertyChanged("Climb_Misc");
+            }
+        }
+
+        public int Climb_Total
+        {
+            get { return climbTotal; }
+            set
+            {
+                climbTotal = value;
+                OnPropertyChanged("Climb_Total");
+            }
+        }
+
+        public int Craft_Rank
+        {
+            get { return craftRank; }
+            set
+            {
+                craftRank = value;
+                OnPropertyChanged("Craft_Rank");
+            }
+        }
+
+        public int Craft_Misc
+        {
+            get { return craftMisc; }
+            set
+            {
+                craftMisc = value;
+                OnPropertyChanged("Craft_Misc");
+            }
+        }
+
+        public int Craft_Total
+        {
+            get { return craftTotal; }
+            set
+            {
+                craftTotal = value;
+                OnPropertyChanged("Craft_Total");
+            }
+        }
+
+        public int Diplomacy_Rank
+        {
+            get { return diplomacyRank; }
+            set
+            {
+                diplomacyRank = value;
+                OnPropertyChanged("Diplomacy_Rank");
+            }
+        }
+
+        public int Diplomacy_Misc
+        {
+            get { return diplomacyMisc; }
+            set
+            {
+                diplomacyMisc = value;
+                OnPropertyChanged("Diplomacy_Misc");
+            }
+        }
+
+        public int Diplomacy_Total
+        {
+            get { return diplomacyTotal; }
+            set
+            {
+                diplomacyTotal = value;
+                OnPropertyChanged("Diplomacy_Total");
+            }
+        }
+
+        public int Disable_Device_Rank
+        {
+            get { return disableDeviceRank; }
+            set
+            {
+                disableDeviceRank = value;
+                OnPropertyChanged("Disable_Device_Rank");
+            }
+        }
+
+        public int Disable_Device_Misc
+        {
+            get { return disableDeviceMisc; }
+            set
+            {
+                disableDeviceMisc = value;
+                OnPropertyChanged("Disable_Device_Misc");
+            }
+        }
+
+        public int Disable_Device_Total
+        {
+            get { return disableDeviceTotal; }
+            set
+            {
+                disableDeviceTotal = value;
+                OnPropertyChanged("Disable_Device_Total");
+            }
+        }
+
+        public int Disguise_Rank
+        {
+            get { return disguiseRank; }
+            set
+            {
+                disguiseRank = value;
+                OnPropertyChanged("Disguise_Rank");
+            }
+        }
+
+        public int Disguise_Misc
+        {
+            get { return disguiseMisc; }
+            set
+            {
+                disguiseMisc = value;
+                OnPropertyChanged("Disguise_Misc");
+            }
+        }
+
+        public int Disguise_Total
+        {
+            get { return disguiseTotal; }
+            set
+            {
+                disguiseTotal = value;
+                OnPropertyChanged("Disguise_Total");
+            }
+        }
+
+
+        //CHARACTER BIO INFO
+
         public string CLASS_Name
         {
             get { return className; }
@@ -704,6 +983,8 @@ namespace PathfinderCharGen.ViewModels
         }
 
         #endregion
+
+
 
         #region Commands
 
@@ -798,8 +1079,59 @@ namespace PathfinderCharGen.ViewModels
             INIT_Total = dex_mod + initMisc;
         }
 
+        //SKILL CALCULATION METHODS
 
+        internal void CalculateAcrobatics()
+        {
+            Acrobatics_Total = dex_mod + acrobaticsRank + acrobaticsMisc;
+        }
 
+        internal void CalculateAppraise()
+        {
+            Appraise_Total = int_mod + appraiseRank + appraiseMisc;
+        }
+
+        internal void CalculateBluff()
+        {
+            Bluff_Total = cha_mod + bluffRank + bluffMisc;
+        }
+        
+        internal void CalculateClimb()
+        {
+            Climb_Total = str_mod + climbRank + climbMisc;
+        }
+
+        internal void CalculateCraft()
+        {
+            Craft_Total = int_mod + craftRank + craftMisc;
+        }
+
+        internal void CalculateDiplomacy()
+        {
+            Diplomacy_Total = cha_mod + diplomacyRank + diplomacyMisc;
+        }
+
+        internal void CalculateDisableDevice()
+        {
+            Disable_Device_Total = dex_mod + disableDeviceRank + disableDeviceMisc;
+        }
+
+        internal void CalculateDisguise()
+        {
+            Disguise_Total = cha_mod + disguiseRank + disguiseMisc;
+        }
+
+        internal void calculateAllSkills()
+        {
+            CalculateAcrobatics();
+            CalculateAppraise();
+            CalculateBluff();
+            CalculateClimb();
+            CalculateCraft();
+            CalculateDiplomacy();
+            CalculateDisableDevice();
+            CalculateDisguise();
+        }
 
         #endregion
     }

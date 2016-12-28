@@ -602,11 +602,7 @@ namespace PathfinderCharGen.Views
 
             sheetView.CharacterLevel.Text = "1";
 
-            Window parentWindow = Window.GetWindow(this);
-            Window window = new Window { Content = sheetView, Height = 1010, Width = 1800, WindowStartupLocation = WindowStartupLocation.CenterScreen };
-
-            parentWindow.Close();
-            window.ShowDialog();
+            this.Content = new WizardStep5View(sheetView);
         }
 
         private void EpicFantasy_Click(object sender, RoutedEventArgs e)
@@ -683,7 +679,7 @@ namespace PathfinderCharGen.Views
             STR_Down.IsEnabled = true;
             DEX_Down.IsEnabled = true;
             CON_Down.IsEnabled = true;
-            INT_Down.IsEnabled = true;
+            INT_Down.IsEnabled = true; 
             WIS_Down.IsEnabled = true;
             CHA_Down.IsEnabled = true;
         }

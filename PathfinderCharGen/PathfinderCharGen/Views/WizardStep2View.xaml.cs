@@ -10,6 +10,7 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Globalization;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
@@ -33,6 +34,39 @@ namespace PathfinderCharGen.Views
             sheetView.CharacterRace.Text = RaceSelection.Text.ToString();
             sheetView.character.ChooseRace(RaceSelection.Text.ToString());
             this.Content = new WizardStep3View(sheetView);
+        }
+
+        protected override void OnRender(DrawingContext drawingContext)
+        {
+            string testString = "This is some text. Testing to see if text will render.  If text renders, replace text with physical description of each race.";
+
+            //Create formatted text object
+            FormattedText testFormattedText = new FormattedText(
+                    testString,
+                    CultureInfo.GetCultureInfo("en-us"),
+                    FlowDirection.LeftToRight,
+                    new Typeface("Verdana"),
+                    32,
+                    Brushes.Black);
+
+            //set max width and height, elipses("...") will be shown if text exceeds these values
+            testFormattedText.MaxTextWidth = 300;
+            testFormattedText.MaxTextHeight = 240;
+
+            testFormattedText.SetFontSize(36);
+
+            testFormattedText.SetForegroundBrush(
+                new LinearGradientBrush(
+                    Colors.Orange,
+                    Colors.Teal,
+                    90.0),
+                    6, 11);
+
+            testFormattedText.SetFontStyle(FontStyles.Italic, 20, 20);
+
+            
+
+            drawingContext.DrawText(testFormattedText, new Point(25, 300));            
         }
     }
 }

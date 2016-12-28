@@ -21,23 +21,15 @@ namespace PathfinderCharGen.Views
     /// </summary>
     public partial class CharSheetView : UserControl
     {
-
         public ReactiveLeveling.Pathfinder.Character character= new ReactiveLeveling.Pathfinder.Character();
-
+     
         public CharSheetView()
         {
-            this.Width = 1800;
-            this.Width = 1010;
             InitializeComponent();
-
-            this.STR_Score.Focus();
-            this.DEX_Score.Focus();
-
-            this.CalcBtn.Command.Execute(this);
         }
 
         public CharSheetView(CharSheetView SV)
-        {
+        {            
             this.Content = SV.Content;
             InitializeComponent();
         }
@@ -61,6 +53,11 @@ namespace PathfinderCharGen.Views
         private void MenuItem_Click_Import(object sender, RoutedEventArgs e)
         {
             Load.LoadPic(this);                            
+        }
+
+        private void Acrobatics_Rank_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            CalcBtn.Command.Execute(this);
         }
     }
 }

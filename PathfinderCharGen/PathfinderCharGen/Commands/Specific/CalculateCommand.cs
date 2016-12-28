@@ -47,6 +47,8 @@ namespace PathfinderCharGen.Commands.Specific
             charSheetViewModel.CalculateRAB();
                 
             charSheetViewModel.CalculateINIT();
+
+            charSheetViewModel.calculateAllSkills();
         
         }
     }

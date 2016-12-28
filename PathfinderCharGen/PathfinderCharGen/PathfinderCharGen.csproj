@@ -133,6 +133,7 @@
     <Compile Include="ViewModels\WizardStep2ViewModel.cs" />
     <Compile Include="ViewModels\WizardStep3ViewModel.cs" />
     <Compile Include="ViewModels\WizardStep4ViewModel.cs" />
+    <Compile Include="ViewModels\WizardStep5ViewModel.cs" />
     <Compile Include="Views\WizardStep1View.xaml.cs">
       <DependentUpon>WizardStep1View.xaml</DependentUpon>
     </Compile>
@@ -147,6 +148,9 @@
     </Compile>
     <Compile Include="Views\WizardStep4View.xaml.cs">
       <DependentUpon>WizardStep4View.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\WizardStep5View.xaml.cs">
+      <DependentUpon>WizardStep5View.xaml</DependentUpon>
     </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -177,6 +181,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\WizardStep4View.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\WizardStep5View.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

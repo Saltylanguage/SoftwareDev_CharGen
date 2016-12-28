@@ -13,6 +13,7 @@ namespace ReactiveLeveling.Pathfinder.Classes
             classFortSave = 2;
             classRefSave = 2;
             classWillSave = 0;
+            skillPoints = 6;
         }
 
         public void SetFortSave(int lvl)
@@ -35,6 +36,11 @@ namespace ReactiveLeveling.Pathfinder.Classes
             {
                 classWillSave++;
             }
+        }
+
+        public void SetSkillPoints()
+        {
+            skillPoints += 6;
         }
     }
 }
