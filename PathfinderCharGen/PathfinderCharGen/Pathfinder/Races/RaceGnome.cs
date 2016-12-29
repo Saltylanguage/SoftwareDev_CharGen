@@ -13,7 +13,7 @@ namespace ReactiveLeveling.Races
         {
             RaceStr = -2;
             RaceCon = 2;
-            RaceItl = 2;
+            RaceCha = 2;
         }
 
         public override string Size() // small

@@ -63,10 +63,97 @@ namespace PathfinderCharGen.Views
                     6, 11);
 
             testFormattedText.SetFontStyle(FontStyles.Italic, 20, 20);
-
-            
-
+                      
             drawingContext.DrawText(testFormattedText, new Point(25, 300));            
+        }
+
+        private void RaceSelection_MouseEnter(object sender, MouseEventArgs e)
+        {
+            sheetView.character.statMgr.raceMgr.RaceSelector(RaceSelection.Text);
+
+            STR_Race.Text = sheetView.character.statMgr.raceMgr.Race.RaceStr.ToString();
+            DEX_Race.Text = sheetView.character.statMgr.raceMgr.Race.RaceDex.ToString();
+            CON_Race.Text = sheetView.character.statMgr.raceMgr.Race.RaceCon.ToString();
+            INT_Race.Text = sheetView.character.statMgr.raceMgr.Race.RaceItl.ToString();
+            WIS_Race.Text = sheetView.character.statMgr.raceMgr.Race.RaceWis.ToString();
+            CHA_Race.Text = sheetView.character.statMgr.raceMgr.Race.RaceCha.ToString();
+
+            if(RaceSelection.Text.Contains("Half-") || RaceSelection.Text == "Human")
+            {
+                VariableBonusTextBlock.Visibility = System.Windows.Visibility.Visible;
+                VariableBonusComboBox.Visibility = System.Windows.Visibility.Visible;
+                VariableBonusTextBlock.IsEnabled = true;
+                VariableBonusComboBox.IsEnabled = true;
+                
+            }
+            else
+            {
+                VariableBonusTextBlock.Visibility = System.Windows.Visibility.Hidden;
+                VariableBonusComboBox.Visibility = System.Windows.Visibility.Hidden;
+                VariableBonusTextBlock.IsEnabled = false;
+                VariableBonusComboBox.IsEnabled = false;
+                VariableBonusComboBox.Text = "";
+            }
+        }
+
+        private void VariableBonusComboBox_MouseLeave(object sender, MouseEventArgs e)
+        {
+            if(VariableBonusComboBox.Text == "STR")
+            {
+                STR_Race.Text = "2";
+                DEX_Race.Text = "0";
+                CON_Race.Text = "0";
+                INT_Race.Text = "0";
+                WIS_Race.Text = "0";
+                CHA_Race.Text = "0"; 
+
+            }
+            if (VariableBonusComboBox.Text == "DEX")
+            {
+                STR_Race.Text = "0";
+                DEX_Race.Text = "2";
+                CON_Race.Text = "0";
+                INT_Race.Text = "0";
+                WIS_Race.Text = "0";
+                CHA_Race.Text = "0";
+            }
+            if (VariableBonusComboBox.Text == "CON")
+            {
+                STR_Race.Text = "0";
+                DEX_Race.Text = "0";
+                CON_Race.Text = "2";
+                INT_Race.Text = "0";
+                WIS_Race.Text = "0";
+                CHA_Race.Text = "0";
+            }
+            if (VariableBonusComboBox.Text == "INT")
+            {
+                STR_Race.Text = "0";
+                DEX_Race.Text = "0";
+                CON_Race.Text = "0";
+                INT_Race.Text = "2";
+                WIS_Race.Text = "0";
+                CHA_Race.Text = "0";
+            }
+            if (VariableBonusComboBox.Text == "WIS")
+            {
+                STR_Race.Text = "0";
+                DEX_Race.Text = "0";
+                CON_Race.Text = "0";
+                INT_Race.Text = "0";
+                WIS_Race.Text = "2";
+                CHA_Race.Text = "0";
+            }
+            if (VariableBonusComboBox.Text == "CHA")
+            {
+                STR_Race.Text = "0";
+                DEX_Race.Text = "0";
+                CON_Race.Text = "0";
+                INT_Race.Text = "0";
+                WIS_Race.Text = "0";
+                CHA_Race.Text = "2";
+            }
+
         }
     }
 }

@@ -118,10 +118,13 @@
     <Compile Include="Pathfinder\LevelManager.cs" />
     <Compile Include="Pathfinder\RaceManager.cs" />
     <Compile Include="Pathfinder\Races\GenericRace.cs" />
+    <Compile Include="Pathfinder\Races\RaceHalfOrc.cs" />
+    <Compile Include="Pathfinder\Races\RaceHuman.cs" />
     <Compile Include="Pathfinder\Races\IRaceTraits.cs" />
     <Compile Include="Pathfinder\Races\RaceDwarf.cs" />
     <Compile Include="Pathfinder\Races\RaceElf.cs" />
     <Compile Include="Pathfinder\Races\RaceGnome.cs" />
+    <Compile Include="Pathfinder\Races\RaceHalfElf.cs" />
     <Compile Include="Pathfinder\Races\RaceHalfling.cs" />
     <Compile Include="Pathfinder\StatManager.cs" />
     <Compile Include="Utilities\Load.cs" />

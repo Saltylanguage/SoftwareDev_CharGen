@@ -41,7 +41,7 @@
                Content="Please Select A Race:"/>
 
         <ComboBox Name="RaceSelection" FontSize="30" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"
-                  Width="150" Height="50" Grid.Column="1" Grid.Row="1"
+                  Width="150" Height="50" Grid.Column="1" Grid.Row="1" MouseLeave="RaceSelection_MouseEnter"
                   Background="WhiteSmoke" Foreground="Black" Margin="107,0,93,0" VerticalAlignment="Top">
             <ComboBoxItem Name="race0" Content="" FontSize="30" HorizontalContentAlignment="Left"/>
             <ComboBoxItem Name="race1" Content="Dwarf" FontSize="30" HorizontalContentAlignment="Left"/>
@@ -73,6 +73,7 @@
                 <RowDefinition Height="50"/>
                 <RowDefinition Height="50"/>
                 <RowDefinition Height="40"/>
+                <RowDefinition Height="70"/>
            
             </Grid.RowDefinitions>
                       
@@ -88,7 +89,7 @@
             </StackPanel>
 
             <StackPanel Orientation="Horizontal" Grid.Row="2" Grid.ColumnSpan="2">
-                <TextBox Name="STR_Race" Text="0" FontSize="30" TextAlignment="Center" Width="40" Margin="15,0" Background="Black" Foreground="White" />
+                <TextBox Name="STR_Race" Text="0"  FontSize="30" TextAlignment="Center" Width="40" Margin="15,0" Background="Black" Foreground="White" />
                 <TextBox Name="DEX_Race" Text="0" FontSize="30" TextAlignment="Center" Width="40" Margin="17,0" Background="Black" Foreground="White"/>
                 <TextBox Name="CON_Race" Text="0" FontSize="30" TextAlignment="Center" Width="40" Margin="17,0" Background="Black" Foreground="White"/>
                 <TextBox Name="INT_Race" Text="0" FontSize="30" TextAlignment="Center" Width="40" Margin="17,0" Background="Black" Foreground="White"/>
@@ -96,6 +97,17 @@
                 <TextBox Name="CHA_Race" Text="0" FontSize="30" TextAlignment="Center" Width="40" Margin="17,0" Background="Black" Foreground="White"/>
             </StackPanel>
 
+            <StackPanel Grid.Row="3" Margin="10" Orientation="Horizontal">
+                <TextBlock Name="VariableBonusTextBlock" Text="+2 to Any Stat:" FontSize="30" Visibility="Hidden" IsEnabled="False"/>
+                <ComboBox Name="VariableBonusComboBox" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="20" Width="70" Margin="10,0" Visibility="Hidden" IsEnabled="False" MouseLeave="VariableBonusComboBox_MouseLeave">
+                    <ComboBoxItem Content="STR" FontSize="20"/>
+                    <ComboBoxItem Content="DEX" FontSize="20"/>
+                    <ComboBoxItem Content="CON" FontSize="20"/>
+                    <ComboBoxItem Content="INT" FontSize="20"/>
+                    <ComboBoxItem Content="WIS" FontSize="20"/>
+                    <ComboBoxItem Content="CHA" FontSize="20"/>
+                </ComboBox>
+            </StackPanel>
         </Grid>
 
     </Grid>

@@ -25,13 +25,25 @@ namespace ReactiveLeveling.Races
             {
                 Race = new Races.RaceElf();
             }
-            if (raceChoice == "Human")
+            if (raceChoice == "Gnome")
             {
-                new Races.RaceGnome();
+                Race = new Races.RaceGnome();
+            }
+            if (raceChoice == "Half-Elf")
+            {
+                Race = new Races.RaceHalfElf();
             }
             if (raceChoice == "Halfling")
             {
                 Race = new Races.RaceHalfling();
+            }
+            if (raceChoice == "Half-Orc")
+            {
+                Race = new Races.RaceHalfOrc();
+            }
+            if (raceChoice == "Human")
+            {
+                Race = new Races.RaceHuman();
             }
         }
     }
