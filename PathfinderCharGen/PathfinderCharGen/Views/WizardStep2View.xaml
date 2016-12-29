@@ -66,19 +66,36 @@
         <Grid Grid.Row="2" Grid.RowSpan="2" Grid.Column="0" Grid.ColumnSpan="2" Margin="30">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="300"/>
-                <ColumnDefinition Width="100"/>
+                <ColumnDefinition Width="200"/>
             </Grid.ColumnDefinitions>
 
             <Grid.RowDefinitions>
                 <RowDefinition Height="50"/>
-                <RowDefinition Height="280"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="40"/>
            
             </Grid.RowDefinitions>
-            
-            
-            <TextBlock Background="Transparent" Text="Physical Description:" FontSize="30" FontWeight="Bold"/>
-            <TextBlock Background="Transparent" FontSize="20" FontWeight="Bold" 
-                     Grid.Row="1" Grid.ColumnSpan="3"/>
+                      
+            <TextBlock Background="Transparent" Text="Stat Bonuses:" FontSize="30" FontWeight="Bold"/>
+
+            <StackPanel Orientation="Horizontal" Grid.Row="1" Grid.ColumnSpan="2">
+                <TextBlock Text="STR" FontSize="30" Margin="10,0"/>
+                <TextBlock Text="DEX" FontSize="30" Margin="10,0"/>
+                <TextBlock Text="CON" FontSize="30" Margin="10,0"/>
+                <TextBlock Text="INT" FontSize="30" Margin="10,0"/>
+                <TextBlock Text="WIS" FontSize="30" Margin="10,0"/>
+                <TextBlock Text="CHA" FontSize="30" Margin="10,0"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" Grid.Row="2" Grid.ColumnSpan="2">
+                <TextBox Name="STR_Race" Text="0" FontSize="30" TextAlignment="Center" Width="40" Margin="15,0" Background="Black" Foreground="White" />
+                <TextBox Name="DEX_Race" Text="0" FontSize="30" TextAlignment="Center" Width="40" Margin="17,0" Background="Black" Foreground="White"/>
+                <TextBox Name="CON_Race" Text="0" FontSize="30" TextAlignment="Center" Width="40" Margin="17,0" Background="Black" Foreground="White"/>
+                <TextBox Name="INT_Race" Text="0" FontSize="30" TextAlignment="Center" Width="40" Margin="17,0" Background="Black" Foreground="White"/>
+                <TextBox Name="WIS_Race" Text="0" FontSize="30" TextAlignment="Center" Width="40" Margin="17,0" Background="Black" Foreground="White"/>
+                <TextBox Name="CHA_Race" Text="0" FontSize="30" TextAlignment="Center" Width="40" Margin="17,0" Background="Black" Foreground="White"/>
+            </StackPanel>
+
         </Grid>
 
     </Grid>

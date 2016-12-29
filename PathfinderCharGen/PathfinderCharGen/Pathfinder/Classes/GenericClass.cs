@@ -17,6 +17,8 @@ namespace ReactiveLeveling.Pathfinder.Classes
         public int classRefSave = 0;
         public int classWillSave = 0;
 
+        public int skillPoints = 0;
+
         public virtual void ClassLevels(uint level)
         {
             Debug.WriteLine("Generic ClassLevels was called");

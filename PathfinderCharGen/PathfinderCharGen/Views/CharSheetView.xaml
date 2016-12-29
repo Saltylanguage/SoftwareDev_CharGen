@@ -187,7 +187,7 @@
                                  Margin="5" Grid.Column="3" Grid.Row="1" 
                                  Background="Transparent" Foreground="Black"                         
                                  FontSize="28" TextAlignment="Center"/>
-                        
+
                         <TextBox Name="STR_TempMod" Template="{StaticResource TextBoxBaseControlTemplate}" 
                                  Margin="5" Grid.Column="4" Grid.Row="1"
                                  Background="Transparent" Foreground="Black"                         
@@ -198,7 +198,7 @@
                         <Border Margin="5" Padding="5" BorderThickness="1" Background="Black" CornerRadius="10" Grid.Column="0" Grid.Row="2">
                             <TextBlock Text="DEX" FontSize="20" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                         </Border>
-                        
+
                         <TextBox Name="DEX_Score" Template="{StaticResource TextBoxBaseControlTemplate}" 
                                  Text="{Binding DEX_Score, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" LostFocus="TextBoxLostFocus"
                                  Margin="5" Grid.Column="1" Grid.Row="2"
@@ -210,12 +210,12 @@
                                  Margin="5" Grid.Column="2" Grid.Row="2" IsReadOnly="True"
                                  Background="Transparent" Foreground="Black"                         
                                  FontSize="28" TextAlignment="Center"/>
-                        
+
                         <TextBox Name="DEX_TempScore" Template="{StaticResource TextBoxBaseControlTemplate}" 
                                  Margin="0,5,5,5" Grid.Column="3" Grid.Row="2"
                                  Background="Transparent" Foreground="Black"                         
                                  FontSize="28" TextAlignment="Center" HorizontalAlignment="Right" Width="61"/>
-                        
+
                         <TextBox Name="DEX_TempMod" Template="{StaticResource TextBoxBaseControlTemplate}" 
                                  Margin="5" Grid.Column="4" Grid.Row="2"
                                  Background="Transparent" Foreground="Black"                         
@@ -227,7 +227,7 @@
                         <Border Margin="5" Padding="5" BorderThickness="1" Background="Black" CornerRadius="10" Grid.Column="0" Grid.Row="3">
                             <TextBlock Text="CON" FontSize="20" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                         </Border>
-                        
+
                         <TextBox Name="CON_Score" Template="{StaticResource TextBoxBaseControlTemplate}" 
                                  Text="{Binding CON_Score, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" LostFocus="TextBoxLostFocus"
                                  Margin="5" Grid.Column="1" Grid.Row="3"
@@ -239,12 +239,12 @@
                                  Margin="5" Grid.Column="2" Grid.Row="3" IsReadOnly="True"
                                  Background="Transparent" Foreground="Black"                         
                                  FontSize="28" TextAlignment="Center"/>
-                        
+
                         <TextBox Name="CON_TempScore" Template="{StaticResource TextBoxBaseControlTemplate}" 
                                  Margin="5" Grid.Column="3" Grid.Row="3"
                                  Background="Transparent" Foreground="Black"                         
                                  FontSize="28" TextAlignment="Center"/>
-                        
+
                         <TextBox Name="CON_TempMod" Template="{StaticResource TextBoxBaseControlTemplate}" 
                                  Margin="5" Grid.Column="4" Grid.Row="3"
                                  Background="Transparent" Foreground="Black"                         
@@ -256,7 +256,7 @@
                         <Border Margin="5" Padding="5" BorderThickness="1" Background="Black" CornerRadius="10" Grid.Column="0" Grid.Row="4">
                             <TextBlock Text="INT" FontSize="20" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                         </Border>
-                        
+
                         <TextBox Name="INT_Score" Template="{StaticResource TextBoxBaseControlTemplate}" 
                                  Text="{Binding INT_Score, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" LostFocus="TextBoxLostFocus"
                                  Margin="5" Grid.Column="1" Grid.Row="4"
@@ -268,12 +268,12 @@
                                  Margin="5" Grid.Column="2" Grid.Row="4" IsReadOnly="True"
                                  Background="Transparent" Foreground="Black"                         
                                  FontSize="28" TextAlignment="Center"/>
-                        
+
                         <TextBox Name="INT_TempScore" Template="{StaticResource TextBoxBaseControlTemplate}" 
                                  Margin="5" Grid.Column="3" Grid.Row="4"
                                  Background="Transparent" Foreground="Black"                        
                                  FontSize="28" TextAlignment="Center"/>
-                        
+
                         <TextBox Name="INT_TempMod" Template="{StaticResource TextBoxBaseControlTemplate}" 
                                  Margin="5" Grid.Column="4" Grid.Row="4"
                                  Background="Transparent" Foreground="Black"                         
@@ -285,7 +285,7 @@
                         <Border Margin="5" Padding="5" BorderThickness="1" Background="Black" CornerRadius="10" Grid.Column="0" Grid.Row="5">
                             <TextBlock Text="WIS" FontSize="20" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                         </Border>
-                        
+
                         <TextBox Name="WIS_Score" Template="{StaticResource TextBoxBaseControlTemplate}" 
                                  Text="{Binding WIS_Score, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" LostFocus="TextBoxLostFocus"
                                  Margin="5" Grid.Column="1" Grid.Row="5"
@@ -297,12 +297,12 @@
                                  Margin="5" Grid.Column="2" Grid.Row="5" IsReadOnly="True"
                                  Background="Transparent" Foreground="Black"                         
                                  FontSize="28" TextAlignment="Center"/>
-                        
+
                         <TextBox Name="WIS_TempScore" Template="{StaticResource TextBoxBaseControlTemplate}" 
                                  Margin="5" Grid.Column="3" Grid.Row="5"
                                  Background="Transparent" Foreground="Black"                         
                                  FontSize="28" TextAlignment="Center"/>
-                        
+
                         <TextBox Name="WIS_TempMod" Template="{StaticResource TextBoxBaseControlTemplate}" 
                                  Margin="5" Grid.Column="4" Grid.Row="5"
                                  Background="Transparent" Foreground="Black"                         
@@ -314,7 +314,7 @@
                         <Border Margin="5" Padding="5" BorderThickness="1" Background="Black" CornerRadius="10" Grid.Column="0" Grid.Row="6">
                             <TextBlock Text="CHA" FontSize="20" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                         </Border>
-                        
+
                         <TextBox Name="CHA_Score" Template="{StaticResource TextBoxBaseControlTemplate}" 
                                  Text="{Binding CHA_Score, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" LostFocus="TextBoxLostFocus"
                                  Margin="5" Grid.Column="1" Grid.Row="6"
@@ -326,17 +326,17 @@
                                  Margin="5" Grid.Column="2" Grid.Row="6" IsReadOnly="True"
                                  Background="Transparent" Foreground="Black"                         
                                  FontSize="28" TextAlignment="Center"/>
-                        
+
                         <TextBox Name="CHA_TempScore" Template="{StaticResource TextBoxBaseControlTemplate}" 
                                  Margin="5" Grid.Column="3" Grid.Row="6"
                                  Background="Transparent" Foreground="Black"                         
                                  FontSize="28" TextAlignment="Center"/>
-                        
+
                         <TextBox Name="CHA_TempMod" Template="{StaticResource TextBoxBaseControlTemplate}" 
                                  Margin="5" Grid.Column="4" Grid.Row="6"
                                  Background="Transparent" Foreground="Black"                         
                                  FontSize="28" TextAlignment="Center"/>
-                        
+
                         <!--=================== END OF CHARISMA ROW =================-->
                     </Grid>
                     <!--=================== END OF MAIN STAT BLOCK SUB-GRID =================-->
@@ -396,34 +396,34 @@
                                  MinWidth="30" Width="auto" Grid.Row="2" Grid.Column="1" TextAlignment="Center"/>
                         <TextBlock Text="=" FontSize="20" Foreground="Black" 
                                    Width="auto" VerticalAlignment="Center" Grid.Row="2" Grid.Column="2"/>
-                        
+
                         <TextBox Name="MAB_Base" Template="{StaticResource TextBoxBaseControlTemplate}" 
                                  Text="{Binding BAB, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" LostFocus="TextBoxLostFocus"
                                  Margin="15,0" FontSize="16"  Background="Transparent"
                                  Height="30" MinWidth="30" Width="auto" Grid.Row="2" Grid.Column="3" TextAlignment="Center"/>
                         <TextBlock Text="+" FontSize="20" Foreground="Black" 
                                    Width="auto" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="2" Grid.Column="4"/>
-                        
+
                         <TextBox Name="MAB_AbilityBonus" Template="{StaticResource TextBoxBaseControlTemplate}" IsReadOnly="True"
                                  Text="{Binding STR_MOD, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" LostFocus="TextBoxLostFocus"
                                  Margin="15,4" FontSize="16"  Background="Transparent" MinWidth="30" Width="auto" TextAlignment="Center" Grid.Row="2" Grid.Column="5"/>
                         <TextBlock Text="+" FontSize="20" Foreground="Black" 
                                    Width="auto" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="2" Grid.Column="6"/>
-                        
+
                         <TextBox Name="MAB_SizeBonus" Template="{StaticResource TextBoxBaseControlTemplate}" 
                                  Text="{Binding MAB_Size, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" LostFocus="TextBoxLostFocus"
                                  Margin="15,0" FontSize="16" Height="30"  Background="Transparent"
                                  MinWidth="30" Width="auto" TextAlignment="Center" Grid.Row="2" Grid.Column="7"/>
                         <TextBlock Text="+" FontSize="20" Foreground="Black" 
                                    Width="auto" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="2" Grid.Column="8"/>
-                        
+
                         <TextBox Name="MAB_MiscBonus" Template="{StaticResource TextBoxBaseControlTemplate}" 
                                  Text="{Binding MAB_Misc, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" LostFocus="TextBoxLostFocus"
                                  Margin="15,0" FontSize="16"  Background="Transparent"
                                  Height="30" MinWidth="30" Width="auto" TextAlignment="Center" Grid.Row="2" Grid.Column="9"/>
                         <TextBlock Text="+" FontSize="20" Foreground="Black" 
                                    Width="auto" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="2" Grid.Column="10"/>
-                        
+
                         <TextBox Name="MAB_TempBonus" Template="{StaticResource TextBoxBaseControlTemplate}" 
                                  Text="{Binding MAB_Temp, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" LostFocus="TextBoxLostFocus"
                                  Margin="15,0" FontSize="16"  Background="Transparent"
@@ -439,7 +439,7 @@
                                  MinWidth="30" Width="auto" Grid.Row="3" Grid.Column="1" TextAlignment="Center"/>
                         <TextBlock Text="=" FontSize="20" Foreground="Black" 
                                    Width="auto" VerticalAlignment="Center" Grid.Row="3" Grid.Column="2"/>
-                        
+
                         <TextBox Name="CMB_Base" Template="{StaticResource TextBoxBaseControlTemplate}" 
                                  Text="{Binding BAB, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" LostFocus="TextBoxLostFocus"
                                  Margin="15,0" FontSize="16"  Background="Transparent"
@@ -453,21 +453,21 @@
                                  Height="30" MinWidth="30" Width="auto" TextAlignment="Center" Grid.Row="3" Grid.Column="5"/>
                         <TextBlock Text="+" FontSize="20" Foreground="Black" 
                        Width="auto" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="3" Grid.Column="6"/>
-                        
+
                         <TextBox Name="CMB_SizeBonus" Template="{StaticResource TextBoxBaseControlTemplate}" 
                                  Text="{Binding CMB_Size, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" LostFocus="TextBoxLostFocus"
                                  Margin="15,0" FontSize="16" Height="30"  Background="Transparent"
                                  MinWidth="30" Width="auto" TextAlignment="Center" Grid.Row="3" Grid.Column="7"/>
                         <TextBlock Text="+" FontSize="20" Foreground="Black" 
                                    Width="auto" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="3" Grid.Column="8"/>
-                        
+
                         <TextBox Name="CMB_MiscBonus" Template="{StaticResource TextBoxBaseControlTemplate}" 
                                  Text="{Binding CMB_Misc, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" LostFocus="TextBoxLostFocus"
                                  Margin="15,0" FontSize="16"  Background="Transparent"
                                  Height="30" MinWidth="30" Width="auto" TextAlignment="Center" Grid.Row="3" Grid.Column="9"/>
                         <TextBlock Text="+" FontSize="20" Foreground="Black" 
                                    Width="auto" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="3" Grid.Column="10"/>
-                        
+
                         <TextBox Name="CMB_TempBonus" Template="{StaticResource TextBoxBaseControlTemplate}" 
                                  Text="{Binding CMB_Temp, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" LostFocus="TextBoxLostFocus"
                                  Margin="15,0" FontSize="16"  Background="Transparent"
@@ -483,7 +483,7 @@
                                  MinWidth="30" Width="auto" Grid.Row="4" Grid.Column="1" TextAlignment="Center"/>
                         <TextBlock Text="=" FontSize="20" Foreground="Black" 
                                    Width="auto" VerticalAlignment="Center" Grid.Row="4" Grid.Column="2"/>
-                        
+
                         <TextBox Name="RAB_Base" Template="{StaticResource TextBoxBaseControlTemplate}" 
                                  Text="{Binding BAB, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" LostFocus="TextBoxLostFocus"
                                  Margin="15,0" FontSize="16"  Background="Transparent" 
@@ -497,21 +497,21 @@
                                  Height="30" MinWidth="30" Width="auto" TextAlignment="Center" Grid.Row="4" Grid.Column="5"/>
                         <TextBlock Text="+" FontSize="20" Foreground="Black" 
                                    Width="auto" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="4" Grid.Column="6"/>
-                        
+
                         <TextBox Name="RAB_SizeBonus" Template="{StaticResource TextBoxBaseControlTemplate}" 
                                  Text="{Binding RAB_Size, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" LostFocus="TextBoxLostFocus"
                                  Margin="15,0" FontSize="16" Height="30"  Background="Transparent"
                                  MinWidth="30" Width="auto" TextAlignment="Center" Grid.Row="4" Grid.Column="7"/>
                         <TextBlock Text="+" FontSize="20" Foreground="Black" 
                                    Width="auto" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="4" Grid.Column="8"/>
-                        
+
                         <TextBox Name="RAB_MiscBonus" Template="{StaticResource TextBoxBaseControlTemplate}" 
                                  Text="{Binding RAB_Misc, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" LostFocus="TextBoxLostFocus"
                                  Margin="15,0" FontSize="16"  Background="Transparent"
                                  Height="30" MinWidth="30" Width="auto" TextAlignment="Center" Grid.Row="4" Grid.Column="9"/>
                         <TextBlock Text="+" FontSize="20" Foreground="Black" 
                                    Width="auto" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="4" Grid.Column="10"/>
-                        
+
                         <TextBox Name="RAB_TempBonus" Template="{StaticResource TextBoxBaseControlTemplate}" 
                                  Text="{Binding RAB_Temp, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" LostFocus="TextBoxLostFocus"
                                  Margin="15,0" FontSize="16"  Background="Transparent"
@@ -701,7 +701,7 @@
                                  FontSize="20" Height="30" MinWidth="60" Width="auto" TextAlignment="Center"
                                  Grid.Row ="1" Grid.Column="9"/>
 
-                        
+
                         <TextBox Name="AC_DeflectBonus" Template="{StaticResource TextBoxBaseControlTemplate}" 
                                  Text="{Binding AC_DeflectBonus, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" LostFocus="TextBoxLostFocus"
                                  Background="Transparent" Foreground="Black" Margin="0,10,0,0"
@@ -788,21 +788,21 @@
                                      Height="30" MinWidth="30" Width="auto" TextAlignment="Center" Grid.Row="2" Grid.Column="5"/>
                             <TextBlock Text="+" FontSize="20" Foreground="Black" 
                                      Width="auto" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="2" Grid.Column="6"/>
-                            
+
                             <TextBox Name="FORT_MagicBonus" Template="{StaticResource TextBoxBaseControlTemplate}" 
                                      Text="{Binding FORT_Magic_Bonus, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" LostFocus="TextBoxLostFocus"
                                      Margin="15,0" FontSize="16" Background="Transparent"
                                      Height="30" MinWidth="30" Width="auto" TextAlignment="Center" Grid.Row="2" Grid.Column="7"/>
                             <TextBlock Text="+" FontSize="20" Foreground="Black" 
                                        Width="auto" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="2" Grid.Column="8"/>
-                            
+
                             <TextBox Name="FORT_MiscBonus" Template="{StaticResource TextBoxBaseControlTemplate}" 
                                      Text="{Binding FORT_Misc_Bonus, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" LostFocus="TextBoxLostFocus"
                                      Margin="15,0" FontSize="16"  Background="Transparent"
                                      Height="30" MinWidth="30" Width="auto" TextAlignment="Center" Grid.Row="2" Grid.Column="9"/>
                             <TextBlock Text="+" FontSize="20" Foreground="Black" 
                                        Width="auto" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="2" Grid.Column="10"/>
-                            
+
                             <TextBox Name="FORT_TempBonus" Template="{StaticResource TextBoxBaseControlTemplate}" 
                                      Text="{Binding FORT_Temp_Bonus, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" LostFocus="TextBoxLostFocus"
                                      Margin="15,0" FontSize="16"  Background="Transparent"
@@ -817,7 +817,7 @@
                                      MinWidth="30" Width="auto" Grid.Row="3" Grid.Column="1" TextAlignment="Center"/>
                             <TextBlock Text="=" FontSize="20" Foreground="Black" 
                                        Width="auto" VerticalAlignment="Center" Grid.Row="3" Grid.Column="2"/>
-                            
+
                             <TextBox Name="REF_BaseBonus" Template="{StaticResource TextBoxBaseControlTemplate}" 
                                      Text="{Binding REF_Base, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" LostFocus="TextBoxLostFocus"
                                      Margin="15,0" FontSize="16"  Background="Transparent"
@@ -831,26 +831,26 @@
                                      Height="30" MinWidth="30" Width="auto" TextAlignment="Center" Grid.Row="3" Grid.Column="5"/>
                             <TextBlock Text="+" FontSize="20" Foreground="Black" 
                                        Width="auto" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="3" Grid.Column="6"/>
-                            
+
                             <TextBox Name="REF_MagicBonus" Template="{StaticResource TextBoxBaseControlTemplate}" 
                                      Text="{Binding REF_Magic_Bonus, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" LostFocus="TextBoxLostFocus"
                                      Margin="15,0" FontSize="16" Height="30"  Background="Transparent"
                                      MinWidth="30" Width="auto" TextAlignment="Center" Grid.Row="3" Grid.Column="7"/>
                             <TextBlock Text="+" FontSize="20" Foreground="Black" 
                                        Width="auto" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="3" Grid.Column="8"/>
-                            
+
                             <TextBox Name="REF_MiscBonus" Template="{StaticResource TextBoxBaseControlTemplate}" 
                                      Text="{Binding REF_Misc_Bonus, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" LostFocus="TextBoxLostFocus"
                                      Margin="15,0" FontSize="16"  Background="Transparent"
                                      Height="30" MinWidth="30" Width="auto" TextAlignment="Center" Grid.Row="3" Grid.Column="9"/>
                             <TextBlock Text="+" FontSize="20" Foreground="Black" 
                                        Width="auto" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="3" Grid.Column="10"/>
-                            
+
                             <TextBox Name="REF_TempBonus" Template="{StaticResource TextBoxBaseControlTemplate}" 
                                      Text="{Binding REF_Temp_Bonus, UpdateSourceTrigger=PropertyChanged}" LostFocus="TextBoxLostFocus"
                                      Margin="15,0" FontSize="16"  Background="Transparent"
                                      Height="30" MinWidth="30" Width="auto" TextAlignment="Center" Grid.Row="3" Grid.Column="11"/>
-                            
+
                             <Border Margin="5" Padding="5" BorderThickness="1" Background="Black" CornerRadius="10" Grid.Row="4">
                                 <TextBlock Text="WILL" FontSize="12" Foreground="White" Width="auto" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                             </Border>
@@ -861,7 +861,7 @@
                                      MinWidth="30" Width="auto" Grid.Row="4" Grid.Column="1" TextAlignment="Center"/>
                             <TextBlock Text="=" FontSize="20" Foreground="Black" 
                                        Width="auto" VerticalAlignment="Center" Grid.Row="4" Grid.Column="2"/>
-                            
+
                             <TextBox Name="WILL_BaseBonus" Template="{StaticResource TextBoxBaseControlTemplate}" 
                                      Text="{Binding WILL_Base, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" LostFocus="TextBoxLostFocus"
                                      Margin="15,0" FontSize="16"  Background="Transparent"
@@ -875,21 +875,21 @@
                                      Height="30" MinWidth="30" Width="auto" TextAlignment="Center" Grid.Row="4" Grid.Column="5"/>
                             <TextBlock Text="+" FontSize="20" Foreground="Black" 
                                        Width="auto" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="4" Grid.Column="6"/>
-                            
+
                             <TextBox Name="WILL_MagicBonus" Template="{StaticResource TextBoxBaseControlTemplate}" 
                                      Text="{Binding WILL_Magic_Bonus, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" LostFocus="TextBoxLostFocus"
                                      Margin="15,0" FontSize="16" Height="30"  Background="Transparent"
                                      MinWidth="30" Width="auto" TextAlignment="Center" Grid.Row="4" Grid.Column="7"/>
                             <TextBlock Text="+" FontSize="20" Foreground="Black" 
                                        Width="auto" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="4" Grid.Column="8"/>
-                            
+
                             <TextBox Name="WILL_MiscBonus" Template="{StaticResource TextBoxBaseControlTemplate}" 
                                      Text="{Binding WILL_Misc_Bonus, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" LostFocus="TextBoxLostFocus"
                                      Margin="15,0" FontSize="16"  Background="Transparent"
                                      Height="30" MinWidth="30" Width="auto" TextAlignment="Center" Grid.Row="4" Grid.Column="9"/>
                             <TextBlock Text="+" FontSize="20" Foreground="White" 
                                        Width="auto" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="4" Grid.Column="10"/>
-                            
+
                             <TextBox Name="WILL_Temp" Template="{StaticResource TextBoxBaseControlTemplate}" 
                                      Text="{Binding WILL_Temp_Bonus, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" LostFocus="TextBoxLostFocus"
                                      Margin="15,0" FontSize="16" Background="Transparent"
@@ -964,41 +964,50 @@
                     </Grid.Background>
 
                     <StackPanel Grid.Row="1" Grid.Column="0" Orientation="Horizontal" Margin="1" Grid.ColumnSpan="2">
-                        <TextBlock Text="Name" FontSize="16" Width="250" MinWidth="150" Margin="20,0,0,0" TextDecorations="Underline" VerticalAlignment="Top"/>
+                        <TextBlock Text="Name" FontSize="16" Width="250" MinWidth="150" Margin="30,0,0,0" TextDecorations="Underline" VerticalAlignment="Top"/>
                         <TextBlock Text="Ability" FontSize="16" Width="auto" TextDecorations="Underline" VerticalAlignment="Top" Margin="0,0,20,0"/>
                         <TextBlock Text="Skill Mod" FontSize="16" Width="auto" Margin="0,0,35,0" TextDecorations="Underline" VerticalAlignment="Top"/>
                         <TextBlock Text="Ability Mod" FontSize="16" Width="auto" Margin="0,0,45,0" TextDecorations="Underline" VerticalAlignment="Top"/>
-                        <TextBlock Text="Rank" FontSize="16" Width="auto" Margin="0,0,45,0" TextDecorations="Underline" VerticalAlignment="Top"/>
+                        <TextBlock Text="Rank" FontSize="16" Width="auto" Margin="-10,0,45,0" TextDecorations="Underline" VerticalAlignment="Top"/>
                         <TextBlock Text="Misc" FontSize="16" Width="auto" Margin="0,0,60,0"  TextDecorations="Underline" VerticalAlignment="Top"/>
                         <TextBlock Text="ACP" FontSize="16" Width="auto" MinWidth="150" TextDecorations="Underline" VerticalAlignment="Top"/>
                     </StackPanel>
 
-                    <StackPanel Grid.Row="2" Grid.Column="0" Orientation="Horizontal" Margin="1" Grid.ColumnSpan="2">
+                    <StackPanel Grid.Row="2" Grid.Column="0" Orientation="Horizontal" Margin="-2,1,4,1" Grid.ColumnSpan="2">
                         <CheckBox Width="auto" Height="auto" VerticalAlignment="Center" />
                         <TextBlock Text="Acrobatics" FontSize="16" Width="255" MinWidth="150" Margin="10,0,0,0" TextDecorations="Underline" VerticalAlignment="Top"/>
                         <TextBlock Text="DEX" FontSize="16" Width="auto" Margin="0,0,36,0" TextDecorations="Underline" VerticalAlignment="Top"/>
-                        <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Background="Black" Foreground="White" Width="40" Height="25"/>
+                        <TextBox Name="Acrobatics_Total" Template="{StaticResource TextBoxBaseControlTemplate}"  Text="{Binding Acrobatics_Total, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"  FontSize="16" TextAlignment="Center" Background="Black" Foreground="White" Width="40" Height="25"/>
                         <TextBlock Text=" = " FontSize="25" Width="70" TextAlignment="Center" VerticalAlignment="Center" />
-                        <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Text="{Binding DEX_MOD, Mode=TwoWay}" TextAlignment="Center" Background="White" Foreground="Black" Width="40" Height="25" IsReadOnly="True"/>
+                        <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Text="{Binding DEX_MOD, Mode=TwoWay}"  FontSize="16" TextAlignment="Center" Background="White" Foreground="Black" Width="40" Height="25" IsReadOnly="True"/>
                         <TextBlock Text=" + " FontSize="25" Width="65" TextAlignment="Center" VerticalAlignment="Center"  />
-                        <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Background="Black" Foreground="White" Width="40" Height="25"/>
+                        <TextBox Name="Acrobatics_Rank" Text="{Binding Acrobatics_Rank, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" FontSize="16" TextAlignment="Center" Template="{StaticResource TextBoxBaseControlTemplate}" Background="Black" Foreground="White" Width="40" Height="25" TextChanged="Acrobatics_Rank_TextChanged"/>
                         <TextBlock Text=" + " FontSize="25" Width="40" TextAlignment="Center" VerticalAlignment="Center" />
-                        <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Background="Black" Foreground="White" Width="40" Height="25"/>
+                        <TextBox Name="Acrobatics_Misc" Text="{Binding Acrobatics_Misc, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"  FontSize="16" TextAlignment="Center" Template="{StaticResource TextBoxBaseControlTemplate}" Background="Black" Foreground="White" Width="40" Height="25"/>
                         <TextBlock Text=" + " FontSize="25" Width="50" TextAlignment="Center" VerticalAlignment="Center" />
-                        <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Background="Black" Foreground="White" Width="40" Height="25"/>
+                        <TextBox Name="Acrobatics_ACP" Template="{StaticResource TextBoxBaseControlTemplate}"  FontSize="16" TextAlignment="Center" Background="Black" Foreground="White" Width="40" Height="25"/>
                     </StackPanel>
 
                     <StackPanel Grid.Row="3" Grid.Column="0" Orientation="Horizontal" Margin="1" Grid.ColumnSpan="2">
                         <CheckBox Width="auto" Height="auto" VerticalAlignment="Center" />
                         <TextBlock Text="Appraise" FontSize="16" Width="255" MinWidth="150" Margin="10,0,0,0" TextDecorations="Underline" VerticalAlignment="Top"/>
                         <TextBlock Text="INT" FontSize="16" Width="auto" Margin="0,0,40,0" TextDecorations="Underline" VerticalAlignment="Top"/>
-                        <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Background="Black" Foreground="White" Width="40" Height="25"/>
-                        <TextBlock Text=" = " FontSize="25" Width="70" TextAlignment="Center" VerticalAlignment="Center" />
-                        <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Text="{Binding INT_MOD, Mode=TwoWay}" TextAlignment="Center" Background="White" Foreground="Black" Width="40" Height="25" IsReadOnly="True"/>
+                        <TextBox Name="Appraise_Total"  Text="{Binding Appraise_Total, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"  FontSize="16" TextAlignment="Center"  Template="{StaticResource TextBoxBaseControlTemplate}" Background="Black" Foreground="White" Width="40" Height="25"/>
+                        <TextBlock Text=" = " FontSize="25" Width="70" TextAlignment="Center" VerticalAlignment="Center" RenderTransformOrigin="0.5,0.5" >
+                            <TextBlock.RenderTransform>
+                                <TransformGroup>
+                                    <ScaleTransform/>
+                                    <SkewTransform AngleY="0.796"/>
+                                    <RotateTransform/>
+                                    <TranslateTransform Y="-0.486"/>
+                                </TransformGroup>
+                            </TextBlock.RenderTransform>
+                        </TextBlock>
+                        <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Text="{Binding INT_MOD, Mode=TwoWay}"  FontSize="16" TextAlignment="Center" Background="White" Foreground="Black" Width="40" Height="25" IsReadOnly="True"/>
                         <TextBlock Text=" + " FontSize="25" Width="65" TextAlignment="Center" VerticalAlignment="Center"  />
-                        <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Background="Black" Foreground="White" Width="40" Height="25"/>
+                        <TextBox Name="Appraise_Rank" Text="{Binding Appraise_Rank, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" FontSize="16" TextAlignment="Center" Template="{StaticResource TextBoxBaseControlTemplate}" Background="Black" Foreground="White" Width="40" Height="25"/>
                         <TextBlock Text=" + " FontSize="25" Width="40" TextAlignment="Center" VerticalAlignment="Center" />
-                        <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Background="Black" Foreground="White" Width="40" Height="25"/>
+                        <TextBox Name="Appraise_Misc" Text="{Binding Appraise_Misc, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" FontSize="16" TextAlignment="Center" Template="{StaticResource TextBoxBaseControlTemplate}" Background="Black" Foreground="White" Width="40" Height="25"/>
                         <TextBlock Text=" + " FontSize="25" Width="50" TextAlignment="Center" VerticalAlignment="Center" />
                         <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Background="Black" Foreground="White" Width="40" Height="25"/>
                     </StackPanel>
@@ -1007,13 +1016,13 @@
                         <CheckBox Width="auto" Height="auto" VerticalAlignment="Center" />
                         <TextBlock Text="Bluff" FontSize="16" Width="255" MinWidth="150" Margin="10,0,0,0" TextDecorations="Underline" VerticalAlignment="Top"/>
                         <TextBlock Text="CHA" FontSize="16" Width="auto" Margin="0,0,34,0" TextDecorations="Underline" VerticalAlignment="Top"/>
-                        <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Background="Black" Foreground="White" Width="40" Height="25"/>
+                        <TextBox Name="Bluff_Total" Text="{Binding Bluff_Total, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"  FontSize="16" TextAlignment="Center" Template="{StaticResource TextBoxBaseControlTemplate}" Background="Black" Foreground="White" Width="40" Height="25"/>
                         <TextBlock Text=" = " FontSize="25" Width="70" TextAlignment="Center" VerticalAlignment="Center" />
-                        <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Text="{Binding CHA_MOD, Mode=TwoWay}" TextAlignment="Center" Background="White" Foreground="Black" Width="40" Height="25" IsReadOnly="True"/>
+                        <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Text="{Binding CHA_MOD, Mode=TwoWay}"  FontSize="16" TextAlignment="Center" Background="White" Foreground="Black" Width="40" Height="25" IsReadOnly="True"/>
                         <TextBlock Text=" + " FontSize="25" Width="65" TextAlignment="Center" VerticalAlignment="Center"  />
-                        <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Background="Black" Foreground="White" Width="40" Height="25"/>
+                        <TextBox Name="Bluff_Rank" Text="{Binding Bluff_Rank, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" FontSize="16" TextAlignment="Center" Template="{StaticResource TextBoxBaseControlTemplate}" Background="Black" Foreground="White" Width="40" Height="25"/>
                         <TextBlock Text=" + " FontSize="25" Width="40" TextAlignment="Center" VerticalAlignment="Center" />
-                        <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Background="Black" Foreground="White" Width="40" Height="25"/>
+                        <TextBox Name="Bluff_Misc" Template="{StaticResource TextBoxBaseControlTemplate}" Text="{Binding Bluff_Misc, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" FontSize="16" TextAlignment="Center" Background="Black" Foreground="White" Width="40" Height="25"/>
                         <TextBlock Text=" + " FontSize="25" Width="50" TextAlignment="Center" VerticalAlignment="Center" />
                         <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Background="Black" Foreground="White" Width="40" Height="25"/>
                     </StackPanel>
@@ -1022,13 +1031,13 @@
                         <CheckBox Width="auto" Height="auto" VerticalAlignment="Center" />
                         <TextBlock Text="Climb" FontSize="16" Width="255" MinWidth="150" Margin="10,0,0,0" TextDecorations="Underline" VerticalAlignment="Top"/>
                         <TextBlock Text="STR" FontSize="16" Width="auto" Margin="0,0,40,0" TextDecorations="Underline" VerticalAlignment="Top"/>
-                        <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Background="Black" Foreground="White" Width="40" Height="25"/>
+                        <TextBox Name="Climb_Total" Template="{StaticResource TextBoxBaseControlTemplate}" Text="{Binding Climb_Total, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" FontSize="16" TextAlignment="Center"  Background="Black" Foreground="White" Width="40" Height="25"/>
                         <TextBlock Text=" = " FontSize="25" Width="70" TextAlignment="Center" VerticalAlignment="Center" />
-                        <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Text="{Binding STR_MOD, Mode=TwoWay}" TextAlignment="Center" Background="White" Foreground="Black" Width="40" Height="25" IsReadOnly="True"/>
+                        <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Text="{Binding STR_MOD, Mode=TwoWay}"  FontSize="16" TextAlignment="Center" Background="White" Foreground="Black" Width="40" Height="25" IsReadOnly="True"/>
                         <TextBlock Text=" + " FontSize="25"  Width="65" TextAlignment="Center" VerticalAlignment="Center"  />
-                        <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Background="Black" Foreground="White" Width="40" Height="25"/>
+                        <TextBox Name="Climb_Rank" Text="{Binding Climb_Rank, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" FontSize="16" TextAlignment="Center" Template="{StaticResource TextBoxBaseControlTemplate}" Background="Black" Foreground="White" Width="40" Height="25"/>
                         <TextBlock Text=" + " FontSize="25" Width="40" TextAlignment="Center" VerticalAlignment="Center" />
-                        <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Background="Black" Foreground="White" Width="40" Height="25"/>
+                        <TextBox Name="Climb_Misc" Template="{StaticResource TextBoxBaseControlTemplate}" Text="{Binding Climb_Misc, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" FontSize="16" TextAlignment="Center" Background="Black" Foreground="White" Width="40" Height="25"/>
                         <TextBlock Text=" + " FontSize="25" Width="50" TextAlignment="Center" VerticalAlignment="Center" />
                         <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Background="Black" Foreground="White" Width="40" Height="25"/>
                     </StackPanel>
@@ -1037,13 +1046,13 @@
                         <CheckBox Width="auto" Height="auto" VerticalAlignment="Center" />
                         <TextBlock Text="Craft" FontSize="16" Width="255" MinWidth="150" Margin="10,0,0,0" TextDecorations="Underline" VerticalAlignment="Top"/>
                         <TextBlock Text="INT" FontSize="16" Width="auto" Margin="0,0,40,0" TextDecorations="Underline" VerticalAlignment="Top"/>
-                        <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Background="Black" Foreground="White" Width="40" Height="25"/>
+                        <TextBox Name="Craft_Total" Template="{StaticResource TextBoxBaseControlTemplate}" Text="{Binding Craft_Total, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"  FontSize="16" TextAlignment="Center"  Background="Black" Foreground="White" Width="40" Height="25"/>
                         <TextBlock Text=" = " FontSize="25" Width="70" TextAlignment="Center" VerticalAlignment="Center" />
-                        <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Text="{Binding INT_MOD, Mode=TwoWay}" TextAlignment="Center" Background="White" Foreground="Black" Width="40" Height="25" IsReadOnly="True"/>
+                        <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Text="{Binding INT_MOD, Mode=TwoWay}"  FontSize="16" TextAlignment="Center" Background="White" Foreground="Black" Width="40" Height="25" IsReadOnly="True"/>
                         <TextBlock Text=" + " FontSize="25" Width="65" TextAlignment="Center" VerticalAlignment="Center"  />
-                        <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Background="Black" Foreground="White" Width="40" Height="25"/>
+                        <TextBox Name="Craft_Rank" Text="{Binding Craft_Rank, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" FontSize="16" TextAlignment="Center" Template="{StaticResource TextBoxBaseControlTemplate}" Background="Black" Foreground="White" Width="40" Height="25"/>
                         <TextBlock Text=" + " FontSize="25" Width="40" TextAlignment="Center" VerticalAlignment="Center" />
-                        <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Background="Black" Foreground="White" Width="40" Height="25"/>
+                        <TextBox Name="Craft_misc" Template="{StaticResource TextBoxBaseControlTemplate}" Text="{Binding Craft_Misc, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" FontSize="16" TextAlignment="Center" Background="Black" Foreground="White" Width="40" Height="25" Margin="0,6,0,2"/>
                         <TextBlock Text=" + " FontSize="25" Width="50" TextAlignment="Center" VerticalAlignment="Center" />
                         <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Background="Black" Foreground="White" Width="40" Height="25"/>
                     </StackPanel>
@@ -1052,13 +1061,13 @@
                         <CheckBox Width="auto" Height="auto" VerticalAlignment="Center" />
                         <TextBlock Text="Diplomacy" FontSize="16" Width="255" MinWidth="150" Margin="10,0,0,0" TextDecorations="Underline" VerticalAlignment="Top"/>
                         <TextBlock Text="CHA" FontSize="16" Width="auto" Margin="0,0,34,0" TextDecorations="Underline" VerticalAlignment="Top"/>
-                        <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Background="Black" Foreground="White" Width="40" Height="25"/>
+                        <TextBox Name="Diplomacy_Total" Template="{StaticResource TextBoxBaseControlTemplate}" Text="{Binding Diplomacy_Total, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"  FontSize="16" TextAlignment="Center"  Background="Black" Foreground="White" Width="40" Height="25"/>
                         <TextBlock Text=" = " FontSize="25" Width="70" TextAlignment="Center" VerticalAlignment="Center" />
-                        <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Text="{Binding CHA_MOD, Mode=TwoWay}" TextAlignment="Center" Background="White" Foreground="Black" Width="40" Height="25" IsReadOnly="True"/>
+                        <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Text="{Binding CHA_MOD, Mode=TwoWay}"  FontSize="16" TextAlignment="Center" Background="White" Foreground="Black" Width="40" Height="25" IsReadOnly="True"/>
                         <TextBlock Text=" + " FontSize="25" Width="65" TextAlignment="Center" VerticalAlignment="Center"  />
-                        <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Background="Black" Foreground="White" Width="40" Height="25"/>
+                        <TextBox Name="Diplomacy_Rank" Text="{Binding Diplomacy_Rank, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" FontSize="16" TextAlignment="Center" Template="{StaticResource TextBoxBaseControlTemplate}" Background="Black" Foreground="White" Width="40" Height="25"/>
                         <TextBlock Text=" + " FontSize="25" Width="40" TextAlignment="Center" VerticalAlignment="Center" />
-                        <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Background="Black" Foreground="White" Width="40" Height="25"/>
+                        <TextBox Name="Diplomacy_Misc" Template="{StaticResource TextBoxBaseControlTemplate}"  Text="{Binding Diplomacy_Misc, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" FontSize="16" TextAlignment="Center" Background="Black" Foreground="White" Width="40" Height="25"/>
                         <TextBlock Text=" + " FontSize="25" Width="50" TextAlignment="Center" VerticalAlignment="Center" />
                         <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Background="Black" Foreground="White" Width="40" Height="25"/>
                     </StackPanel>
@@ -1067,13 +1076,13 @@
                         <CheckBox Width="auto" Height="auto" VerticalAlignment="Center" />
                         <TextBlock Text="Disable Device" FontSize="16" Width="255" MinWidth="150" Margin="10,0,0,0" TextDecorations="Underline" VerticalAlignment="Top"/>
                         <TextBlock Text="DEX" FontSize="16" Width="auto" Margin="0,0,37,0" TextDecorations="Underline" VerticalAlignment="Top"/>
-                        <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Background="Black" Foreground="White" Width="40" Height="25"/>
+                        <TextBox Name="Disable_Device_Total" Template="{StaticResource TextBoxBaseControlTemplate}" Text="{Binding Disable_Device_Total, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"  FontSize="16" TextAlignment="Center"  Background="Black" Foreground="White" Width="40" Height="25"/>
                         <TextBlock Text=" = " FontSize="25" Width="70" TextAlignment="Center" VerticalAlignment="Center" />
-                        <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Text="{Binding DEX_MOD, Mode=TwoWay}" TextAlignment="Center" Background="White" Foreground="Black" Width="40" Height="25" IsReadOnly="True"/>
+                        <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Text="{Binding DEX_MOD, Mode=TwoWay}"  FontSize="16" TextAlignment="Center" Background="White" Foreground="Black" Width="40" Height="25" IsReadOnly="True"/>
                         <TextBlock Text=" + " FontSize="25" Width="65" TextAlignment="Center" VerticalAlignment="Center"  />
-                        <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Background="Black" Foreground="White" Width="40" Height="25"/>
+                        <TextBox Name="Disable_Device_Rank" Text="{Binding Disable_Device_Rank, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" FontSize="16" TextAlignment="Center" Template="{StaticResource TextBoxBaseControlTemplate}" Background="Black" Foreground="White" Width="40" Height="25" Margin="0,4,0,0" VerticalAlignment="Top"/>
                         <TextBlock Text=" + " FontSize="25" Width="40" TextAlignment="Center" VerticalAlignment="Center" />
-                        <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Background="Black" Foreground="White" Width="40" Height="25"/>
+                        <TextBox Name="Disable_Device_Misc" Template="{StaticResource TextBoxBaseControlTemplate}" Text="{Binding Disable_Device_Misc, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" FontSize="16" TextAlignment="Center" Background="Black" Foreground="White" Width="40" Height="25"/>
                         <TextBlock Text=" + " FontSize="25" Width="50" TextAlignment="Center" VerticalAlignment="Center" />
                         <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Background="Black" Foreground="White" Width="40" Height="25"/>
                     </StackPanel>
@@ -1084,13 +1093,13 @@
                         <CheckBox Width="auto" Height="auto" VerticalAlignment="Center" />
                         <TextBlock Text="Disguise" FontSize="16" Width="255" MinWidth="150" Margin="10,0,0,0" TextDecorations="Underline" VerticalAlignment="Top"/>
                         <TextBlock Text="CHA" FontSize="16" Width="auto" Margin="0,0,35,0" TextDecorations="Underline" VerticalAlignment="Top"/>
-                        <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Background="Black" Foreground="White" Width="40" Height="25"/>
+                        <TextBox Name="Disguise_Total" Template="{StaticResource TextBoxBaseControlTemplate}" Text="{Binding Disguise_Total, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"  FontSize="16" TextAlignment="Center"  Background="Black" Foreground="White" Width="40" Height="25"/>
                         <TextBlock Text=" = " FontSize="25" Width="70" TextAlignment="Center" VerticalAlignment="Center" />
-                        <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Text="{Binding CHA_MOD, Mode=TwoWay}" TextAlignment="Center" Background="White" Foreground="Black" Width="40" Height="25" IsReadOnly="True"/>
+                        <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Text="{Binding CHA_MOD, Mode=TwoWay}"  FontSize="16" TextAlignment="Center" Background="White" Foreground="Black" Width="40" Height="25" IsReadOnly="True"/>
                         <TextBlock Text=" + " FontSize="25" Width="65" TextAlignment="Center" VerticalAlignment="Center"  />
-                        <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Background="Black" Foreground="White" Width="40" Height="25"/>
+                        <TextBox Name="Disguise_Rank" Text="{Binding Disguise_Rank, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" FontSize="16" TextAlignment="Center" Template="{StaticResource TextBoxBaseControlTemplate}" Background="Black" Foreground="White" Width="40" Height="25"/>
                         <TextBlock Text=" + " FontSize="25" Width="40" TextAlignment="Center" VerticalAlignment="Center" />
-                        <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Background="Black" Foreground="White" Width="40" Height="25"/>
+                        <TextBox Name="Disguise_Misc" Template="{StaticResource TextBoxBaseControlTemplate}" Text="{Binding Disguise_Misc, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" FontSize="16" TextAlignment="Center" Background="Black" Foreground="White" Width="40" Height="25"/>
                         <TextBlock Text=" + " FontSize="25" Width="50" TextAlignment="Center" VerticalAlignment="Center" />
                         <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Background="Black" Foreground="White" Width="40" Height="25"/>
                     </StackPanel>
@@ -1099,13 +1108,13 @@
                         <CheckBox Width="auto" Height="auto" VerticalAlignment="Center" />
                         <TextBlock Text="Escape Artist" FontSize="16" Width="255" MinWidth="150" Margin="10,0,0,0" TextDecorations="Underline" VerticalAlignment="Top"/>
                         <TextBlock Text="DEX" FontSize="16" Width="auto" Margin="0,0,37,0" TextDecorations="Underline" VerticalAlignment="Top"/>
-                        <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Background="Black" Foreground="White" Width="40" Height="25"/>
+                        <TextBox Name="Escape_Artist_Total" Template="{StaticResource TextBoxBaseControlTemplate}" Text="{Binding Escape_Artist_Total, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"  FontSize="16" TextAlignment="Center"  Background="Black" Foreground="White" Width="40" Height="25"/>
                         <TextBlock Text=" = " FontSize="25" Width="70" TextAlignment="Center" VerticalAlignment="Center" />
-                        <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Text="{Binding DEX_MOD, Mode=TwoWay}" TextAlignment="Center" Background="White" Foreground="Black" Width="40" Height="25" IsReadOnly="True"/>
+                        <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Text="{Binding DEX_MOD, Mode=TwoWay}"  FontSize="16" TextAlignment="Center" Background="White" Foreground="Black" Width="40" Height="25" IsReadOnly="True"/>
                         <TextBlock Text=" + " FontSize="25" Width="65" TextAlignment="Center" VerticalAlignment="Center"  />
-                        <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Background="Black" Foreground="White" Width="40" Height="25"/>
+                        <TextBox Name="Escape_Artist_Rank" Text="{Binding Escape_Artist_Rank, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" FontSize="16" TextAlignment="Center" Template="{StaticResource TextBoxBaseControlTemplate}" Background="Black" Foreground="White" Width="40" Height="25"/>
                         <TextBlock Text=" + " FontSize="25" Width="40" TextAlignment="Center" VerticalAlignment="Center" />
-                        <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Background="Black" Foreground="White" Width="40" Height="25"/>
+                        <TextBox Name="Escape_Artist_Misc" Template="{StaticResource TextBoxBaseControlTemplate}" Text="{Binding Escape_Artist_Misc, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" FontSize="16" TextAlignment="Center" Background="Black" Foreground="White" Width="40" Height="25"/>
                         <TextBlock Text=" + " FontSize="25" Width="50" TextAlignment="Center" VerticalAlignment="Center" />
                         <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Background="Black" Foreground="White" Width="40" Height="25"/>
                     </StackPanel>
@@ -1114,13 +1123,13 @@
                         <CheckBox Width="auto" Height="auto" VerticalAlignment="Center" />
                         <TextBlock Text="Fly" FontSize="16" Width="255" MinWidth="150" Margin="10,0,0,0" TextDecorations="Underline" VerticalAlignment="Top"/>
                         <TextBlock Text="DEX" FontSize="16" Width="auto" Margin="0,0,37,0" TextDecorations="Underline" VerticalAlignment="Top"/>
-                        <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Background="Black" Foreground="White" Width="40" Height="25"/>
+                        <TextBox Name="Fly_Total" Template="{StaticResource TextBoxBaseControlTemplate}" Text="{Binding Fly_Total, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"  FontSize="16" TextAlignment="Center"  Background="Black" Foreground="White" Width="40" Height="25"/>
                         <TextBlock Text=" = " FontSize="25" Width="70" TextAlignment="Center" VerticalAlignment="Center" />
-                        <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Text="{Binding DEX_MOD, Mode=TwoWay}" TextAlignment="Center" Background="White" Foreground="Black" Width="40" Height="25" IsReadOnly="True"/>
+                        <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Text="{Binding DEX_MOD, Mode=TwoWay}"  FontSize="16" TextAlignment="Center" Background="White" Foreground="Black" Width="40" Height="25" IsReadOnly="True"/>
                         <TextBlock Text=" + " FontSize="25" Width="65" TextAlignment="Center" VerticalAlignment="Center"  />
-                        <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Background="Black" Foreground="White" Width="40" Height="25"/>
+                        <TextBox Name="Fly_Rank" Text="{Binding Fly_Rank, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" FontSize="16" TextAlignment="Center" Template="{StaticResource TextBoxBaseControlTemplate}" Background="Black" Foreground="White" Width="40" Height="25"/>
                         <TextBlock Text=" + " FontSize="25" Width="40" TextAlignment="Center" VerticalAlignment="Center" />
-                        <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Background="Black" Foreground="White" Width="40" Height="25"/>
+                        <TextBox Name="Fly_Misc" Template="{StaticResource TextBoxBaseControlTemplate}" Text="{Binding Fly_Misc, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" FontSize="16" TextAlignment="Center" Background="Black" Foreground="White" Width="40" Height="25"/>
                         <TextBlock Text=" + " FontSize="25" Width="50" TextAlignment="Center" VerticalAlignment="Center" />
                         <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Background="Black" Foreground="White" Width="40" Height="25"/>
                     </StackPanel>
@@ -1129,13 +1138,13 @@
                         <CheckBox Width="auto" Height="auto" VerticalAlignment="Center" />
                         <TextBlock Text="Handle Animal" FontSize="16" Width="255" MinWidth="150" Margin="10,0,0,0" TextDecorations="Underline" VerticalAlignment="Top"/>
                         <TextBlock Text="CHA" FontSize="16" Width="auto" Margin="0,0,34,0" TextDecorations="Underline" VerticalAlignment="Top"/>
-                        <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Background="Black" Foreground="White" Width="40" Height="25"/>
+                        <TextBox Name="Handle_Animal_Total" Template="{StaticResource TextBoxBaseControlTemplate}" Text="{Binding Handle_Animal_Total, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"  FontSize="16" TextAlignment="Center"  Background="Black" Foreground="White" Width="40" Height="25"/>
                         <TextBlock Text=" = " FontSize="25" Width="70" TextAlignment="Center" VerticalAlignment="Center" />
-                        <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Text="{Binding CHA_MOD, Mode=TwoWay}" TextAlignment="Center" Background="White" Foreground="Black" Width="40" Height="25" IsReadOnly="True"/>
+                        <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Text="{Binding CHA_MOD, Mode=TwoWay}"  FontSize="16" TextAlignment="Center" Background="White" Foreground="Black" Width="40" Height="25" IsReadOnly="True"/>
                         <TextBlock Text=" + " FontSize="25" Width="65" TextAlignment="Center" VerticalAlignment="Center"  />
-                        <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Background="Black" Foreground="White" Width="40" Height="25"/>
+                        <TextBox Name="Handle_Animal_Rank" Text="{Binding Handle_Animal_Rank, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" FontSize="16" TextAlignment="Center" Template="{StaticResource TextBoxBaseControlTemplate}" Background="Black" Foreground="White" Width="40" Height="25"/>
                         <TextBlock Text=" + " FontSize="25" Width="40" TextAlignment="Center" VerticalAlignment="Center" />
-                        <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Background="Black" Foreground="White" Width="40" Height="25"/>
+                        <TextBox Name="Handle_Animal_Misc" Template="{StaticResource TextBoxBaseControlTemplate}" Text="{Binding Handle_Animal_Misc, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" FontSize="16" TextAlignment="Center" Background="Black" Foreground="White" Width="40" Height="25"/>
                         <TextBlock Text=" + " FontSize="25" Width="50" TextAlignment="Center" VerticalAlignment="Center" />
                         <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Background="Black" Foreground="White" Width="40" Height="25"/>
                     </StackPanel>
@@ -1143,14 +1152,14 @@
                     <StackPanel Grid.Row="13" Grid.Column="0" Orientation="Horizontal" Margin="1" Grid.ColumnSpan="2">
                         <CheckBox Width="auto" Height="auto" VerticalAlignment="Center" />
                         <TextBlock Text="Heal" FontSize="16" Width="255" MinWidth="150" Margin="10,0,0,0" TextDecorations="Underline" VerticalAlignment="Top"/>
-                        <TextBlock Text="DEX" FontSize="16" Width="auto" Margin="0,0,37,0" TextDecorations="Underline" VerticalAlignment="Top"/>
-                        <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Background="Black" Foreground="White" Width="40" Height="25"/>
+                        <TextBlock Text="WIS" FontSize="16" Width="auto" Margin="0,0,37,0" TextDecorations="Underline" VerticalAlignment="Top"/>
+                        <TextBox Name="Heal_Total" Template="{StaticResource TextBoxBaseControlTemplate}" Text="{Binding Heal_Total, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"  FontSize="16" TextAlignment="Center"  Background="Black" Foreground="White" Width="40" Height="25"/>
                         <TextBlock Text=" = " FontSize="25" Width="70" TextAlignment="Center" VerticalAlignment="Center" />
-                        <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Text="{Binding DEX_MOD, Mode=TwoWay}" TextAlignment="Center"  Background="White" Foreground="Black" Width="40" Height="25" IsReadOnly="True"/>
+                        <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Text="{Binding WIS_MOD, Mode=TwoWay}"  FontSize="16" TextAlignment="Center"  Background="White" Foreground="Black" Width="40" Height="25" IsReadOnly="True"/>
                         <TextBlock Text=" + " FontSize="25" Width="65" TextAlignment="Center" VerticalAlignment="Center"  />
-                        <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Background="Black" Foreground="White" Width="40" Height="25"/>
+                        <TextBox Name="Heal_Rank" Text="{Binding Heal_Rank, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" FontSize="16" TextAlignment="Center" Template="{StaticResource TextBoxBaseControlTemplate}" Background="Black" Foreground="White" Width="40" Height="25"/>
                         <TextBlock Text=" + " FontSize="25" Width="40" TextAlignment="Center" VerticalAlignment="Center" />
-                        <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Background="Black" Foreground="White" Width="40" Height="25"/>
+                        <TextBox Name="Heal_Misc" Template="{StaticResource TextBoxBaseControlTemplate}" Text="{Binding Heal_Misc, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" FontSize="16" TextAlignment="Center" Background="Black" Foreground="White" Width="40" Height="25"/>
                         <TextBlock Text=" + " FontSize="25" Width="50" TextAlignment="Center" VerticalAlignment="Center" />
                         <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Background="Black" Foreground="White" Width="40" Height="25"/>
                     </StackPanel>
@@ -1159,13 +1168,13 @@
                         <CheckBox Width="auto" Height="auto" VerticalAlignment="Center" />
                         <TextBlock Text="Intimidate" FontSize="16" Width="255" MinWidth="150" Margin="10,0,0,0" TextDecorations="Underline" VerticalAlignment="Top"/>
                         <TextBlock Text="CHA" FontSize="16" Width="auto" Margin="0,0,34,0" TextDecorations="Underline" VerticalAlignment="Top"/>
-                        <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Background="Black" Foreground="White" Width="40" Height="25"/>
+                        <TextBox Name="Intimidate_Total" Template="{StaticResource TextBoxBaseControlTemplate}" Text="{Binding Intimidate_Total, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"  FontSize="16" TextAlignment="Center"  Background="Black" Foreground="White" Width="40" Height="25"/>
                         <TextBlock Text=" = " FontSize="25" Width="70" TextAlignment="Center" VerticalAlignment="Center" />
-                        <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Text="{Binding CHA_MOD, Mode=TwoWay}" TextAlignment="Center" Background="White" Foreground="Black" Width="40" Height="25" IsReadOnly="True"/>
+                        <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Text="{Binding CHA_MOD, Mode=TwoWay}"  FontSize="16" TextAlignment="Center" Background="White" Foreground="Black" Width="40" Height="25" IsReadOnly="True"/>
                         <TextBlock Text=" + " FontSize="25" Width="65" TextAlignment="Center" VerticalAlignment="Center"  />
-                        <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Background="Black" Foreground="White" Width="40" Height="25"/>
+                        <TextBox Name="Intimidate_Rank" Text="{Binding Intimidate_Rank, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" FontSize="16" TextAlignment="Center" Template="{StaticResource TextBoxBaseControlTemplate}" Background="Black" Foreground="White" Width="40" Height="25"/>
                         <TextBlock Text=" + " FontSize="25" Width="40" TextAlignment="Center" VerticalAlignment="Center" />
-                        <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Background="Black" Foreground="White" Width="40" Height="25"/>
+                        <TextBox Name="Intimidate_Misc" Template="{StaticResource TextBoxBaseControlTemplate}" Text="{Binding Intimidate_Misc, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" FontSize="16" TextAlignment="Center" Background="Black" Foreground="White" Width="40" Height="25"/>
                         <TextBlock Text=" + " FontSize="25" Width="50" TextAlignment="Center" VerticalAlignment="Center" />
                         <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Background="Black" Foreground="White" Width="40" Height="25"/>
                     </StackPanel>
@@ -1174,13 +1183,13 @@
                         <CheckBox Width="auto" Height="auto" VerticalAlignment="Center" />
                         <TextBlock Text="Linguistics" FontSize="16" Width="255" MinWidth="150" Margin="10,0,0,0" TextDecorations="Underline" VerticalAlignment="Top"/>
                         <TextBlock Text="INT" FontSize="16" Width="auto" Margin="0,0,40,0" TextDecorations="Underline" VerticalAlignment="Top"/>
-                        <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Background="Black" Foreground="White" Width="40" Height="25"/>
+                        <TextBox Name="Linguistics_Total" Template="{StaticResource TextBoxBaseControlTemplate}" Text="{Binding Linguistics_Total, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"  FontSize="16" TextAlignment="Center"  Background="Black" Foreground="White" Width="40" Height="25"/>
                         <TextBlock Text=" = " FontSize="25" Width="70" TextAlignment="Center" VerticalAlignment="Center" />
-                        <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Text="{Binding INT_MOD, Mode=TwoWay}" TextAlignment="Center" Background="White" Foreground="Black" Width="40" Height="25" IsReadOnly="True"/>
+                        <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Text="{Binding INT_MOD, Mode=TwoWay}"  FontSize="16" TextAlignment="Center" Background="White" Foreground="Black" Width="40" Height="25" IsReadOnly="True"/>
                         <TextBlock Text=" + " FontSize="25" Width="65" TextAlignment="Center" VerticalAlignment="Center"  />
-                        <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Background="Black" Foreground="White" Width="40" Height="25"/>
+                        <TextBox Name="Linguistics_Rank" Text="{Binding Linguistics_Rank, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" FontSize="16" TextAlignment="Center" Template="{StaticResource TextBoxBaseControlTemplate}" Background="Black" Foreground="White" Width="40" Height="25"/>
                         <TextBlock Text=" + " FontSize="25" Width="40" TextAlignment="Center" VerticalAlignment="Center" />
-                        <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Background="Black" Foreground="White" Width="40" Height="25"/>
+                        <TextBox Name="Linguistics_Misc" Template="{StaticResource TextBoxBaseControlTemplate}" Text="{Binding Linguistics_Misc, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" FontSize="16" TextAlignment="Center" Background="Black" Foreground="White" Width="40" Height="25"/>
                         <TextBlock Text=" + " FontSize="25" Width="50" TextAlignment="Center" VerticalAlignment="Center" />
                         <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Background="Black" Foreground="White" Width="40" Height="25"/>
                     </StackPanel>
@@ -1189,13 +1198,13 @@
                         <CheckBox Width="auto" Height="auto" VerticalAlignment="Center" />
                         <TextBlock Text="Perception" FontSize="16" Width="255" MinWidth="150" Margin="10,0,0,0" TextDecorations="Underline" VerticalAlignment="Top"/>
                         <TextBlock Text="WIS" FontSize="16" Width="auto" Margin="0,0,37,0" TextDecorations="Underline" VerticalAlignment="Top"/>
-                        <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Background="Black" Foreground="White" Width="40" Height="25"/>
+                        <TextBox Name="Perception_Total" Template="{StaticResource TextBoxBaseControlTemplate}" Text="{Binding Perception_Total, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"  FontSize="16" TextAlignment="Center"  Background="Black" Foreground="White" Width="40" Height="25"/>
                         <TextBlock Text=" = " FontSize="25" Width="70" TextAlignment="Center" VerticalAlignment="Center" />
-                        <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Text="{Binding WIS_MOD, Mode=TwoWay}" TextAlignment="Center" Background="White" Foreground="Black" Width="40" Height="25" IsReadOnly="True"/>
+                        <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Text="{Binding WIS_MOD, Mode=TwoWay}"  FontSize="16" TextAlignment="Center" Background="White" Foreground="Black" Width="40" Height="25" IsReadOnly="True"/>
                         <TextBlock Text=" + " FontSize="25" Width="65" TextAlignment="Center" VerticalAlignment="Center"  />
-                        <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Background="Black" Foreground="White" Width="40" Height="25"/>
+                        <TextBox Name="Perception_Rank" Text="{Binding Perception_Rank, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" FontSize="16" TextAlignment="Center" Template="{StaticResource TextBoxBaseControlTemplate}" Background="Black" Foreground="White" Width="40" Height="25"/>
                         <TextBlock Text=" + " FontSize="25" Width="40" TextAlignment="Center" VerticalAlignment="Center" />
-                        <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Background="Black" Foreground="White" Width="40" Height="25"/>
+                        <TextBox Name="Perception_Misc" Template="{StaticResource TextBoxBaseControlTemplate}" Text="{Binding Perception_Misc, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" FontSize="16" TextAlignment="Center" Background="Black" Foreground="White" Width="40" Height="25"/>
                         <TextBlock Text=" + " FontSize="25" Width="50" TextAlignment="Center" VerticalAlignment="Center" />
                         <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Background="Black" Foreground="White" Width="40" Height="25"/>
                     </StackPanel>
@@ -1204,13 +1213,13 @@
                         <CheckBox Width="auto" Height="auto" VerticalAlignment="Center" />
                         <TextBlock Text="Perform" FontSize="16" Width="255" MinWidth="150" Margin="10,0,0,0" TextDecorations="Underline" VerticalAlignment="Top"/>
                         <TextBlock Text="CHA" FontSize="16" Width="auto" Margin="0,0,33,12" TextDecorations="Underline"/>
-                        <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Background="Black" Foreground="White" Width="40" Height="25"/>
+                        <TextBox Name="Perform_Total" Template="{StaticResource TextBoxBaseControlTemplate}" Text="{Binding Perform_Total, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"  FontSize="16" TextAlignment="Center"  Background="Black" Foreground="White" Width="40" Height="25"/>
                         <TextBlock Text=" = " FontSize="25" Width="70" TextAlignment="Center" VerticalAlignment="Center" />
-                        <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Text="{Binding CHA_MOD, Mode=TwoWay}" TextAlignment="Center" Background="White" Foreground="Black" Width="40" Height="25" IsReadOnly="True"/>
+                        <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Text="{Binding CHA_MOD, Mode=TwoWay}"  FontSize="16" TextAlignment="Center" Background="White" Foreground="Black" Width="40" Height="25" IsReadOnly="True"/>
                         <TextBlock Text=" + " FontSize="25" Width="65" TextAlignment="Center" VerticalAlignment="Center"  />
-                        <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Background="Black" Foreground="White" Width="40" Height="25"/>
+                        <TextBox Name="Perform_Rank" Text="{Binding Perform_Rank, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" FontSize="16" TextAlignment="Center" Template="{StaticResource TextBoxBaseControlTemplate}" Background="Black" Foreground="White" Width="40" Height="25"/>
                         <TextBlock Text=" + " FontSize="25" Width="40" TextAlignment="Center" VerticalAlignment="Center" />
-                        <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Background="Black" Foreground="White" Width="40" Height="25"/>
+                        <TextBox Name="Perform_Misc" Template="{StaticResource TextBoxBaseControlTemplate}" Text="{Binding Perform_Misc, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" FontSize="16" TextAlignment="Center" Background="Black" Foreground="White" Width="40" Height="25"/>
                         <TextBlock Text=" + " FontSize="25" Width="50" TextAlignment="Center" VerticalAlignment="Center" />
                         <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Background="Black" Foreground="White" Width="40" Height="25"/>
                     </StackPanel>
@@ -1219,13 +1228,13 @@
                         <CheckBox Width="auto" Height="auto" VerticalAlignment="Center" />
                         <TextBlock Text="Profession" FontSize="16" Width="255" MinWidth="150" Margin="10,0,0,0" TextDecorations="Underline" VerticalAlignment="Top"/>
                         <TextBlock Text="WIS" FontSize="16" Width="auto" Margin="0,0,38,0" TextDecorations="Underline" VerticalAlignment="Top"/>
-                        <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Background="Black" Foreground="White" Width="40" Height="25"/>
+                        <TextBox Name="Profession_Total" Template="{StaticResource TextBoxBaseControlTemplate}" Text="{Binding Profession_Total, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"  FontSize="16" TextAlignment="Center"  Background="Black" Foreground="White" Width="40" Height="25"/>
                         <TextBlock Text=" = " FontSize="25" Width="70" TextAlignment="Center" VerticalAlignment="Center" />
-                        <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Text="{Binding WIS_MOD, Mode=TwoWay}" TextAlignment="Center" Background="White" Width="40" Height="25" IsReadOnly="True"/>
+                        <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Text="{Binding WIS_MOD, Mode=TwoWay}"  FontSize="16" TextAlignment="Center" Background="White" Width="40" Height="25" IsReadOnly="True"/>
                         <TextBlock Text=" + " FontSize="25" Width="65" TextAlignment="Center" VerticalAlignment="Center"  />
-                        <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Background="Black" Foreground="White" Width="40" Height="25"/>
+                        <TextBox Name="Profession_Rank" Text="{Binding Profession_Rank, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" FontSize="16" TextAlignment="Center" Template="{StaticResource TextBoxBaseControlTemplate}" Background="Black" Foreground="White" Width="40" Height="25"/>
                         <TextBlock Text=" + " FontSize="25" Width="40" TextAlignment="Center" VerticalAlignment="Center" />
-                        <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Background="Black" Foreground="White" Width="40" Height="25"/>
+                        <TextBox Name="Profession_Misc" Template="{StaticResource TextBoxBaseControlTemplate}" Text="{Binding Profession_Misc, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" FontSize="16" TextAlignment="Center" Background="Black" Foreground="White" Width="40" Height="25"/>
                         <TextBlock Text=" + " FontSize="25" Width="50" TextAlignment="Center" VerticalAlignment="Center" />
                         <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Background="Black" Foreground="White" Width="40" Height="25"/>
                     </StackPanel>
@@ -1234,13 +1243,13 @@
                         <CheckBox Width="auto" Height="auto" VerticalAlignment="Center" />
                         <TextBlock Text="Ride" FontSize="16" Width="255" MinWidth="150" Margin="10,0,0,0" TextDecorations="Underline" VerticalAlignment="Top"/>
                         <TextBlock Text="DEX" FontSize="16" Width="auto" Margin="0,0,37,0" TextDecorations="Underline" VerticalAlignment="Top"/>
-                        <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Background="Black" Foreground="White" Width="40" Height="25"/>
+                        <TextBox Name="Ride_Total" Template="{StaticResource TextBoxBaseControlTemplate}" Text="{Binding Ride_Total, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"  FontSize="16" TextAlignment="Center"  Background="Black" Foreground="White" Width="40" Height="25"/>
                         <TextBlock Text=" = " FontSize="25" Width="70" TextAlignment="Center" VerticalAlignment="Center" />
-                        <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Text="{Binding DEX_MOD, Mode=TwoWay}" TextAlignment="Center" Background="White" Foreground="Black" Width="40" Height="25" IsReadOnly="True"/>
+                        <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Text="{Binding DEX_MOD, Mode=TwoWay}"  FontSize="16" TextAlignment="Center" Background="White" Foreground="Black" Width="40" Height="25" IsReadOnly="True"/>
                         <TextBlock Text=" + " FontSize="25" Width="65" TextAlignment="Center" VerticalAlignment="Center"  />
-                        <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Background="Black" Foreground="White" Width="40" Height="25"/>
+                        <TextBox Name="Ride_Rank" Text="{Binding Ride_Rank, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" FontSize="16" TextAlignment="Center" Template="{StaticResource TextBoxBaseControlTemplate}" Background="Black" Foreground="White" Width="40" Height="25"/>
                         <TextBlock Text=" + " FontSize="25" Width="40" TextAlignment="Center" VerticalAlignment="Center" />
-                        <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Background="Black" Foreground="White" Width="40" Height="25"/>
+                        <TextBox Name="Ride_Misc" Template="{StaticResource TextBoxBaseControlTemplate}" Text="{Binding Ride_Misc, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" FontSize="16" TextAlignment="Center" Background="Black" Foreground="White" Width="40" Height="25"/>
                         <TextBlock Text=" + " FontSize="25" Width="50" TextAlignment="Center" VerticalAlignment="Center" />
                         <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Background="Black" Foreground="White" Width="40" Height="25"/>
                     </StackPanel>
@@ -1249,13 +1258,13 @@
                         <CheckBox Width="auto" Height="auto" VerticalAlignment="Center" />
                         <TextBlock Text="Sense Motive" FontSize="16" Width="255" MinWidth="150" Margin="10,0,0,0" TextDecorations="Underline" VerticalAlignment="Top" />
                         <TextBlock Text="WIS" FontSize="16" Width="auto" Margin="0,0,40,0" TextDecorations="Underline" VerticalAlignment="Top"/>
-                        <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Background="Black" Foreground="White" Width="40" Height="25"/>
+                        <TextBox Name="Sense_Motive_Total" Template="{StaticResource TextBoxBaseControlTemplate}" Text="{Binding Sense_Motive_Total, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"  FontSize="16" TextAlignment="Center"  Background="Black" Foreground="White" Width="40" Height="25"/>
                         <TextBlock Text=" = " FontSize="25" Width="70" TextAlignment="Center" VerticalAlignment="Center" />
-                        <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Text="{Binding WIS_MOD, Mode=TwoWay}" TextAlignment="Center" Background="White" Width="40" Height="25" IsReadOnly="True"/>
+                        <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Text="{Binding WIS_MOD, Mode=TwoWay}"  FontSize="16" TextAlignment="Center" Background="White" Width="40" Height="25" IsReadOnly="True"/>
                         <TextBlock Text=" + " FontSize="25" Width="65" TextAlignment="Center" VerticalAlignment="Center"  />
-                        <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Background="Black" Foreground="White" Width="40" Height="25"/>
+                        <TextBox Name="Sense_Motive_Rank" Text="{Binding Sense_Motive_Rank, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" FontSize="16" TextAlignment="Center" Template="{StaticResource TextBoxBaseControlTemplate}" Background="Black" Foreground="White" Width="40" Height="25"/>
                         <TextBlock Text=" + " FontSize="25" Width="40" TextAlignment="Center" VerticalAlignment="Center" />
-                        <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Background="Black" Foreground="White" Width="40" Height="25"/>
+                        <TextBox Name="Sense_Motive_Misc" Template="{StaticResource TextBoxBaseControlTemplate}" Text="{Binding Sense_Motive_Misc, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" FontSize="16" TextAlignment="Center" Background="Black" Foreground="White" Width="40" Height="25"/>
                         <TextBlock Text=" + " FontSize="25" Width="50" TextAlignment="Center" VerticalAlignment="Center" />
                         <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Background="Black" Foreground="White" Width="40" Height="25"/>
                     </StackPanel>
@@ -1264,13 +1273,13 @@
                         <CheckBox Width="auto" Height="auto" VerticalAlignment="Center" />
                         <TextBlock Text="Sleight of Hand" FontSize="16" Width="255" MinWidth="150" Margin="10,0,0,0" TextDecorations="Underline" VerticalAlignment="Top"/>
                         <TextBlock Text="DEX" FontSize="16" Width="auto" Margin="0,0,38,0" TextDecorations="Underline" VerticalAlignment="Top"/>
-                        <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Background="Black" Foreground="White" Width="40" Height="25"/>
+                        <TextBox Name="Sleight_Of_Hand_Total" Template="{StaticResource TextBoxBaseControlTemplate}" Text="{Binding Sleight_Of_Hand_Total, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"  FontSize="16" TextAlignment="Center"  Background="Black" Foreground="White" Width="40" Height="25"/>
                         <TextBlock Text=" = " FontSize="25" Width="70" TextAlignment="Center" VerticalAlignment="Center" />
-                        <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Text="{Binding DEX_MOD, Mode=TwoWay}" TextAlignment="Center" Background="White" Foreground="Black" Width="40" Height="25" IsReadOnly="True"/>
+                        <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Text="{Binding DEX_MOD, Mode=TwoWay}"  FontSize="16" TextAlignment="Center" Background="White" Foreground="Black" Width="40" Height="25" IsReadOnly="True"/>
                         <TextBlock Text=" + " FontSize="25" Width="65" TextAlignment="Center" VerticalAlignment="Center"  />
-                        <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Background="Black" Foreground="White" Width="40" Height="25"/>
+                        <TextBox Name="Sleight_Of_Hand_Rank" Text="{Binding Sleight_Of_Hand_Rank, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" FontSize="16" TextAlignment="Center" Template="{StaticResource TextBoxBaseControlTemplate}" Background="Black" Foreground="White" Width="40" Height="25"/>
                         <TextBlock Text=" + " FontSize="25" Width="40" TextAlignment="Center" VerticalAlignment="Center" />
-                        <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Background="Black" Foreground="White" Width="40" Height="25"/>
+                        <TextBox Name="Sleight_of_Hand_Misc" Template="{StaticResource TextBoxBaseControlTemplate}" Text="{Binding Sleight_Of_Hand_Misc, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" FontSize="16" TextAlignment="Center" Background="Black" Foreground="White" Width="40" Height="25"/>
                         <TextBlock Text=" + " FontSize="25" Width="50" TextAlignment="Center" VerticalAlignment="Center" />
                         <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Background="Black" Foreground="White" Width="40" Height="25"/>
                     </StackPanel>
@@ -1279,13 +1288,13 @@
                         <CheckBox Width="auto" Height="auto" VerticalAlignment="Center" />
                         <TextBlock Text="Spellcraft" FontSize="16" Width="255" MinWidth="150" Margin="10,0,0,0" TextDecorations="Underline" VerticalAlignment="Top"/>
                         <TextBlock Text="INT" FontSize="16" Width="auto" Margin="0,0,42,0" TextDecorations="Underline" VerticalAlignment="Top"/>
-                        <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Background="Black" Foreground="White" Width="40" Height="25"/>
+                        <TextBox Name="Spellcraft_Total" Template="{StaticResource TextBoxBaseControlTemplate}" Text="{Binding Spellcraft_Total, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"  FontSize="16" TextAlignment="Center"  Background="Black" Foreground="White" Width="40" Height="25"/>
                         <TextBlock Text=" = " FontSize="25" Width="70" TextAlignment="Center" VerticalAlignment="Center" />
-                        <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Text="{Binding INT_MOD, Mode=TwoWay}" TextAlignment="Center" Background="White" Foreground="Black" Width="40" Height="25" IsReadOnly="True"/>
+                        <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Text="{Binding INT_MOD, Mode=TwoWay}"  FontSize="16" TextAlignment="Center" Background="White" Foreground="Black" Width="40" Height="25" IsReadOnly="True"/>
                         <TextBlock Text=" + " FontSize="25" Width="65" TextAlignment="Center" VerticalAlignment="Center"  />
-                        <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Background="Black" Foreground="White" Width="40" Height="25"/>
+                        <TextBox Name="Spellcraft_Rank" Text="{Binding Spellcraft_Rank, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" FontSize="16" TextAlignment="Center" Template="{StaticResource TextBoxBaseControlTemplate}" Background="Black" Foreground="White" Width="40" Height="25"/>
                         <TextBlock Text=" + " FontSize="25" Width="40" TextAlignment="Center" VerticalAlignment="Center" />
-                        <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Background="Black" Foreground="White" Width="40" Height="25"/>
+                        <TextBox Name="Spellcraft_Misc" Template="{StaticResource TextBoxBaseControlTemplate}" Text="{Binding Spellcraft_Misc, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" FontSize="16" TextAlignment="Center" Background="Black" Foreground="White" Width="40" Height="25"/>
                         <TextBlock Text=" + " FontSize="25" Width="50" TextAlignment="Center" VerticalAlignment="Center" />
                         <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Background="Black" Foreground="White" Width="40" Height="25"/>
                     </StackPanel>
@@ -1296,13 +1305,13 @@
                         <CheckBox Width="auto" Height="auto" VerticalAlignment="Center" />
                         <TextBlock Text="Stealth" FontSize="16" Width="255" MinWidth="150" Margin="10,0,0,0" TextDecorations="Underline" VerticalAlignment="Top"/>
                         <TextBlock Text="DEX" FontSize="16" Width="auto" Margin="0,0,39,0" TextDecorations="Underline" VerticalAlignment="Top"/>
-                        <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Background="Black" Foreground="White" Width="40" Height="25"/>
+                        <TextBox Name="Stealth_Total" Template="{StaticResource TextBoxBaseControlTemplate}" Text="{Binding Stealth_Total, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"  FontSize="16" TextAlignment="Center"  Background="Black" Foreground="White" Width="40" Height="25"/>
                         <TextBlock Text=" = " FontSize="25" Width="70" TextAlignment="Center" VerticalAlignment="Center" />
-                        <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Text="{Binding DEX_MOD, Mode=TwoWay}" TextAlignment="Center" Background="White" Foreground="Black" Width="40" Height="25" IsReadOnly="True"/>
+                        <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Text="{Binding DEX_MOD, Mode=TwoWay}"  FontSize="16" TextAlignment="Center" Background="White" Foreground="Black" Width="40" Height="25" IsReadOnly="True"/>
                         <TextBlock Text=" + " FontSize="25" Width="65" TextAlignment="Center" VerticalAlignment="Center"  />
-                        <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Background="Black" Foreground="White" Width="40" Height="25"/>
+                        <TextBox Name="Stealth_Rank" Text="{Binding Stealth_Rank, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" FontSize="16" TextAlignment="Center" Template="{StaticResource TextBoxBaseControlTemplate}" Background="Black" Foreground="White" Width="40" Height="25"/>
                         <TextBlock Text=" + " FontSize="25" Width="40" TextAlignment="Center" VerticalAlignment="Center" />
-                        <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Background="Black" Foreground="White" Width="40" Height="25"/>
+                        <TextBox Name="Stealth_Misc" Template="{StaticResource TextBoxBaseControlTemplate}" Text="{Binding Stealth_Misc, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" FontSize="16" TextAlignment="Center" Background="Black" Foreground="White" Width="40" Height="25"/>
                         <TextBlock Text=" + " FontSize="25" Width="50" TextAlignment="Center" VerticalAlignment="Center" />
                         <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Background="Black" Foreground="White" Width="40" Height="25"/>
                     </StackPanel>
@@ -1311,13 +1320,13 @@
                         <CheckBox Width="auto" Height="auto" VerticalAlignment="Center" />
                         <TextBlock Text="Survival" FontSize="16" Width="255" MinWidth="150" Margin="10,0,0,0" TextDecorations="Underline" VerticalAlignment="Top"/>
                         <TextBlock Text="WIS" FontSize="16" Width="auto" Margin="0,0,40,0" TextDecorations="Underline" VerticalAlignment="Top"/>
-                        <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Background="Black" Foreground="White" Width="40" Height="25"/>
+                        <TextBox Name="Survival_Total" Template="{StaticResource TextBoxBaseControlTemplate}" Text="{Binding Survival_Total, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"  FontSize="16" TextAlignment="Center"  Background="Black" Foreground="White" Width="40" Height="25"/>
                         <TextBlock Text=" = " FontSize="25" Width="70" TextAlignment="Center" VerticalAlignment="Center" />
-                        <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Text="{Binding WIS_MOD, Mode=TwoWay}" TextAlignment="Center" Background="White" Width="40" Height="25" IsReadOnly="True"/>
+                        <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Text="{Binding WIS_MOD, Mode=TwoWay}"  FontSize="16" TextAlignment="Center" Background="White" Width="40" Height="25" IsReadOnly="True"/>
                         <TextBlock Text=" + " FontSize="25" Width="65" TextAlignment="Center" VerticalAlignment="Center"  />
-                        <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Background="Black" Foreground="White" Width="40" Height="25"/>
+                        <TextBox Name="Survival_Rank" Text="{Binding Survival_Rank, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" FontSize="16" TextAlignment="Center" Template="{StaticResource TextBoxBaseControlTemplate}" Background="Black" Foreground="White" Width="40" Height="25"/>
                         <TextBlock Text=" + " FontSize="25" Width="40" TextAlignment="Center" VerticalAlignment="Center" />
-                        <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Background="Black" Foreground="White" Width="40" Height="25"/>
+                        <TextBox Name="Survival_Misc" Template="{StaticResource TextBoxBaseControlTemplate}" Text="{Binding Survival_Misc, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" FontSize="16" TextAlignment="Center" Background="Black" Foreground="White" Width="40" Height="25"/>
                         <TextBlock Text=" + " FontSize="25" Width="50" TextAlignment="Center" VerticalAlignment="Center" />
                         <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Background="Black" Foreground="White" Width="40" Height="25"/>
                     </StackPanel>
@@ -1326,13 +1335,13 @@
                         <CheckBox Width="auto" Height="auto" VerticalAlignment="Center" />
                         <TextBlock Text="Swim" FontSize="16" Width="255" MinWidth="150" Margin="10,0,0,0" TextDecorations="Underline" VerticalAlignment="Top"/>
                         <TextBlock Text="STR" FontSize="16" Width="auto" Margin="0,0,42,0" TextDecorations="Underline" VerticalAlignment="Top"/>
-                        <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Background="Black" Foreground="White" Width="40" Height="25"/>
+                        <TextBox Name="Swim_Total" Template="{StaticResource TextBoxBaseControlTemplate}" Text="{Binding Swim_Total, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"  FontSize="16" TextAlignment="Center"  Background="Black" Foreground="White" Width="40" Height="25"/>
                         <TextBlock Text=" = " FontSize="25" Width="70" TextAlignment="Center" VerticalAlignment="Center" />
-                        <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Text="{Binding STR_MOD, Mode=TwoWay}" TextAlignment="Center" Background="White" Foreground="Black" Width="40" Height="25" IsReadOnly="True"/>
+                        <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Text="{Binding STR_MOD, Mode=TwoWay}"  FontSize="16" TextAlignment="Center" Background="White" Foreground="Black" Width="40" Height="25" IsReadOnly="True"/>
                         <TextBlock Text=" + " FontSize="25" Width="65" TextAlignment="Center" VerticalAlignment="Center"  />
-                        <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Background="Black" Foreground="White" Width="40" Height="25"/>
+                        <TextBox Name="Swim_Rank" Text="{Binding Swim_Rank, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" FontSize="16" TextAlignment="Center" Template="{StaticResource TextBoxBaseControlTemplate}" Background="Black" Foreground="White" Width="40" Height="25"/>
                         <TextBlock Text=" + " FontSize="25" Width="40" TextAlignment="Center" VerticalAlignment="Center" />
-                        <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Background="Black" Foreground="White" Width="40" Height="25"/>
+                        <TextBox Name="Swim_Misc" Template="{StaticResource TextBoxBaseControlTemplate}" Text="{Binding Swim_Misc, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" FontSize="16" TextAlignment="Center" Background="Black" Foreground="White" Width="40" Height="25"/>
                         <TextBlock Text=" + " FontSize="25" Width="50" TextAlignment="Center" VerticalAlignment="Center" />
                         <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Background="Black" Foreground="White" Width="40" Height="25"/>
                     </StackPanel>
@@ -1340,13 +1349,13 @@
                         <CheckBox Width="auto" Height="auto" VerticalAlignment="Center" />
                         <TextBlock Text="Use magic Device" FontSize="16" Width="255" MinWidth="150" Margin="10,0,0,0" TextDecorations="Underline" VerticalAlignment="Top"/>
                         <TextBlock Text="CHA" FontSize="16" Width="auto" Margin="0,0,36,0" TextDecorations="Underline" VerticalAlignment="Top"/>
-                        <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Background="Black" Foreground="White" Width="40" Height="25"/>
+                        <TextBox Name="Use_Magic_Device_Total" Template="{StaticResource TextBoxBaseControlTemplate}" Text="{Binding Use_Magic_Device_Total, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"  FontSize="16" TextAlignment="Center"  Background="Black" Foreground="White" Width="40" Height="25"/>
                         <TextBlock Text=" = " FontSize="25" Width="70" TextAlignment="Center" VerticalAlignment="Center" />
-                        <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Text="{Binding CHA_MOD, Mode=TwoWay}" TextAlignment="Center" Background="White" Foreground="Black" Width="40" Height="25" IsReadOnly="True"/>
+                        <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Text="{Binding CHA_MOD, Mode=TwoWay}"  FontSize="16" TextAlignment="Center" Background="White" Foreground="Black" Width="40" Height="25" IsReadOnly="True"/>
                         <TextBlock Text=" + " FontSize="25" Width="65" TextAlignment="Center" VerticalAlignment="Center"  />
-                        <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Background="Black" Foreground="White" Width="40" Height="25"/>
+                        <TextBox Name="Use_Magic_Device_Rank" Text="{Binding Use_Magic_Device_Rank, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" FontSize="16" TextAlignment="Center" Template="{StaticResource TextBoxBaseControlTemplate}" Background="Black" Foreground="White" Width="40" Height="25"/>
                         <TextBlock Text=" + " FontSize="25" Width="40" TextAlignment="Center" VerticalAlignment="Center" />
-                        <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Background="Black" Foreground="White" Width="40" Height="25"/>
+                        <TextBox Name="Use_Magic_Device_Misc" Template="{StaticResource TextBoxBaseControlTemplate}" Text="{Binding Use_Magic_Device_Misc, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" FontSize="16" TextAlignment="Center" Background="Black" Foreground="White" Width="40" Height="25"/>
                         <TextBlock Text=" + " FontSize="25" Width="50" TextAlignment="Center" VerticalAlignment="Center" />
                         <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Background="Black" Foreground="White" Width="40" Height="25"/>
                     </StackPanel>
@@ -1360,7 +1369,7 @@
                         <TextBlock Text="Ability" FontSize="16" Width="auto" TextDecorations="Underline" VerticalAlignment="Top" Margin="0,0,20,0"/>
                         <TextBlock Text="Skill Mod" FontSize="16" Width="auto" Margin="0,0,35,0" TextDecorations="Underline" VerticalAlignment="Top"/>
                         <TextBlock Text="Ability Mod" FontSize="16" Width="auto" Margin="0,0,45,0" TextDecorations="Underline" VerticalAlignment="Top"/>
-                        <TextBlock Text="Rank" FontSize="16" Width="auto" Margin="0,0,45,0" TextDecorations="Underline" VerticalAlignment="Top"/>
+                        <TextBlock Text="Rank" FontSize="16" Width="auto" Margin="-10,0,40,0" TextDecorations="Underline" VerticalAlignment="Top"/>
                         <TextBlock Text="Misc" FontSize="16" Width="auto" Margin="0,0,60,0"  TextDecorations="Underline" VerticalAlignment="Top"/>
                         <TextBlock Text="ACP" FontSize="16" Width="auto" MinWidth="150" TextDecorations="Underline" VerticalAlignment="Top"/>
                     </StackPanel>
@@ -1369,13 +1378,13 @@
                         <CheckBox Width="auto" Height="auto" VerticalAlignment="Center" />
                         <TextBlock Text="Knowledge(Arcana)" FontSize="16" Width="255" MinWidth="150" TextDecorations="Underline" VerticalAlignment="Top"/>
                         <TextBlock Text="INT" FontSize="16" Width="auto" Margin="0,0,36,0" TextDecorations="Underline" VerticalAlignment="Top"/>
-                        <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Background="Black" Foreground="White" Width="40" Height="25"/>
+                        <TextBox Name="Arcana_Total" Template="{StaticResource TextBoxBaseControlTemplate}" Text="{Binding Arcana_Total, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"  FontSize="16" TextAlignment="Center"  Background="Black" Foreground="White" Width="40" Height="25"/>
                         <TextBlock Text=" = " FontSize="25" Width="70" TextAlignment="Center" VerticalAlignment="Center" />
-                        <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Text="{Binding INT_MOD, Mode=TwoWay}" TextAlignment="Center" Background="White" Foreground="Black" Width="40" Height="25" IsReadOnly="True"/>
+                        <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Text="{Binding INT_MOD, Mode=TwoWay}"  FontSize="16" TextAlignment="Center" Background="White" Foreground="Black" Width="40" Height="25" IsReadOnly="True"/>
                         <TextBlock Text=" + " FontSize="25" Width="65" TextAlignment="Center" VerticalAlignment="Center"  />
-                        <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Background="Black" Foreground="White" Width="40" Height="25"/>
+                        <TextBox Name="Arcana_Rank" Text="{Binding Arcana_Rank, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" FontSize="16" TextAlignment="Center" Template="{StaticResource TextBoxBaseControlTemplate}" Background="Black" Foreground="White" Width="40" Height="25"/>
                         <TextBlock Text=" + " FontSize="25" Width="40" TextAlignment="Center" VerticalAlignment="Center" />
-                        <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Background="Black" Foreground="White" Width="40" Height="25"/>
+                        <TextBox Name="Arcana_Misc" Template="{StaticResource TextBoxBaseControlTemplate}" Text="{Binding Arcana_Misc, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" FontSize="16" TextAlignment="Center" Background="Black" Foreground="White" Width="40" Height="25"/>
                         <TextBlock Text=" + " FontSize="25" Width="50" TextAlignment="Center" VerticalAlignment="Center" />
                         <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Background="Black" Foreground="White" Width="40" Height="25"/>
                     </StackPanel>
@@ -1384,13 +1393,13 @@
                         <CheckBox Width="auto" Height="auto" VerticalAlignment="Center" />
                         <TextBlock Text="Knowledge(Dungeoneering)" FontSize="16" Width="255" MinWidth="150" TextDecorations="Underline" VerticalAlignment="Top"/>
                         <TextBlock Text="INT" FontSize="16" Width="auto" Margin="0,0,36,0" TextDecorations="Underline" VerticalAlignment="Top"/>
-                        <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Background="Black" Foreground="White" Width="40" Height="25"/>
+                        <TextBox Name="Dungeoneering_Total" Template="{StaticResource TextBoxBaseControlTemplate}" Text="{Binding Dungeoneering_Total, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"  FontSize="16" TextAlignment="Center"  Background="Black" Foreground="White" Width="40" Height="25"/>
                         <TextBlock Text=" = " FontSize="25" Width="70" TextAlignment="Center" VerticalAlignment="Center" />
-                        <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Text="{Binding INT_MOD, Mode=TwoWay}" TextAlignment="Center" Background="White" Foreground="Black" Width="40" Height="25" IsReadOnly="True"/>
+                        <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Text="{Binding INT_MOD, Mode=TwoWay}"  FontSize="16" TextAlignment="Center" Background="White" Foreground="Black" Width="40" Height="25" IsReadOnly="True"/>
                         <TextBlock Text=" + " FontSize="25" Width="65" TextAlignment="Center" VerticalAlignment="Center"  />
-                        <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Background="Black" Foreground="White" Width="40" Height="25"/>
+                        <TextBox Name="Dungeoneering_Rank" Text="{Binding Dungeoneering_Rank, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" FontSize="16" TextAlignment="Center" Template="{StaticResource TextBoxBaseControlTemplate}" Background="Black" Foreground="White" Width="40" Height="25"/>
                         <TextBlock Text=" + " FontSize="25" Width="40" TextAlignment="Center" VerticalAlignment="Center" />
-                        <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Background="Black" Foreground="White" Width="40" Height="25"/>
+                        <TextBox Name="Dungeoneering_Misc" Template="{StaticResource TextBoxBaseControlTemplate}" Text="{Binding Dungeoneering_Misc, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" FontSize="16" TextAlignment="Center" Background="Black" Foreground="White" Width="40" Height="25"/>
                         <TextBlock Text=" + " FontSize="25" Width="50" TextAlignment="Center" VerticalAlignment="Center" />
                         <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Background="Black" Foreground="White" Width="40" Height="25"/>
                     </StackPanel>
@@ -1399,13 +1408,13 @@
                         <CheckBox Width="auto" Height="auto" VerticalAlignment="Center" />
                         <TextBlock Text="Knowledge(Engineering)" FontSize="16" Width="255" MinWidth="150" TextDecorations="Underline" VerticalAlignment="Top"/>
                         <TextBlock Text="INT" FontSize="16" Width="auto" Margin="0,0,36,0" TextDecorations="Underline" VerticalAlignment="Top"/>
-                        <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Background="Black" Foreground="White" Width="40" Height="25"/>
+                        <TextBox Name="Engineering_Total" Template="{StaticResource TextBoxBaseControlTemplate}" Text="{Binding Engineering_Total, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"  FontSize="16" TextAlignment="Center"  Background="Black" Foreground="White" Width="40" Height="25"/>
                         <TextBlock Text=" = " FontSize="25" Width="70" TextAlignment="Center" VerticalAlignment="Center" />
-                        <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Text="{Binding INT_MOD, Mode=TwoWay}" TextAlignment="Center" Background="White" Foreground="Black" Width="40" Height="25" IsReadOnly="True"/>
+                        <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Text="{Binding INT_MOD, Mode=TwoWay}"  FontSize="16" TextAlignment="Center" Background="White" Foreground="Black" Width="40" Height="25" IsReadOnly="True"/>
                         <TextBlock Text=" + " FontSize="25" Width="65" TextAlignment="Center" VerticalAlignment="Center"  />
-                        <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Background="Black" Foreground="White" Width="40" Height="25"/>
+                        <TextBox Name="Engineering_Rank" Text="{Binding Engineering_Rank, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" FontSize="16" TextAlignment="Center" Template="{StaticResource TextBoxBaseControlTemplate}" Background="Black" Foreground="White" Width="40" Height="25"/>
                         <TextBlock Text=" + " FontSize="25" Width="40" TextAlignment="Center" VerticalAlignment="Center" />
-                        <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Background="Black" Foreground="White" Width="40" Height="25"/>
+                        <TextBox Name="Engineering_Misc" Template="{StaticResource TextBoxBaseControlTemplate}" Text="{Binding Engineering_Misc, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" FontSize="16" TextAlignment="Center" Background="Black" Foreground="White" Width="40" Height="25"/>
                         <TextBlock Text=" + " FontSize="25" Width="50" TextAlignment="Center" VerticalAlignment="Center" />
                         <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Background="Black" Foreground="White" Width="40" Height="25"/>
                     </StackPanel>
@@ -1414,13 +1423,13 @@
                         <CheckBox Width="auto" Height="auto" VerticalAlignment="Center" />
                         <TextBlock Text="Knowledge(Geography)" FontSize="16" Width="255" MinWidth="150" TextDecorations="Underline" VerticalAlignment="Top"/>
                         <TextBlock Text="INT" FontSize="16" Width="auto" Margin="0,0,36,0" TextDecorations="Underline" VerticalAlignment="Top"/>
-                        <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Background="Black" Foreground="White" Width="40" Height="25"/>
+                        <TextBox Name="Geography_Total" Template="{StaticResource TextBoxBaseControlTemplate}" Text="{Binding Geography_Total, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"  FontSize="16" TextAlignment="Center"  Background="Black" Foreground="White" Width="40" Height="25"/>
                         <TextBlock Text=" = " FontSize="25" Width="70" TextAlignment="Center" VerticalAlignment="Center" />
-                        <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Text="{Binding INT_MOD, Mode=TwoWay}" TextAlignment="Center" Background="White" Foreground="Black" Width="40" Height="25" IsReadOnly="True"/>
+                        <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Text="{Binding INT_MOD, Mode=TwoWay}"  FontSize="16" TextAlignment="Center" Background="White" Foreground="Black" Width="40" Height="25" IsReadOnly="True"/>
                         <TextBlock Text=" + " FontSize="25" Width="65" TextAlignment="Center" VerticalAlignment="Center"  />
-                        <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Background="Black" Foreground="White" Width="40" Height="25"/>
+                        <TextBox Name="Geography_Rank" Text="{Binding Geography_Rank, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" FontSize="16" TextAlignment="Center" Template="{StaticResource TextBoxBaseControlTemplate}" Background="Black" Foreground="White" Width="40" Height="25"/>
                         <TextBlock Text=" + " FontSize="25" Width="40" TextAlignment="Center" VerticalAlignment="Center" />
-                        <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Background="Black" Foreground="White" Width="40" Height="25"/>
+                        <TextBox Name="Geography_Misc" Template="{StaticResource TextBoxBaseControlTemplate}" Text="{Binding Geography_Misc, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" FontSize="16" TextAlignment="Center" Background="Black" Foreground="White" Width="40" Height="25"/>
                         <TextBlock Text=" + " FontSize="25" Width="50" TextAlignment="Center" VerticalAlignment="Center" />
                         <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Background="Black" Foreground="White" Width="40" Height="25"/>
                     </StackPanel>
@@ -1429,13 +1438,13 @@
                         <CheckBox Width="auto" Height="auto" VerticalAlignment="Center" />
                         <TextBlock Text="Knowledge(History)" FontSize="16" Width="255" MinWidth="150" TextDecorations="Underline" VerticalAlignment="Top"/>
                         <TextBlock Text="INT" FontSize="16" Width="auto" Margin="0,0,36,0" TextDecorations="Underline" VerticalAlignment="Top"/>
-                        <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Background="Black" Foreground="White" Width="40" Height="25"/>
+                        <TextBox Name="History_Total" Template="{StaticResource TextBoxBaseControlTemplate}" Text="{Binding History_Total, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"  FontSize="16" TextAlignment="Center"  Background="Black" Foreground="White" Width="40" Height="25"/>
                         <TextBlock Text=" = " FontSize="25" Width="70" TextAlignment="Center" VerticalAlignment="Center" />
-                        <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Text="{Binding INT_MOD, Mode=TwoWay}" TextAlignment="Center" Background="White" Foreground="Black" Width="40" Height="25" IsReadOnly="True"/>
+                        <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Text="{Binding INT_MOD, Mode=TwoWay}"  FontSize="16" TextAlignment="Center" Background="White" Foreground="Black" Width="40" Height="25" IsReadOnly="True"/>
                         <TextBlock Text=" + " FontSize="25" Width="65" TextAlignment="Center" VerticalAlignment="Center"  />
-                        <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Background="Black" Foreground="White" Width="40" Height="25"/>
+                        <TextBox Name="History_Rank" Text="{Binding History_Rank, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" FontSize="16" TextAlignment="Center" Template="{StaticResource TextBoxBaseControlTemplate}" Background="Black" Foreground="White" Width="40" Height="25"/>
                         <TextBlock Text=" + " FontSize="25" Width="40" TextAlignment="Center" VerticalAlignment="Center" />
-                        <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Background="Black" Foreground="White" Width="40" Height="25"/>
+                        <TextBox Name="History_Misc" Template="{StaticResource TextBoxBaseControlTemplate}" Text="{Binding History_Misc, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" FontSize="16" TextAlignment="Center" Background="Black" Foreground="White" Width="40" Height="25"/>
                         <TextBlock Text=" + " FontSize="25" Width="50" TextAlignment="Center" VerticalAlignment="Center" />
                         <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Background="Black" Foreground="White" Width="40" Height="25"/>
                     </StackPanel>
@@ -1444,13 +1453,13 @@
                         <CheckBox Width="auto" Height="auto" VerticalAlignment="Center" />
                         <TextBlock Text="Knowledge(Local)" FontSize="16" Width="255" MinWidth="150" TextDecorations="Underline" VerticalAlignment="Top"/>
                         <TextBlock Text="INT" FontSize="16" Width="auto" Margin="0,0,36,0" TextDecorations="Underline" VerticalAlignment="Top"/>
-                        <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Background="Black" Foreground="White" Width="40" Height="25"/>
+                        <TextBox Name="Local_Total" Template="{StaticResource TextBoxBaseControlTemplate}" Text="{Binding Local_Total, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"  FontSize="16" TextAlignment="Center"  Background="Black" Foreground="White" Width="40" Height="25"/>
                         <TextBlock Text=" = " FontSize="25" Width="70" TextAlignment="Center" VerticalAlignment="Center" />
-                        <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Text="{Binding INT_MOD, Mode=TwoWay}" TextAlignment="Center" Background="White" Foreground="Black" Width="40" Height="25" IsReadOnly="True"/>
+                        <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Text="{Binding INT_MOD, Mode=TwoWay}"  FontSize="16" TextAlignment="Center" Background="White" Foreground="Black" Width="40" Height="25" IsReadOnly="True"/>
                         <TextBlock Text=" + " FontSize="25" Width="65" TextAlignment="Center" VerticalAlignment="Center"  />
-                        <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Background="Black" Foreground="White" Width="40" Height="25"/>
+                        <TextBox Name="Local_Rank" Text="{Binding Local_Rank, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" FontSize="16" TextAlignment="Center" Template="{StaticResource TextBoxBaseControlTemplate}" Background="Black" Foreground="White" Width="40" Height="25"/>
                         <TextBlock Text=" + " FontSize="25" Width="40" TextAlignment="Center" VerticalAlignment="Center" />
-                        <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Background="Black" Foreground="White" Width="40" Height="25"/>
+                        <TextBox Name="Local_Misc" Template="{StaticResource TextBoxBaseControlTemplate}" Text="{Binding Local_Misc, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" FontSize="16" TextAlignment="Center" Background="Black" Foreground="White" Width="40" Height="25"/>
                         <TextBlock Text=" + " FontSize="25" Width="50" TextAlignment="Center" VerticalAlignment="Center" />
                         <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Background="Black" Foreground="White" Width="40" Height="25"/>
                     </StackPanel>
@@ -1459,13 +1468,13 @@
                         <CheckBox Width="auto" Height="auto" VerticalAlignment="Center" />
                         <TextBlock Text="Knowledge(Nature)" FontSize="16" Width="255" MinWidth="150" TextDecorations="Underline" VerticalAlignment="Top"/>
                         <TextBlock Text="INT" FontSize="16" Width="auto" Margin="0,0,36,0" TextDecorations="Underline" VerticalAlignment="Top"/>
-                        <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Background="Black" Foreground="White" Width="40" Height="25"/>
+                        <TextBox Name="Nature_Total" Template="{StaticResource TextBoxBaseControlTemplate}" Text="{Binding Nature_Total, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"  FontSize="16" TextAlignment="Center"  Background="Black" Foreground="White" Width="40" Height="25"/>
                         <TextBlock Text=" = " FontSize="25" Width="70" TextAlignment="Center" VerticalAlignment="Center" />
-                        <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Text="{Binding INT_MOD, Mode=TwoWay}" TextAlignment="Center" Background="White" Foreground="Black" Width="40" Height="25" IsReadOnly="True"/>
+                        <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Text="{Binding INT_MOD, Mode=TwoWay}"  FontSize="16" TextAlignment="Center" Background="White" Foreground="Black" Width="40" Height="25" IsReadOnly="True"/>
                         <TextBlock Text=" + " FontSize="25" Width="65" TextAlignment="Center" VerticalAlignment="Center"  />
-                        <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Background="Black" Foreground="White" Width="40" Height="25"/>
+                        <TextBox Name="Nature_Rank" Text="{Binding Nature_Rank, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" FontSize="16" TextAlignment="Center" Template="{StaticResource TextBoxBaseControlTemplate}" Background="Black" Foreground="White" Width="40" Height="25"/>
                         <TextBlock Text=" + " FontSize="25" Width="40" TextAlignment="Center" VerticalAlignment="Center" />
-                        <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Background="Black" Foreground="White" Width="40" Height="25"/>
+                        <TextBox Name="Nature_Misc" Template="{StaticResource TextBoxBaseControlTemplate}" Text="{Binding Nature_Misc, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" FontSize="16" TextAlignment="Center" Background="Black" Foreground="White" Width="40" Height="25"/>
                         <TextBlock Text=" + " FontSize="25" Width="50" TextAlignment="Center" VerticalAlignment="Center" />
                         <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Background="Black" Foreground="White" Width="40" Height="25"/>
                     </StackPanel>
@@ -1474,13 +1483,13 @@
                         <CheckBox Width="auto" Height="auto" VerticalAlignment="Center" />
                         <TextBlock Text="Knowledge(Nobility)" FontSize="16" Width="255" MinWidth="150" TextDecorations="Underline" VerticalAlignment="Top"/>
                         <TextBlock Text="INT" FontSize="16" Width="auto" Margin="0,0,36,0" TextDecorations="Underline" VerticalAlignment="Top"/>
-                        <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Background="Black" Foreground="White" Width="40" Height="25"/>
+                        <TextBox Name="Nobility_Total" Template="{StaticResource TextBoxBaseControlTemplate}" Text="{Binding Nobility_Total, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"  FontSize="16" TextAlignment="Center"  Background="Black" Foreground="White" Width="40" Height="25"/>
                         <TextBlock Text=" = " FontSize="25" Width="70" TextAlignment="Center" VerticalAlignment="Center" />
-                        <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Text="{Binding INT_MOD, Mode=TwoWay}" TextAlignment="Center" Background="White" Foreground="Black" Width="40" Height="25" IsReadOnly="True"/>
+                        <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Text="{Binding INT_MOD, Mode=TwoWay}"  FontSize="16" TextAlignment="Center" Background="White" Foreground="Black" Width="40" Height="25" IsReadOnly="True"/>
                         <TextBlock Text=" + " FontSize="25" Width="65" TextAlignment="Center" VerticalAlignment="Center"  />
-                        <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Background="Black" Foreground="White" Width="40" Height="25"/>
+                        <TextBox Name="Nobility_Rank" Text="{Binding Nobility_Rank, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" FontSize="16" TextAlignment="Center" Template="{StaticResource TextBoxBaseControlTemplate}" Background="Black" Foreground="White" Width="40" Height="25"/>
                         <TextBlock Text=" + " FontSize="25" Width="40" TextAlignment="Center" VerticalAlignment="Center" />
-                        <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Background="Black" Foreground="White" Width="40" Height="25"/>
+                        <TextBox Name="Nobility_Misc" Template="{StaticResource TextBoxBaseControlTemplate}" Text="{Binding Nobility_Misc, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" FontSize="16" TextAlignment="Center" Background="Black" Foreground="White" Width="40" Height="25"/>
                         <TextBlock Text=" + " FontSize="25" Width="50" TextAlignment="Center" VerticalAlignment="Center" />
                         <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Background="Black" Foreground="White" Width="40" Height="25"/>
                     </StackPanel>
@@ -1489,13 +1498,13 @@
                         <CheckBox Width="auto" Height="auto" VerticalAlignment="Center" />
                         <TextBlock Text="Knowledge(Planes)" FontSize="16" Width="255" MinWidth="150" TextDecorations="Underline" VerticalAlignment="Top"/>
                         <TextBlock Text="INT" FontSize="16" Width="auto" Margin="0,0,36,0" TextDecorations="Underline" VerticalAlignment="Top"/>
-                        <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Background="Black" Foreground="White" Width="40" Height="25"/>
+                        <TextBox Name="Planes_Total" Template="{StaticResource TextBoxBaseControlTemplate}" Text="{Binding Planes_Total, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"  FontSize="16" TextAlignment="Center"  Background="Black" Foreground="White" Width="40" Height="25"/>
                         <TextBlock Text=" = " FontSize="25" Width="70" TextAlignment="Center" VerticalAlignment="Center" />
-                        <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Text="{Binding INT_MOD, Mode=TwoWay}" TextAlignment="Center" Background="White" Foreground="Black" Width="40" Height="25" IsReadOnly="True"/>
+                        <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Text="{Binding INT_MOD, Mode=TwoWay}" FontSize="16" TextAlignment="Center" Background="White" Foreground="Black" Width="40" Height="25" IsReadOnly="True"/>
                         <TextBlock Text=" + " FontSize="25" Width="65" TextAlignment="Center" VerticalAlignment="Center"  />
-                        <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Background="Black" Foreground="White" Width="40" Height="25"/>
+                        <TextBox Name="Planes_Rank" Text="{Binding Planes_Rank, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" FontSize="16" TextAlignment="Center" Template="{StaticResource TextBoxBaseControlTemplate}" Background="Black" Foreground="White" Width="40" Height="25"/>
                         <TextBlock Text=" + " FontSize="25" Width="40" TextAlignment="Center" VerticalAlignment="Center" />
-                        <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Background="Black" Foreground="White" Width="40" Height="25"/>
+                        <TextBox Name="Planes_Misc" Template="{StaticResource TextBoxBaseControlTemplate}" Text="{Binding Planes_Misc, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" FontSize="16" TextAlignment="Center" Background="Black" Foreground="White" Width="40" Height="25"/>
                         <TextBlock Text=" + " FontSize="25" Width="50" TextAlignment="Center" VerticalAlignment="Center" />
                         <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Background="Black" Foreground="White" Width="40" Height="25"/>
                     </StackPanel>
@@ -1504,19 +1513,19 @@
                         <CheckBox Width="auto" Height="auto" VerticalAlignment="Center" />
                         <TextBlock Text="Knowldege(Religion)" FontSize="16" Width="255" MinWidth="150" TextDecorations="Underline" VerticalAlignment="Top"/>
                         <TextBlock Text="INT" FontSize="16" Width="auto" Margin="0,0,36,0" TextDecorations="Underline" VerticalAlignment="Top"/>
-                        <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Background="Black" Foreground="White" Width="40" Height="25"/>
+                        <TextBox Name="Religion_Total" Template="{StaticResource TextBoxBaseControlTemplate}" Text="{Binding Religion_Total, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"  FontSize="16" TextAlignment="Center"  Background="Black" Foreground="White" Width="40" Height="25"/>
                         <TextBlock Text=" = " FontSize="25" Width="70" TextAlignment="Center" VerticalAlignment="Center" />
-                        <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Text="{Binding INT_MOD, Mode=TwoWay}" TextAlignment="Center" Background="White" Foreground="Black" Width="40" Height="25" IsReadOnly="True"/>
+                        <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Text="{Binding INT_MOD, Mode=TwoWay}" FontSize="16" TextAlignment="Center" Background="White" Foreground="Black" Width="40" Height="25" IsReadOnly="True"/>
                         <TextBlock Text=" + " FontSize="25" Width="65" TextAlignment="Center" VerticalAlignment="Center"  />
-                        <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Background="Black" Foreground="White" Width="40" Height="25"/>
+                        <TextBox Name="Religion_Rank" Text="{Binding Religion_Rank, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" FontSize="16" TextAlignment="Center" Template="{StaticResource TextBoxBaseControlTemplate}" Background="Black" Foreground="White" Width="40" Height="25"/>
                         <TextBlock Text=" + " FontSize="25" Width="40" TextAlignment="Center" VerticalAlignment="Center" />
-                        <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Background="Black" Foreground="White" Width="40" Height="25"/>
+                        <TextBox Name="Religion_Misc" Template="{StaticResource TextBoxBaseControlTemplate}" Text="{Binding Religion_Misc, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" FontSize="16" TextAlignment="Center" Background="Black" Foreground="White" Width="40" Height="25"/>
                         <TextBlock Text=" + " FontSize="25" Width="50" TextAlignment="Center" VerticalAlignment="Center" />
                         <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Background="Black" Foreground="White" Width="40" Height="25"/>
                     </StackPanel>
 
 
-                    <TextBlock Text="Skills" FontSize="20" FontWeight="Bold" Grid.ColumnSpan="2"/>
+                    <TextBlock Text="Skills" FontSize="20" FontWeight="Bold" Grid.ColumnSpan="2" Margin="30,0"/>
                 </Grid>
             </TabItem>
 

@@ -25,7 +25,7 @@ namespace PathfinderCharGen
     /// </summary>
     public partial class MainWindow : Window
     {
-        //Character hero = new Character();
+       
         CharSheetView sheetView = new CharSheetView();
 
         public MainWindow()

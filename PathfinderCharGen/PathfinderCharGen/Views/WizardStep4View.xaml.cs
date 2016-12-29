@@ -579,52 +579,24 @@ namespace PathfinderCharGen.Views
 
         private void Step4Next_Click(object sender, RoutedEventArgs e)
         {
+
             int STR = Convert.ToInt32(STR_Score.Text) + sheetView.character.statMgr.raceMgr.Race.RaceStr;
             int DEX = Convert.ToInt32(DEX_Score.Text) + sheetView.character.statMgr.raceMgr.Race.RaceDex;
             int CON = Convert.ToInt32(CON_Score.Text) + sheetView.character.statMgr.raceMgr.Race.RaceCon;
-            int ITL = Convert.ToInt32(INT_Score.Text) + sheetView.character.statMgr.raceMgr.Race.RaceItl;
+            int INT = Convert.ToInt32(INT_Score.Text) + sheetView.character.statMgr.raceMgr.Race.RaceItl;
             int WIS = Convert.ToInt32(WIS_Score.Text) + sheetView.character.statMgr.raceMgr.Race.RaceWis;
             int CHA = Convert.ToInt32(CHA_Score.Text) + sheetView.character.statMgr.raceMgr.Race.RaceCha;
 
             sheetView.STR_Score.Text = STR.ToString();
             sheetView.DEX_Score.Text = DEX.ToString();
             sheetView.CON_Score.Text = CON.ToString();
-            sheetView.INT_Score.Text = ITL.ToString();
+            sheetView.INT_Score.Text = INT.ToString();
             sheetView.WIS_Score.Text = WIS.ToString();
             sheetView.CHA_Score.Text = CHA.ToString();
-
-            //sheetView.STR_Score.Text = STR_Score.Text;
-            //sheetView.DEX_Score.Text = DEX_Score.Text;
-            //sheetView.CON_Score.Text = CON_Score.Text;
-            //sheetView.INT_Score.Text = INT_Score.Text;
-            //sheetView.WIS_Score.Text = WIS_Score.Text;
-            //sheetView.CHA_Score.Text = CHA_Score.Text;
-
-            int strMod = (Convert.ToInt32(STR_Score.Text) - 10) / 2;
-            int dexMod = (Convert.ToInt32(DEX_Score.Text) - 10) / 2;
-            int conMod = (Convert.ToInt32(CON_Score.Text) - 10) / 2;
-            int intMod = (Convert.ToInt32(INT_Score.Text) - 10) / 2;
-            int wisMod = (Convert.ToInt32(WIS_Score.Text) - 10) / 2;
-            int chaMod = (Convert.ToInt32(CHA_Score.Text) - 10) / 2;
-
-            sheetView.STR_Mod.Text = strMod.ToString();
-            sheetView.DEX_Mod.Text = dexMod.ToString();
-            sheetView.CON_Mod.Text = conMod.ToString();
-            sheetView.INT_Mod.Text = intMod.ToString();
-            sheetView.WIS_Mod.Text = wisMod.ToString();
-            sheetView.CHA_Mod.Text = chaMod.ToString();
-
+    
             sheetView.CharacterLevel.Text = "1";
 
-            sheetView.CalcBtn.Command.Execute(sheetView);
-
-            Window parentWindow = Window.GetWindow(this);
-
-
-            Window window = new Window { Content = sheetView, Height = 1010, Width = 1800, WindowStartupLocation = WindowStartupLocation.CenterScreen };
-
-            parentWindow.Close();
-            window.ShowDialog();
+            this.Content = new WizardStep5View(sheetView);
         }
 
         private void EpicFantasy_Click(object sender, RoutedEventArgs e)
@@ -701,7 +673,7 @@ namespace PathfinderCharGen.Views
             STR_Down.IsEnabled = true;
             DEX_Down.IsEnabled = true;
             CON_Down.IsEnabled = true;
-            INT_Down.IsEnabled = true;
+            INT_Down.IsEnabled = true; 
             WIS_Down.IsEnabled = true;
             CHA_Down.IsEnabled = true;
         }
