@@ -1,0 +1,49 @@
+﻿<Window x:Class="PathfinderCharGen.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        
+        xmlns:local="clr-namespace:PathfinderCharGen"
+        xmlns:views="clr-namespace:PathfinderCharGen.Views"
+        xmlns:vm ="clr-namespace:PathfinderCharGen.ViewModels"
+        mc:Ignorable="d"
+        Title="Char Gen" Height="1010" Width="1800" WindowStartupLocation="CenterScreen">
+    <Window.Resources>
+        <DataTemplate DataType="{x:Type vm:MainWindowViewModel}">
+            <views:WizardStep1View/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type vm:CharSheetViewModel}">
+            <views:CharSheetView/>
+        </DataTemplate>
+    </Window.Resources>
+    <Window.DataContext>
+        <vm:MainWindowViewModel/>
+    </Window.DataContext>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition MinHeight="50"/>
+            <RowDefinition MinHeight="50"/>
+            <RowDefinition MinHeight="50"/>
+            <RowDefinition MinHeight="50"/>
+            <RowDefinition MinHeight="50"/>
+            <RowDefinition MinHeight="50"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition MinWidth="50"/>
+            <ColumnDefinition MinWidth="50"/>
+            <ColumnDefinition MinWidth="50"/>
+            <ColumnDefinition MinWidth="50"/>
+            <ColumnDefinition MinWidth="50"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid.Background>
+            <ImageBrush ImageSource="Resources/parchment.jpg" Stretch="Fill"/>
+        </Grid.Background>
+
+        <Button Height="60" Width="500" Background="Black" Foreground="White" Content="New Character Wizard" FontSize="30" Grid.Row="1" Grid.ColumnSpan="6" Click="NewCharacterWizard_Click"/>
+        <Button Height="60" Width="500" Background="Black" Foreground="White" Content="Load Character Sheet" FontSize="30" Grid.Row="3" Grid.ColumnSpan="6" Click="LoadCharacterSheet_Click"/>
+        <ContentControl Content="{Binding CurrentView, Mode=OneWay}"/>
+
+    </Grid>
+</Window>
