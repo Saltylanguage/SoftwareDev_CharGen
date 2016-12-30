@@ -98,14 +98,16 @@ namespace PathfinderCharGen.Views
 
         private void VariableBonusComboBox_MouseLeave(object sender, MouseEventArgs e)
         {
-            if(VariableBonusComboBox.Text == "STR")
+            if (VariableBonusComboBox.Text == "STR")
             {
                 STR_Race.Text = "2";
                 DEX_Race.Text = "0";
                 CON_Race.Text = "0";
                 INT_Race.Text = "0";
                 WIS_Race.Text = "0";
-                CHA_Race.Text = "0"; 
+                CHA_Race.Text = "0";
+
+                sheetView.character.statMgr.raceMgr.Race.RaceStr = 2;
 
             }
             if (VariableBonusComboBox.Text == "DEX")
@@ -116,6 +118,8 @@ namespace PathfinderCharGen.Views
                 INT_Race.Text = "0";
                 WIS_Race.Text = "0";
                 CHA_Race.Text = "0";
+
+                sheetView.character.statMgr.raceMgr.Race.RaceDex = 2;
             }
             if (VariableBonusComboBox.Text == "CON")
             {
@@ -125,6 +129,8 @@ namespace PathfinderCharGen.Views
                 INT_Race.Text = "0";
                 WIS_Race.Text = "0";
                 CHA_Race.Text = "0";
+
+                sheetView.character.statMgr.raceMgr.Race.RaceCon = 2;
             }
             if (VariableBonusComboBox.Text == "INT")
             {
@@ -134,6 +140,8 @@ namespace PathfinderCharGen.Views
                 INT_Race.Text = "2";
                 WIS_Race.Text = "0";
                 CHA_Race.Text = "0";
+
+                sheetView.character.statMgr.raceMgr.Race.RaceItl = 2;
             }
             if (VariableBonusComboBox.Text == "WIS")
             {
@@ -143,6 +151,8 @@ namespace PathfinderCharGen.Views
                 INT_Race.Text = "0";
                 WIS_Race.Text = "2";
                 CHA_Race.Text = "0";
+
+                sheetView.character.statMgr.raceMgr.Race.RaceWis = 2;
             }
             if (VariableBonusComboBox.Text == "CHA")
             {
@@ -152,6 +162,8 @@ namespace PathfinderCharGen.Views
                 INT_Race.Text = "0";
                 WIS_Race.Text = "0";
                 CHA_Race.Text = "2";
+
+                sheetView.character.statMgr.raceMgr.Race.RaceCha = 2;
             }
 
         }
