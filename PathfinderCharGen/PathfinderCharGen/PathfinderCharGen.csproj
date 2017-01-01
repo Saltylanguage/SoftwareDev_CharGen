@@ -101,6 +101,12 @@
     <Compile Include="Commands\Specific\CalculateStatModsCommand.cs" />
     <Compile Include="Commands\Specific\DexterityModCommand.cs" />
     <Compile Include="Commands\Specific\StrengthModCommand.cs" />
+    <Compile Include="CustomControls\BarbarianTab.xaml.cs">
+      <DependentUpon>BarbarianTab.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CustomControls\BardTab.xaml.cs">
+      <DependentUpon>BardTab.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pathfinder\Character.cs" />
     <Compile Include="Pathfinder\Classes\ClassBarbarian.cs" />
     <Compile Include="Pathfinder\Classes\ClassBard.cs" />
@@ -155,6 +161,14 @@
     <Compile Include="Views\WizardStep5View.xaml.cs">
       <DependentUpon>WizardStep5View.xaml</DependentUpon>
     </Compile>
+    <Page Include="CustomControls\BarbarianTab.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CustomControls\BardTab.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>

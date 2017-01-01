@@ -31,13 +31,13 @@ namespace PathfinderCharGen.Views
         private void Step3Next_Click(object sender, RoutedEventArgs e)
         {
             sheetView.CharacterClass.Text = ClassSelection.Text.ToString();
+            sheetView.ClassTab.Header = ClassSelection.Text.ToString();
             sheetView.character.SetClassType(this.ClassSelection.Text);
 
             sheetView.FORT_Base.Text = sheetView.character.statMgr.classMngr.Class.classFortSave.ToString();
             sheetView.REF_BaseBonus.Text = sheetView.character.statMgr.classMngr.Class.classRefSave.ToString();
             sheetView.WILL_BaseBonus.Text = sheetView.character.statMgr.classMngr.Class.classWillSave.ToString();
-            
-
+           
             this.Content = new WizardStep4View(sheetView);
         }
     }

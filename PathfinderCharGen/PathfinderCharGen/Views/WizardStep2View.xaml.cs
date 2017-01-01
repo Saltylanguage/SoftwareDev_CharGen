@@ -13,6 +13,8 @@ using System.Windows.Media.Imaging;
 using System.Globalization;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Diagnostics;
+
 
 namespace PathfinderCharGen.Views
 {
@@ -33,6 +35,8 @@ namespace PathfinderCharGen.Views
         {
             sheetView.CharacterRace.Text = RaceSelection.Text.ToString();
             sheetView.character.ChooseRace(RaceSelection.Text.ToString());
+            setVariableBonus(VariableBonusComboBox.Text);
+
             this.Content = new WizardStep3View(sheetView);
         }
 
@@ -63,8 +67,37 @@ namespace PathfinderCharGen.Views
                     6, 11);
 
             testFormattedText.SetFontStyle(FontStyles.Italic, 20, 20);
-                      
-            drawingContext.DrawText(testFormattedText, new Point(25, 300));            
+
+            drawingContext.DrawText(testFormattedText, new Point(25, 300));
+        }
+
+
+        private void setVariableBonus(string stat)
+        {
+            if (stat == "STR")
+            {
+                sheetView.character.statMgr.raceMgr.Race.RaceStr = 2;
+            }
+            if (stat == "DEX")
+            {
+                sheetView.character.statMgr.raceMgr.Race.RaceDex = 2;
+            }
+            if (stat == "CON")
+            {
+                sheetView.character.statMgr.raceMgr.Race.RaceCon = 2;
+            }
+            if (stat == "INT")
+            {
+                sheetView.character.statMgr.raceMgr.Race.RaceItl = 2;
+            }
+            if (stat == "WIS")
+            {
+                sheetView.character.statMgr.raceMgr.Race.RaceWis = 2;
+            }
+            if (stat == "CHA")
+            {
+                sheetView.character.statMgr.raceMgr.Race.RaceCha = 2;
+            }
         }
 
         private void RaceSelection_MouseEnter(object sender, MouseEventArgs e)
@@ -78,13 +111,12 @@ namespace PathfinderCharGen.Views
             WIS_Race.Text = sheetView.character.statMgr.raceMgr.Race.RaceWis.ToString();
             CHA_Race.Text = sheetView.character.statMgr.raceMgr.Race.RaceCha.ToString();
 
-            if(RaceSelection.Text.Contains("Half-") || RaceSelection.Text == "Human")
+            if (RaceSelection.Text.Contains("Half-") || RaceSelection.Text == "Human")
             {
                 VariableBonusTextBlock.Visibility = System.Windows.Visibility.Visible;
                 VariableBonusComboBox.Visibility = System.Windows.Visibility.Visible;
                 VariableBonusTextBlock.IsEnabled = true;
                 VariableBonusComboBox.IsEnabled = true;
-                
             }
             else
             {
@@ -106,9 +138,6 @@ namespace PathfinderCharGen.Views
                 INT_Race.Text = "0";
                 WIS_Race.Text = "0";
                 CHA_Race.Text = "0";
-
-                sheetView.character.statMgr.raceMgr.Race.RaceStr = 2;
-
             }
             if (VariableBonusComboBox.Text == "DEX")
             {
@@ -118,8 +147,6 @@ namespace PathfinderCharGen.Views
                 INT_Race.Text = "0";
                 WIS_Race.Text = "0";
                 CHA_Race.Text = "0";
-
-                sheetView.character.statMgr.raceMgr.Race.RaceDex = 2;
             }
             if (VariableBonusComboBox.Text == "CON")
             {
@@ -129,8 +156,6 @@ namespace PathfinderCharGen.Views
                 INT_Race.Text = "0";
                 WIS_Race.Text = "0";
                 CHA_Race.Text = "0";
-
-                sheetView.character.statMgr.raceMgr.Race.RaceCon = 2;
             }
             if (VariableBonusComboBox.Text == "INT")
             {
@@ -140,8 +165,6 @@ namespace PathfinderCharGen.Views
                 INT_Race.Text = "2";
                 WIS_Race.Text = "0";
                 CHA_Race.Text = "0";
-
-                sheetView.character.statMgr.raceMgr.Race.RaceItl = 2;
             }
             if (VariableBonusComboBox.Text == "WIS")
             {
@@ -151,8 +174,6 @@ namespace PathfinderCharGen.Views
                 INT_Race.Text = "0";
                 WIS_Race.Text = "2";
                 CHA_Race.Text = "0";
-
-                sheetView.character.statMgr.raceMgr.Race.RaceWis = 2;
             }
             if (VariableBonusComboBox.Text == "CHA")
             {
@@ -161,11 +182,8 @@ namespace PathfinderCharGen.Views
                 CON_Race.Text = "0";
                 INT_Race.Text = "0";
                 WIS_Race.Text = "0";
-                CHA_Race.Text = "2";
-
-                sheetView.character.statMgr.raceMgr.Race.RaceCha = 2;
+                CHA_Race.Text = "2";            
             }
-
         }
     }
 }

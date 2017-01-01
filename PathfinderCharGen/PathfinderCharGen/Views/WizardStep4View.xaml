@@ -34,8 +34,6 @@
             <ColumnDefinition Width="auto"/>
         </Grid.ColumnDefinitions>
 
-
-
         <Label Content="STEP 4:" FontSize="40" Background="Black" Foreground="White"               
                Grid.Column="0" Grid.Row="0" HorizontalAlignment="Right" VerticalAlignment="Center"
                Margin="20,0,10,0"/>

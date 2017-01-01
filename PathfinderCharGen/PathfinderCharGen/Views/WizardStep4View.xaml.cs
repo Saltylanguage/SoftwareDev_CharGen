@@ -623,7 +623,6 @@ namespace PathfinderCharGen.Views
             INT_Down.IsEnabled = true;
             WIS_Down.IsEnabled = true;
             CHA_Down.IsEnabled = true;
-
         }
 
         private void HighFantasy_Click(object sender, RoutedEventArgs e)

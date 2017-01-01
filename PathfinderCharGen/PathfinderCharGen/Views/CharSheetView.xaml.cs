@@ -21,17 +21,32 @@ namespace PathfinderCharGen.Views
     /// </summary>
     public partial class CharSheetView : UserControl
     {
+
         public ReactiveLeveling.Pathfinder.Character character= new ReactiveLeveling.Pathfinder.Character();
+             
+        public void setClassTab()
+        {
+            if(CharacterClass.Text.ToString() == "Barbarian" )
+            {                
+                ClassTab.Content = new PathfinderCharGen.CustomControls.BarbarianTab();
+            }
+            if (CharacterClass.Text.ToString() == "Bard")
+            {
+                ClassTab.Content = new PathfinderCharGen.CustomControls.BardTab();
+            }
+        }
      
         public CharSheetView()
         {
             InitializeComponent();
+            
         }
 
         public CharSheetView(CharSheetView SV)
         {            
-            this.Content = SV.Content;
-            InitializeComponent();                
+            this.Content = SV.Content;           
+            InitializeComponent();
+            
         }
 
         private void MenuItem_Click_Save(object sender, RoutedEventArgs e)

@@ -5,10 +5,13 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"        
         xmlns:local="clr-namespace:PathfinderCharGen.Views"
         xmlns:vm="clr-namespace:PathfinderCharGen.ViewModels"
+        xmlns:ClassTabs="clr-namespace:PathfinderCharGen.CustomControls"
         mc:Ignorable="d"
        Height="1010" Width="1800" >
     <UserControl.Resources>
         <vm:CharSheetViewModel x:Key="charSheetVM"/>
+        <ClassTabs:BarbarianTab x:Key="barbTab"/>
+
         <!--=================== CUSTOM TEXTBOX =================-->
         <ControlTemplate x:Key="TextBoxBaseControlTemplate" TargetType="{x:Type TextBoxBase}">
             <Border Background="{TemplateBinding Background}"
@@ -99,11 +102,11 @@
 
                         <!--=================== PLAYER INFO FIELDS =================-->
                         <StackPanel Orientation="Vertical" Width="190" Grid.Column="1" Grid.Row="2">
-                            <TextBox Name="PlayerName" Template="{StaticResource TextBoxBaseControlTemplate}"      Margin="2" Background="Black" Foreground="White" Width="160" Height="30" VerticalAlignment="Top" FontSize="16" Text="{Binding PlayerName, Mode=TwoWay}" IsReadOnly="True"/>
-                            <TextBox Name="CharacterName"  Template="{StaticResource TextBoxBaseControlTemplate}"  Margin="2" Background="Black" Foreground="White" Width="160" Height="30" VerticalAlignment="Top" FontSize="16" IsReadOnly="True"/>
-                            <TextBox Name="CharacterRace"  Template="{StaticResource TextBoxBaseControlTemplate}"  Margin="2" Background="Black" Foreground="White" Width="160" Height="30" VerticalAlignment="Top" FontSize="16" IsReadOnly="True"/>
-                            <TextBox Name="CharacterClass"  Template="{StaticResource TextBoxBaseControlTemplate}" Margin="2" Background="Black" Foreground="White" Width="160" Height="30" VerticalAlignment="Top" FontSize="16" Text="{Binding CLASS_Name, Mode=TwoWay}" IsReadOnly="True"/>
-                            <TextBox Name="CharacterLevel"  Template="{StaticResource TextBoxBaseControlTemplate}" Background="Black" Foreground="White" Height="30" Width="30" VerticalAlignment="Top" FontSize="16" Margin="12,0,140,0" TextAlignment="Center" IsReadOnly="True"/>
+                            <TextBox Name="PlayerName"      Template="{StaticResource TextBoxBaseControlTemplate}"  Margin="2"          Background="Black" Foreground="White" Width="160" Height="30" VerticalAlignment="Top" FontSize="16" IsReadOnly="True" Text="{Binding PlayerName, Mode=TwoWay}"/>
+                            <TextBox Name="CharacterName"   Template="{StaticResource TextBoxBaseControlTemplate}"  Margin="2"          Background="Black" Foreground="White" Width="160" Height="30" VerticalAlignment="Top" FontSize="16" IsReadOnly="True"/>
+                            <TextBox Name="CharacterRace"   Template="{StaticResource TextBoxBaseControlTemplate}"  Margin="2"          Background="Black" Foreground="White" Width="160" Height="30" VerticalAlignment="Top" FontSize="16" IsReadOnly="True"/>
+                            <TextBox Name="CharacterClass"  Template="{StaticResource TextBoxBaseControlTemplate}"  Margin="2"          Background="Black" Foreground="White" Width="160" Height="30" VerticalAlignment="Top" FontSize="16" IsReadOnly="True" Text="{Binding CLASS_Name, Mode=TwoWay}"/>
+                            <TextBox Name="CharacterLevel"  Template="{StaticResource TextBoxBaseControlTemplate}"  Margin="12,0,140,0" Background="Black" Foreground="White" Height="30" Width="30"  VerticalAlignment="Top" FontSize="16" IsReadOnly="True" TextAlignment="Center"/>
                         </StackPanel>
                         <!--=================== END OF PLAYER INFO FIELDS =================-->
                     </Grid>
@@ -1530,11 +1533,23 @@
             </TabItem>
 
             <TabItem Header="Inventory">
-
+                <Grid>
+                    <Grid.Background>
+                        <ImageBrush ImageSource="../Resources/parchment.jpg" Stretch="Fill"/>
+                    </Grid.Background>
+                </Grid>
             </TabItem>
 
-            <TabItem DataContext="{StaticResource charSheetVM}" Header="{Binding CLASS_Name}" >
-
+            <TabItem Name="ClassTab" Header="{Binding CLASS_Name}" >
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="27*"/>
+                        <ColumnDefinition Width="272*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.Background>
+                        <ImageBrush ImageSource="../Resources/parchment.jpg" Stretch="Fill"/>
+                    </Grid.Background>
+                </Grid>
             </TabItem>
 
         </TabControl>

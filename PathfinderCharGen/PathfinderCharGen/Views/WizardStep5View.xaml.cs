@@ -79,17 +79,7 @@ namespace PathfinderCharGen.Views
 
         private void Step5Next_Click(object sender, RoutedEventArgs e)
         {
-            char[] trim = new char[9];
-            trim[0] = '_';
-            trim[1] = 'C';
-            trim[2] = 'H';
-            trim[3] = 'E';
-            trim[4] = 'C';
-            trim[5] = 'K';
-            trim[6] = 'B';
-            trim[7] = 'O';
-            trim[8] = 'X';
-
+         
             for (int i = 0; i < Skills.Count(); ++i)
             {
 
@@ -310,6 +300,8 @@ namespace PathfinderCharGen.Views
                     }
                 }
             }
+
+            sheetView.setClassTab();
 
             Window parentWindow = Window.GetWindow(this);
             Window window = new Window { Content = sheetView, Height = 1010, Width = 1800, WindowStartupLocation = WindowStartupLocation.CenterScreen };

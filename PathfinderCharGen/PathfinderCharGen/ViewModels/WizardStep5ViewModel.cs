@@ -19,7 +19,6 @@ namespace PathfinderCharGen.ViewModels
         public int POINTS
         {
             get { return points; }
-
             set
             {
                 points = value;
