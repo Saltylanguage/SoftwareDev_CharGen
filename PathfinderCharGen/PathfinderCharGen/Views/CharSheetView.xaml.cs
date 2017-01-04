@@ -34,19 +34,34 @@ namespace PathfinderCharGen.Views
             {
                 ClassTab.Content = new PathfinderCharGen.CustomControls.BardTab();
             }
+            if (CharacterClass.Text.ToString() == "Cleric")
+            {
+                ClassTab.Content = new PathfinderCharGen.CustomControls.ClericTab();
+            }
+            if (CharacterClass.Text.ToString() == "Druid")
+            {
+                ClassTab.Content = new PathfinderCharGen.CustomControls.DruidTab();
+            }
+            if (CharacterClass.Text.ToString() == "Fighter")
+            {
+                ClassTab.Content = new PathfinderCharGen.CustomControls.FighterTab();
+            }
+            if (CharacterClass.Text.ToString() == "Monk")
+            {
+                ClassTab.Content = new PathfinderCharGen.CustomControls.MonkTab();
+            }
         }
      
+
         public CharSheetView()
         {
-            InitializeComponent();
-            
+            InitializeComponent();            
         }
 
         public CharSheetView(CharSheetView SV)
         {            
             this.Content = SV.Content;           
-            InitializeComponent();
-            
+            InitializeComponent();            
         }
 
         private void MenuItem_Click_Save(object sender, RoutedEventArgs e)

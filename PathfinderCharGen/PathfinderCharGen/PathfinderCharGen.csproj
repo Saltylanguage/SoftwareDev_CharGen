@@ -107,6 +107,18 @@
     <Compile Include="CustomControls\BardTab.xaml.cs">
       <DependentUpon>BardTab.xaml</DependentUpon>
     </Compile>
+    <Compile Include="CustomControls\ClericTab.xaml.cs">
+      <DependentUpon>ClericTab.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CustomControls\DruidTab.xaml.cs">
+      <DependentUpon>DruidTab.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CustomControls\FighterTab.xaml.cs">
+      <DependentUpon>FighterTab.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CustomControls\MonkTab.xaml.cs">
+      <DependentUpon>MonkTab.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pathfinder\Character.cs" />
     <Compile Include="Pathfinder\Classes\ClassBarbarian.cs" />
     <Compile Include="Pathfinder\Classes\ClassBard.cs" />
@@ -166,6 +178,22 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="CustomControls\BardTab.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CustomControls\ClericTab.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CustomControls\DruidTab.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CustomControls\FighterTab.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CustomControls\MonkTab.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -275,6 +303,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\monk.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\BarbarianEmblem.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

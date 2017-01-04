@@ -1,0 +1,130 @@
+﻿<UserControl x:Class="PathfinderCharGen.CustomControls.FighterTab"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:PathfinderCharGen.CustomControls"
+             mc:Ignorable="d" 
+             d:DesignHeight="350" d:DesignWidth="400">
+    <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="../Resources/parchment.jpg" Stretch="Fill"/>
+        </Grid.Background>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="100" />
+            <ColumnDefinition Width="100" />
+            <ColumnDefinition Width="200" />
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.ColumnSpan="3" Margin="20">
+
+            <TextBlock Text="Fighter" FontSize="30" TextDecorations="Underline" Grid.ColumnSpan="2"/>
+            <StackPanel Orientation="Horizontal" Grid.ColumnSpan="3" Margin="0,10">
+                <Label Content="Channel Energy"/>
+                <TextBox Name="Performances" Text="1d6" TextAlignment="Center" Width="34" Height="20"/>
+
+
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Label Content="Orisons:" Margin="28,0,0,0"/>
+                <ComboBox Name="Orisons" Width="100">
+                    <ComboBoxItem Content="Orison1"/>
+                    <ComboBoxItem Content="Orison2"/>
+                    <ComboBoxItem Content="Orison3"/>
+                </ComboBox>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Label Content="Spells:" Margin="40,10,0,0"/>
+                <ComboBox Name="Spells" Width="100" Margin="0,10,0,0">
+                    <ComboBoxItem Content="Lvl1Spells"/>
+                    <Separator/>
+                    <ComboBoxItem Content="Lvl2Spells"/>
+                    <Separator/>
+                    <ComboBoxItem Content="Lvl3Spells"/>
+                </ComboBox>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" Margin="10">
+                <TextBlock Text="Nature Bond: "/>
+                <ComboBox Width="100" Height="20">
+                    <ComboBoxItem Content="Animal Companion"/>
+                    <ComboBoxItem Content="Animal/Terrain Domain"/>
+                </ComboBox>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" Margin="10">
+                <TextBlock Text="Aura: " Margin="20,10,5,10"/>
+                <TextBox Width="60" Height="20"/>
+            </StackPanel>
+
+
+            <StackPanel Orientation="Horizontal" Margin="13,-10" Grid.ColumnSpan="3">
+                <Label Content="Domain 1:" Margin="0,0,0,10"/>
+                <TextBox Width="50" Height="20" Margin="0,0,0,10"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="13,-10" Grid.ColumnSpan="3">
+                <Label Content="Domain 2:" Margin="0,10,0,10"/>
+                <TextBox Width="50" Height="20" Margin="0,10,0,10"/>
+            </StackPanel>
+
+        </StackPanel>
+
+        <StackPanel Grid.Column="2">
+            <StackPanel Orientation="Horizontal" Margin="-20,70,0,10">
+                <TextBlock Text="Channels Per Day" Margin="30,0,0,0"/>
+                <TextBox Text="0" TextAlignment="Center" Margin="5,0" Width="20"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="Channels Left" Margin="31,0,0,0"/>
+                <TextBox Text="0" TextAlignment="Center" Margin="5,0" Width="20"/>
+            </StackPanel>
+
+            <StackPanel Margin="-20,10,0,0">
+                <TextBlock Text="Spells Per Day:" Margin="30,0,0,0"/>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="LVL1" Margin="30,5,0,5"/>
+                    <TextBox Width="20" Height="20"/>
+                    <TextBlock Text="LVL2" Margin="5,5,0,5"/>
+                    <TextBox Width="20" Height="20"/>
+                    <TextBlock Text="LVL3" Margin="5,5,0,5"/>
+                    <TextBox Width="20" Height="20"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="LVL4" Margin="30,5,0,5"/>
+                    <TextBox Width="20" Height="20"/>
+                    <TextBlock Text="LVL5" Margin="5,5,0,5"/>
+                    <TextBox Width="20" Height="20"/>
+                    <TextBlock Text="LVL6" Margin="5,5,0,5"/>
+                    <TextBox Width="20" Height="20"/>
+                </StackPanel>
+
+                <TextBlock Text="Spells Left Today" Margin="30,5,0,0"/>
+
+                <StackPanel Orientation="Horizontal" Margin="0,0,0,0" Grid.ColumnSpan="3">
+                    <TextBlock Text="LVL1" Margin="30,5,0,5"/>
+                    <TextBox Width="20" Height="20"/>
+                    <TextBlock Text="LVL2" Margin="5,5,0,5"/>
+                    <TextBox Width="20" Height="20"/>
+                    <TextBlock Text="LVL3" Margin="5,5,0,5"/>
+                    <TextBox Width="20" Height="20"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="0,0,0,0">
+                    <TextBlock Text="LVL4" Margin="30,5,0,5"/>
+                    <TextBox Width="20" Height="20"/>
+                    <TextBlock Text="LVL5" Margin="5,5,0,5"/>
+                    <TextBox Width="20" Height="20"/>
+                    <TextBlock Text="LVL6" Margin="5,5,0,5"/>
+                    <TextBox Width="20" Height="20"/>
+                </StackPanel>
+            </StackPanel>
+
+        </StackPanel>
+
+    </Grid>
+</UserControl>

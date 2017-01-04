@@ -5,45 +5,90 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:PathfinderCharGen.CustomControls"
              mc:Ignorable="d" 
-             d:DesignHeight="350" d:DesignWidth="400">
+             d:DesignHeight="1010" d:DesignWidth="1800">
     <Grid>
         <Grid.Background>
             <ImageBrush ImageSource="../Resources/parchment.jpg" Stretch="Fill"/>
         </Grid.Background>
 
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="100" />
-            <ColumnDefinition Width="100" />
-            <ColumnDefinition Width="200" />
+            <ColumnDefinition Width="400" />
+            <ColumnDefinition Width="250" />
+            <ColumnDefinition Width="400" Name="Column3" />
         </Grid.ColumnDefinitions>
 
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
 
         </Grid.RowDefinitions>
 
-        <StackPanel Grid.ColumnSpan="3" Margin="20">
+        <TextBlock Text="Bard" FontSize="60" TextDecorations="Underline" Grid.ColumnSpan="3" Grid.Row="0"  Margin="30"/>
 
-            <TextBlock Text="Bard" FontSize="30" TextDecorations="Underline" Grid.ColumnSpan="2"/>
+        <StackPanel Grid.ColumnSpan="3" Grid.Row="1" Margin="30,10">
+
+
             <StackPanel Orientation="Horizontal" Grid.ColumnSpan="3" Margin="0,10">
-                <Label Content="Performances:"/>
-                <ComboBox Name="Performances" Width="100">
+                <Label Content="Performances:" FontSize="30"/>
+                <ComboBox Name="Performances" Width="150" Height="30" FontSize="25" VerticalAlignment="Center">
                     <ComboBoxItem Content="Performance1"/>
                     <ComboBoxItem Content="Performance2"/>
                     <ComboBoxItem Content="Performance3"/>
                 </ComboBox>
             </StackPanel>
+
+
+            <StackPanel Orientation="Horizontal" Margin="10">
+                <TextBlock Text="Bardic Knowledge:" FontSize="25" Margin="10,10,5,10"/>
+                <TextBox Width="30" Height="30" Text="0" FontSize="20" TextAlignment="Center"/>
+            </StackPanel>
+
+
+            <StackPanel Orientation="Horizontal" Margin="60,0" Grid.ColumnSpan="3">
+                <Label Content="Well-Versed" FontSize="25"/>
+                <CheckBox VerticalAlignment="Center"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" Margin="60,0">
+                <Label Content="Lore Master" FontSize="25"/>
+                <CheckBox VerticalAlignment="Center"/>
+
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="5,0">
+                <Label Content="Jack of All Trades" FontSize="25"/>
+                <CheckBox VerticalAlignment="Center"/>
+
+            </StackPanel>
+
+        </StackPanel>
+
+        <StackPanel Grid.Column="1" Grid.Row="1">
+            <StackPanel Orientation="Horizontal" Margin="-20,20,0,10">
+                <TextBlock Text="Rounds Per Day" FontSize="25" Margin="30,0,0,0"/>
+                <TextBox Text="0" FontSize="25" TextAlignment="Center" Margin="5,0" Width="30"/>
+            </StackPanel>
             <StackPanel Orientation="Horizontal">
-                <Label Content="Cantrips:" Margin="28,0,0,0"/>
-                <ComboBox Name="Cantrips" Width="100">
+                <TextBlock Text="Rounds Left" FontSize="25" Margin="54,0,0,0"/>
+                <TextBox Text="0" FontSize="25" TextAlignment="Center" Margin="5,0" Width="30"/>
+            </StackPanel>
+        </StackPanel>
+
+
+        <StackPanel Grid.Column="2" Grid.Row="1">
+            
+            <StackPanel Orientation="Horizontal">
+                <Label Content="Cantrips:" FontSize="25"/>
+                <ComboBox Name="Cantrips" VerticalAlignment="Center" Width="100">
                     <ComboBoxItem Content="Cantrip1"/>
                     <ComboBoxItem Content="Cantrip2"/>
                     <ComboBoxItem Content="Cantrip3"/>
                 </ComboBox>
             </StackPanel>
-            <StackPanel Orientation="Horizontal">
-                <Label Content="Spells:" Margin="40,10,0,0"/>
-                <ComboBox Name="Spells" Width="100" Margin="0,10,0,0"> 
+            
+            <StackPanel Orientation="Horizontal" Margin="25,10">
+                <Label Content="Spells:" FontSize="25"/>
+                <ComboBox Name="Spells" VerticalAlignment="Center" Width="100" Margin="0,10,0,0">
                     <ComboBoxItem Content="Lvl1Spells"/>
                     <Separator/>
                     <ComboBoxItem Content="Lvl2Spells"/>
@@ -52,82 +97,39 @@
                 </ComboBox>
             </StackPanel>
 
-           
-
-
-            <StackPanel Orientation="Horizontal" Margin="10">
-                <TextBlock Text="Bardic Knowledge:" Margin="10,10,5,10"/>
-                <TextBox Width="20" Height="20" Text="0" TextAlignment="Center"/>
-            </StackPanel>
-
-
-            <StackPanel Orientation="Horizontal" Margin="40,0" Grid.ColumnSpan="3">
-                <Label Content="Well-Versed"/>
-                <CheckBox Margin="0,6"/>
-            </StackPanel>
-
-            <StackPanel Orientation="Horizontal" Margin="37,0">
-                <Label Content="Lore Master"/>
-                <CheckBox Margin="2,6"/>
-
-            </StackPanel>
-            <StackPanel Orientation="Horizontal" Margin="10,0">
-                <Label Content="Jack of All Trades"/>
-                <CheckBox Margin="2,6"/>
-
-            </StackPanel>
-
-        </StackPanel>
-
-        <StackPanel Grid.Column="2">
-            <StackPanel Orientation="Horizontal" Margin="-20,70,0,10">
-                <TextBlock Text="Rounds Per Day" Margin="30,0,0,0"/>
-                <TextBox Text="0" TextAlignment="Center" Margin="5,0" Width="20"/>
-            </StackPanel>
-            <StackPanel Orientation="Horizontal">
-                <TextBlock Text="Rounds Left" Margin="30,0,0,0"/>
-                <TextBox Text="0" TextAlignment="Center" Margin="5,0" Width="20"/>
-            </StackPanel>
-
             <StackPanel Margin="-20,10,0,0">
-                <TextBlock Text="Spells Per Day:" Margin="30,0,0,0"/>
+                <TextBlock Text="Spells Per Day:" Margin="10" FontSize="30" HorizontalAlignment="Center"/>
                 <StackPanel Orientation="Horizontal">
-                    <TextBlock Text="LVL1" Margin="30,5,0,5"/>
-                    <TextBox Width="20" Height="20"/>
-                    <TextBlock Text="LVL2" Margin="5,5,0,5"/>
-                    <TextBox Width="20" Height="20"/>
-                    <TextBlock Text="LVL3" Margin="5,5,0,5"/>
-                    <TextBox Width="20" Height="20"/>
+                    <TextBlock Text="LVL1" FontSize="25" Margin="30,5,0,5"/>
+                    <TextBox Width="20" Height="20" Margin="5,0"/>
+                    <TextBlock Text="/" FontSize="25" Margin="0,5"/>
+                    <TextBox Width="20" Height="20" Margin="5,0"/>
+                    <TextBlock Text="LVL2" FontSize="25" Margin="15,5,0,5"/>
+                    <TextBox Width="20" Height="20" Margin="5,0"/>
+                    <TextBlock Text="/" FontSize="25" Margin="0,5"/>
+                    <TextBox Width="20" Height="20" Margin="5,0"/>
+                    <TextBlock Text="LVL3" FontSize="25" Margin="15,5,0,5"/>
+                    <TextBox Width="20" Height="20" Margin="5,0"/>
+                    <TextBlock Text="/" FontSize="25" Margin="0,5"/>
+                    <TextBox Width="20" Height="20" Margin="5,0"/>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal">
-                    <TextBlock Text="LVL4" Margin="30,5,0,5"/>
-                    <TextBox Width="20" Height="20"/>
-                    <TextBlock Text="LVL5" Margin="5,5,0,5"/>
-                    <TextBox Width="20" Height="20"/>
-                    <TextBlock Text="LVL6" Margin="5,5,0,5"/>
-                    <TextBox Width="20" Height="20"/>
+                    <TextBlock Text="LVL4" FontSize="25" Margin="30,5,0,5"/>
+                    <TextBox Width="20" Height="20" Margin="5,0"/>
+                    <TextBlock Text="/" FontSize="25" Margin="0,5"/>
+                    <TextBox Width="20" Height="20" Margin="5,0"/>
+                    <TextBlock Text="LVL5" FontSize="25" Margin="15,5,0,5"/>
+                    <TextBox Width="20" Height="20" Margin="5,0"/>
+                    <TextBlock Text="/" FontSize="25" Margin="0,5"/>
+                    <TextBox Width="20" Height="20" Margin="5,0"/>
+                    <TextBlock Text="LVL6" FontSize="25" Margin="15,5,0,5"/>
+                    <TextBox Width="20" Height="20" Margin="5,0"/>
+                    <TextBlock Text="/" FontSize="25" Margin="0,5"/>
+                    <TextBox Width="20" Height="20" Margin="5,0"/>
                 </StackPanel>
 
-                <TextBlock Text="Spells Left Today" Margin="30,5,0,0"/>
 
-                <StackPanel Orientation="Horizontal" Margin="0,0,0,0" Grid.ColumnSpan="3">
-                    <TextBlock Text="LVL1" Margin="30,5,0,5"/>
-                    <TextBox Width="20" Height="20"/>
-                    <TextBlock Text="LVL2" Margin="5,5,0,5"/>
-                    <TextBox Width="20" Height="20"/>
-                    <TextBlock Text="LVL3" Margin="5,5,0,5"/>
-                    <TextBox Width="20" Height="20"/>
-                </StackPanel>
-                <StackPanel Orientation="Horizontal" Margin="0,0,0,0">
-                    <TextBlock Text="LVL4" Margin="30,5,0,5"/>
-                    <TextBox Width="20" Height="20"/>
-                    <TextBlock Text="LVL5" Margin="5,5,0,5"/>
-                    <TextBox Width="20" Height="20"/>
-                    <TextBlock Text="LVL6" Margin="5,5,0,5"/>
-                    <TextBox Width="20" Height="20"/>
-                </StackPanel>
             </StackPanel>
-
         </StackPanel>
 
     </Grid>

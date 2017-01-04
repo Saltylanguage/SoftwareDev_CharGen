@@ -5,86 +5,90 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:PathfinderCharGen.CustomControls"
              mc:Ignorable="d" 
-             d:DesignHeight="350" d:DesignWidth="350">
+             d:DesignHeight="1010" d:DesignWidth="1800">
     <Grid>
         <Grid.Background>
             <ImageBrush ImageSource="../Resources/parchment.jpg" Stretch="Fill"/>
         </Grid.Background>
 
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="100" />
-            <ColumnDefinition Width="100" />
-            <ColumnDefinition Width="150" />
+            <ColumnDefinition Width="250" />
+            <ColumnDefinition Width="250" />
+            <ColumnDefinition Width="150" Name="Column3" />
         </Grid.ColumnDefinitions>
 
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"/>
- 
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+
         </Grid.RowDefinitions>
+       
+        <TextBlock Text="Barbarian" FontSize="60" TextDecorations="Underline" Grid.ColumnSpan="3" Grid.Row="0"  Margin="30"/>
+        
+        <StackPanel Grid.ColumnSpan="3" Grid.Row="1">
 
-        <StackPanel Grid.ColumnSpan="3" Margin="20">
 
-            <TextBlock Text="Barbarian" FontSize="30" TextDecorations="Underline" Grid.ColumnSpan="2"/>
-            <StackPanel Orientation="Horizontal" Grid.ColumnSpan="3" Margin="0,10">
-                <Label Content="Rage Powers:"/>
-                <ComboBox Name="RagePowers" Width="100">
+            <StackPanel Orientation="Horizontal" Grid.ColumnSpan="3" Margin="30,10">
+                <Label Content="Rage Powers:" FontSize="30"/>
+                <ComboBox Name="RagePowers" Width="150" Height="30" VerticalAlignment="Top" Margin="10,15">
                     <ComboBoxItem Content="RagePower1"/>
                     <ComboBoxItem Content="RagePower2"/>
                     <ComboBoxItem Content="RagePower3"/>
                 </ComboBox>
+
+                <StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="0,20,0,0">
+                        <TextBlock Text="Rounds Per Day" FontSize="20" Margin="30,0,0,0"/>
+                        <TextBox Text="0" TextAlignment="Center" FontSize="16" Margin="5,0" Width="20"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="Rounds Left" FontSize="20" Margin="65,10,0,0"/>
+                        <TextBox Text="0" TextAlignment="Center" FontSize="16" Margin="5,10" Width="20"/>
+                    </StackPanel>
+                </StackPanel>
             </StackPanel>
 
-            <Label Content="Rage Bonuses:"/>
             <StackPanel Orientation="Horizontal" Margin="10,10">
-                <TextBlock Text="STR" Margin="5,0"/>
-                <TextBox Text="0" TextAlignment="Center" Width="20"/>
-                <TextBlock Text="CON" Margin="5,0"/>
-                <TextBox Text="0" TextAlignment="Center" Width="20"/>
-                <TextBlock Text="AC" Margin="5,0"/>
-                <TextBox Text="0" TextAlignment="Center" Width="20"/>
-                <TextBlock Text="Will" Margin="5,0"/>
-                <TextBox Text="0" TextAlignment="Center" Width="20"/>
+                <Label Content="Rage Bonuses:" FontSize="20" Margin="30,0,10,0"/>
+                <TextBlock Text="STR" FontSize="16" VerticalAlignment="Center" Margin="5,0"/>
+                <TextBox Text="0" FontSize="16" TextAlignment="Center" VerticalAlignment="Center" Width="20"/>
+                <TextBlock Text="CON" FontSize="16" VerticalAlignment="Center" Margin="5,0"/>
+                <TextBox Text="0" FontSize="16" TextAlignment="Center" VerticalAlignment="Center" Width="20"/>
+                <TextBlock Text="AC" FontSize="16" VerticalAlignment="Center" Margin="5,0"/>
+                <TextBox Text="0" FontSize="16" TextAlignment="Center" VerticalAlignment="Center" Width="20"/>
+                <TextBlock Text="Will" FontSize="16" VerticalAlignment="Center" Margin="5,0"/>
+                <TextBox Text="0" FontSize="16" TextAlignment="Center" VerticalAlignment="Center" Width="20"/>
             </StackPanel>
 
-            <StackPanel Orientation="Horizontal" Margin="10">
-                <TextBlock Text="Trap Sense:" Margin="10,10,5,10"/>
-                <TextBox Width="20" Height="20" Text="0" TextAlignment="Center"/>
-                <TextBlock Text="Damage Reduction:" Margin="10,10,5,0"/>
-                <TextBox Width="20" Height="20" Text="0" TextAlignment="Center"/>
+            <StackPanel Orientation="Horizontal" Margin="35,0">
+                <TextBlock Text="Trap Sense:" FontSize="20" Margin="10,10,5,10"/>
+                <TextBox Width="20" FontSize="16" Margin="0,5,0,0" VerticalAlignment="Center" Text="0" TextAlignment="Center"/>
+                <TextBlock Text="Damage Reduction:" FontSize="20" Margin="10,10,5,0"/>
+                <TextBox Width="20" FontSize="16" VerticalAlignment="Center" Text="0" TextAlignment="Center"/>
             </StackPanel>
 
             <StackPanel Orientation="Horizontal" Margin="10,0" Grid.ColumnSpan="3">
-                <Label Content="Tireless Rage"/>
-                <CheckBox Margin="0,6"/>
-                <Label Content="Uncanny Dodge" Margin="57,0,0,0"/>
-                <CheckBox Margin="0,6"/>
+                <Label Content="Greater Rage" FontSize="20" Margin="30,0,5,0"/>
+                <CheckBox VerticalAlignment="Center"/>
+                <Label Content="Uncanny Dodge" FontSize="20" Margin="105,0,5,0"/>
+                <CheckBox VerticalAlignment="Center"/>
             </StackPanel>
 
             <StackPanel Orientation="Horizontal" Margin="10,0">
-                <Label Content="Mighty Rage"/>
-                <CheckBox Margin="2,6"/>
-                <Label Content="Improved Uncanny Dodge"/>
-                <CheckBox Margin="0,6"/>
+                <Label Content="Tireless Rage" FontSize="20" Margin="30,0,5,0"/>
+                <CheckBox VerticalAlignment="Center"/>
+                <Label Content="Improved Uncanny Dodge" FontSize="20" Margin="10,0"/>
+                <CheckBox VerticalAlignment="Center"/>
             </StackPanel>
             <StackPanel Orientation="Horizontal" Margin="10,0">
-                <Label Content="Mighty Rage"/>
-                <CheckBox Margin="2,6"/>
-                <Label Content="Indomitable Will" Margin="49,0,0,0"/>
-                <CheckBox Margin="2,6"/>
+                <Label Content="Mighty Rage" FontSize="20" Margin="30,0,8,0"/>
+                <CheckBox VerticalAlignment="Center"/>
+                <Label Content="Indomitable Will" FontSize="20" Margin="105,0,3,0"/>
+                <CheckBox VerticalAlignment="Center"/>
             </StackPanel>
 
         </StackPanel>
-
-        <StackPanel Grid.Column="2">
-            <StackPanel Orientation="Horizontal" Margin="-20,50,0,10">
-                <TextBlock Text="Rounds Per Day" Margin="30,0,0,0"/>
-                <TextBox Text="0" TextAlignment="Center" Margin="5,0" Width="20"/>
-            </StackPanel>
-            <StackPanel Orientation="Horizontal">
-                <TextBlock Text="Rounds Left" Margin="30,0,0,0"/>
-                <TextBox Text="0" TextAlignment="Center" Margin="5,0" Width="20"/>
-            </StackPanel>
-        </StackPanel>
-        
+       
     </Grid>
 </UserControl>
