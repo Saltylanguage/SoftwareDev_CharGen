@@ -17,6 +17,7 @@ using PathfinderCharGen.Commands;
 using PathfinderCharGen.Views;
 using PathfinderCharGen.ViewModels;
 using PathfinderCharGen.Utilities;
+using System.IO;
 
 namespace PathfinderCharGen
 {
@@ -30,6 +31,12 @@ namespace PathfinderCharGen
 
         public MainWindow()
         {
+            string path = System.Reflection.Assembly.GetEntryAssembly().Location;
+            path = System.IO.Path.GetDirectoryName(path) + "\\SaveFiles";
+            if (!Directory.Exists(path))
+                Directory.CreateDirectory(path);
+            Save.TheSavePath = path;
+
             InitializeComponent();            
         }
 

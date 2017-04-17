@@ -7,15 +7,31 @@ using PathfinderCharGen.Views;
 using Microsoft.Win32;
 using Newtonsoft.Json.Linq;
 using System.Windows.Media.Imaging;
+using System.IO;
 
 namespace PathfinderCharGen.Utilities
 {
     public static class Save
     {
+        private static string SavePath;
+
+        public static string TheSavePath
+        {
+            set
+            {
+                SavePath = value;
+            }
+            get
+            {
+                return SavePath;
+            }
+        }
+
         public static bool SaveDialog(CharSheetView model)
         {
             SaveFileDialog saveFileDialog = new SaveFileDialog();
             saveFileDialog.Filter = "Json file (*.json) [recomended]|*.json"; //|Xml file (*.xml)|*.xml
+            saveFileDialog.InitialDirectory = TheSavePath;
             if (saveFileDialog.ShowDialog() == false)
             {
                 return false;
@@ -84,10 +100,10 @@ namespace PathfinderCharGen.Utilities
             //Add Saves to json
             //Fort Save
             json.Add("FORT_Total", model.FORT_Total.Text);
-            json.Add("FORT_Base", model.FORT_Base.Text);
+            json.Add("FORT_Base",  model.FORT_Base.Text);
             json.Add("FORT_Magic", model.FORT_MagicBonus.Text);
-            json.Add("FORT_Misc", model.FORT_MiscBonus.Text);
-            json.Add("FORT_Temp", model.FORT_TempBonus.Text);
+            json.Add("FORT_Misc",  model.FORT_MiscBonus.Text);
+            json.Add("FORT_Temp",  model.FORT_TempBonus.Text);
             //Ref Save
             json.Add("REF_Total", model.REF_Total.Text);
             json.Add("REF_Base",  model.REF_BaseBonus.Text);
@@ -104,27 +120,27 @@ namespace PathfinderCharGen.Utilities
             //Add Attack Bonuses to json            
 
             //MAB
-            json.Add("MAB_Base", model.MAB_Base.Text);
+            json.Add("MAB_Base",  model.MAB_Base.Text);
             json.Add("MAB_Total", model.MAB_Total.Text);
             json.Add("MAB_Size",  model.MAB_SizeBonus.Text);
             json.Add("MAB_Misc",  model.MAB_MiscBonus.Text);
             json.Add("MAB_Temp",  model.MAB_TempBonus.Text);
             //CMB
-            json.Add("CMB_Base", model.CMB_Base.Text);
+            json.Add("CMB_Base",  model.CMB_Base.Text);
             json.Add("CMB_Total", model.CMB_Total.Text);
-            json.Add("CMB_Size", model.CMB_SizeBonus.Text);
-            json.Add("CMB_Misc", model.CMB_MiscBonus.Text);
-            json.Add("CMB_Temp", model.CMB_TempBonus.Text);
+            json.Add("CMB_Size",  model.CMB_SizeBonus.Text);
+            json.Add("CMB_Misc",  model.CMB_MiscBonus.Text);
+            json.Add("CMB_Temp",  model.CMB_TempBonus.Text);
             //RAB
-            json.Add("RAB_Base", model.RAB_Base.Text);
+            json.Add("RAB_Base",  model.RAB_Base.Text);
             json.Add("RAB_Total", model.RAB_Total.Text);
             json.Add("RAB_Size",  model.RAB_SizeBonus.Text);
             json.Add("RAB_Misc",  model.RAB_MiscBonus.Text);
             json.Add("RAB_Temp",  model.RAB_TempBonus.Text);
 
-            // Init
+            //Init
             json.Add("INIT_Total", model.Init_Total.Text);
-            json.Add("INIT_Misc", model.Init_MiscBonus.Text);
+            json.Add("INIT_Misc",  model.Init_MiscBonus.Text);
 
             //Add more
 

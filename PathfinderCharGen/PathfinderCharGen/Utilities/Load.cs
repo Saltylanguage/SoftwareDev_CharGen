@@ -9,6 +9,7 @@ using Newtonsoft.Json.Linq;
 using System.Windows.Media.Imaging;
 using System.Windows.Media;
 using System.IO;
+using System.Windows.Threading;
 
 namespace PathfinderCharGen.Utilities
 {
@@ -18,6 +19,7 @@ namespace PathfinderCharGen.Utilities
         {
             OpenFileDialog openFileDialog = new OpenFileDialog();
             openFileDialog.Filter = "Json file (*.json)|*.json";
+            openFileDialog.InitialDirectory = Save.TheSavePath;
             if (openFileDialog.ShowDialog() == false)
             {
                 return false;
@@ -154,8 +156,27 @@ namespace PathfinderCharGen.Utilities
             if (json.TryGetValue("RAB_Temp", out temp)) model.RAB_TempBonus.Text = temp.ToString();
             else model.RAB_TempBonus.Text = "";
 
+            //Load class tab
+            model.setClassTab();
+            model.ClassTab.Header = model.CharacterClass.Text;
 
             //Load Image
+            Action action = delegate ()
+            {
+                ImageProcess(model, json);
+            };
+
+            Dispatcher jeff;
+            jeff = Dispatcher.CurrentDispatcher;
+            jeff.Invoke(DispatcherPriority.Normal, action);
+
+            return true;
+        }
+
+        public static void ImageProcess(CharSheetView model, JObject json)
+        {
+            JToken temp = "";
+
             bool valid = true;
             int width = -1, height = -1, bytesPerPixel = -1, stride = -1;
             double dpiX = -1, dpiY = -1;
@@ -182,8 +203,6 @@ namespace PathfinderCharGen.Utilities
                 BitmapSource bitmap = BitmapSource.Create(width, height, dpiX, dpiY, pixelFormat, null, bitmapData, stride);
                 model.CharImage.Source = bitmap;
             }
-
-            return true;
         }
 
         public static bool LoadPic(CharSheetView model)
