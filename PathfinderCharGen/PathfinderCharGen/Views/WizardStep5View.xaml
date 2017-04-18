@@ -198,6 +198,7 @@
             </StackPanel>
         </StackPanel>
 
+        
         <StackPanel Orientation="Horizontal" Grid.Column="2" Grid.Row="6">
             <Label  FontSize="30" Content="Skill Points" VerticalAlignment="Center"/>
             <TextBox Name="POINTS" Text="{Binding POINTS, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Margin="20" VerticalAlignment="Center" FontSize="30" Background="Transparent"/>

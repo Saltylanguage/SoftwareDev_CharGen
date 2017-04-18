@@ -10,7 +10,8 @@
        Height="1010" Width="1800" >
     <UserControl.Resources>
         <vm:CharSheetViewModel x:Key="charSheetVM"/>
-        <ClassTabs:BarbarianTab x:Key="barbTab"/>
+        <vm:GameViewModel x:Key="GameVM"/>
+
 
         <!--=================== CUSTOM TEXTBOX =================-->
         <ControlTemplate x:Key="TextBoxBaseControlTemplate" TargetType="{x:Type TextBoxBase}">
@@ -1549,6 +1550,24 @@
                     <Grid.Background>
                         <ImageBrush ImageSource="../Resources/parchment.jpg" Stretch="Fill"/>
                     </Grid.Background>
+                </Grid>
+            </TabItem>
+
+            <TabItem Name="GameTab" Header="Game">
+                <Grid DataContext="{Binding Source={StaticResource GameVM}}" >
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="27*"/>
+                        <ColumnDefinition Width="272*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.Background>
+                        <ImageBrush ImageSource="../Resources/parchment.jpg" Stretch="Fill"/>
+                    </Grid.Background>
+                    <TextBlock Margin="20" Text="Command" FontSize="20"/>
+                    <TextBox Name="CMD_Text" Margin="0,25,0,0" Width="200" Height="50" Grid.Column="1"
+                             Background="White" HorizontalAlignment="Left" VerticalAlignment="Top"
+                             Text="{Binding CMD_Text, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                    
+
                 </Grid>
             </TabItem>
 

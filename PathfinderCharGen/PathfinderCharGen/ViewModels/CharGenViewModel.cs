@@ -8,5 +8,8 @@ namespace PathfinderCharGen.ViewModels
 {
     class CharGenViewModel
     {
+
+
+
     }
 }

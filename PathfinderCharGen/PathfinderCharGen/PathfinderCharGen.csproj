@@ -97,6 +97,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Commands\Command.cs" />
+    <Compile Include="Commands\Generic\RollD10.cs" />
+    <Compile Include="Commands\Generic\RollD20.cs" />
+    <Compile Include="Commands\ScriptParser.cs" />
     <Compile Include="Commands\Specific\CalculateCommand.cs" />
     <Compile Include="Commands\Specific\CalculateStatModsCommand.cs" />
     <Compile Include="Commands\Specific\DexterityModCommand.cs" />
@@ -149,6 +153,7 @@
     <Compile Include="Utilities\Save.cs" />
     <Compile Include="ViewModels\CharGenViewModel.cs" />
     <Compile Include="ViewModels\CharSheetViewModel.cs" />
+    <Compile Include="ViewModels\GameViewModel.cs" />
     <Compile Include="ViewModels\MainWindowViewModel.cs" />
     <Compile Include="ViewModels\ViewModelBase.cs" />
     <Compile Include="ViewModels\WizardStep2ViewModel.cs" />
@@ -267,7 +272,8 @@
     <Resource Include="Resources\PhilipJFry_art.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Commands\Generic\" />
+    <Folder Include="Commands\Feats\" />
+    <Folder Include="Commands\Items\" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\parchment.jpg" />
