@@ -16,7 +16,6 @@ namespace PathfinderCharGen.ViewModels
             scriptParser = new ScriptParser();
         }
 
-
         private string CommandText = "";
 
         public string CMD_Text

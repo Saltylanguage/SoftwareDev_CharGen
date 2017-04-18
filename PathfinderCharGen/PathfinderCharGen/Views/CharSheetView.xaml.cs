@@ -98,11 +98,27 @@ namespace PathfinderCharGen.Views
         {
             if (e.Key == Key.Enter)
             {
-                if (GameVM.scriptParser.cmd_Dictionary.ContainsKey(CMD_Text.Text))
+                if (GameVM.scriptParser.cmd_Dictionary.ContainsKey(CMD_Text.Text)) 
                 {
                     Commands.Command cmd = GameVM.scriptParser.cmd_Dictionary[CMD_Text.Text];
                     cmd.Execute();
-                    MessageBox.Show($"You Rolled a {this.GameVM.scriptParser.cmd_Dictionary[CMD_Text.Text].result}");
+                    string printout = "You Rolled a " + cmd.result;
+                    if (CMD_Text.Text == "Attack Roll")
+                    {
+                        printout += " + " + MAB_Total.Text;
+                        
+                    }
+                    if(CMD_Text.Text == "Power Attack")
+                    {
+
+                        printout += " + " + MAB_Total.Text + " - 1";
+                        GameVM.scriptParser.cmd_Dictionary["DamageRoll"].Execute();
+                    }
+                    MessageBox.Show(printout);
+                }
+                else
+                {
+                    MessageBox.Show($"Invalid Command");
                 }
                 CMD_Text.Text = "";
             }

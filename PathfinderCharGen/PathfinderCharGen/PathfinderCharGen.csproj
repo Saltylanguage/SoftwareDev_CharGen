@@ -98,6 +98,8 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Commands\Command.cs" />
+    <Compile Include="Commands\Feats\PowerAttack.cs" />
+    <Compile Include="Commands\Generic\AttackRoll.cs" />
     <Compile Include="Commands\Generic\RollD10.cs" />
     <Compile Include="Commands\Generic\RollD20.cs" />
     <Compile Include="Commands\ScriptParser.cs" />
@@ -272,7 +274,6 @@
     <Resource Include="Resources\PhilipJFry_art.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Commands\Feats\" />
     <Folder Include="Commands\Items\" />
   </ItemGroup>
   <ItemGroup>

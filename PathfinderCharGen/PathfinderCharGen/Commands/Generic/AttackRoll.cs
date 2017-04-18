@@ -3,11 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using PathfinderCharGen.ViewModels;
 
 namespace PathfinderCharGen.Commands.Generic
 {
-    public class RollD20 : Command
+    class AttackRoll : Command
     {
+        
         public override void Acquire()
         {
             throw new NotImplementedException();
@@ -17,9 +19,8 @@ namespace PathfinderCharGen.Commands.Generic
         {
             Random random = new Random();
             int rand = random.Next(1, 20);
-
-
-            Console.WriteLine("You Rolled a {0}", result);  //TODO make a window popup that displays the result of the dice roll
+           
+            Console.WriteLine("You Rolled a {0}", result);
             result = rand.ToString();
         }
 
@@ -27,5 +28,7 @@ namespace PathfinderCharGen.Commands.Generic
         {
             throw new NotImplementedException();
         }
+
+
     }
 }
