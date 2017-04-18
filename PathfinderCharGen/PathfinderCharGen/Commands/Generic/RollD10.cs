@@ -8,6 +8,8 @@ namespace PathfinderCharGen.Commands.Generic
 {
     public class RollD10 : Command
     {
+       
+
         public override void Acquire()
         {
             throw new NotImplementedException();
@@ -16,11 +18,11 @@ namespace PathfinderCharGen.Commands.Generic
         public override void Execute()
         {
             Random random = new Random();
-            int result = random.Next(1, 10);
+            int rand = random.Next(1, 10);
 
-            // debugging dice roller
-            Console.WriteLine("You Rolled a %i", result);  //TODO make a window popup that displays the result of the dice roll
-
+            
+            Console.WriteLine("You Rolled a {0}", result);  //TODO make a window popup that displays the result of the dice roll
+            result = rand.ToString();
         }
 
         public override void Remove()

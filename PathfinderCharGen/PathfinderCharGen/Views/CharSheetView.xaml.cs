@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using PathfinderCharGen.Utilities;
+using PathfinderCharGen.ViewModels;
 
 namespace PathfinderCharGen.Views
 {
@@ -22,12 +23,20 @@ namespace PathfinderCharGen.Views
     public partial class CharSheetView : UserControl
     {
 
-        public ReactiveLeveling.Pathfinder.Character character= new ReactiveLeveling.Pathfinder.Character();
-             
+        private GameViewModel GameVM;
+
+        public CharSheetView()
+        {
+            InitializeComponent();
+            GameVM = new GameViewModel();
+        }
+
+        public ReactiveLeveling.Pathfinder.Character character = new ReactiveLeveling.Pathfinder.Character();
+
         public void setClassTab()
         {
-            if(CharacterClass.Text.ToString() == "Barbarian" )
-            {                
+            if (CharacterClass.Text.ToString() == "Barbarian")
+            {
                 ClassTab.Content = new PathfinderCharGen.CustomControls.BarbarianTab();
             }
             if (CharacterClass.Text.ToString() == "Bard")
@@ -51,17 +60,12 @@ namespace PathfinderCharGen.Views
                 ClassTab.Content = new PathfinderCharGen.CustomControls.MonkTab();
             }
         }
-     
 
-        public CharSheetView()
-        {
-            InitializeComponent();            
-        }
 
         public CharSheetView(CharSheetView SV)
-        {            
-            this.Content = SV.Content;           
-            InitializeComponent();            
+        {
+            this.Content = SV.Content;
+            InitializeComponent();
         }
 
         private void MenuItem_Click_Save(object sender, RoutedEventArgs e)
@@ -82,12 +86,27 @@ namespace PathfinderCharGen.Views
 
         private void MenuItem_Click_Import(object sender, RoutedEventArgs e)
         {
-            Load.LoadPic(this);                            
+            Load.LoadPic(this);
         }
 
         private void Acrobatics_Rank_TextChanged(object sender, TextChangedEventArgs e)
         {
             CalcBtn.Command.Execute(this);
         }
+
+        public void KeyEventDownHandler(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Enter)
+            {
+                if (GameVM.scriptParser.cmd_Dictionary.ContainsKey(CMD_Text.Text))
+                {
+                    Commands.Command cmd = GameVM.scriptParser.cmd_Dictionary[CMD_Text.Text];
+                    cmd.Execute();
+                    MessageBox.Show($"You Rolled a {this.GameVM.scriptParser.cmd_Dictionary[CMD_Text.Text].result}");
+                }
+                CMD_Text.Text = "";
+            }
+        }
+
     }
 }

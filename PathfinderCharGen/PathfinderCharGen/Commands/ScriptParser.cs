@@ -8,15 +8,17 @@ using PathfinderCharGen.Commands.Generic;
 
 namespace PathfinderCharGen.Commands
 {
-    class ScriptParser
+    public class ScriptParser
     {
-        ScriptParser()
+        public ScriptParser()
         {
+            cmd_Dictionary = new Dictionary<string, Command>();
+
             cmd_Dictionary.Add("Roll D10", new RollD10());
             cmd_Dictionary.Add("Roll D20", new RollD20());
         }
 
-        Dictionary<string, Command> cmd_Dictionary;
+        public Dictionary<string, Command> cmd_Dictionary;
 
 
 
