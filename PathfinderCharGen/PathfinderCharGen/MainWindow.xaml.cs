@@ -37,6 +37,8 @@ namespace PathfinderCharGen
                 Directory.CreateDirectory(path);
             Save.TheSavePath = path;
 
+            CommandDictionary.Instance.Initialize();
+
             InitializeComponent();            
         }
 

@@ -98,6 +98,8 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Commands\Command.cs" />
+    <Compile Include="Commands\CommandDictionary.cs" />
+    <Compile Include="Commands\Custom\CustomCommand.cs" />
     <Compile Include="Commands\Feats\PowerAttack.cs" />
     <Compile Include="Commands\Generic\AttackRoll.cs" />
     <Compile Include="Commands\Generic\RollD10.cs" />

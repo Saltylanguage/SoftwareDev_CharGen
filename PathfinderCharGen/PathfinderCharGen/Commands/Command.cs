@@ -12,5 +12,7 @@ namespace PathfinderCharGen.Commands
         public abstract void Acquire();
         public abstract void Execute();
         public abstract void Remove();
+
+        // Josh is a fuk'n nerb
     }
 }

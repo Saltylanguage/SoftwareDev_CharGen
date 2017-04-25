@@ -14,6 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using PathfinderCharGen.Utilities;
 using PathfinderCharGen.ViewModels;
+using PathfinderCharGen.Commands;
 
 namespace PathfinderCharGen.Views
 {
@@ -98,28 +99,39 @@ namespace PathfinderCharGen.Views
         {
             if (e.Key == Key.Enter)
             {
-                if (GameVM.scriptParser.cmd_Dictionary.ContainsKey(CMD_Text.Text)) 
+                Command command = CommandDictionary.Instance.CommandExecute(CMD_Text.Text);
+                if (command != null)
                 {
-                    Commands.Command cmd = GameVM.scriptParser.cmd_Dictionary[CMD_Text.Text];
-                    cmd.Execute();
-                    string printout = "You Rolled a " + cmd.result;
-                    if (CMD_Text.Text == "Attack Roll")
-                    {
-                        printout += " + " + MAB_Total.Text;
-                        
-                    }
-                    if(CMD_Text.Text == "Power Attack")
-                    {
-
-                        printout += " + " + MAB_Total.Text + " - 1";
-                        GameVM.scriptParser.cmd_Dictionary["DamageRoll"].Execute();
-                    }
-                    MessageBox.Show(printout);
+                    MessageBox.Show(command.ToString());
                 }
                 else
                 {
                     MessageBox.Show($"Invalid Command");
                 }
+
+                //if (GameVM.scriptParser.cmd_Dictionary.ContainsKey(CMD_Text.Text)) 
+                //{
+                //    Commands.Command cmd = GameVM.scriptParser.cmd_Dictionary[CMD_Text.Text];
+                //    cmd.Execute();
+                //    string printout = "You Rolled a " + cmd.result;
+                //    if (CMD_Text.Text == "Attack Roll")
+                //    {
+                //        printout += " + " + MAB_Total.Text;
+                        
+                //    }
+                //    if(CMD_Text.Text == "Power Attack")
+                //    {
+
+                //        printout += " + " + MAB_Total.Text + " - 1";
+                //        GameVM.scriptParser.cmd_Dictionary["DamageRoll"].Execute();
+                //    }
+                //    MessageBox.Show(printout);
+                //}
+                //else
+                //{
+                //    MessageBox.Show($"Invalid Command");
+                //}
+
                 CMD_Text.Text = "";
             }
         }

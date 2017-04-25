@@ -10,7 +10,7 @@ namespace PathfinderCharGen.Commands.Generic
     {
         public override void Acquire()
         {
-            throw new NotImplementedException();
+            
         }
 
         public override void Execute()
@@ -18,14 +18,21 @@ namespace PathfinderCharGen.Commands.Generic
             Random random = new Random();
             int rand = random.Next(1, 20);
 
-
-            Console.WriteLine("You Rolled a {0}", result);  //TODO make a window popup that displays the result of the dice roll
             result = rand.ToString();
+            Console.WriteLine("You Rolled a {0}", result);  //TODO make a window popup that displays the result of the dice roll
         }
 
         public override void Remove()
         {
-            throw new NotImplementedException();
+            
+        }
+
+        public override string ToString()
+        {
+            int temp = System.Convert.ToInt32(result);
+            string aaaaaaaaa = "a";
+            if (temp == 11 || temp == 8 || temp == 18) { aaaaaaaaa += "n"; } 
+            return "You Rolled " + aaaaaaaaa + " " + result;
         }
     }
 }
