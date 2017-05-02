@@ -8,11 +8,9 @@ namespace PathfinderCharGen.Commands.Generic
 {
     public class RollD10 : Command
     {
-       
-
         public override void Acquire()
         {
-            throw new NotImplementedException();
+            
         }
 
         public override void Execute()
@@ -21,13 +19,21 @@ namespace PathfinderCharGen.Commands.Generic
             int rand = random.Next(1, 10);
 
             
-            Console.WriteLine("You Rolled a {0}", result);  //TODO make a window popup that displays the result of the dice roll
             result = rand.ToString();
+            Console.WriteLine("You Rolled a {0}", result);
         }
 
         public override void Remove()
         {
-            throw new NotImplementedException();
+            
+        }
+
+        public override string ToString()
+        {
+            int temp = System.Convert.ToInt32(result);
+            string aaaaaaaaa = "a";
+            if (temp == 11 || temp == 8) { aaaaaaaaa += "n"; }
+            return "You Rolled " + aaaaaaaaa + " " + result;
         }
     }
 }

@@ -99,42 +99,60 @@ namespace PathfinderCharGen.Views
         {
             if (e.Key == Key.Enter)
             {
-                Command command = CommandDictionary.Instance.CommandExecute(CMD_Text.Text);
-                if (command != null)
-                {
-                    MessageBox.Show(command.ToString());
-                }
-                else
-                {
-                    MessageBox.Show($"Invalid Command");
-                }
-
-                //if (GameVM.scriptParser.cmd_Dictionary.ContainsKey(CMD_Text.Text)) 
-                //{
-                //    Commands.Command cmd = GameVM.scriptParser.cmd_Dictionary[CMD_Text.Text];
-                //    cmd.Execute();
-                //    string printout = "You Rolled a " + cmd.result;
-                //    if (CMD_Text.Text == "Attack Roll")
-                //    {
-                //        printout += " + " + MAB_Total.Text;
-                        
-                //    }
-                //    if(CMD_Text.Text == "Power Attack")
-                //    {
-
-                //        printout += " + " + MAB_Total.Text + " - 1";
-                //        GameVM.scriptParser.cmd_Dictionary["DamageRoll"].Execute();
-                //    }
-                //    MessageBox.Show(printout);
-                //}
-                //else
-                //{
-                //    MessageBox.Show($"Invalid Command");
-                //}
+                SelectType();
 
                 CMD_Text.Text = "";
             }
         }
 
+        private void SendClick(object sender, RoutedEventArgs e)
+        {
+            SelectType();
+
+            CMD_Text.Text = "";
+        }
+
+        private void ClearClick(object sender, RoutedEventArgs e)
+        {
+            ChatTextBox.Clear();
+        }
+
+        private void SelectType()
+        {
+            if (CMD_Text.Text == "")
+            {
+                return;
+            }
+
+            switch (ChatTypeBox.Text)
+            {
+                case "Chat":
+                    TypeChat();
+                    break;
+                case "Command":
+                    TypeCommand();
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        private void TypeChat()
+        {
+            ChatTextBox.Text += PlayerName.Text + ": " + CMD_Text.Text + "\n";
+        }
+
+        private void TypeCommand()
+        {
+            Command command = CommandDictionary.Instance.CommandExecute(CMD_Text.Text);
+            if (command != null)
+            {
+                ChatTextBox.Text += PlayerName.Text + ": (" + CMD_Text.Text + ") " + command.ToString() + "\n";
+            }
+            else
+            {
+                ChatTextBox.Text += "Invalid Command\n";
+            }
+        }
     }
 }

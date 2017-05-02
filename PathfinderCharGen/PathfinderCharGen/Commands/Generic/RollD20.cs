@@ -19,7 +19,7 @@ namespace PathfinderCharGen.Commands.Generic
             int rand = random.Next(1, 20);
 
             result = rand.ToString();
-            Console.WriteLine("You Rolled a {0}", result);  //TODO make a window popup that displays the result of the dice roll
+            Console.WriteLine("You Rolled a {0}", result);
         }
 
         public override void Remove()

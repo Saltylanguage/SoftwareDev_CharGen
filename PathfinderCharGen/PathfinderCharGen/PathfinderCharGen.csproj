@@ -127,6 +127,8 @@
     <Compile Include="CustomControls\MonkTab.xaml.cs">
       <DependentUpon>MonkTab.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Networking\Chat\ChatMaster.cs" />
+    <Compile Include="Networking\Chat\ChatReciver.cs" />
     <Compile Include="Pathfinder\Character.cs" />
     <Compile Include="Pathfinder\Classes\ClassBarbarian.cs" />
     <Compile Include="Pathfinder\Classes\ClassBard.cs" />
