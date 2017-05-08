@@ -45,8 +45,7 @@ namespace PathfinderCharGen
             UpdateLoop.Instance.Initialize();
 
             InitializeComponent();
-          UpdateLoop.Instance.dispatcherTimer.Tick += new EventHandler(UpdateNetwork);
-             
+            UpdateLoop.Instance.dispatcherTimer.Tick += new EventHandler(UpdateNetwork);
         }
 
         private void UpdateNetwork(object sender, EventArgs e)

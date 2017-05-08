@@ -161,6 +161,9 @@
     <Compile Include="Utilities\UpdateTest.cs" />
     <Compile Include="ViewModels\CharGenViewModel.cs" />
     <Compile Include="ViewModels\CharSheetViewModel.cs" />
+    <Compile Include="Views\ConnectionWindow.xaml.cs">
+      <DependentUpon>ConnectionWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ViewModels\GameViewModel.cs" />
     <Compile Include="ViewModels\MainWindowViewModel.cs" />
     <Compile Include="ViewModels\ViewModelBase.cs" />
@@ -222,6 +225,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Views\ConnectionWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\WizardStep1View.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

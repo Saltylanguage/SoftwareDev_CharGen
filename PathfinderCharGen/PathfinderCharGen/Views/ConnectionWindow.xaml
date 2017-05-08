@@ -1,0 +1,36 @@
+﻿<UserControl Height="320" Width="300" x:Class="PathfinderCharGen.Views.ConnectionWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PathfinderCharGen.Views"
+        mc:Ignorable="d">
+    
+    <!--Title="ConnectionWindow" Height="300" Width="300">-->
+
+    <Grid Background="White">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="4*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Column="0" Grid.Row="0">
+            
+            <TextBlock Text="IP:" FontSize="20" Margin="20,70,20,0" HorizontalAlignment="Right" />
+            <TextBlock Text="Port:" FontSize="20" Margin="10" HorizontalAlignment="Right"/>
+        </StackPanel>
+
+        <StackPanel Grid.Column="1">
+            <TextBlock Text="127.0.0.1" Margin="20,40,20,0" FontSize="20" />
+            <TextBox Grid.Column="1" FontSize="20" Margin="0,10" Width="150" HorizontalAlignment="Left"/>
+            <TextBox Grid.Column="1" Text="25565" FontSize="20" HorizontalAlignment="Left" Width="100"/>
+            <Button Content="Connect" Height="30" Width="60" Margin="25"></Button>
+            <Button Content="Host" Height="30" Width="60" Margin="5"></Button>
+        </StackPanel>
+
+    </Grid>
+</UserControl>

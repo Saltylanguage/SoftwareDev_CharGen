@@ -76,7 +76,7 @@ namespace PathfinderCharGen.Views
 
         private void MenuItem_Click_Connect(object sender, RoutedEventArgs e)
         {
-            Window window = new Window { Content = new PathfinderCharGen.Views.WizardStep1View(), Height = 600, Width = 1200, WindowStartupLocation = WindowStartupLocation.CenterScreen };
+            Window window = new Window { Content = new PathfinderCharGen.Views.ConnectionWindow(), Height = 320, Width = 300, WindowStartupLocation = WindowStartupLocation.CenterScreen };
             window.ShowDialog();
         }
 
