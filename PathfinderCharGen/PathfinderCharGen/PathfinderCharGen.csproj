@@ -127,8 +127,8 @@
     <Compile Include="CustomControls\MonkTab.xaml.cs">
       <DependentUpon>MonkTab.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Networking\Chat\ChatMaster.cs" />
-    <Compile Include="Networking\Chat\ChatReciver.cs" />
+    <Compile Include="Networking\Client.cs" />
+    <Compile Include="Networking\Server.cs" />
     <Compile Include="Pathfinder\Character.cs" />
     <Compile Include="Pathfinder\Classes\ClassBarbarian.cs" />
     <Compile Include="Pathfinder\Classes\ClassBard.cs" />
@@ -158,6 +158,7 @@
     <Compile Include="Utilities\Load.cs" />
     <Compile Include="Utilities\Save.cs" />
     <Compile Include="Utilities\UpdateLoop.cs" />
+    <Compile Include="Utilities\UpdateTest.cs" />
     <Compile Include="ViewModels\CharGenViewModel.cs" />
     <Compile Include="ViewModels\CharSheetViewModel.cs" />
     <Compile Include="ViewModels\GameViewModel.cs" />

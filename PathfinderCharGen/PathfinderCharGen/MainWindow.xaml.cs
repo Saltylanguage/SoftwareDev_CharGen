@@ -12,11 +12,13 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Windows.Threading;
 using ReactiveLeveling;
 using PathfinderCharGen.Commands;
 using PathfinderCharGen.Views;
 using PathfinderCharGen.ViewModels;
 using PathfinderCharGen.Utilities;
+using PathfinderCharGen.Networking;
 using System.IO;
 
 namespace PathfinderCharGen
@@ -27,7 +29,9 @@ namespace PathfinderCharGen
     public partial class MainWindow : Window
     {
         CharSheetView sheetView = new CharSheetView();
-
+        DispatcherTimer dispatchTimer = new DispatcherTimer();
+        public Server server = Server.Instance;
+        public Client client = new Client();
         public MainWindow()
         {
             string path = System.Reflection.Assembly.GetEntryAssembly().Location;
@@ -40,7 +44,15 @@ namespace PathfinderCharGen
 
             UpdateLoop.Instance.Initialize();
 
-            InitializeComponent();            
+            InitializeComponent();
+          UpdateLoop.Instance.dispatcherTimer.Tick += new EventHandler(UpdateNetwork);
+             
+        }
+
+        private void UpdateNetwork(object sender, EventArgs e)
+        {
+            server.Update();
+            client.Update();
         }
 
         private void NewCharacterWizard_Click(object sender, RoutedEventArgs e)
