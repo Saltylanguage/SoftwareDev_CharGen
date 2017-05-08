@@ -157,6 +157,7 @@
     <Compile Include="Pathfinder\StatManager.cs" />
     <Compile Include="Utilities\Load.cs" />
     <Compile Include="Utilities\Save.cs" />
+    <Compile Include="Utilities\UpdateLoop.cs" />
     <Compile Include="ViewModels\CharGenViewModel.cs" />
     <Compile Include="ViewModels\CharSheetViewModel.cs" />
     <Compile Include="ViewModels\GameViewModel.cs" />

@@ -26,7 +26,6 @@ namespace PathfinderCharGen
     /// </summary>
     public partial class MainWindow : Window
     {
-       
         CharSheetView sheetView = new CharSheetView();
 
         public MainWindow()
@@ -38,6 +37,8 @@ namespace PathfinderCharGen
             Save.TheSavePath = path;
 
             CommandDictionary.Instance.Initialize();
+
+            UpdateLoop.Instance.Initialize();
 
             InitializeComponent();            
         }
