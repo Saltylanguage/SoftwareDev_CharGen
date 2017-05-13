@@ -9,11 +9,11 @@ namespace PathfinderCharGen.ViewModels
 {
     class GameViewModel : ViewModelBase
     {
-       public ScriptParser scriptParser;
+       //public ScriptParser scriptParser;
 
         public GameViewModel()
         {
-            scriptParser = new ScriptParser();
+            //scriptParser = new ScriptParser();
         }
 
         private string CommandText = "";

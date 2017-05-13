@@ -104,7 +104,8 @@
     <Compile Include="Commands\Generic\AttackRoll.cs" />
     <Compile Include="Commands\Generic\RollD10.cs" />
     <Compile Include="Commands\Generic\RollD20.cs" />
-    <Compile Include="Commands\ScriptParser.cs" />
+    <Compile Include="Networking\NetworkMessage.cs" />
+    <Compile Include="Networking\ScriptParser.cs" />
     <Compile Include="Commands\Specific\CalculateCommand.cs" />
     <Compile Include="Commands\Specific\CalculateStatModsCommand.cs" />
     <Compile Include="Commands\Specific\DexterityModCommand.cs" />
