@@ -1574,7 +1574,7 @@
                         <ComboBoxItem Content="Chat"/>
                         <ComboBoxItem Content="Command"/>
                         <ComboBoxItem Content="Notification"/>
-                        <ComboBoxItem Content="Wisper"/>
+                        <ComboBoxItem Content="Whisper"/>
                     </ComboBox>
                     <ComboBox x:Name="ChatExtraBox" HorizontalAlignment="Left" Margin="230,48,0,0" VerticalAlignment="Top" Width="120" SelectedIndex="0" Height="22">
                         <ComboBoxItem Content="SomeText1"/>

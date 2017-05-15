@@ -138,6 +138,12 @@ namespace PathfinderCharGen.Views
                 case "Command":
                     TypeCommand();
                     break;
+                case "Notification":
+                    TypeTestSend();
+                    break;
+                case "Whisper":
+                    TypeTestRecieve();
+                    break;
                 default:
                     break;
             }
@@ -158,6 +164,47 @@ namespace PathfinderCharGen.Views
             else
             {
                 ChatTextBox.Text += "Invalid Command\n";
+            }
+        }
+
+        private void TypeTestSend()
+        {
+            Networking.NetworkMessage testNM = new Networking.NetworkMessage();
+            char[] testCA;
+
+            testNM.Type = Networking.NetworkMessage.StringToMessageType(ChatTypeBox.Text);
+            testNM.Username = PlayerName.Text;
+            testNM.Context = ChatExtraBox.Text;
+            testNM.Message = CMD_Text.Text;
+
+            if (Networking.ScriptParser.PrepNetworkMessage(testNM, out testCA))
+            {
+                string temp = new string(testCA);
+                ChatTextBox.Text += temp + "\n";
+            }
+            else
+            {
+                ChatTextBox.Text += "error\n";
+            }
+        }
+
+        private void TypeTestRecieve()
+        {
+            Networking.NetworkMessage testNM = new Networking.NetworkMessage();
+            char[] testCA = CMD_Text.Text.ToCharArray();
+
+            if (Networking.ScriptParser.ParseNetworkMessage(testCA, out testNM))
+            {
+                ChatTextBox.Text += "---\n";
+                ChatTextBox.Text += "Type = " + Networking.NetworkMessage.MessageTypeToString(testNM.Type) + "\n";
+                ChatTextBox.Text += "Username = " + testNM.Username + "\n";
+                ChatTextBox.Text += "Context = " + testNM.Context + "\n";
+                ChatTextBox.Text += "Message = " + testNM.Message + "\n";
+                ChatTextBox.Text += "---\n";
+            }
+            else
+            {
+                ChatTextBox.Text += "error\n";
             }
         }
     }
