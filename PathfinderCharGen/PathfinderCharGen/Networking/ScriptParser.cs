@@ -21,7 +21,7 @@ namespace PathfinderCharGen.Networking
 
             switch (split[0])
             {
-                case "/t":
+                case "/a":
                     result.Type = MessageType.Chat;
                     break;
                 case "/c":
@@ -56,7 +56,7 @@ namespace PathfinderCharGen.Networking
             switch (message.Type)
             {
                 case MessageType.Chat:
-                    final += "/t";
+                    final += "/a";
                     break;
                 case MessageType.Command:
                     final += "/c";

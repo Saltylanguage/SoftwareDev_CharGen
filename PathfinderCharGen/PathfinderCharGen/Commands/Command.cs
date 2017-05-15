@@ -8,6 +8,7 @@ namespace PathfinderCharGen.Commands
 {
     public abstract class Command
     {
+        public string name;
         public string result;
         public abstract void Acquire();
         public abstract void Execute();

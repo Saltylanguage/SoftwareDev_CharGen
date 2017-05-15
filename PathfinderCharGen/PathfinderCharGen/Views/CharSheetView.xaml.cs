@@ -159,7 +159,7 @@ namespace PathfinderCharGen.Views
             Command command = CommandDictionary.Instance.CommandExecute(CMD_Text.Text);
             if (command != null)
             {
-                ChatTextBox.Text += PlayerName.Text + ": (" + CMD_Text.Text + ") " + command.ToString() + "\n";
+                ChatTextBox.Text += PlayerName.Text + ": (" + command.name + ") " + command.ToString() + "\n";
             }
             else
             {

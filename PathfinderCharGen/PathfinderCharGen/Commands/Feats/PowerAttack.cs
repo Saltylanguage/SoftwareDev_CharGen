@@ -8,10 +8,14 @@ namespace PathfinderCharGen.Commands.Feats
 {
     class PowerAttack : Command
     {
+        public PowerAttack()
+        {
+            name = "Power Attack";
+        }
 
         public override void Acquire()
         {
-            throw new NotImplementedException();
+            
         }
 
         public override void Execute()
@@ -27,7 +31,7 @@ namespace PathfinderCharGen.Commands.Feats
 
         public override void Remove()
         {
-            throw new NotImplementedException();
+            
         }
     }
 }
