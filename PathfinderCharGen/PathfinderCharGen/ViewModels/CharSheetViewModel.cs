@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Windows.Input;
 using PathfinderCharGen.Commands.Specific;
 using ReactiveLeveling.Pathfinder;
+using PathfinderCharGen.Networking;
 
 
 namespace PathfinderCharGen.ViewModels
@@ -237,9 +238,35 @@ namespace PathfinderCharGen.ViewModels
         private int religionMisc = 0;
         private CalculateCommand calcCmd;
 
+        private Server server;
+        private Client client;
+
+        
+
+
+
         #endregion
 
         #region Public Properties
+
+
+        public Server SERVER
+        {
+            get { return server; }
+            set
+            {
+                server = value;
+            }
+        }
+
+        public Client CLIENT
+        {
+            get { return client; }
+            set
+            {
+                client = value;                
+            }
+        }
 
 
         public int STR_Score
@@ -1901,8 +1928,6 @@ namespace PathfinderCharGen.ViewModels
 
         #endregion
 
-
-
         #region Commands
 
         public ICommand CalculateCommand
@@ -2012,7 +2037,7 @@ namespace PathfinderCharGen.ViewModels
         {
             Bluff_Total = cha_mod + bluffRank + bluffMisc;
         }
-        
+
         internal void CalculateClimb()
         {
             Climb_Total = str_mod + climbRank + climbMisc;
@@ -2135,7 +2160,7 @@ namespace PathfinderCharGen.ViewModels
 
         internal void CalculateEngineering()
         {
-            Engineering_Total = int_mod + engineeringRank + engineeringMisc;        
+            Engineering_Total = int_mod + engineeringRank + engineeringMisc;
         }
 
         internal void CalculateGeography()

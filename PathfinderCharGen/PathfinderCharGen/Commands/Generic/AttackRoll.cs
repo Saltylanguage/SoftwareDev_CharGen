@@ -9,14 +9,10 @@ namespace PathfinderCharGen.Commands.Generic
 {
     class AttackRoll : Command
     {
-        public AttackRoll()
-        {
-            name = "Attack Roll";
-        }
-
+        
         public override void Acquire()
         {
-            
+            throw new NotImplementedException();
         }
 
         public override void Execute()
@@ -30,7 +26,9 @@ namespace PathfinderCharGen.Commands.Generic
 
         public override void Remove()
         {
-            
+            throw new NotImplementedException();
         }
+
+
     }
 }

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Net;
 using System.Net.Sockets;
@@ -12,52 +13,156 @@ namespace PathfinderCharGen.Networking
 {
     public class Client
     {
-        TcpClient client;
-        Stream stream;
+        private Client() { }
 
+        private static Client TheInstance;
+        public static Client Instance
+        {
+            get
+            {
+                if (TheInstance == null)
+                {
+                    TheInstance = new Client();
+                }
+
+                return TheInstance;
+            }
+        }
+        public class StateObject
+        {
+            // Client  socket.  
+            public Socket workSocket = null;
+            // Size of receive buffer.  
+            public const int BufferSize = 1024;
+            // Receive buffer.  
+            public byte[] buffer = new byte[BufferSize];
+            // Received data string.  
+            public StringBuilder stringBuilder = new StringBuilder();
+        }
+
+        private const int port = 25565;
+
+        private static ManualResetEvent ConnectDone = new ManualResetEvent(false);
+        private static ManualResetEvent SendDone = new ManualResetEvent(false);
+        private static ManualResetEvent RecieveDone = new ManualResetEvent(false);
+
+        private static String response = string.Empty;
         public void Initialize(string IP)
         {
             try
             {
-                client = new TcpClient();
-                Debug.WriteLine("Connecting...");
+                IPAddress ipAddress = IPAddress.Parse(IP);
+                IPEndPoint remoteEndPoint = new IPEndPoint(ipAddress, port);
 
-                client.Connect(IP, 25565);
-                stream = client.GetStream(); //for sending messages to the server          
+                //create socket
+                Socket client = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
+
+                client.BeginConnect(remoteEndPoint, new AsyncCallback(ConnectCallback), client);
+                ConnectDone.WaitOne();
+
+
+                SendMessage(client, IP.ToString() + "<EOF>");
+                SendDone.WaitOne();
+
+                Receive(client);
+                RecieveDone.WaitOne();
+
+                Console.WriteLine("Server responded : {0}", response);
+
+                //client.Shutdown(SocketShutdown.Both);
+                //client.Close();
+
             }
             catch (Exception e)
             {
-                Debug.WriteLine("Client Error " + e.StackTrace);
+                Console.WriteLine(e.ToString());
             }
         }
 
-        public void SendMessage(string message)
+        private static void ConnectCallback(IAsyncResult ar)
         {
-            ASCIIEncoding encoding = new ASCIIEncoding();
-            byte[] messageBuffer = encoding.GetBytes(message);
-            stream.Write(messageBuffer, 0, messageBuffer.Length);
-        }
-
-        public void Update()
-        {
-            if (stream == null)
+            try
             {
-                return;
+                Socket client = (Socket)ar.AsyncState;
+
+                client.EndConnect(ar);
+
+                ConnectDone.Set();
             }
-            byte[] messageBuffer = new byte[1000];
-            int k = stream.Read(messageBuffer, 0, 1000);
-
-
-            for (int i = 0; i < k; i++) //recieved message
+            catch (Exception e)
             {
-                Debug.Write(Convert.ToChar(messageBuffer[i]));
+                Console.WriteLine(e.ToString());
             }
         }
 
-        public void Terminate()
+        private static void Receive(Socket client)
         {
-            client.Close();
+            try
+            {
+                StateObject state = new StateObject();
+                state.workSocket = client;
+
+                client.BeginReceive(state.buffer, 0, StateObject.BufferSize, 0, new AsyncCallback(ReceiveCallback), state);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.ToString());
+            }
         }
+
+        private static void ReceiveCallback(IAsyncResult ar)
+        {
+            try
+            {
+                StateObject state = (StateObject)ar.AsyncState;
+                Socket client = state.workSocket;
+
+                int bytesRead = client.EndReceive(ar);
+
+                //if (bytesRead > 0)
+                //{
+                //    state.stringBuilder.Append(Encoding.ASCII.GetString(state.buffer, 0, bytesRead));
+                //    client.BeginReceive(state.buffer, 0, StateObject.BufferSize, 0, new AsyncCallback(ReceiveCallback), state);                    
+                //}
+                //else
+                //{
+                state.stringBuilder.Append(Encoding.ASCII.GetString(state.buffer, 0, bytesRead));
+                if (state.stringBuilder.Length > 1)
+                {
+                    response = state.stringBuilder.ToString();
+                }
+                RecieveDone.Set();
+                //}
+
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.ToString());
+            }
+        }
+        public static void SendMessage(Socket client, String message)
+        {
+            byte[] byteMessage = Encoding.ASCII.GetBytes(message);
+
+            client.BeginSend(byteMessage, 0, byteMessage.Length, 0, new AsyncCallback(SendCallback), client);
+        }
+
+        private static void SendCallback(IAsyncResult ar)
+        {
+            try
+            {
+                Socket client = (Socket)ar.AsyncState;
+
+                int byteSent = client.EndSend(ar);
+
+                SendDone.Set();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.ToString());
+            }
+        }
+
 
     }
 }

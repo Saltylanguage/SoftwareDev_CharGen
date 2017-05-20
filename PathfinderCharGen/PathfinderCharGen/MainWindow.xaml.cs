@@ -30,8 +30,6 @@ namespace PathfinderCharGen
     {
         CharSheetView sheetView = new CharSheetView();
         DispatcherTimer dispatchTimer = new DispatcherTimer();
-        public Server server = Server.Instance;
-        public Client client = new Client();
         public MainWindow()
         {
             string path = System.Reflection.Assembly.GetEntryAssembly().Location;
@@ -45,13 +43,8 @@ namespace PathfinderCharGen
             UpdateLoop.Instance.Initialize();
 
             InitializeComponent();
-            UpdateLoop.Instance.dispatcherTimer.Tick += new EventHandler(UpdateNetwork);
-        }
+            //UpdateLoop.Instance.dispatcherTimer.Tick += new EventHandler(UpdateNetwork);
 
-        private void UpdateNetwork(object sender, EventArgs e)
-        {
-            server.Update();
-            client.Update();
         }
 
         private void NewCharacterWizard_Click(object sender, RoutedEventArgs e)

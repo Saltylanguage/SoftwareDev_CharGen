@@ -6,22 +6,19 @@ using System.Threading.Tasks;
 using PathfinderCharGen.Commands;
 using PathfinderCharGen.Networking;
 
-namespace PathfinderCharGen.Networking
+namespace PathfinderCharGen.Commands
 {
     public static class ScriptParser
     {
-        private static char[] delimiter = { ':' };
-
         public static bool ParseNetworkMessage(char[] message, out NetworkMessage result)
         {
             result = new NetworkMessage();
 
-            string temp = new string(message);
-            string[] split = temp.Split(delimiter, 4);
+            string temp = message[0].ToString() + message[1].ToString();
 
-            switch (split[0])
+            switch (temp)
             {
-                case "/a":
+                case "/t":
                     result.Type = MessageType.Chat;
                     break;
                 case "/c":
@@ -34,51 +31,11 @@ namespace PathfinderCharGen.Networking
                     result.Type = MessageType.Notification;
                     break;
                 case "/w":
-                    result.Type = MessageType.Whisper;
+                    result.Type = MessageType.Wisper;
                     break;
                 default:
                     return false;
             }
-
-            result.Username = split[1];
-            result.Context = split[2];
-            result.Message = split[3];
-
-            return true;
-        }
-
-        public static bool PrepNetworkMessage(NetworkMessage message, out char[] result)
-        {
-            result = new char[0];
-
-            string final = "";
-
-            switch (message.Type)
-            {
-                case MessageType.Chat:
-                    final += "/a";
-                    break;
-                case MessageType.Command:
-                    final += "/c";
-                    break;
-                case MessageType.Result:
-                    final += "/r";
-                    break;
-                case MessageType.Notification:
-                    final += "/n";
-                    break;
-                case MessageType.Whisper:
-                    final += "/w";
-                    break;
-                default:
-                    return false;
-            }
-            
-            final += ":" + message.Username;
-            final += ":" + message.Context;
-            final += ":" + message.Message;
-
-            result = final.ToCharArray();
 
             return true;
         }

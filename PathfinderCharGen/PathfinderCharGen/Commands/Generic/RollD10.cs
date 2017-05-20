@@ -8,11 +8,6 @@ namespace PathfinderCharGen.Commands.Generic
 {
     public class RollD10 : Command
     {
-        public RollD10()
-        {
-            name = "Roll D10";
-        }
-
         public override void Acquire()
         {
             

@@ -39,12 +39,12 @@ namespace PathfinderCharGen.Commands
             Custom = new Dictionary<string, Command>();
 
             // Fill Utilities
-            Utilities.Add("roll_d10", new Generic.RollD10());
-            Utilities.Add("roll_d20", new Generic.RollD20());
-            Utilities.Add("attack_roll", new Generic.AttackRoll());
+            Utilities.Add("Roll D10", new Generic.RollD10());
+            Utilities.Add("Roll D20", new Generic.RollD20());
+            Utilities.Add("Attack Roll", new Generic.AttackRoll());
 
             // Fill Common
-            Common.Add("power_attack", new Feats.PowerAttack());
+            Common.Add("Power Attack", new Feats.PowerAttack());
 
             // Fill Custom
 
@@ -54,7 +54,6 @@ namespace PathfinderCharGen.Commands
         public Command FindCommand(string command)
         {
             Command result;
-            command = ParseStringInput(command);
 
             Utilities.TryGetValue(command, out result);
             if (result != null) return result;
@@ -100,13 +99,6 @@ namespace PathfinderCharGen.Commands
             remove.Remove();
 
             return remove;
-        }
-
-        private string ParseStringInput(string input)
-        {
-            input = input.ToLower();
-            input = input.Replace(' ', '_');
-            return input;
         }
     }
 }
