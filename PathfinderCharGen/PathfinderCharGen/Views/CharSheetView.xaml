@@ -1558,34 +1558,35 @@
                 </Grid>
             </TabItem>
 
-            <TabItem Name="GameTab" Header="Game">
+            <TabItem Name="GameTab" Header="Game" Margin="1,0,-5,-3">
                 <Grid DataContext="{Binding Source={StaticResource GameVM}}" >
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition/>
+                        <ColumnDefinition Width="7*"/>
+                        <ColumnDefinition Width="351*"/>
                     </Grid.ColumnDefinitions>
                     <Grid.Background>
                         <ImageBrush ImageSource="../Resources/parchment.jpg" Stretch="Fill"/>
                     </Grid.Background>
-                    <TextBlock Margin="1,20,1648,20" Text="Command" FontSize="20"/>
-                    <TextBox Name="CMD_Text" Margin="355,20,0,0" Width="200" Height="50"
+                    <TextBlock Margin="1,20,1648,20" Text="Command" FontSize="20" Grid.ColumnSpan="2"/>
+                    <TextBox Name="CMD_Text" Margin="320,20,0,0" Width="200" Height="50"
                              Background="White" HorizontalAlignment="Left" VerticalAlignment="Top"
                              Text="{Binding CMD_Text, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
-                             KeyDown="KeyEventDownHandler"/>
-                    <ComboBox x:Name="ChatTypeBox" HorizontalAlignment="Left" Margin="230,20,0,0" VerticalAlignment="Top" Width="120" SelectedIndex="0" Height="22">
+                             KeyDown="KeyEventDownHandler" Grid.Column="1"/>
+                    <ComboBox x:Name="ChatTypeBox" HorizontalAlignment="Left" Margin="195,20,0,0" VerticalAlignment="Top" Width="120" SelectedIndex="0" Height="22" Grid.Column="1">
                         <ComboBoxItem Content="Chat"/>
                         <ComboBoxItem Content="Command"/>
                         <ComboBoxItem Content="Notification"/>
                         <ComboBoxItem Content="Wisper"/>
                     </ComboBox>
-                    <ComboBox x:Name="ChatExtraBox" HorizontalAlignment="Left" Margin="230,48,0,0" VerticalAlignment="Top" Width="120" SelectedIndex="0" Height="22">
+                    <ComboBox x:Name="ChatExtraBox" HorizontalAlignment="Left" Margin="195,48,0,0" VerticalAlignment="Top" Width="120" SelectedIndex="0" Height="22" Grid.Column="1">
                         <ComboBoxItem Content="SomeText1"/>
                         <ComboBoxItem Content="SomeText2"/>
                         <ComboBoxItem Content="SomeText3"/>
                         <ComboBoxItem Content="SomeText4"/>
                     </ComboBox>
-                    <Button x:Name="SendBtn" Content="Send" HorizontalAlignment="Left" Margin="560,21,0,0" VerticalAlignment="Top" Width="75" Height="22" Click="SendClick"/>
-                    <TextBox x:Name="ChatTextBox" HorizontalAlignment="Left" Height="605" Margin="355,75,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="200" IsReadOnly="True"/>
-                    <Button x:Name="ClearBtn_Copy" Content="Clear" HorizontalAlignment="Left" Margin="560,48,0,0" VerticalAlignment="Top" Width="75" Height="22" Click="ClearClick"/>
+                    <Button x:Name="SendBtn" Content="Send" HorizontalAlignment="Left" Margin="525,21,0,0" VerticalAlignment="Top" Width="75" Height="22" Click="SendClick" Grid.Column="1"/>
+                    <TextBox x:Name="ChatTextBox" HorizontalAlignment="Left" Height="605" Margin="320,75,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="200" IsReadOnly="True" Grid.Column="1"/>
+                    <Button x:Name="ClearBtn_Copy" Content="Clear" HorizontalAlignment="Left" Margin="525,48,0,0" VerticalAlignment="Top" Width="75" Height="22" Click="ClearClick" Grid.Column="1"/>
 
                 </Grid>
             </TabItem>

@@ -104,6 +104,8 @@
     <Compile Include="Commands\Generic\AttackRoll.cs" />
     <Compile Include="Commands\Generic\RollD10.cs" />
     <Compile Include="Commands\Generic\RollD20.cs" />
+    <Compile Include="Commands\Specific\ClearCommand.cs" />
+    <Compile Include="Commands\Specific\SendCommand.cs" />
     <Compile Include="Networking\NetworkingManager.cs" />
     <Compile Include="Networking\NetworkMessage.cs" />
     <Compile Include="Networking\ScriptParser.cs" />
@@ -163,7 +165,11 @@
     <Compile Include="Utilities\UpdateTest.cs" />
     <Compile Include="ViewModels\CharGenViewModel.cs" />
     <Compile Include="ViewModels\CharSheetViewModel.cs" />
+    <Compile Include="ViewModels\ChatUIViewModel.cs" />
     <Compile Include="ViewModels\ConnectionViewModel.cs" />
+    <Compile Include="Views\ChatUI.xaml.cs">
+      <DependentUpon>ChatUI.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\ConnectionWindow.xaml.cs">
       <DependentUpon>ConnectionWindow.xaml</DependentUpon>
     </Compile>
@@ -228,6 +234,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Views\ChatUI.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\ConnectionWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
