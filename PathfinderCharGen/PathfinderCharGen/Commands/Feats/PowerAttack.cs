@@ -8,6 +8,10 @@ namespace PathfinderCharGen.Commands.Feats
 {
     class PowerAttack : Command
     {
+        public PowerAttack()
+        {
+            name = "Power Attack";
+        }
 
         public override void Acquire()
         {

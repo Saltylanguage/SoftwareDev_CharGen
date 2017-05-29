@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Threading;
 
 namespace PathfinderCharGen.Networking
 {
@@ -33,6 +34,9 @@ namespace PathfinderCharGen.Networking
 
         public static MessageType StringToMessageType(string input)
         {
+            //Thread thread = new Thread(() => MessageTypeToString(MessageType.Chat));
+            //thread.Start();
+
             input = input.ToLower();
 
             switch (input)

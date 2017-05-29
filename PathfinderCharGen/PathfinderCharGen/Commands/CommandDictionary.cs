@@ -6,7 +6,15 @@ using System.Threading.Tasks;
 
 namespace PathfinderCharGen.Commands
 {
-    class CommandDictionary
+    public enum DictionaryType
+    {
+        Unknown,
+        Utilities,
+        Common,
+        Custom
+    }
+
+    public class CommandDictionary
     {
         private CommandDictionary() { } 
 
@@ -39,35 +47,61 @@ namespace PathfinderCharGen.Commands
             Custom = new Dictionary<string, Command>();
 
             // Fill Utilities
-            Utilities.Add("Roll D10", new Generic.RollD10());
-            Utilities.Add("Roll D20", new Generic.RollD20());
-            Utilities.Add("Attack Roll", new Generic.AttackRoll());
+            Utilities.Add("roll_d10", new Generic.RollD10());
+            Utilities.Add("roll_d20", new Generic.RollD20());
+            Utilities.Add("attack_roll", new Generic.AttackRoll());
 
             // Fill Common
-            Common.Add("Power Attack", new Feats.PowerAttack());
+            Common.Add("power_attack", new Feats.PowerAttack());
 
             // Fill Custom
 
             Init = true;
         }
 
-        public Command FindCommand(string command)
+        public Command FindCommand(string command, DictionaryType type = DictionaryType.Unknown)
         {
             Command result;
+            command = ParseStringInput(command);
 
-            Utilities.TryGetValue(command, out result);
-            if (result != null) return result;
+            switch (type)
+            {
+                case DictionaryType.Unknown:
 
-            Common.TryGetValue(command, out result);
-            if (result != null) return result;
+                    Utilities.TryGetValue(command, out result);
+                    if (result != null) return result;
 
-            Custom.TryGetValue(command, out result);
-            return result;
+                    Common.TryGetValue(command, out result);
+                    if (result != null) return result;
+
+                    Custom.TryGetValue(command, out result);
+                    return result;
+
+                case DictionaryType.Utilities:
+
+                    Utilities.TryGetValue(command, out result);
+                    return result;
+
+                case DictionaryType.Common:
+
+                    Common.TryGetValue(command, out result);
+                    return result;
+
+                case DictionaryType.Custom:
+
+                    Custom.TryGetValue(command, out result);
+                    return result;
+
+                default:
+                    return null;
+            }
+
+            
         }
 
-        public Command CommandAcquire(string command)
+        public Command CommandAcquire(string command, DictionaryType type = DictionaryType.Unknown)
         {
-            Command acquire = FindCommand(command);
+            Command acquire = FindCommand(command, type);
 
             if (acquire == null)
                 return null;
@@ -77,9 +111,9 @@ namespace PathfinderCharGen.Commands
             return acquire;
         }
 
-        public Command CommandExecute(string command)
+        public Command CommandExecute(string command, DictionaryType type = DictionaryType.Unknown)
         {
-            Command execute = FindCommand(command);
+            Command execute = FindCommand(command, type);
 
             if (execute == null)
                 return null;
@@ -89,9 +123,9 @@ namespace PathfinderCharGen.Commands
             return execute;
         }
 
-        public Command CommandRemove(string command)
+        public Command CommandRemove(string command, DictionaryType type = DictionaryType.Unknown)
         {
-            Command remove = FindCommand(command);
+            Command remove = FindCommand(command, type);
 
             if (remove == null)
                 return null;
@@ -99,6 +133,47 @@ namespace PathfinderCharGen.Commands
             remove.Remove();
 
             return remove;
+        }
+
+        private string ParseStringInput(string input)
+        {
+            input = input.ToLower();
+            input = input.Replace(' ', '_');
+            return input;
+        }
+
+    public static DictionaryType StringToDictionaryType(string input)
+        {
+            input = input.ToLower();
+
+            switch (input)
+            {
+                case "utilities":
+                    return DictionaryType.Utilities;
+                case "common":
+                    return DictionaryType.Common;
+                case "custom":
+                    return DictionaryType.Custom;
+                default:
+                    return DictionaryType.Unknown;
+            }
+        }
+
+        public static string DictionaryTypeToString(DictionaryType input)
+        {
+            switch (input)
+            {
+                case DictionaryType.Unknown:
+                    return "Unknown";
+                case DictionaryType.Utilities:
+                    return "Utilities";
+                case DictionaryType.Common:
+                    return "Common";
+                case DictionaryType.Custom:
+                    return "Custom";
+                default:
+                    return "";
+            }
         }
     }
 }
