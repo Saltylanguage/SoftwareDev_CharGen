@@ -12,15 +12,26 @@ using System.Windows.Threading;
 
 namespace PathfinderCharGen.Networking
 {
+    class ConnectedClient
+    {
+        public Socket handler;
+        public string ClientIP;
+        public bool IsAlive;
+    }
+
     public class Server
     {
-        Socket SocketListener;
+        public Socket SocketListener;
+        List<ConnectedClient> RoutingTable = new List<ConnectedClient>();
+
+
         public string IP { get; set; }
         private Server() { }
 
         private static Server TheInstance;
         public static Server Instance
         {
+
             get
             {
                 if (TheInstance == null)
@@ -56,18 +67,46 @@ namespace PathfinderCharGen.Networking
 
                 SocketListener.Bind(localEndPoint);
                 SocketListener.Listen(100);
-
                 while (true)
                 {
-                    Console.WriteLine("On network thread, waiting for cleints");
+                    //Console.WriteLine("On network thread, waiting for clients");
                     allDone.Reset();
                     SocketListener.BeginAccept(new AsyncCallback(AcceptCallback), SocketListener);
-                    //allDone.WaitOne();
+                    //allDone.WaitOne();                         
                 }
             }
             catch (Exception err)
             {
                 Debug.WriteLine("Server Error " + err.StackTrace);
+            }
+        }
+
+
+        public void BeginRecievingMessages()
+        {
+            while (true)
+            {
+                StateObject state = new StateObject();
+                SocketListener.BeginReceive(state.buffer, 0, StateObject.BufferSize, SocketFlags.None, new AsyncCallback(SendToRequestManagerCallBack), SocketListener);
+            }
+        }
+
+        public void SendToRequestManagerCallBack(IAsyncResult ar)
+        {
+            string content = string.Empty;
+            StateObject state = (StateObject)ar.AsyncState;
+            Socket handler = state.workSocket;
+            int bytesRead = handler.EndReceive(ar);
+
+            if (bytesRead > 0)
+            {
+                state.stringBuilder.Append(Encoding.ASCII.GetString(state.buffer, 0, bytesRead));
+
+                content = state.stringBuilder.ToString();
+                if (content.IndexOf("<EOF>") > -1)
+                {
+                    RequestManager.Instance.PushMessage(state.buffer);
+                }
             }
         }
 
@@ -102,11 +141,13 @@ namespace PathfinderCharGen.Networking
                 content = state.stringBuilder.ToString();
                 if (content.IndexOf("<EOF>") > -1)
                 {
-
-                    //Console.WriteLine("Read {0} bytes from socket. \n Data : {1}",
-                    //    content.Length, content);
-
-                    SendMessage(handler, content); //send message back to client 
+                    if (content[0] != '/')
+                    {
+                        AddClientToRoutingTable(handler, content);
+                    }
+                    //SendMessage(handler, state.buffer); //send message back to client
+                    BroadcastMessage(Encoding.ASCII.GetBytes(RoutingTable.Last().ClientIP));
+                    Console.WriteLine("{0}", content);
                     Console.WriteLine("Responded to Client");
                 }
                 else
@@ -118,12 +159,49 @@ namespace PathfinderCharGen.Networking
             }
         }
 
-        public void SendMessage(Socket handler, string message)
+        void AddClientToRoutingTable(Socket handler, string content)
         {
-            byte[] byteMessage = Encoding.ASCII.GetBytes(message);
-
-            handler.BeginSend(byteMessage, 0, byteMessage.Length, 0, new AsyncCallback(SendCallback), handler);
+            Console.WriteLine("Adding client to Routing Table");
+            ConnectedClient tempClient = new ConnectedClient();
+            tempClient.handler = handler;
+            tempClient.ClientIP = content.Remove(content.Length - 5, 5);
+            tempClient.IsAlive = true;
+            //add client to Routing table
+            if (RoutingTable.Count == 0)
+            {
+                RoutingTable.Add(tempClient);
+            }
+            else
+            {
+                bool IPfound = false;
+                for (int i = 0; i < RoutingTable.Count; ++i) //check list for duplicate IP
+                {
+                    if (RoutingTable[i].ClientIP == tempClient.ClientIP)
+                    {
+                        IPfound = true;
+                    }
+                }
+                if (IPfound == false)
+                {
+                    RoutingTable.Add(tempClient);
+                }
+            }
         }
+
+        public void BroadcastMessage(byte[] message) //send message to current clients
+        {
+            if (RoutingTable.Count != 0)
+            {
+                for (int i = 0; i < RoutingTable.Count; ++i)
+                {
+                    if (RoutingTable[i].IsAlive == true)
+                    {
+                        SendMessage(RoutingTable[i].handler, message);
+                    }
+                }
+            }
+        }
+
         public void SendMessage(Socket handler, byte[] message)
         {
             handler.BeginSend(message, 0, message.Length, 0, new AsyncCallback(SendCallback), handler);
@@ -138,12 +216,35 @@ namespace PathfinderCharGen.Networking
 
                 int byteSent = handler.EndSend(ar);
 
-                //handler.Shutdown(SocketShutdown.Both);
-                //handler.Close();
             }
             catch (Exception e)
             {
                 Console.WriteLine(e.ToString());
+            }
+        }
+
+
+        public void UpdateRequests()
+        {
+            while (true)
+            {
+                if (!RequestManager.Instance.bIsLocked)
+                {
+                    if (RequestManager.Instance.mRequests.Count != 0)
+                    {
+                        RequestManager.Instance.bIsLocked = true;
+                        byte[] request = RequestManager.Instance.mRequests.Peek().message;
+                        //
+                        //byte[] result = parser.read(request);
+                        //
+                        RequestManager.Instance.PopMessage();
+                        RequestManager.Instance.bIsLocked = false;
+                        //if(whisper) send to specific player in routing table
+
+                        //else
+                        //BroadcastMessage(result);
+                    }
+                }
             }
         }
     }

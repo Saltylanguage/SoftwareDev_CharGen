@@ -60,8 +60,14 @@ namespace PathfinderCharGen.Networking
                 client.BeginConnect(remoteEndPoint, new AsyncCallback(ConnectCallback), client);
                 ConnectDone.WaitOne();
 
-
-                SendMessage(client, IP.ToString() + "<EOF>");
+                
+                Thread message = new Thread(() =>SendMessage(client, IP.ToString() + "<EOF>"));
+                message.Start();
+                //SendMessage(client, IP.ToString() + "<EOF>");
+                SendDone.WaitOne();
+                //SendMessage(client,"Hello Josh" + "<EOF>");
+                message = new Thread(() => SendMessage(client, "/Hello Server" + "<EOF>"));
+                message.Start();
                 SendDone.WaitOne();
 
                 Receive(client);
@@ -119,20 +125,12 @@ namespace PathfinderCharGen.Networking
 
                 int bytesRead = client.EndReceive(ar);
 
-                //if (bytesRead > 0)
-                //{
-                //    state.stringBuilder.Append(Encoding.ASCII.GetString(state.buffer, 0, bytesRead));
-                //    client.BeginReceive(state.buffer, 0, StateObject.BufferSize, 0, new AsyncCallback(ReceiveCallback), state);                    
-                //}
-                //else
-                //{
                 state.stringBuilder.Append(Encoding.ASCII.GetString(state.buffer, 0, bytesRead));
                 if (state.stringBuilder.Length > 1)
                 {
                     response = state.stringBuilder.ToString();
                 }
                 RecieveDone.Set();
-                //}
 
             }
             catch (Exception e)
@@ -142,9 +140,11 @@ namespace PathfinderCharGen.Networking
         }
         public static void SendMessage(Socket client, String message)
         {
+            //System.Threading.Thread.Sleep(10);
             byte[] byteMessage = Encoding.ASCII.GetBytes(message);
 
             client.BeginSend(byteMessage, 0, byteMessage.Length, 0, new AsyncCallback(SendCallback), client);
+            //client.Send(byteMessage, SocketFlags.Broadcast);
         }
 
         private static void SendCallback(IAsyncResult ar)

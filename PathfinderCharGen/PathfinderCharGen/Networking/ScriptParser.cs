@@ -14,11 +14,11 @@ namespace PathfinderCharGen.Networking
 
         public static byte[] byteResult;
 
-        public static bool ParseNetworkMessage(char[] message, out NetworkMessage result)
+        public static bool ParseNetworkMessage(byte[] message, out NetworkMessage result)
         {
             result = new NetworkMessage();
 
-            string temp = new string(message);
+            string temp = System.Text.Encoding.Default.GetString(message);
             string[] split = temp.Split(delimiter, 4);
 
             switch (split[0])
@@ -49,9 +49,9 @@ namespace PathfinderCharGen.Networking
             return true;
         }
 
-        public static bool PrepNetworkMessage(NetworkMessage message, out char[] result)
+        public static bool PrepNetworkMessage(NetworkMessage message, out byte[] result)
         {
-            result = new char[0];
+            result = new byte[0];
 
             string final = "";
 
@@ -80,7 +80,7 @@ namespace PathfinderCharGen.Networking
             final += ":" + message.Context;
             final += ":" + message.Message;
 
-            result = final.ToCharArray();
+            result = Encoding.ASCII.GetBytes(final);
 
             return true;
         }
