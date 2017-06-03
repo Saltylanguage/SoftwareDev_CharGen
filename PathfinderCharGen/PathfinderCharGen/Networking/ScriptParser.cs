@@ -12,6 +12,8 @@ namespace PathfinderCharGen.Networking
     {
         private static char[] delimiter = { ':' };
 
+        public static byte[] byteResult;
+
         public static bool ParseNetworkMessage(char[] message, out NetworkMessage result)
         {
             result = new NetworkMessage();
@@ -79,6 +81,40 @@ namespace PathfinderCharGen.Networking
             final += ":" + message.Message;
 
             result = final.ToCharArray();
+
+            return true;
+        }
+
+        public static bool PrepNetworkMessage(NetworkMessage message)
+        {
+            string final = "";
+
+            switch (message.Type)
+            {
+                case MessageType.Chat:
+                    final += "/t";
+                    break;
+                case MessageType.Command:
+                    final += "/c";
+                    break;
+                case MessageType.Result:
+                    final += "/r";
+                    break;
+                case MessageType.Notification:
+                    final += "/n";
+                    break;
+                case MessageType.Whisper:
+                    final += "/w";
+                    break;
+                default:
+                    return false;
+            }
+
+            final += ":" + message.Username;
+            final += ":" + message.Context;
+            final += ":" + message.Message;
+
+            byteResult = Encoding.ASCII.GetBytes(final);
 
             return true;
         }
