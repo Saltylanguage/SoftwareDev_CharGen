@@ -105,7 +105,7 @@ namespace PathfinderCharGen.Networking
                 content = state.stringBuilder.ToString();
                 if (content.IndexOf("<EOF>") > -1)
                 {
-                    RequestManager.Instance.PushMessage(state.buffer);
+                    //RequestManager.Instance.PushMessage(state.buffer);
                 }
             }
         }
@@ -226,26 +226,26 @@ namespace PathfinderCharGen.Networking
 
         public void UpdateRequests()
         {
-            while (true)
-            {
-                if (!RequestManager.Instance.bIsLocked)
-                {
-                    if (RequestManager.Instance.mRequests.Count != 0)
-                    {
-                        RequestManager.Instance.bIsLocked = true;
-                        byte[] request = RequestManager.Instance.mRequests.Peek().message;
-                        //
-                        //byte[] result = parser.read(request);
-                        //
-                        RequestManager.Instance.PopMessage();
-                        RequestManager.Instance.bIsLocked = false;
-                        //if(whisper) send to specific player in routing table
+            //while (true)
+            //{
+            //    if (!RequestManager.Instance.bIsLocked)
+            //    {
+            //        if (RequestManager.Instance.mRequests.Count != 0)
+            //        {
+            //            RequestManager.Instance.bIsLocked = true;
+            //            byte[] request = RequestManager.Instance.mRequests.Peek().message;
+            //            //
+            //            //byte[] result = parser.read(request);
+            //            //
+            //            RequestManager.Instance.PopMessage();
+            //            RequestManager.Instance.bIsLocked = false;
+            //            //if(whisper) send to specific player in routing table
 
-                        //else
-                        //BroadcastMessage(result);
-                    }
-                }
-            }
+            //            //else
+            //            //BroadcastMessage(result);
+            //        }
+            //    }
+            //}
         }
     }
 }

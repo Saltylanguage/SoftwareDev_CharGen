@@ -13,7 +13,7 @@ namespace PathfinderCharGen.Networking
         Command,
         Result,
         Notification,
-        Wisper
+        Whisper
     }
 
     public class NetworkMessage

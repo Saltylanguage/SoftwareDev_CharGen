@@ -38,7 +38,7 @@ namespace PathfinderCharGen.Networking
         {
             Server.StateObject state = new Server.StateObject();
             Socket handler  = state.workSocket;
-            server.SendMessage(handler, message);
+            //server.SendMessage(handler, message);
         }
 
 
